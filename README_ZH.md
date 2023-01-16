@@ -2,8 +2,8 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-16 14:52:58
- * @FilePath: /Embedded_Linux/ENG5220/README.md
+ * @LastEditTime: 2023-01-16 16:09:11
+ * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
 -->
@@ -15,7 +15,7 @@
 
 1. 树莓派4B(4GB/8GB)
 2. Linux发行版:Ubuntu Desktop 22.04.01 LTS(64Bit)
-3. 内核版本:5.15.0-1023-raspi |搜索Linux内核`apt-cache search linux-raspi-headers`
+3. 内核版本:5.15.0-1023-raspi |检索所有Linux内核`apt-cache search linux-raspi-headers`
 4. g++:`g++ (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
 5. gcc:`gcc (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
 
@@ -30,6 +30,7 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install ssh vim gcc g++ screen htop git make
 ```
+>Note:注意`sudo apt-get upgrade`命令默认把内核升级为最新版本，请手动将内核版本保持至5.15.0-1023-raspi
 4. 开启ubuntu远程桌面:Setting-share-开启远程桌面-修改用户名和密码为`ubuntu`
 
    4.1 允许hdmi热插拔，避免不插hdmi时无法访问远程桌面。  
@@ -41,7 +42,11 @@ sudo apt-get install ssh vim gcc g++ screen htop git make
    4.2固定远程桌面登陆密码，防止每次重启后密码随机生成无法访问远程桌面  
    Application-password&keys-默认密钥&login-change password-不设置密码(留空)-最后实现取消加密  
    4.3使用Microsoft Remote Desktop软件来访问树莓派桌面|树莓派的局域网IP+用户名和密码均为`ubuntu`
+   >如何获得树莓派IP: 1.若在同一路由器下，可通过访问路由器后台获得。2.若无法访问路由器后台，则通过`arp -a(windows)`等方式获得树莓派的局域网IP。
 
 5. 防止树莓派休眠:Setting-Power-Nerver sleep
 6. 至此树莓派完全脱离键盘鼠标和显示器，可用其他电脑远程操作
 7. 使用Termius软件SSH连接至树莓派的局域网IP。用户名:`ubuntu` 密码:`ubuntu`
+
+### 1.3 构建交叉编译环境
+考虑到树莓派算力不足，而使用服务器将会显著提升编译效率，版本控制，代码备份，协同工作。我们在本项目开发过程中使用一台中心化服务器(`I9-12900k+RTX3090TI+32GB DDR4+512G SSD`)，并在服务器中构建交叉编译环境。
