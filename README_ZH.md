@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-16 16:09:11
+ * @LastEditTime: 2023-01-16 17:00:24
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -34,7 +34,7 @@ sudo apt-get install ssh vim gcc g++ screen htop git make
 4. 开启ubuntu远程桌面:Setting-share-开启远程桌面-修改用户名和密码为`ubuntu`
 
    4.1 允许hdmi热插拔，避免不插hdmi时无法访问远程桌面。  
-   输入以下命令:`sudo vim /boot/fireware/config.txt`，并在config.txt文件中增加以下内容:  
+   输入以下命令:`sudo vim /boot/firmware/config.txt`，并在config.txt文件中增加以下内容:  
    ```
    [hdmi]
    hdmi_force_hotplug=1 #allow remote desktop when no hdmi wire 
