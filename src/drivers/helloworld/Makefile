@@ -4,7 +4,7 @@ MODULE_DIR=$(shell basename `pwd`) #get driver name
 
 obj-m:=$(MODULE_NAME).o
 
-KERNEL_DIR=../../kernel/linux-headers-5.15.0-1023-raspi/ #/usr/src/linux-headers-5.15.0-1023-raspi/
+KERNEL_DIR=/usr/src/linux-headers-5.15.0-1023-raspi/ #../../kernel/linux-headers-5.15.0-1023-raspi/ 
 
 CROSS=ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-
 
