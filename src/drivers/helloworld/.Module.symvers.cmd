@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/xddcore/SleepPanda/src/drivers/helloworld/Module.symvers := sed 's/\.ko$$/\.o/' /home/ubuntu/xddcore/SleepPanda/src/drivers/helloworld/modules.order | scripts/mod/modpost -m -a  -o /home/ubuntu/xddcore/SleepPanda/src/drivers/helloworld/Module.symvers -e -i Module.symvers   -T -

@@ -1,0 +1,1 @@
+cmd_/home/ubuntu/xddcore/SleepPanda/src/drivers/helloworld/helloworld.mod := { echo  /home/ubuntu/xddcore/SleepPanda/src/drivers/helloworld/helloworld.o;  echo; } > /home/ubuntu/xddcore/SleepPanda/src/drivers/helloworld/helloworld.mod
