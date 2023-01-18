@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-18 14:38:27
+ * @LastEditTime: 2023-01-18 14:48:31
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -36,10 +36,30 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 >如果你对本项目有任何建议，欢迎发邮件至xddcore@gmail.com
 
 ## 项目开发规划
+
+#### Global
 - [x] 构建Github仓库&README文档，完成基础开发环境配置，固定Linux内核源码，测试内核模块编译。 
-- [ ] 建立dev分支
+- [x] 建立dev分支
 - [ ] 购买所有硬件
 - [ ] 25/01/2023 Pitch Session
+
+#### Chengsen Dong
+- [ ] 蜂鸣器驱动开发
+- [ ] WM8960驱动开发
+- [ ] MLX90640驱动开发
+- [ ] MAX30101驱动开发
+- [ ] 墨水屏驱动开发
+- [ ] 4K 30FPS摄像头(opencv c++框架)
+- [ ] 触摸屏(基于QT的GUI)开发
+- [ ] MQTT服务器搭建
+
+#### Yihan Wang
+- [ ] To do later...
+
+#### Rui Liu
+- [ ] To do later...
+
+#### Hui Wang
 - [ ] To do later...
 
 # 指南
