@@ -57,6 +57,7 @@ sudo apt-get install ssh vim gcc g++ screen htop git make
 ```
 apt-get source linux-image-$(uname -r)
 ```
+
 Q1:模块未签名问题:
 >看起来你的系统供应商已经在你的内核上启用了内核模块签名验证，这意味着它不会加载供应商尚未签名的任何模块。换句话说，你的补丁模块没有（正确地）签名并且内核将拒绝加载它。
 >解决方案:cmd run `CONFIG_MODULE_SIG=n`
