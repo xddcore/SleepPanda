@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-18 10:06:48
+ * @LastEditTime: 2023-01-18 10:13:25
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -65,7 +65,7 @@ sudo apt-get install ssh vim gcc g++ screen htop git make
 >Note: Note that the `sudo apt-get upgrade` command will upgrade the kernel to the latest version by default, please manually keep the kernel version to 5.15.0-1023-raspi
 4. Open ubuntu remote desktop: Setting-share-open remote desktop-change username and password to `ubuntu`
 
-    4.1 Allow hdmi hot plugging to avoid inability to access remote desktop when hdmi is not plugged in. ｜Unresolved! ! ! |Try to use HDMI pseudo load to solve
+    4.1 Allow hdmi hot plugging to avoid inability to access remote desktop when hdmi is not plugged in. ｜Unresolved! ! ! |Try to use HDMI pseudo load to solve  
     Enter the following command: `sudo vim /boot/firmware/config.txt`, and add the following content to the config.txt file:
     ```
     [hdmi]
