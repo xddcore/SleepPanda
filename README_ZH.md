@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-18 14:00:22
+ * @LastEditTime: 2023-01-18 14:38:27
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -37,6 +37,9 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 
 ## 项目开发规划
 - [x] 构建Github仓库&README文档，完成基础开发环境配置，固定Linux内核源码，测试内核模块编译。 
+- [ ] 建立dev分支
+- [ ] 购买所有硬件
+- [ ] 25/01/2023 Pitch Session
 - [ ] To do later...
 
 # 指南
@@ -115,3 +118,18 @@ Q1:模块未签名问题:
 >看起来你的系统供应商已经在你的内核上启用了内核模块签名验证，这意味着它不会加载供应商尚未签名的任何模块。换句话说，你的补丁模块没有（正确地）签名并且内核将拒绝加载它。
 >解决方案:cmd run `CONFIG_MODULE_SIG=n`
 
+### 1.4 传感器&执行器&服务器
+
+**传感器**
+1. 扬声器&麦克风:WM8960
+2. 体温(热成像)&手势控制:MLX90640
+3. 心率&血氧:MAX30101
+4. 睡姿监测:4K 30FPS摄像头
+
+**执行器**
+1. 墨水屏(虚拟动物园)
+2. 触摸屏(基于QT的GUI)
+3. 蜂鸣器:紧急异常报警
+
+**服务器**
+面向全球，负责存储用户数据，并承担虚拟动物园之间的参观访问/动物交换。
