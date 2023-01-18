@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-17 22:15:57
+ * @LastEditTime: 2023-01-17 23:59:49
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -53,6 +53,10 @@ sudo apt-get install ssh vim gcc g++ screen htop git make
 ### 1.3 构建交叉编译环境&本地编译环境
 考虑到树莓派算力不足，而使用服务器将会显著提升编译效率，版本控制，代码备份，协同工作。我们在本项目开发过程中使用一台中心化服务器(`I9-12900k+RTX3090TI+32GB DDR4+512G SSD`)，并在服务器中构建交叉编译环境。
 
+1.获取当前内核源码
+```
+apt-get source linux-image-$(uname -r)
+```
 Q1:模块未签名问题:
 >看起来你的系统供应商已经在你的内核上启用了内核模块签名验证，这意味着它不会加载供应商尚未签名的任何模块。换句话说，你的补丁模块没有（正确地）签名并且内核将拒绝加载它。
 >解决方案:cmd run `CONFIG_MODULE_SIG=n`
