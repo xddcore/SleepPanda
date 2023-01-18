@@ -1,8 +1,8 @@
 <!--
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
- * @LastEditors: xddcore 1034029664@qq.com
- * @LastEditTime: 2023-01-18 12:31:56
+ * @LastEditors: Chengsen Dong 1034029664@qq.com
+ * @LastEditTime: 2023-01-18 14:00:22
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -93,9 +93,7 @@ sudo apt-get install ssh vim gcc g++ screen htop git make
 apt-get source linux-image-$(uname -r) #5.15.0-1023-raspi
 ```
 3. 编译内核源码
-```
-make -j16 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- 
-```
+>Ref:https://www.raspberrypi.com/documentation/computers/linux_kernel.html
 4. 编译`helloworld`模块代码
 5. 测试`helloworld`模块
 
