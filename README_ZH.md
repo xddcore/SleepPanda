@@ -2,14 +2,46 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-18 09:25:48
+ * @LastEditTime: 2023-01-18 10:07:21
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
 -->
 # SleepPanda，一个贴心睡眠管家
 
-## 1. 系统部署指南
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.png?v=103)](https://opensource.org/licenses/GPL-3.0/)
+
+Change README Language: [English](./README.md) ｜ [中文](./README_ZH.md)
+
+## 项目简介
+SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。SleepPanda使用多种传感器收集用户的睡眠数据，并通过dsp，卷积神经网络等算法对数据进行分析处理。最终将数据处理结果通过多种方式呈现给用户。
+
+## 项目特性
+1. 早睡提醒，起床闹钟
+2. 体温(热成像)，心率，血氧监测
+3. 睡姿监测
+4. 呼吸暂停综合症预警
+5. 浅度/深度睡眠分类
+6. 助眠音乐播放
+7. 分享与社交(不同的SleepPanda硬件将会被连接至同一服务器，这将有助于用户间分享睡眠数据，以及互相监督早睡计划)
+
+## 项目贡献者
+|  Name   | ID  |  Role  |
+|  ----  | ----  | ----  |
+| Chengsen Dong  | 2789825d |  |
+| Rui Liu  | 2756138L |  |
+| Hui Wang  | 2810919W |  |
+| Yihan Wang  | 2696441W |  |
+>如果你对本项目有任何建议，欢迎发邮件至xddcore@gmail.com
+
+## 项目开发规划
+- [x] 构建Github仓库&README文档，完成基础开发环境配置，固定Linux内核源码，测试内核模块编译。 
+- [ ] To do later...
+
+# 指南
+
+## 1. 系统部署
 
 ### 1.1 软硬件版本
 
@@ -55,25 +87,25 @@ sudo apt-get install ssh vim gcc g++ screen htop git make
 
 #### 1.3.1 交叉编译环境(服务器)
 
-1.安装aarch64-linux-gnu-交叉编译工具链，以及其他编译linux内核所需的编译工具
-2.获取树莓派内核源码
+1. 安装aarch64-linux-gnu-交叉编译工具链，以及其他编译linux内核所需的编译工具
+2. 获取树莓派内核源码
 ```
 apt-get source linux-image-$(uname -r) #5.15.0-1023-raspi
 ```
-3.编译内核源码
-4.编译`helloworld`模块代码
-5.测试`helloworld`模块
+3. 编译内核源码
+4. 编译`helloworld`模块代码
+5. 测试`helloworld`模块
 
 ![helloworld_modinfo](./img/helloworld_modinfo.png)
 
 #### 1.3.2 本地编译环境
 
-1.编译`helloworld`模块代码
+1. 编译`helloworld`模块代码
 
 ```
 make -C /usr/src/linux-headers-5.15.0-1023-raspi/ M=`pwd` modules
 ```
-2.测试`helloworld`模块
+2. 测试`helloworld`模块
 >测试结果同上
 
 ---
