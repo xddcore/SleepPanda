@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-18 10:13:16
+ * @LastEditTime: 2023-01-18 10:14:18
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -65,7 +65,7 @@ sudo apt-get install ssh vim gcc g++ screen htop git make
 >Note:注意`sudo apt-get upgrade`命令默认把内核升级为最新版本，请手动将内核版本保持至5.15.0-1023-raspi
 4. 开启ubuntu远程桌面:Setting-share-开启远程桌面-修改用户名和密码为`ubuntu`
 
-   4.1 允许hdmi热插拔，避免不插hdmi时无法访问远程桌面。｜未解决！！！|尝试使用HDMI伪负载解决  
+   4.1 允许hdmi热插拔，避免不插hdmi时无法访问远程桌面。｜`未解决！！！`|尝试使用HDMI伪负载解决  
    输入以下命令:`sudo vim /boot/firmware/config.txt`，并在config.txt文件中增加以下内容:  
    ```
    [hdmi]
@@ -98,7 +98,7 @@ apt-get source linux-image-$(uname -r) #5.15.0-1023-raspi
 
 ![helloworld_modinfo](./img/helloworld_modinfo.png)
 
-#### 1.3.2 本地编译环境
+#### 1.3.2 本地编译环境(树莓派)
 
 1. 编译`helloworld`模块代码
 
