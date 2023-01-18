@@ -6,6 +6,8 @@ obj-m:=$(MODULE_NAME).o
 
 KERNEL_DIR=/usr/src/linux-headers-5.15.0-1023-raspi/ #../../kernel/linux-headers-5.15.0-1023-raspi/ 
 
+CROSS_KERNEL_DIR=../../kernel/linux-5.15/ 
+
 CROSS=ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-
 
 all:
@@ -13,7 +15,6 @@ all:
 clean:
 	make -C $(KERNEL_DIR) M=`pwd` clean
 cross:
-	make $(CROSS) -C $(KERNEL_DIR) M=`pwd` modules
-
+	make $(CROSS) -C $(CROSS_KERNEL_DIR) M=`pwd` modules
 cross-clean:
-	make $(CROSS) -C $(KERNEL_DIR) M=`pwd` clean
+	make $(CROSS) -C $(CROSS_KERNEL_DIR) M=`pwd` clean
