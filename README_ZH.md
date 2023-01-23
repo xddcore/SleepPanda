@@ -2,16 +2,18 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-20 21:11:26
+ * @LastEditTime: 2023-01-23 10:13:08
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
 -->
 # SleepPanda，一个贴心睡眠管家
 
-![Logo](./img/SleepPanda-logo.png)
-[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-[![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.png?v=103)](https://opensource.org/licenses/GPL-3.0/)
+![Logo](./img/SleepPanda-logo.png)  
+
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)  
+
+[![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.png?v=103)](https://opensource.org/licenses/GPL-3.0/)  
 
 Change README Language: [English](./README.md) ｜ [中文](./README_ZH.md)
 
@@ -41,7 +43,8 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 #### Global
 - [x] 构建Github仓库&README文档，完成基础开发环境配置，固定Linux内核源码，测试内核模块编译。 
 - [x] 建立dev分支
-- [ ] 购买所有硬件
+- [x] 购买所有硬件(除触摸屏以外)
+- [x] Pitch Session PPT幻灯片初稿
 - [ ] 25/01/2023 Pitch Session
 
 #### Chengsen Dong
@@ -142,15 +145,20 @@ Q1:模块未签名问题:
 ### 1.4 传感器&执行器&服务器
 
 **传感器**
-1. 扬声器&麦克风:WM8960
-2. 体温(热成像)&手势控制:MLX90640
-3. 心率&血氧:MAX30101
-4. 睡姿监测:4K 30FPS摄像头
+1. 扬声器&麦克风:WM8960(Control:IIC;Audio:IIS)-✅
+2. 体温(热成像)&手势控制:MLX90640(IIC)-✅
+3. 心率&血氧:MAX30101(IIC)
+4. 睡姿监测:4K 30FPS摄像头(USB+OpenCV)-✅
 
 **执行器**
-1. 墨水屏(虚拟动物园)
-2. 触摸屏(基于QT的GUI)
-3. 蜂鸣器:紧急异常报警
+1. 墨水屏(虚拟动物园)(SPI)-✅
+2. 触摸屏(基于QT的GUI)(Video:HDMI,Touch:USB)
+3. 蜂鸣器:紧急异常报警(High/Low Pin Level)-✅
+
+**其他**
+
+1. 杜邦线若干
+
 
 **服务器**
 面向全球，负责存储用户数据，并承担虚拟动物园之间的参观访问/动物交换。
