@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-23 14:57:39
+ * @LastEditTime: 2023-01-23 15:07:14
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -46,7 +46,7 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 - [x] 购买所有硬件(除触摸屏以外)
 - [x] Pitch Session PPT幻灯片初稿
 - [ ] Pitch Session PPT幻灯片最终稿
-- [ ] 25/01/2023 Pitch Session
+- [ ] 14:20:00, 25/01/2023 Pitch Session
 
 #### Chengsen Dong
 - [ ] 蜂鸣器驱动开发
