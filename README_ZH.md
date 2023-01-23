@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-23 15:07:14
+ * @LastEditTime: 2023-01-23 15:30:33
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -50,13 +50,16 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 
 #### Chengsen Dong
 - [ ] 蜂鸣器驱动开发
-- [ ] WM8960驱动开发
-- [ ] MLX90640驱动开发
 - [ ] MAX30101驱动开发
-- [ ] 墨水屏驱动开发
+- [ ] MLX90640驱动开发
+- [ ] OpenNNA 2.0神经网络推理框架(C++版本)
+- [ ] MLX90640+卷积神经网络手势识别
+- [ ] WM8960驱动开发(低优先级)
+- [ ] 墨水屏驱动开发(虚拟动物园)
 - [ ] 4K 30FPS摄像头(opencv c++框架)
+- [ ] 卷积神经网络睡姿分类
 - [ ] 触摸屏(基于QT的GUI)开发
-- [ ] MQTT服务器搭建
+- [ ] MQTT服务器搭建(低优先级)
 
 #### Yihan Wang
 - [x] Pitch Session PPT幻灯片初稿
