@@ -10,7 +10,7 @@ clean:
 	$(RM) helloworld helloworld_test
 
 Again, manually test the code:
-	$ ./.github/workflows/configure && make && make test
+	$ ../../../.github/workflows/configure && make && make test
 	g++ -std=c++17 helloworld.cpp -o helloworld
 	g++ -std=c++17 helloworld_test.cpp -lcppunit -o helloworld_test
 	chmod +x helloworld
