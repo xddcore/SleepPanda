@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-25 11:13:29
+ * @LastEditTime: 2023-01-25 17:18:45
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -46,7 +46,7 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 - [x] 购买所有硬件(除触摸屏以外)
 - [x] Pitch Session PPT幻灯片初稿
 - [x] Pitch Session PPT幻灯片最终稿
-- [ ] 14:20:00, 25/01/2023 Pitch Session
+- [x] 14:20:00, 25/01/2023 Pitch Session
 
 #### Chengsen Dong
 - [ ] 蜂鸣器驱动开发
@@ -157,7 +157,7 @@ Q1:模块未签名问题:
 ### 1.4 传感器&执行器&服务器
 
 **传感器**
-1. 扬声器&麦克风:WM8960(Control:IIC;Audio:IIS)-✅
+1. 扬声器&麦克风:WM8960(Control:IIC;Audio:IIS)+Sound Sensor(电压比较器Dout)-✅
 2. 体温(热成像)&手势控制:MLX90640(IIC)-✅
 3. 心率&血氧:MAX30101(IIC)-✅
 4. 睡姿监测:4K 30FPS摄像头(USB+OpenCV)-✅
