@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-25 22:28:30
+ * @LastEditTime: 2023-01-25 23:07:24
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -16,6 +16,15 @@
 [![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.png?v=103)](https://opensource.org/licenses/GPL-3.0/)  
 
 Change README Language: [English](./README.md) ｜ [中文](./README_ZH.md)
+
+## Auto Unit Test
+|  Name   | Status  |
+|  ----  | ----  |
+| src/app/helloworld/helloworld.cpp  | ![Helloworld cpp test](https://github.com/xddcore/SleepPanda/actions/workflows/helloworld_action.yml/badge.svg) |
+| .  | . |
+| . | . |
+| .  | . |
+
 
 ## 项目简介
 SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。SleepPanda使用多种传感器收集用户的睡眠数据，并通过dsp，卷积神经网络等算法对数据进行分析处理。最终将数据处理结果通过多种方式呈现给用户。
