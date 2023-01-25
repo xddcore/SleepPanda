@@ -16,7 +16,7 @@ jobs:
     - name: install cppunit
       run: sudo apt install -y libcppunit-dev
     - name: configure
-      run: chmod +x ./configure | ./configure
+      run: chmod +x ./configure | sudo ./configure
     - name: make
       run: cd ./src/app/helloworld | make
     - name: make test
