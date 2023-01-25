@@ -16,8 +16,8 @@ jobs:
     - name: install cppunit
       run: sudo apt install -y libcppunit-dev
     - name: configure
-      run: sudo .github/workflows/configure
+      run: sudo ./.github/workflows/configure
     - name: make
-      run: make
+      run: cd ./src/app/helloworld | make
     - name: make test
       run: make test
