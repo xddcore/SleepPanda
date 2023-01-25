@@ -10,14 +10,13 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    options: --user root
-    
+
     steps:
     - uses: actions/checkout@v3
     - name: install cppunit
       run: sudo apt install -y libcppunit-dev
     - name: configure
-      run: ./configure
+      run: chmod +x ./configure | ./configure
     - name: make
       run: cd ./src/app/helloworld | make
     - name: make test
