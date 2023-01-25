@@ -1,8 +1,6 @@
 all:
 	g++ -std=c++17 helloworld.cpp -o helloworld
 	g++ -std=c++17 helloworld_test.cpp -lcppunit -o helloworld_test
-
-test:
 	chmod +x helloworld
 	./helloworld_test
 
