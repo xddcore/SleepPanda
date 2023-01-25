@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-25 17:18:45
+ * @LastEditTime: 2023-01-25 18:38:23
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -154,6 +154,10 @@ Q1:模块未签名问题:
 >看起来你的系统供应商已经在你的内核上启用了内核模块签名验证，这意味着它不会加载供应商尚未签名的任何模块。换句话说，你的补丁模块没有（正确地）签名并且内核将拒绝加载它。
 >解决方案:cmd run `CONFIG_MODULE_SIG=n`
 
+Q2:执行`sudo apt-get upgrade`时，某些pack(例如linux内核)被保留，无法升级。
+> `sudo apt-get --with-new-pkgs upgrade`
+
+
 ### 1.4 传感器&执行器&服务器
 
 **传感器**
@@ -174,3 +178,10 @@ Q1:模块未签名问题:
 
 **服务器**
 面向全球，负责存储用户数据，并承担虚拟动物园之间的参观访问/动物交换。
+
+
+## 2. 系统开发
+
+### 2.1 获取SleepPanda源码
+
+`git clone https://github.com/xddcore/SleepPanda.git`
