@@ -20,6 +20,6 @@ jobs:
     - name: configure
       run: chmod +x ./.github/workflows/configure | sudo ./.github/workflows/configure
     - name: make
-      run: cd ./src/app/helloworld | make
+      run: cd ./src/app/helloworld/ | make
     - name: make test
       run: make test
