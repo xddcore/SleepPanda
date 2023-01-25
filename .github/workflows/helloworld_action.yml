@@ -18,8 +18,8 @@ jobs:
     - name: switch to 'dev' branch
       run: git checkout dev
     - name: configure
-      run: chmod +x /home/runner/work/SleepPanda/SleepPanda/.github/workflows/configure | sudo /home/runner/work/SleepPanda/SleepPanda/.github/workflows/configure
+      run: chmod +x ./.github/workflows/configure && sudo ./.github/workflows/configure
     - name: make
-      run: cd /home/runner/work/SleepPanda/SleepPanda/src/app/helloworld/ | make
+      run: cd ./src/app/helloworld/ && make
     - name: make test
       run: make test
