@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-25 23:11:02
+ * @LastEditTime: 2023-01-26 00:03:12
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -18,9 +18,9 @@
 Change README Language: [English](./README.md) ｜ [中文](./README_ZH.md)
 
 ## Auto Unit Test
-|  Name   | Status  |
+|  Source   | Status  |
 |  ----  | ----  |
-| src/app/helloworld/helloworld.cpp  | ![Helloworld cpp test](https://github.com/xddcore/SleepPanda/actions/workflows/helloworld_action.yml/badge.svg) |
+| helloworld.cpp  | ![Helloworld cpp test](https://github.com/xddcore/SleepPanda/actions/workflows/helloworld_action.yml/badge.svg) |
 | .  | . |
 | . | . |
 | .  | . |
