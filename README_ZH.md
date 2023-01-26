@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-26 09:00:37
+ * @LastEditTime: 2023-01-26 11:36:45
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -21,7 +21,7 @@ Change README Language: [English](./README.md) ｜ [中文](./README_ZH.md)
 |  Source   | Status  |
 |  ----  | ----  |
 | helloworld.cpp  | ![Helloworld cpp test](https://github.com/xddcore/SleepPanda/actions/workflows/helloworld_action.yml/badge.svg) |
-| .  | . |
+| rpi4b-qemu-env  | ![rpi4b-qemu-env](https://github.com/xddcore/SleepPanda/actions/workflows/qemu_rpi4b_action.yml/badge.svg) |
 | . | . |
 | .  | . |
 
