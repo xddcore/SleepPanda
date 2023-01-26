@@ -2,12 +2,12 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-26 07:44:21
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-26 07:45:09
+ * @LastEditTime: 2023-01-26 07:51:00
  * @FilePath: /SleepPanda/src/app/gtest_demo/gtest_demo.cpp
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
  */
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
  
 // The class that needs to be tested (the implementation of subtraction is wrong)
 class Foo {

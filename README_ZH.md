@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-26 07:46:13
+ * @LastEditTime: 2023-01-26 07:49:22
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -218,7 +218,9 @@ gtest动态链接库路径`SleepPanda/tools/gtest/lib/`
 ```
 # g++ build demo
 
-g++ -std=c++14 src/app/gtest_demo/gtest_demo.cpp -L SleepPanda/tools/gtest/lib/ -lpthread -o gtest_demo
+cd /SleepPanda/src/app/gtest_demo
+
+g++ -std=c++14 ./gtest_demo.cpp -L ../../../tools/gtest/lib/ -lpthread -o gtest_demo
 ```
 
 * 自己通过google test源码编译动态链接库文件
