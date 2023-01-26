@@ -13,8 +13,9 @@ jobs:
     - uses: actions/checkout@v3
     - uses: pguyot/arm-runner-action@v2
       with:
+        image_additional_mb: 1024
         base_image: https://cdimage.ubuntu.com/releases/22.04.1/release/ubuntu-22.04.1-preinstalled-server-arm64+raspi.img.xz
         cpu: cortex-a53
-        cpu_info: raspberrypi_4b
+        cpu_info: cpuinfo/raspberrypi_4b
         commands: |
             uname -a
