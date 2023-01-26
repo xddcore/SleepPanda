@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-26 00:03:12
+ * @LastEditTime: 2023-01-26 00:10:46
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -195,8 +195,10 @@ Q2:执行`sudo apt-get upgrade`时，某些pack(例如linux内核)被保留，�
 
 `git clone https://github.com/xddcore/SleepPanda.git`
 
-### 2.2 CPP单元测试
+### 2.2 CPP单元测试(gtest)
 
 `sudo apt install -y libcppunit-dev`
 >#include <cppunit/TestRunner.h>
+
+>因为cpp unit使用比较繁琐，所以本项目采用google test(gtest)进行单元测试
 
