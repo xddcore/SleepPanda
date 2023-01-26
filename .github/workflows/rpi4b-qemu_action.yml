@@ -19,3 +19,5 @@ jobs:
         cpu_info: cpuinfo/raspberrypi_4b
         commands: |
             uname -a
+            apt-get update -y --allow-releaseinfo-change
+            apt-get install --no-install-recommends -y gcc g++ make cmake libpigpio-dev
