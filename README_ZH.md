@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-26 00:10:46
+ * @LastEditTime: 2023-01-26 07:46:13
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -195,10 +195,52 @@ Q2:执行`sudo apt-get upgrade`时，某些pack(例如linux内核)被保留，�
 
 `git clone https://github.com/xddcore/SleepPanda.git`
 
-### 2.2 CPP单元测试(gtest)
+### 2.2 cpp单元测试框架
 
-`sudo apt install -y libcppunit-dev`
+#### 2.2.1 cppunit
+
+```
+#install cppunit lib
+sudo apt install -y libcppunit-dev
+```
 >#include <cppunit/TestRunner.h>
 
->因为cpp unit使用比较繁琐，所以本项目采用google test(gtest)进行单元测试
+>因为:
+>1. google test使用比较简单，写test case不用分为声明和定义两部分，也不用自己注册test suite.
+>2. google test的assert更加丰富
+>所以本项目采用google test(gtest)进行单元测试
 
+#### 2.2.2 google test(gtest)
+* 直接加载编译好的动态链接库文件
+
+gtest动态链接库路径`SleepPanda/tools/gtest/lib/`
+
+```
+# g++ build demo
+
+g++ -std=c++14 src/app/gtest_demo/gtest_demo.cpp -L SleepPanda/tools/gtest/lib/ -lpthread -o gtest_demo
+```
+
+* 自己通过google test源码编译动态链接库文件
+```
+# install dependencies
+sudo apt-get install cmake
+
+# install google test lib
+
+# get source
+git clone https://github.com/google/googletest.git
+
+# build
+cd googletest
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=`pwd`/install -DBUILD_SHARED_LIBS=ON ..
+make -j8
+make install
+
+# Then the corresponding dynamic library of gtest will be generated in the build/install directory
+ls install/
+# include lib
+
+```
