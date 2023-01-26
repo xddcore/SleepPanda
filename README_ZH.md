@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-26 11:36:45
+ * @LastEditTime: 2023-01-26 18:55:42
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -262,6 +262,13 @@ ls install/
 >Ref:  
 >https://berndporr.github.io/realtime_cpp_coding/  
 >https://github.com/berndporr/realtime_cpp_coding  
+
+**在开始之前**，你需要执行以下命令，以安装必须的依赖。在此，对pigpio库(https://github.com/joan2937/pigpio)的开发者表示由衷的感谢。
+
+```
+apt-get install cmake
+apt-get install libpigpio-dev
+```
 
 #### 2.3.1 蜂鸣器
 
