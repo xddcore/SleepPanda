@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-26 08:27:05
+ * @LastEditTime: 2023-01-26 08:34:55
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -58,10 +58,12 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 - [x] 14:20:00, 25/01/2023 Pitch Session
 
 #### Chengsen Dong
+- [ ] 更新README文档(随着开发过程同步更新)
 - [ ] 蜂鸣器驱动开发
+- [ ] Sound Sensor驱动开发
 - [ ] MAX30101驱动开发
 - [ ] MLX90640驱动开发
-- [ ] OpenNNA 2.0神经网络推理框架(C++版本)
+- [ ] Tensorflow Lite神经网络推理框架(C++版本)
 - [ ] MLX90640+卷积神经网络手势识别
 - [ ] WM8960驱动开发(低优先级)
 - [ ] 墨水屏驱动开发(虚拟动物园)
@@ -213,7 +215,7 @@ sudo apt install -y libcppunit-dev
 #### 2.2.2 google test(gtest)
 * 直接加载编译好的动态链接库文件
 
-gtest动态链接库路径`SleepPanda/tools/gtest/lib/`
+gtest动态链接库路径`SleepPanda/tools/gtest/lib/`, gtest头文件路径`SleepPanda/tools/gtest/include/`
 
 ```
 # g++ build demo
@@ -227,7 +229,7 @@ g++ -std=c++14 ./gtest_demo.cpp -I ../../../tools/gtest/include/ ../../../tools/
 # Export the gtest dynamic link library to the system environment variable (temporary)
 export LD_LIBRARY_PATH=../../../tools/gtest/lib/:$LD_LIBRARY_PATH
 
-# run
+# run gtest demo
 ./gtest_demo
 ```
 
@@ -254,3 +256,5 @@ ls install/
 # include lib
 
 ```
+
+
