@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-27 05:21:06
+ * @LastEditTime: 2023-01-27 05:32:20
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -280,7 +280,7 @@ sudo apt install python-setuptools python3-setuptools
 
 最后，为了检验pigpio lib是否被正确安装，我们还**建议您运行如下测试命令**:
 ```
-cd pigpio-master
+cd pigpio-master #(if you are not in this dir)
 sudo ./x_pigpio # check C I/F
 
 # To start the pigpio daemon
