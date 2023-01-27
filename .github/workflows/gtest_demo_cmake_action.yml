@@ -25,8 +25,8 @@ jobs:
 
     - name: Build
       # Build your program with the given configuration
-      run: make
+      run:  cd ./src/app/gtest_demo/build && make
 
     - name: Test
-      run: ./gtest_demo
+      run: cd ./src/app/gtest_demo/build && ./gtest_demo
 
