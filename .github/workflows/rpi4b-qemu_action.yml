@@ -27,5 +27,5 @@ jobs:
             make
             sudo apt-get install -y python-setuptools python3-setuptools
             sudo make install 
-            sudo pigpiod
+            sudo pigpiod -a1
             sudo ./x_pigpiod_if2
