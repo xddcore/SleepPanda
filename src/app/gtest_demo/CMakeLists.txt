@@ -14,5 +14,6 @@ link_directories(${GTEST_PATH}/lib)
 
 
 add_executable(gtest_demo gtest_demo.cpp)
-
+#print work path
+MESSAGE(STATUS "Current path : ${CMAKE_CURRENT_SOURCE_DIR}")
 target_link_libraries(gtest_demo ${GTEST_PATH_BUILD}/lib/libgtest.so)
