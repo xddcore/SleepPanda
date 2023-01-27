@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-27 05:32:20
+ * @LastEditTime: 2023-01-27 09:04:55
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -295,6 +295,47 @@ sudo killall pigpiod
 ```
 >Note: 在每次使用pigpio时，你都应先运行`sudo pigpiod`，以打开守护程序。
 
+---
+Q1: **ERROR**
+```
+:~$ sudo pigpiod
+OR
+:~$ ./x_pigpio
+Then get
+:~$ initAllocDMAMem: mbox open failed(No such device or address)
+```
+Fixup: Run`sudo modprobe vcio`
+OR
+`./x_pigpio`是一个使用mailbox分配内存的程序。如果在某种情况下(例如qemu env),你将不会有GPU内存可供分配。pigpio会使用mailbox分配DMA内存(除非您请求了一个大缓冲区)。使用使用`-a1`选项启动pigpiod时，会使用页面映射来分配DMA内存。
+```
+sudo pigpiod -a1 #force use PMAP allocate DMA memory
+./x_pigpiod_if2 # check C      I/F to daemon
+```
+
+Q2: **ERROR**
+```
+:~$ sudo modprobe vcio
+:~$ modprobe: FATAL: Module vcio not found in directory /lib/modules/5.15.0-1031-azure
+```
+Fixup: Run`sudo apt-get install -y linux-modules-extra-$(uname -r)`  
+OR
+`You need install Ubuntu Desktop Image, and then you will have vcio(videocore io)`
+
+Q3: **ERROR**
+```
+:~$ sudo ./x_pigpio
+:~$ initInitialise: Can't lock /var/run/pigpio.pid
+pigpio initialisation failed.
+```
+Fixup: Run`sudo killall pigpiod`
+
+Q4: 在QEMU环境下，pigpio无法仿真
+```
+2023-01-27 09:02:23 initAllocDMAMem: mbox open failed(No such device or address)
+Can't initialise pigpio library
+pigpio initialisation failed (-2003).
+```
+Fixup: 因为pigpio依赖BCM2711芯片硬件功能实现超低延迟的DMA操作，而qemu的DMA无法支持这一操作，所以在QEMU环境下，无法完成pigpio仿真。
 #### 2.3.1 蜂鸣器
 
 
