@@ -26,3 +26,6 @@ jobs:
             cd pigpio-master
             make
             sudo make install 
+            ./x_pigpio
+            sudo pigpiod
+            ./x_pigpiod_if2
