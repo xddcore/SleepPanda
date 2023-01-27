@@ -5,7 +5,7 @@ project(gtest_demo)
 set(CMAKE_CXX_STANDARD 14)
 
 set(GTEST_PATH "../../../tools/gtest") #
-set(GTEST_PATH_BUILD "../../../../../tools/gtest") #
+set(GTEST_PATH_BUILD "/home/ubuntu/xddcore/SleepPanda/tools/gtest") #
 
 include_directories(${GTEST_PATH}/include)
 link_directories(${GTEST_PATH}/lib)
