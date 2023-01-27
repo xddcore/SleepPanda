@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-27 09:04:55
+ * @LastEditTime: 2023-01-27 09:07:53
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -296,7 +296,7 @@ sudo killall pigpiod
 >Note: 在每次使用pigpio时，你都应先运行`sudo pigpiod`，以打开守护程序。
 
 ---
-Q1: **ERROR**
+Q1: ERROR: **initAllocDMAMem: mbox open failed(No such device or address)**
 ```
 :~$ sudo pigpiod
 OR
@@ -312,7 +312,7 @@ sudo pigpiod -a1 #force use PMAP allocate DMA memory
 ./x_pigpiod_if2 # check C      I/F to daemon
 ```
 
-Q2: **ERROR**
+Q2: ERROR: **modprobe: FATAL: Module vcio not found in directory**
 ```
 :~$ sudo modprobe vcio
 :~$ modprobe: FATAL: Module vcio not found in directory /lib/modules/5.15.0-1031-azure
@@ -321,7 +321,7 @@ Fixup: Run`sudo apt-get install -y linux-modules-extra-$(uname -r)`
 OR
 `You need install Ubuntu Desktop Image, and then you will have vcio(videocore io)`
 
-Q3: **ERROR**
+Q3: ERROR: **initInitialise: Can't lock /var/run/pigpio.pid**
 ```
 :~$ sudo ./x_pigpio
 :~$ initInitialise: Can't lock /var/run/pigpio.pid
