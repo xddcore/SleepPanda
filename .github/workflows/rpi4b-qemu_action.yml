@@ -26,8 +26,8 @@ jobs:
             cd pigpio-master
             make
             sudo make install 
-            apt-get install -y linux-modules-extra-$(uname -r)
+            sudo apt-get install -y linux-modules-extra-$(uname -r)
             sudo modprobe vcio
-            ./x_pigpio
+            sudo ./x_pigpio
             sudo pigpiod
-            ./x_pigpiod_if2
+            sudo ./x_pigpiod_if2
