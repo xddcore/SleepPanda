@@ -20,4 +20,9 @@ jobs:
         commands: |
             uname -a
             apt-get update -y --allow-releaseinfo-change
-            apt-get install --no-install-recommends -y gcc g++ make cmake libpigpio-dev
+            apt-get install --no-install-recommends -y gcc g++ make cmake wget
+            wget https://github.com/joan2937/pigpio/archive/master.zip
+            unzip master.zip
+            cd pigpio-master
+            make
+            sudo make install 
