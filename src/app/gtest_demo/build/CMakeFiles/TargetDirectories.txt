@@ -1,0 +1,3 @@
+/home/ubuntu/xddcore/SleepPanda/src/app/gtest_demo/build/CMakeFiles/gtest_demo.dir
+/home/ubuntu/xddcore/SleepPanda/src/app/gtest_demo/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/xddcore/SleepPanda/src/app/gtest_demo/build/CMakeFiles/rebuild_cache.dir
