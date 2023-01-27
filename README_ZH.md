@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-27 05:07:24
+ * @LastEditTime: 2023-01-27 05:21:06
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -273,7 +273,27 @@ unzip master.zip
 cd pigpio-master
 make
 sudo make install
+
+#If the Python part of the install fails it may be because you need the setup tools.
+sudo apt install python-setuptools python3-setuptools
 ```
+
+最后，为了检验pigpio lib是否被正确安装，我们还**建议您运行如下测试命令**:
+```
+cd pigpio-master
+sudo ./x_pigpio # check C I/F
+
+# To start the pigpio daemon
+sudo pigpiod
+./x_pigpiod_if2 # check C      I/F to daemon
+# Then you should get PASS
+
+# To stop the pigpio daemon
+sudo killall pigpiod
+./x_pigpiod_if2 # check C      I/F to daemon
+# Then you should get 'pigpio initialisation failed (-2003).', because pigpio daemon not runing.
+```
+>Note: 在每次使用pigpio时，你都应先运行`sudo pigpiod`，以打开守护程序。
 
 #### 2.3.1 蜂鸣器
 
