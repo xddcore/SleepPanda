@@ -171,6 +171,8 @@ Q2:执行`sudo apt-get upgrade`时，某些pack(例如linux内核)被保留，�
 
 ### 1.4 传感器&执行器&服务器
 
+>[点我下载BOM](./doc/BOM/SleepPanda_BOM.xlsx)
+
 **传感器**
 1. 扬声器&麦克风:WM8960(Control:IIC;Audio:IIS)+Sound Sensor(电压比较器Dout)-✅
 2. 体温(热成像)&手势控制:MLX90640(IIC)-✅

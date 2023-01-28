@@ -171,6 +171,8 @@ Q2: When `sudo apt-get upgrade` is executed, some packs (such as the linux kerne
 
 ### 1.4 Sensors & Actuators & Servers
 
+>[Click me to download BOM](./doc/BOM/SleepPanda_BOM.xlsx)
+
 **sensor**
 1. Speaker & Microphone: WM8960(Control:IIC;Audio:IIS)+Sound Sensor(Voltage Comparator Dout)-✅
 2. Body temperature (thermal imaging) & gesture control: MLX90640(IIC)-✅
