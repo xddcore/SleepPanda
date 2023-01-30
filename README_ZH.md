@@ -2,14 +2,14 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-27 09:07:53
+ * @LastEditTime: 2023-01-30 17:36:13
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
 -->
 # SleepPanda，一个贴心睡眠管家
 
-![Logo](./img/SleepPanda-logo.png)  
+![Logo](./img/Sleep_Panda_LOGO.png)  
 
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)  
 
@@ -75,18 +75,18 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 #### Yihan Wang
 - [ ] 同步更新README_ZH.md&README.md的内容(每周一次)
 - [x] Pitch Session PPT幻灯片初稿
-- [ ] 制作成本核算&原件选行Excel表格
+- [x] 制作成本核算&原件选行Excel表格
 - [ ] To do later...
 
 #### Rui Liu
 - [ ] 同步更新README_ZH.md&README.md的内容(每周一次)
-- [ ] 设计SleepPanda Logo
+- [x] 设计SleepPanda Logo
 - [x] Pitch Session PPT幻灯片终稿&pitch session演讲准备
-- [ ] 制作成本核算&原件选行Excel表格
+- [x] 制作成本核算&原件选行Excel表格
 - [ ] To do later...
 
 #### Hui Wang
-- [ ] 查询所有传感器/芯片的数据手册，并上传至github仓库
+- [x] 查询所有传感器/芯片的数据手册，并上传至github仓库
 - [ ] To do later...
 
 # 指南

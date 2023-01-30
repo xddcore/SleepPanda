@@ -2,14 +2,14 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-18 10:14:57
+ * @LastEditTime: 2023-01-30 17:37:20
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
 -->
 # SleepPanda, a caring sleep manager
 
-![Logo](./img/SleepPanda-logo.png)
+![Logo](./img/Sleep_Panda_LOGO.png)
 
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/ )
 
@@ -75,18 +75,18 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 #### Yihan Wang
 - [ ] Synchronously update the contents of README_ZH.md & README.md (once a week)
 - [x] Pitch Session PPT slide draft
-- [ ] Make cost accounting & original row selection Excel table
+- [x] Make cost accounting & original row selection Excel table
 - [ ] To do later...
 
 #### Rui Liu
 - [ ] Synchronously update the contents of README_ZH.md & README.md (once a week)
-- [ ] Design SleepPanda Logo
+- [x] Design SleepPanda Logo
 - [x] Pitch Session PPT slide final draft & pitch session speech preparation
-- [ ] Make cost accounting & original row selection Excel table
+- [x] Make cost accounting & original row selection Excel table
 - [ ] To do later...
 
 #### Hui Wang
-- [ ] Query the data sheets of all sensors/chips and upload them to the github repository
+- [x] Query the data sheets of all sensors/chips and upload them to the github repository
 - [ ] To do later...
 
 # guide
