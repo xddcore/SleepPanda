@@ -1,0 +1,23 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "dev" ]
+  pull_request:
+    branches: [ "dev" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: install cppunit
+      run: sudo apt install -y libcppunit-dev
+    - name: switch to 'dev' branch
+      run: git checkout dev
+    - name: configure
+      run: chmod +x ./.github/workflows/configure && sudo ./.github/workflows/configure
+    - name: build and test code(helloworld.cpp)
+      run: cd ./src/app/helloworld/ && make

@@ -2,20 +2,29 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-23 15:07:14
+ * @LastEditTime: 2023-01-30 17:36:13
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
 -->
 # SleepPanda，一个贴心睡眠管家
 
-![Logo](./img/SleepPanda-logo.png)  
+![Logo](./img/Sleep_Panda_LOGO.png)  
 
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)  
 
-[![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.png?v=103)](https://opensource.org/licenses/GPL-3.0/)  
+![GPL V3 Licence](https://img.shields.io/github/license/xddcore/SleepPanda)
 
 Change README Language: [English](./README.md) ｜ [中文](./README_ZH.md)
+
+## Auto Unit Test
+|  Source   | Status  |
+|  ----  | ----  |
+| helloworld.cpp  | ![Helloworld cpp test](https://img.shields.io/github/actions/workflow/status/xddcore/SleepPanda/helloworld_action.yml) |
+| rpi4b-qemu-env  | ![rpi4b-qemu-env](https://img.shields.io/github/actions/workflow/status/xddcore/SleepPanda/rpi4b-qemu_action.yml) |
+| . | . |
+| .  | . |
+
 
 ## 项目简介
 SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。SleepPanda使用多种传感器收集用户的睡眠数据，并通过dsp，卷积神经网络等算法对数据进行分析处理。最终将数据处理结果通过多种方式呈现给用户。
@@ -45,27 +54,39 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 - [x] 建立dev分支
 - [x] 购买所有硬件(除触摸屏以外)
 - [x] Pitch Session PPT幻灯片初稿
-- [ ] Pitch Session PPT幻灯片最终稿
-- [ ] 14:20:00, 25/01/2023 Pitch Session
+- [x] Pitch Session PPT幻灯片最终稿
+- [x] 14:20:00, 25/01/2023 Pitch Session
 
 #### Chengsen Dong
+- [ ] 更新README文档(随着开发过程同步更新)
 - [ ] 蜂鸣器驱动开发
-- [ ] WM8960驱动开发
-- [ ] MLX90640驱动开发
+- [ ] Sound Sensor驱动开发
 - [ ] MAX30101驱动开发
-- [ ] 墨水屏驱动开发
+- [ ] MLX90640驱动开发
+- [ ] Tensorflow Lite神经网络推理框架(C++版本)
+- [ ] MLX90640+卷积神经网络手势识别
+- [ ] WM8960驱动开发(低优先级)
+- [ ] 墨水屏驱动开发(虚拟动物园)
 - [ ] 4K 30FPS摄像头(opencv c++框架)
+- [ ] 卷积神经网络睡姿分类
 - [ ] 触摸屏(基于QT的GUI)开发
-- [ ] MQTT服务器搭建
+- [ ] MQTT服务器搭建(低优先级)
 
 #### Yihan Wang
+- [ ] 同步更新README_ZH.md&README.md的内容(每周一次)
 - [x] Pitch Session PPT幻灯片初稿
+- [x] 制作成本核算&原件选行Excel表格
 - [ ] To do later...
 
 #### Rui Liu
+- [ ] 同步更新README_ZH.md&README.md的内容(每周一次)
+- [x] 设计SleepPanda Logo
+- [x] Pitch Session PPT幻灯片终稿&pitch session演讲准备
+- [x] 制作成本核算&原件选行Excel表格
 - [ ] To do later...
 
 #### Hui Wang
+- [x] 查询所有传感器/芯片的数据手册，并上传至github仓库
 - [ ] To do later...
 
 # 指南
@@ -144,10 +165,16 @@ Q1:模块未签名问题:
 >看起来你的系统供应商已经在你的内核上启用了内核模块签名验证，这意味着它不会加载供应商尚未签名的任何模块。换句话说，你的补丁模块没有（正确地）签名并且内核将拒绝加载它。
 >解决方案:cmd run `CONFIG_MODULE_SIG=n`
 
+Q2:执行`sudo apt-get upgrade`时，某些pack(例如linux内核)被保留，无法升级。
+> `sudo apt-get --with-new-pkgs upgrade`
+
+
 ### 1.4 传感器&执行器&服务器
 
+>[点我下载BOM](./doc/BOM/SleepPanda_BOM.xlsx)
+
 **传感器**
-1. 扬声器&麦克风:WM8960(Control:IIC;Audio:IIS)-✅
+1. 扬声器&麦克风:WM8960(Control:IIC;Audio:IIS)+Sound Sensor(电压比较器Dout)-✅
 2. 体温(热成像)&手势控制:MLX90640(IIC)-✅
 3. 心率&血氧:MAX30101(IIC)-✅
 4. 睡姿监测:4K 30FPS摄像头(USB+OpenCV)-✅
@@ -164,3 +191,153 @@ Q1:模块未签名问题:
 
 **服务器**
 面向全球，负责存储用户数据，并承担虚拟动物园之间的参观访问/动物交换。
+
+
+## 2. 系统开发
+
+### 2.1 获取SleepPanda源码
+
+`git clone https://github.com/xddcore/SleepPanda.git`
+
+### 2.2 cpp单元测试框架
+
+#### 2.2.1 cppunit
+
+```
+#install cppunit lib
+sudo apt install -y libcppunit-dev
+```
+>#include <cppunit/TestRunner.h>
+
+>因为:
+>1. google test使用比较简单，写test case不用分为声明和定义两部分，也不用自己注册test suite.
+>2. google test的assert更加丰富
+>所以本项目采用google test(gtest)进行单元测试
+
+#### 2.2.2 google test(gtest)
+* 直接加载编译好的动态链接库文件
+
+gtest动态链接库路径`SleepPanda/tools/gtest/lib/`, gtest头文件路径`SleepPanda/tools/gtest/include/`
+
+```
+# g++ build demo
+
+# cd to workscape
+cd /SleepPanda/src/app/gtest_demo
+
+# build code
+g++ -std=c++14 ./gtest_demo.cpp -I ../../../tools/gtest/include/ ../../../tools/gtest/lib/libgtest.so -lpthread -o gtest_demo
+
+# Export the gtest dynamic link library to the system environment variable (temporary)
+export LD_LIBRARY_PATH=../../../tools/gtest/lib/:$LD_LIBRARY_PATH
+
+# run gtest demo
+./gtest_demo
+```
+
+* 自己通过google test源码编译动态链接库文件
+```
+# install dependencies
+sudo apt-get install cmake
+
+# install google test lib
+
+# get source
+git clone https://github.com/google/googletest.git
+
+# build
+cd googletest
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=`pwd`/install -DBUILD_SHARED_LIBS=ON ..
+make -j8
+make install
+
+# Then the corresponding dynamic library of gtest will be generated in the build/install directory
+ls install/
+# include lib
+
+```
+
+### 2.3 传感器&执行器驱动开发
+
+>Ref:  
+>https://berndporr.github.io/realtime_cpp_coding/  
+>https://github.com/berndporr/realtime_cpp_coding  
+
+**在开始之前**，你需要执行以下命令，以安装必须的依赖。在此，对pigpio库(https://github.com/joan2937/pigpio)的开发者表示由衷的感谢。
+
+```
+apt-get install cmake
+# Download and install latest version(pigpio)
+wget https://github.com/joan2937/pigpio/archive/master.zip
+unzip master.zip
+cd pigpio-master
+make
+sudo make install
+
+#If the Python part of the install fails it may be because you need the setup tools.
+sudo apt install python-setuptools python3-setuptools
+```
+
+最后，为了检验pigpio lib是否被正确安装，我们还**建议您运行如下测试命令**:
+```
+cd pigpio-master #(if you are not in this dir)
+sudo ./x_pigpio # check C I/F
+
+# To start the pigpio daemon
+sudo pigpiod
+./x_pigpiod_if2 # check C      I/F to daemon
+# Then you should get PASS
+
+# To stop the pigpio daemon
+sudo killall pigpiod
+./x_pigpiod_if2 # check C      I/F to daemon
+# Then you should get 'pigpio initialisation failed (-2003).', because pigpio daemon not runing.
+```
+>Note: 在每次使用pigpio时，你都应先运行`sudo pigpiod`，以打开守护程序。
+
+---
+Q1: ERROR: **initAllocDMAMem: mbox open failed(No such device or address)**
+```
+:~$ sudo pigpiod
+OR
+:~$ ./x_pigpio
+Then get
+:~$ initAllocDMAMem: mbox open failed(No such device or address)
+```
+Fixup: Run`sudo modprobe vcio`
+OR
+`./x_pigpio`是一个使用mailbox分配内存的程序。如果在某种情况下(例如qemu env),你将不会有GPU内存可供分配。pigpio会使用mailbox分配DMA内存(除非您请求了一个大缓冲区)。使用使用`-a1`选项启动pigpiod时，会使用页面映射来分配DMA内存。
+```
+sudo pigpiod -a1 #force use PMAP allocate DMA memory
+./x_pigpiod_if2 # check C      I/F to daemon
+```
+
+Q2: ERROR: **modprobe: FATAL: Module vcio not found in directory**
+```
+:~$ sudo modprobe vcio
+:~$ modprobe: FATAL: Module vcio not found in directory /lib/modules/5.15.0-1031-azure
+```
+Fixup: Run`sudo apt-get install -y linux-modules-extra-$(uname -r)`  
+OR
+`You need install Ubuntu Desktop Image, and then you will have vcio(videocore io)`
+
+Q3: ERROR: **initInitialise: Can't lock /var/run/pigpio.pid**
+```
+:~$ sudo ./x_pigpio
+:~$ initInitialise: Can't lock /var/run/pigpio.pid
+pigpio initialisation failed.
+```
+Fixup: Run`sudo killall pigpiod`
+
+Q4: 在QEMU环境下，pigpio无法仿真
+```
+2023-01-27 09:02:23 initAllocDMAMem: mbox open failed(No such device or address)
+Can't initialise pigpio library
+pigpio initialisation failed (-2003).
+```
+Fixup: 因为pigpio依赖BCM2711芯片硬件功能实现超低延迟的DMA操作，而qemu的DMA无法支持这一操作，所以在QEMU环境下，无法完成pigpio仿真。
+#### 2.3.1 蜂鸣器
+
+

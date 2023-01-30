@@ -1,0 +1,31 @@
+name: Rpi4b-qemu-test
+
+on:
+  push:
+    branches: [ "dev" ]
+  pull_request:
+    branches: [ "dev" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - uses: pguyot/arm-runner-action@v2
+      with:
+        image_additional_mb: 1024
+        base_image: https://cdimage.ubuntu.com/releases/22.04.1/release/ubuntu-22.04.1-preinstalled-server-arm64+raspi.img.xz
+        cpu: cortex-a7:cortex-a53
+        cpu_info: cpuinfo/raspberrypi_4b
+        commands: |
+            uname -a
+            apt-get update -y --allow-releaseinfo-change
+            apt-get install --no-install-recommends -y gcc g++ make cmake wget unzip
+            wget https://github.com/joan2937/pigpio/archive/master.zip
+            unzip master.zip
+            cd pigpio-master
+            make
+            sudo apt-get install -y python-setuptools python3-setuptools
+            sudo make install 
+            #sudo pigpiod
+            #sudo ./x_pigpiod_if2

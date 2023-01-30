@@ -2,22 +2,34 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-18 10:14:57
+ * @LastEditTime: 2023-01-30 17:37:20
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
 -->
 # SleepPanda, a caring sleep manager
 
-[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-[![GPL Licence](https://badges.frapsoft.com/os/gpl/gpl.png?v=103)](https://opensource.org/licenses/GPL-3.0/)
+![Logo](./img/Sleep_Panda_LOGO.png)
 
-Change README Language: [English](./README.md) ｜ [中文](./README_ZH.md)
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/ )
 
-## Description
+![GPL V3 License](https://img.shields.io/github/license/xddcore/SleepPanda)
+
+Change README Language: [English](./README.md) ｜ [Chinese](./README_ZH.md)
+
+## Auto Unit Test
+| Source | Status |
+| ---- | ---- |
+| helloworld.cpp | ![Helloworld cpp test](https://img.shields.io/github/actions/workflow/status/xddcore/SleepPanda/helloworld_action.yml) |
+| rpi4b-qemu-env | ![rpi4b-qemu-env](https://img.shields.io/github/actions/workflow/status/xddcore/SleepPanda/rpi4b-qemu_action.yml) |
+| . | . |
+| . | . |
+
+
+## Project Description
 SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). SleepPanda uses a variety of sensors to collect sleep data of users, and analyzes and processes the data through dsp, convolutional neural network and other algorithms. Finally, the data processing results are presented to users in various ways.
 
-## Features
+## Project Features
 1. Early bed reminder, wake up alarm clock
 2. Body temperature (thermal imaging), heart rate, blood oxygen monitoring
 3. Sleep position monitoring
@@ -26,22 +38,60 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 6. Playing sleep aid music
 7. Sharing and social networking (different SleepPanda hardware will be connected to the same server, which will help users share sleep data and monitor each other's early bedtime plans)
 
-## Contributors
-|  Name   | ID  |  Role  |
-|  ----  | ----  | ----  |
-| Chengsen Dong  | 2789825d |  |
-| Rui Liu  | 2756138L |  |
-| Hui Wang  | 2810919W |  |
-| Yihan Wang  | 2696441W |  |
->If you have any suggestions for this project, please email to xddcore@gmail.com
+## Project Contributors
+| Name | ID | Role |
+| ---- | ---- | ---- |
+| Chengsen Dong | 2789825d | Embedded Engineer |
+| Rui Liu | 2756138L | Project Management & Publicity |
+| Hui Wang | 2810919W | Test Engineer |
+| Yihan Wang | 2696441W | Project Management & Publicity |
+> If you have any suggestions for this project, please email to xddcore@gmail.com
 
-## Development Planning
+## Project Development Planning
+
+#### Global
 - [x] Build the Github warehouse & README document, complete the basic development environment configuration, fix the Linux kernel source code, and test the compilation of the kernel module.
+- [x] build dev branch
+- [x] Buy all hardware (except touchscreen)
+- [x] Pitch Session PPT slide draft
+- [x] Final draft of Pitch Session PPT slides
+- [x] 14:20:00, 25/01/2023 Pitch Session
+
+#### Chengsen Dong
+- [ ] Update the README document (synchronized with the development process)
+- [ ] Buzzer driver development
+- [ ] Sound Sensor driver development
+- [ ] MAX30101 driver development
+- [ ] MLX90640 driver development
+- [ ] Tensorflow Lite neural network reasoning framework (C++ version)
+- [ ] MLX90640+ Convolutional Neural Network Gesture Recognition
+- [ ] WM8960 driver development (low priority)
+- [ ] ink screen driver development (virtual zoo)
+- [ ] 4K 30FPS camera (opencv c++ framework)
+- [ ] Convolutional Neural Network Sleeping Position Classification
+- [ ] Touch screen (QT-based GUI) development
+- [ ] MQTT server setup (low priority)
+
+#### Yihan Wang
+- [ ] Synchronously update the contents of README_ZH.md & README.md (once a week)
+- [x] Pitch Session PPT slide draft
+- [x] Make cost accounting & original row selection Excel table
 - [ ] To do later...
 
-# Guide
+#### Rui Liu
+- [ ] Synchronously update the contents of README_ZH.md & README.md (once a week)
+- [x] Design SleepPanda Logo
+- [x] Pitch Session PPT slide final draft & pitch session speech preparation
+- [x] Make cost accounting & original row selection Excel table
+- [ ] To do later...
 
-## 1. System Deployment
+#### Hui Wang
+- [x] Query the data sheets of all sensors/chips and upload them to the github repository
+- [ ] To do later...
+
+# guide
+
+## 1. System deployment
 
 ### 1.1 Software and hardware version
 
@@ -65,7 +115,7 @@ sudo apt-get install ssh vim gcc g++ screen htop git make
 >Note: Note that the `sudo apt-get upgrade` command will upgrade the kernel to the latest version by default, please manually keep the kernel version to 5.15.0-1023-raspi
 4. Open ubuntu remote desktop: Setting-share-open remote desktop-change username and password to `ubuntu`
 
-    4.1 Allow hdmi hot plugging to avoid inability to access remote desktop when hdmi is not plugged in. ｜`Unresolved! ! !` |Try to use HDMI pseudo load to solve  
+    4.1 Allow hdmi hot plugging to avoid inability to access remote desktop when hdmi is not plugged in. | `Unresolved! ! ! `|Try to use HDMI dummy load to resolve
     Enter the following command: `sudo vim /boot/firmware/config.txt`, and add the following content to the config.txt file:
     ```
     [hdmi]
@@ -93,12 +143,13 @@ Considering that the computing power of the Raspberry Pi is insufficient, using 
 apt-get source linux-image-$(uname -r) #5.15.0-1023-raspi
 ```
 3. Compile the kernel source code
+>Ref: https://www.raspberrypi.com/documentation/computers/linux_kernel.html
 4. Compile `helloworld` module code
 5. Test the `helloworld` module
 
 ![helloworld_modinfo](./img/helloworld_modinfo.png)
 
-#### 1.3.2 Local compilation environment (raspberry pi)
+#### 1.3.2 Local compilation environment (Raspberry Pi)
 
 1. Compile `helloworld` module code
 
@@ -113,3 +164,178 @@ make -C /usr/src/linux-headers-5.15.0-1023-raspi/ M=`pwd` modules
 Q1: The module is not signed problem:
 It looks like your system vendor has enabled kernel module signature verification on your kernel, which means it won't load any modules that the vendor hasn't signed. In other words, your patched module is not (correctly) signed and the kernel will refuse to load it.
 > Solution: cmd run `CONFIG_MODULE_SIG=n`
+
+Q2: When `sudo apt-get upgrade` is executed, some packs (such as the linux kernel) are reserved and cannot be upgraded.
+> `sudo apt-get --with-new-pkgs upgrade`
+
+
+### 1.4 Sensors & Actuators & Servers
+
+>[Click me to download BOM](./doc/BOM/SleepPanda_BOM.xlsx)
+
+**sensor**
+1. Speaker & Microphone: WM8960(Control:IIC;Audio:IIS)+Sound Sensor(Voltage Comparator Dout)-✅
+2. Body temperature (thermal imaging) & gesture control: MLX90640(IIC)-✅
+3. Heart rate & blood oxygen: MAX30101(IIC)-✅
+4. Sleeping position monitoring: 4K 30FPS camera (USB+OpenCV)-✅
+
+**Actuator**
+1. Ink Screen (Virtual Zoo) (SPI)-✅
+2. Touch screen (QT-based GUI) (Video: HDMI, Touch: USB)
+3. Buzzer: Emergency abnormal alarm (High/Low Pin Level)-✅
+
+**other**
+
+1. Several DuPont lines-✅
+
+
+**server**
+Facing the world, it is responsible for storing user data and undertaking visits/animal exchanges between virtual zoos.
+
+
+## 2. System development
+
+### 2.1 Get the source code of SleepPanda
+
+`git clone https://github.com/xddcore/SleepPanda.git`
+
+### 2.2 cpp unit testing framework
+
+#### 2.2.1 cppunit
+
+```
+#install cppunit-lib
+sudo apt install -y libcppunit-dev
+```
+>#include <cppunit/TestRunner.h>
+
+> because:
+>1. Google test is relatively simple to use. Writing a test case does not need to be divided into two parts: declaration and definition, and there is no need to register the test suite yourself.
+>2. The assert of google test is richer
+> So this project uses google test (gtest) for unit testing
+
+#### 2.2.2 google test(gtest)
+* Directly load the compiled dynamic link library file
+
+gtest dynamic link library path `SleepPanda/tools/gtest/lib/`, gtest header file path `SleepPanda/tools/gtest/include/`
+
+```
+# g++ build demo
+
+# cd to workscape
+cd /SleepPanda/src/app/gtest_demo
+
+# build code
+g++ -std=c++14 ./gtest_demo.cpp -I ../../../tools/gtest/include/ ../../../tools/gtest/lib/libgtest.so -lpthread -o gtest_demo
+
+# Export the gtest dynamic link library to the system environment variable (temporary)
+export LD_LIBRARY_PATH=../../../tools/gtest/lib/:$LD_LIBRARY_PATH
+
+# run gtest demo
+./gtest_demo
+```
+
+* Compile the dynamic link library file by yourself through the google test source code
+```
+# install dependencies
+sudo apt-get install cmake
+
+# install google test lib
+
+# get source
+git clone https://github.com/google/googletest.git
+
+#build
+cd googletest
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=`pwd`/install -DBUILD_SHARED_LIBS=ON ..
+make -j8
+make install
+
+# Then the corresponding dynamic library of gtest will be generated in the build/install directory
+ls install /
+# include lib
+
+```
+
+### 2.3 Sensor & Actuator Driver Development
+
+>Ref:
+> https://berndporr.github.io/realtime_cpp_coding/
+> https://github.com/berndporr/realtime_cpp_coding
+
+**Before you start**, you need to execute the following commands to install the necessary dependencies. Here, I would like to express my sincere thanks to the developers of the pigpio library (https://github.com/joan2937/pigpio).
+
+```
+apt-get install cmake
+# Download and install latest version(pigpio)
+wget https://github.com/joan2937/pigpio/archive/master.zip
+unzip master.zip
+cd pigpio-master
+make
+sudo make install
+
+#If the Python part of the install fails it may be because you need the setup tools.
+sudo apt install python-setuptools python3-setuptools
+```
+
+Finally, in order to verify whether pigpio lib is installed correctly, we also **recommend you to run the following test command**:
+```
+cd pigpio-master #(if you are not in this dir)
+sudo ./x_pigpio # check C I/F
+
+# To start the pigpio daemon
+sudo pigpiod
+./x_pigpiod_if2 # check C I/F to daemon
+# Then you should get PASS
+
+# To stop the pigpio daemon
+sudo killall pigpiod
+./x_pigpiod_if2 # check C I/F to daemon
+# Then you should get 'pigpio initialisation failed (-2003).', because pigpio daemon not running.
+```
+>Note: Every time you use pigpio, you should first run `sudo pigpiod` to start the daemon.
+
+---
+Q1: ERROR: **initAllocDMAMem: mbox open failed(No such device or address)**
+```
+:~$ sudo pigpiod
+OR
+:~$ ./x_pigpio
+then get
+:~$ initAllocDMAMem: mbox open failed(No such device or address)
+```
+Fixup: Run `sudo modprobe vcio`
+OR
+`./x_pigpio` is a program that uses mailboxes to allocate memory. If under certain conditions (e.g. qemu env), you won't have GPU memory to allocate. pigpio will use the mailbox to allocate DMA memory (unless you request a large buffer). When pigpiod is started with the `-a1` option, page mapping is used to allocate DMA memory.
+```
+sudo pigpiod -a1 #force use PMAP allocate DMA memory
+./x_pigpiod_if2 # check C I/F to daemon
+```
+
+Q2: ERROR: **modprobe: FATAL: Module vcio not found in directory**
+```
+:~$ sudo modprobe vcio
+:~$ modprobe: FATAL: Module vcio not found in directory /lib/modules/5.15.0-1031-azure
+```
+Fixup: Run `sudo apt-get install -y linux-modules-extra-$(uname -r)`
+OR
+`You need install Ubuntu Desktop Image, and then you will have vcio(videocore io)`
+
+Q3: ERROR: **initInitialise: Can't lock /var/run/pigpio.pid**
+```
+:~$ sudo ./x_pigpio
+:~$ initInitialise: Can't lock /var/run/pigpio.pid
+pigpio initialisation failed.
+```
+Fixup: Run `sudo killall pigpiod`
+
+Q4: In the QEMU environment, pigpio cannot be emulated
+```
+2023-01-27 09:02:23 initAllocDMAMem: mbox open failed(No such device or address)
+Can't initialize pigpio library
+pigpio initialisation failed (-2003).
+```
+Fixup: Because pigpio relies on the BCM2711 chip hardware function to achieve ultra-low-latency DMA operations, and qemu's DMA cannot support this operation, so pigpio simulation cannot be completed in the QEMU environment.
+#### 2.3.1 Buzzer
