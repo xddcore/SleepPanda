@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-30 17:36:13
+ * @LastEditTime: 2023-01-30 18:08:40
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -258,8 +258,18 @@ ls install/
 # include lib
 
 ```
+### 2.3 软件架构
 
-### 2.3 传感器&执行器驱动开发
+|Index| 层|-|注释|
+|:----:|:----:|:----:|:----:|
+|5(Top)|GUI界面(QT)|-|与用户交互|
+|4|C++逻辑层|-|Opencv，TensorFlow Lite，MQTT Client等|
+|3|硬件驱动层(Sensor Class)|-|硬件(传感器等)的配置/驱动|
+|2|硬件隔离层(Rpi4b Class)|-|隔离软件逻辑和硬件依赖，目的是为了可以抛开底层硬件依赖(比如pigpio)，单独运行/测试上层代码。|
+|1(Bottom)|pigpiod嵌套字通信进程|-|驱动rpi4b(bcm2711)寄存器|
+
+
+### 2.4 传感器&执行器驱动开发
 
 >Ref:  
 >https://berndporr.github.io/realtime_cpp_coding/  
@@ -338,6 +348,7 @@ Can't initialise pigpio library
 pigpio initialisation failed (-2003).
 ```
 Fixup: 因为pigpio依赖BCM2711芯片硬件功能实现超低延迟的DMA操作，而qemu的DMA无法支持这一操作，所以在QEMU环境下，无法完成pigpio仿真。
-#### 2.3.1 蜂鸣器
+
+#### 2.4.1 蜂鸣器
 
 
