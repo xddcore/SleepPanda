@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-30 17:37:20
+ * @LastEditTime: 2023-01-30 18:11:17
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -258,8 +258,18 @@ ls install /
 # include lib
 
 ```
+### 2.3 Software Architecture
 
-### 2.3 Sensor & Actuator Driver Development
+|Index| Layer|-|Comments|
+|:----:|:----:|:----:|:----:|
+|5(Top)|GUI interface (QT)|-|Interaction with users|
+|4|C++ logic layer|-|Opencv, TensorFlow Lite, MQTT Client, etc.|
+|3|Hardware Driver Layer (Sensor Class)|-|Configuration/Driver of Hardware (Sensor, etc.)|
+|2|Hardware isolation layer (Rpi4b Class)|-|Isolate software logic and hardware dependencies, the purpose is to run/test the upper layer code independently of the underlying hardware dependencies (such as pigpio). |
+|1(Bottom)|pigpiod nested word communication process|-|drive rpi4b(bcm2711) register|
+
+
+### 2.4 Sensor & Actuator Driver Development
 
 >Ref:
 > https://berndporr.github.io/realtime_cpp_coding/
@@ -338,4 +348,5 @@ Can't initialize pigpio library
 pigpio initialisation failed (-2003).
 ```
 Fixup: Because pigpio relies on the BCM2711 chip hardware function to achieve ultra-low-latency DMA operations, and qemu's DMA cannot support this operation, so pigpio simulation cannot be completed in the QEMU environment.
-#### 2.3.1 Buzzer
+
+#### 2.4.1 Buzzer
