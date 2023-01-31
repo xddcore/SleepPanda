@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-31 12:52:42
+ * @LastEditTime: 2023-01-31 13:16:36
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -265,12 +265,12 @@ ls install /
 |Index| Layer|-|Comments|
 |:----:|:----:|:----:|:----:|
 |7(Top)|GUI Interface Layer(QT)|-|Interaction with users|
-|6|C++ logic layer|-|Opencv, TensorFlow Lite, MQTT Client, etc.|
+|6|C++ Logic Layer|-|Opencv, TensorFlow Lite, MQTT Client, etc.|
 |5|Hardware Driver Layer (Sensor Class)|-|Configuration/Driver of Hardware (Sensor, etc.)|
 |4|Hardware Isolation Layer (Rpi4b Class)|-|Isolate software logic and hardware dependencies, the purpose is to run/test the upper layer code independently of the underlying hardware dependencies (such as pigpio). |
-|3|Pigpiod Nested Word Communication Process|-|drive rpi4b(bcm2711) register|
-|2|System Call|-|provided by the linux kernel|
-|1(Bottom)|Linux Kernel Modules|-|allocate interrupt|
+|3|Pigpiod Nested Word Communication Process|-|Drive rpi4b(bcm2711) register|
+|2|System Call|-|Provided by the linux kernel|
+|1(Bottom)|Linux Kernel Modules|-|Allocate interrupt|
 
 
 ### 2.4 Sensor & Actuator Driver Development
