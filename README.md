@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-30 18:11:17
+ * @LastEditTime: 2023-01-31 12:43:53
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -259,6 +259,8 @@ ls install /
 
 ```
 ### 2.3 Software Architecture
+
+![Software_Architecture](./img/Software_Architecture.png) 
 
 |Index| Layer|-|Comments|
 |:----:|:----:|:----:|:----:|
