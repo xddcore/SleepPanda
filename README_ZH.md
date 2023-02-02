@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-02 15:42:59
+ * @LastEditTime: 2023-02-02 16:01:59
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -248,9 +248,10 @@ sudo apt install -y libcppunit-dev
 >所以本项目采用google test(gtest)进行单元测试
 
 #### 2.2.2 google test(gtest)
-* 直接加载编译好的动态链接库文件
+##### 2.2.2.1 直接加载编译好的动态链接库文件
 
-**For Ubuntu Desktop 22.04 64bit**
+###### 2.2.2.1.1 For Ubuntu Desktop 22.04 64bit
+
 gtest动态链接库路径`SleepPanda/tools/gtest/ubuntu22.04_64bit/lib/`, gtest头文件路径`SleepPanda/tools/gtest/ubuntu22.04_64bit/include/`
 
 ```
@@ -269,9 +270,11 @@ export LD_LIBRARY_PATH=../../../tools/gtest/ubuntu22.04_64bit/lib/:$LD_LIBRARY_P
 ./gtest_demo
 ```
 
-**For Raspberry Pi OS 32bit**
+###### 2.2.2.1.2 For Raspberry Pi OS 32bit**
+
 gtest动态链接库路径`SleepPanda/tools/gtest/rpios_32bit/lib/`, gtest头文件路径`SleepPanda/tools/gtest/rpios_32bit/include/`
-**使用g++进行编译**
+
+* 使用g++进行编译(两种编译方式二选一，也可都尝试一下)
 ```
 # g++ build demo
 
@@ -287,7 +290,8 @@ export LD_LIBRARY_PATH=../../../tools/gtest/rpios_32bit/lib/:$LD_LIBRARY_PATH
 # run gtest demo
 ./gtest_demo
 ```
-**使用cmake进行编译**
+
+* 使用cmake进行编译(两种编译方式二选一，也可都尝试一下)
 ```
 # g++ build demo
 
@@ -350,7 +354,7 @@ Expected equality of these values:
 [  FAILED  ] FooTest.test_minus
 ```
 
-* 自己通过google test源码编译动态链接库文件
+##### 2.2.2.2 自己通过google test源码编译动态链接库文件
 ```
 # install dependencies
 sudo apt-get install cmake
