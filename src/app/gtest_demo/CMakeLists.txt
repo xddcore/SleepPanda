@@ -6,7 +6,7 @@ MESSAGE(STATUS "Current path : ${CMAKE_CURRENT_SOURCE_DIR}")
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
 
-set(GTEST_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../../tools/gtest") #
+set(GTEST_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../../tools/gtest/rpios_32bit") #
 
 include_directories(${GTEST_PATH}/include)
 link_directories(${GTEST_PATH}/lib)
