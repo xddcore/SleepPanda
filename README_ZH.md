@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-01 15:27:42
+ * @LastEditTime: 2023-02-02 08:39:11
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -180,7 +180,7 @@ Q2:执行`sudo apt-get upgrade`时，某些pack(例如linux内核)被保留，�
 4. 睡姿监测:4K 30FPS摄像头(USB+OpenCV)-✅
 
 **执行器**
-1. 墨水屏(虚拟动物园)(SPI)-✅
+1. 墨水屏：SSD1608(虚拟动物园)(SPI)-✅
 2. 触摸屏(基于QT的GUI)(Video:HDMI,Touch:USB)
 3. 蜂鸣器:紧急异常报警(High/Low Pin Level)-✅
 

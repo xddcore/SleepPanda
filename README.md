@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-31 13:16:36
+ * @LastEditTime: 2023-02-02 08:56:39
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -180,7 +180,7 @@ Q2: When `sudo apt-get upgrade` is executed, some packs (such as the linux kerne
 4. Sleeping position monitoring: 4K 30FPS camera (USB+OpenCV)-✅
 
 **Actuator**
-1. Ink Screen (Virtual Zoo) (SPI)-✅
+1. Ink Screen:SSD1608(Virtual Zoo) (SPI)-✅
 2. Touch screen (QT-based GUI) (Video: HDMI, Touch: USB)
 3. Buzzer: Emergency abnormal alarm (High/Low Pin Level)-✅
 
