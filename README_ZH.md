@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-02 11:14:35
+ * @LastEditTime: 2023-02-02 14:50:24
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -103,7 +103,7 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 
 
 ### 1.2 将树莓派脱离键鼠&显示器(For Ubuntu Desktop)
-0. Windows电脑需要安装的软件:`1.Termius(用于SSH)` `2.Microsoft  Remote Desktop(用于远程桌面)3.Visual Studio code(万能编辑器) 4.Raspberry Pi Image(镜像烧录) 5.Github Desktop(可选)`
+0. Windows电脑需要安装的软件:`1.Termius(用于SSH)` `2.Microsoft  Remote Desktop(用于远程桌面)3.Visual Studio code(万能编辑器)` `3.Visual Studio code(万能编辑器)` `4.Raspberry Pi Image(镜像烧录)` `5.Github Desktop(可选)`
 1. 使用Raspberry Pi Image烧录镜像至SD卡(ubuntu镜像:`https://ubuntu.com/raspberry-pi/desktop`)
 2. 使用外接显示器和键鼠完成ubuntu的初始化。系统语言English，创建用户名为`ubuntu`，密码为`ubuntu`。
 3. 需要安装的软件包: ssh vim gcc g++ screen htop git make
@@ -134,9 +134,30 @@ sudo apt-get install ssh vim gcc g++ screen htop git make
 
 ### 1.3 将树莓派脱离键鼠&显示器(For Raspberry Pi OS)
 
-0. Windows电脑需要安装的软件:`1.Termius(用于SSH)` `2.Microsoft  Remote Desktop(用于远程桌面)3.Visual Studio code(万能编辑器) 4.Raspberry Pi Image(镜像烧录) 5.Github Desktop(可选)`
-1. 使用Raspberry Pi Image烧录镜像至SD卡(Raspberry Pi OS镜像:`https://www.raspberrypi.com/software/operating-systems/`)
-
+0. Windows电脑需要安装的软件:`1.Termius(用于SSH)` `2.VNC Viewer(用于远程桌面,下载链接https://www.realvnc.com/en/connect/download/viewer/)` `3.Visual Studio code(万能编辑器)` `4.Raspberry Pi Image(镜像烧录) ` `5.Github Desktop(可选)`
+1. 使用Raspberry Pi Image烧录`Raspberry Pi OS(32bit)`镜像至SD卡(Raspberry Pi OS镜像:`https://www.raspberrypi.com/software/operating-systems/`)
+>在烧录之前，请先点击右下角齿轮按钮，进行如下配置:
+> 1. 勾选设置主机名->raspberrypi.local
+> 2. 勾选开启SSH服务->使用密码登录
+> 3. 勾选Set username and password -> Username: pi | Password: pi
+> 4. 点击保存
+2. 将树莓派连接上电源，启动树莓派。等待一会儿后，通过`termius`软件的SSH连接上树莓派。
+3. 输入`sudo raspi-config`命令，使用**方向键**进行如下配置:
+> 1. 设置启动选项为自动登录桌面。`System Options -> Boot/Auto Login -> Desktop Autologin`
+> 2. 打开VNC远程桌面。`Interface Options -> VNC - > YES`
+> 3. 打开SPI端口。`Interface Options -> SPI - > YES`
+> 4. 打开IIC端口。`Interface Options -> I2C - > YES`
+> 5. 选择Finish保存设置。
+4. 输入`reboot`命令重启树莓派。(执行完此步骤后需要等待一会儿)
+5. 此时，树莓派已经可以通过`VNC Viewer`远程桌面进行访问。
+>树莓派上对应的VNC软件包为 `realvnc-vnc-server`（Raspberry Pi OS已自带，不用安装)
+6. 需要安装的软件包: ssh vim gcc g++ screen htop git make,执行以下命令:
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install ssh vim gcc g++ screen htop git make
+```
+4. 输入`reboot`命令重启树莓派。至此，已完成基础环境配置。
 
 ### 1.4 构建交叉编译环境&本地编译环境
 考虑到树莓派算力不足，而使用服务器将会显著提升编译效率，版本控制，代码备份，协同工作。我们在本项目开发过程中使用一台中心化服务器(`I9-12900k+RTX3090TI+32GB DDR4+512G SSD`)，并在服务器中构建交叉编译环境。
