@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-02 16:06:12
+ * @LastEditTime: 2023-02-02 16:07:26
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -201,6 +201,7 @@ Q2:执行`sudo apt-get upgrade`时，某些pack(例如linux内核)被保留，�
 ### 1.5 传感器&执行器&服务器
 
 >[点我下载BOM](./doc/BOM/SleepPanda_BOM.xlsx)
+
 >[点我下载datasheet](./doc/datasheet/)
 
 **传感器**
