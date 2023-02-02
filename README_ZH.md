@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-02 08:39:11
+ * @LastEditTime: 2023-02-02 11:04:58
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -96,13 +96,13 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 ### 1.1 软硬件版本
 
 1. 树莓派4B(4GB/8GB)｜bcm2711
-2. Linux发行版:Ubuntu Desktop 22.04.01 LTS(64Bit)
-3. 内核版本:5.15.0-1023-raspi |检索所有Linux内核`apt-cache search linux-raspi-headers`
-4. g++:`g++ (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
-5. gcc:`gcc (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
+2. Linux发行版: Raspberry Pi OS(32bit)｜Ubuntu Desktop 22.04.01 LTS(64Bit)
+3. 内核版本: 5.15.0-1023-raspi |检索所有Linux内核`apt-cache search linux-raspi-headers`
+4. g++: Raspberry Pi OS｜`g++ (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
+5. gcc: Raspberry Pi OS｜`gcc (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
 
 
-### 1.2 将树莓派脱离键鼠&显示器
+### 1.2 将树莓派脱离键鼠&显示器(For Ubuntu Desktop)
 0. Windows电脑需要安装的软件:`1.Termius(用于SSH)` `2.Microsoft  Remote Desktop(用于远程桌面)3.Visual Studio code(万能编辑器) 4.Github Desktop(可选)`
 1. 使用Raspberry Pi Image烧录镜像至SD卡(ubuntu镜像:`https://ubuntu.com/raspberry-pi/desktop`)
 2. 使用外接显示器和键鼠完成ubuntu的初始化。系统语言English，创建用户名为`ubuntu`，密码为`ubuntu`。
@@ -132,10 +132,14 @@ sudo apt-get install ssh vim gcc g++ screen htop git make
 6. 至此树莓派完全脱离键盘鼠标和显示器，可用其他电脑远程操作
 7. 使用Termius软件SSH连接至树莓派的局域网IP。用户名:`ubuntu` 密码:`ubuntu`
 
-### 1.3 构建交叉编译环境&本地编译环境
+### 1.3 将树莓派脱离键鼠&显示器(For Raspberry Pi OS)
+
+--
+
+### 1.4 构建交叉编译环境&本地编译环境
 考虑到树莓派算力不足，而使用服务器将会显著提升编译效率，版本控制，代码备份，协同工作。我们在本项目开发过程中使用一台中心化服务器(`I9-12900k+RTX3090TI+32GB DDR4+512G SSD`)，并在服务器中构建交叉编译环境。
 
-#### 1.3.1 交叉编译环境(服务器)
+#### 1.4.1 交叉编译环境(服务器)
 
 1. 安装aarch64-linux-gnu-交叉编译工具链，以及其他编译linux内核所需的编译工具
 2. 获取树莓派内核源码
@@ -149,7 +153,7 @@ apt-get source linux-image-$(uname -r) #5.15.0-1023-raspi
 
 ![helloworld_modinfo](./img/helloworld_modinfo.png)
 
-#### 1.3.2 本地编译环境(树莓派)
+#### 1.4.2 本地编译环境(树莓派)
 
 1. 编译`helloworld`模块代码
 
@@ -169,7 +173,7 @@ Q2:执行`sudo apt-get upgrade`时，某些pack(例如linux内核)被保留，�
 > `sudo apt-get --with-new-pkgs upgrade`
 
 
-### 1.4 传感器&执行器&服务器
+### 1.5 传感器&执行器&服务器
 
 >[点我下载BOM](./doc/BOM/SleepPanda_BOM.xlsx)
 
