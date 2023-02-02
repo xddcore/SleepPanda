@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-02 15:37:31
+ * @LastEditTime: 2023-02-02 15:42:59
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -325,6 +325,7 @@ cmake .. && make
 cd .. && ./gtest_demo
 
 ```
+
 理论上，你将获得如下运行结果:
 ```
 ./gtest_demo
@@ -423,6 +424,27 @@ sudo killall pigpiod
 # Then you should get 'pigpio initialisation failed (-2003).', because pigpio daemon not runing.
 ```
 >Note: 在每次使用pigpio时，你都应先运行`sudo pigpiod`，以打开守护程序。
+
+理论上，你将获得如下运行结果:
+```
+Testing pigpio C I/F
+pigpio version 79.
+Hardware revision 13644052.
+Mode/PUD/read/write tests.
+TEST  1.1  PASS (set mode, get mode: 0)
+TEST  1.2  PASS (set pull up down, read: 1)
+TEST  1.3  PASS (set pull up down, read: 0)
+TEST  1.4  PASS (write, get mode: 1)
+TEST  1.5  PASS (read: 0)
+TEST  1.6  PASS (write, read: 1)
+PWM dutycycle/range/frequency tests.
+TEST  2.1  PASS (set PWM range, set/get PWM frequency: 10)
+TEST  2.2  PASS (get PWM dutycycle: 0)
+TEST  2.3  PASS (set PWM dutycycle, callback: 0)
+TEST  2.4  PASS (get PWM dutycycle: 12
+
+...etc
+```
 
 ---
 Q1: ERROR: **initAllocDMAMem: mbox open failed(No such device or address)**
