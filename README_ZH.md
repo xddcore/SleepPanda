@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-02 14:50:24
+ * @LastEditTime: 2023-02-02 15:26:34
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -97,9 +97,9 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 
 1. 树莓派4B(4GB/8GB)｜bcm2711
 2. Linux发行版: Raspberry Pi OS(32bit)｜Ubuntu Desktop 22.04.01 LTS(64Bit)
-3. 内核版本: 5.15.0-1023-raspi |检索所有Linux内核`apt-cache search linux-raspi-headers`
-4. g++: Raspberry Pi OS｜`g++ (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
-5. gcc: Raspberry Pi OS｜`gcc (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
+3. 内核版本: Linux raspberrypi 5.15.84-v7l+ #1613|5.15.0-1023-raspi |检索所有Linux内核`apt-cache search linux-raspi-headers`
+4. g++: `g++ version 10.2.1 20210110 (Raspbian 10.2.1-6+rpi1)`｜`g++ (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
+5. gcc: `gcc version 10.2.1 20210110 (Raspbian 10.2.1-6+rpi1)`｜`gcc (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
 
 
 ### 1.2 将树莓派脱离键鼠&显示器(For Ubuntu Desktop)
@@ -226,6 +226,12 @@ Q2:执行`sudo apt-get upgrade`时，某些pack(例如linux内核)被保留，�
 
 `git clone https://github.com/xddcore/SleepPanda.git`
 
+**Note:如果你是开发人员，记得通过以下命令切换到dev分支:**
+```
+git checkout dev
+git branch -l
+```
+
 ### 2.2 cpp单元测试框架
 
 #### 2.2.1 cppunit
@@ -244,22 +250,65 @@ sudo apt install -y libcppunit-dev
 #### 2.2.2 google test(gtest)
 * 直接加载编译好的动态链接库文件
 
-gtest动态链接库路径`SleepPanda/tools/gtest/lib/`, gtest头文件路径`SleepPanda/tools/gtest/include/`
+**For Ubuntu Desktop 22.04 64bit**
+gtest动态链接库路径`SleepPanda/tools/gtest/ubuntu22.04_64bit/lib/`, gtest头文件路径`SleepPanda/tools/gtest/ubuntu22.04_64bit/include/`
 
 ```
 # g++ build demo
 
 # cd to workscape
-cd /SleepPanda/src/app/gtest_demo
+cd ./SleepPanda/src/app/gtest_demo
 
 # build code
-g++ -std=c++14 ./gtest_demo.cpp -I ../../../tools/gtest/include/ ../../../tools/gtest/lib/libgtest.so -lpthread -o gtest_demo
+g++ -std=c++14 ./gtest_demo.cpp -I ../../../tools/gtest/ubuntu22.04_64bit/include/ ../../../tools/gtest/ubuntu22.04_64bit/lib/libgtest.so -lpthread -o gtest_demo
 
 # Export the gtest dynamic link library to the system environment variable (temporary)
-export LD_LIBRARY_PATH=../../../tools/gtest/lib/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=../../../tools/gtest/ubuntu22.04_64bit/lib/:$LD_LIBRARY_PATH
 
 # run gtest demo
 ./gtest_demo
+```
+
+**For Raspberry Pi OS 32bit**
+gtest动态链接库路径`SleepPanda/tools/gtest/rpios_32bit/lib/`, gtest头文件路径`SleepPanda/tools/gtest/rpios_32bit/include/`
+
+```
+# g++ build demo
+
+# cd to workscape
+cd ./SleepPanda/src/app/gtest_demo
+
+# build code
+g++ -std=c++14 ./gtest_demo.cpp -I ../../../tools/gtest/rpios_32bit/include/ ../../../tools/gtest/rpios_32bit/lib/libgtest.so -lpthread -o gtest_demo
+
+# Export the gtest dynamic link library to the system environment variable (temporary)
+export LD_LIBRARY_PATH=../../../tools/gtest/rpios_32bit/lib/:$LD_LIBRARY_PATH
+
+# run gtest demo
+./gtest_demo
+```
+理论上，你将获得如下运行结果:
+```
+./gtest_demo
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from FooTest
+[ RUN      ] FooTest.test_add
+[       OK ] FooTest.test_add (0 ms)
+[ RUN      ] FooTest.test_minus
+./gtest_demo.cpp:54: Failure
+Expected equality of these values:
+  foo->GetNum()
+    Which is: 1
+  0
+[  FAILED  ] FooTest.test_minus (0 ms)
+[----------] 2 tests from FooTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.test_minus
 ```
 
 * 自己通过google test源码编译动态链接库文件
