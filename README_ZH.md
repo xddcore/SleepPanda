@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-02 15:26:34
+ * @LastEditTime: 2023-02-02 15:37:31
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -271,7 +271,7 @@ export LD_LIBRARY_PATH=../../../tools/gtest/ubuntu22.04_64bit/lib/:$LD_LIBRARY_P
 
 **For Raspberry Pi OS 32bit**
 gtest动态链接库路径`SleepPanda/tools/gtest/rpios_32bit/lib/`, gtest头文件路径`SleepPanda/tools/gtest/rpios_32bit/include/`
-
+**使用g++进行编译**
 ```
 # g++ build demo
 
@@ -286,6 +286,44 @@ export LD_LIBRARY_PATH=../../../tools/gtest/rpios_32bit/lib/:$LD_LIBRARY_PATH
 
 # run gtest demo
 ./gtest_demo
+```
+**使用cmake进行编译**
+```
+# g++ build demo
+
+# cd to workscape
+cd ./SleepPanda/src/app/gtest_demo/build
+
+# build code
+cmake .. && make
+
+# Export the gtest dynamic link library to the system environment variable (temporary)
+export LD_LIBRARY_PATH=../../../tools/gtest/rpios_32bit/lib/:$LD_LIBRARY_PATH
+
+# run gtest demo
+./gtest_demo
+```
+**Error:在使用cmake编译时，可能会出现如下报错:**
+```
+CMake Error: The source "/home/pi/xddcore/SleepPanda/src/app/gtest_demo/CMakeLists.txt" does not match the source "/home/ubuntu/xddcore/SleepPanda/src/app/gtest_demo/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.
+```
+**解决办法:**
+```
+# remove /build dir
+rm -rf build/
+
+# create new /build dir
+mkdir build
+
+# go to build dir
+cd build
+
+# build code
+cmake .. && make
+
+# run gtest demo code
+cd .. && ./gtest_demo
+
 ```
 理论上，你将获得如下运行结果:
 ```
