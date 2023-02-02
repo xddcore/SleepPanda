@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-30 17:36:13
+ * @LastEditTime: 2023-02-02 15:42:59
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -96,14 +96,14 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 ### 1.1 软硬件版本
 
 1. 树莓派4B(4GB/8GB)｜bcm2711
-2. Linux发行版:Ubuntu Desktop 22.04.01 LTS(64Bit)
-3. 内核版本:5.15.0-1023-raspi |检索所有Linux内核`apt-cache search linux-raspi-headers`
-4. g++:`g++ (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
-5. gcc:`gcc (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
+2. Linux发行版: Raspberry Pi OS(32bit)｜Ubuntu Desktop 22.04.01 LTS(64Bit)
+3. 内核版本: Linux raspberrypi 5.15.84-v7l+ #1613|5.15.0-1023-raspi |检索所有Linux内核`apt-cache search linux-raspi-headers`
+4. g++: `g++ version 10.2.1 20210110 (Raspbian 10.2.1-6+rpi1)`｜`g++ (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
+5. gcc: `gcc version 10.2.1 20210110 (Raspbian 10.2.1-6+rpi1)`｜`gcc (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
 
 
-### 1.2 将树莓派脱离键鼠&显示器
-0. Windows电脑需要安装的软件:`1.Termius(用于SSH)` `2.Microsoft  Remote Desktop(用于远程桌面)3.Visual Studio code(万能编辑器)`
+### 1.2 将树莓派脱离键鼠&显示器(For Ubuntu Desktop)
+0. Windows电脑需要安装的软件:`1.Termius(用于SSH)` `2.Microsoft  Remote Desktop(用于远程桌面)3.Visual Studio code(万能编辑器)` `3.Visual Studio code(万能编辑器)` `4.Raspberry Pi Image(镜像烧录)` `5.Github Desktop(可选)`
 1. 使用Raspberry Pi Image烧录镜像至SD卡(ubuntu镜像:`https://ubuntu.com/raspberry-pi/desktop`)
 2. 使用外接显示器和键鼠完成ubuntu的初始化。系统语言English，创建用户名为`ubuntu`，密码为`ubuntu`。
 3. 需要安装的软件包: ssh vim gcc g++ screen htop git make
@@ -132,10 +132,37 @@ sudo apt-get install ssh vim gcc g++ screen htop git make
 6. 至此树莓派完全脱离键盘鼠标和显示器，可用其他电脑远程操作
 7. 使用Termius软件SSH连接至树莓派的局域网IP。用户名:`ubuntu` 密码:`ubuntu`
 
-### 1.3 构建交叉编译环境&本地编译环境
+### 1.3 将树莓派脱离键鼠&显示器(For Raspberry Pi OS)
+
+0. Windows电脑需要安装的软件:`1.Termius(用于SSH)` `2.VNC Viewer(用于远程桌面,下载链接https://www.realvnc.com/en/connect/download/viewer/)` `3.Visual Studio code(万能编辑器)` `4.Raspberry Pi Image(镜像烧录) ` `5.Github Desktop(可选)`
+1. 使用Raspberry Pi Image烧录`Raspberry Pi OS(32bit)`镜像至SD卡(Raspberry Pi OS镜像:`https://www.raspberrypi.com/software/operating-systems/`)
+>在烧录之前，请先点击右下角齿轮按钮，进行如下配置:
+> 1. 勾选设置主机名->raspberrypi.local
+> 2. 勾选开启SSH服务->使用密码登录
+> 3. 勾选Set username and password -> Username: pi | Password: pi
+> 4. 点击保存
+2. 将树莓派连接上电源，启动树莓派。等待一会儿后，通过`termius`软件的SSH连接上树莓派。
+3. 输入`sudo raspi-config`命令，使用**方向键**进行如下配置:
+> 1. 设置启动选项为自动登录桌面。`System Options -> Boot/Auto Login -> Desktop Autologin`
+> 2. 打开VNC远程桌面。`Interface Options -> VNC - > YES`
+> 3. 打开SPI端口。`Interface Options -> SPI - > YES`
+> 4. 打开IIC端口。`Interface Options -> I2C - > YES`
+> 5. 选择Finish保存设置。
+4. 输入`reboot`命令重启树莓派。(执行完此步骤后需要等待一会儿)
+5. 此时，树莓派已经可以通过`VNC Viewer`远程桌面进行访问。
+>树莓派上对应的VNC软件包为 `realvnc-vnc-server`（Raspberry Pi OS已自带，不用安装)
+6. 需要安装的软件包: ssh vim gcc g++ screen htop git make,执行以下命令:
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install ssh vim gcc g++ screen htop git make
+```
+4. 输入`reboot`命令重启树莓派。至此，已完成基础环境配置。
+
+### 1.4 构建交叉编译环境&本地编译环境
 考虑到树莓派算力不足，而使用服务器将会显著提升编译效率，版本控制，代码备份，协同工作。我们在本项目开发过程中使用一台中心化服务器(`I9-12900k+RTX3090TI+32GB DDR4+512G SSD`)，并在服务器中构建交叉编译环境。
 
-#### 1.3.1 交叉编译环境(服务器)
+#### 1.4.1 交叉编译环境(服务器)
 
 1. 安装aarch64-linux-gnu-交叉编译工具链，以及其他编译linux内核所需的编译工具
 2. 获取树莓派内核源码
@@ -149,7 +176,7 @@ apt-get source linux-image-$(uname -r) #5.15.0-1023-raspi
 
 ![helloworld_modinfo](./img/helloworld_modinfo.png)
 
-#### 1.3.2 本地编译环境(树莓派)
+#### 1.4.2 本地编译环境(树莓派)
 
 1. 编译`helloworld`模块代码
 
@@ -169,7 +196,7 @@ Q2:执行`sudo apt-get upgrade`时，某些pack(例如linux内核)被保留，�
 > `sudo apt-get --with-new-pkgs upgrade`
 
 
-### 1.4 传感器&执行器&服务器
+### 1.5 传感器&执行器&服务器
 
 >[点我下载BOM](./doc/BOM/SleepPanda_BOM.xlsx)
 
@@ -180,7 +207,7 @@ Q2:执行`sudo apt-get upgrade`时，某些pack(例如linux内核)被保留，�
 4. 睡姿监测:4K 30FPS摄像头(USB+OpenCV)-✅
 
 **执行器**
-1. 墨水屏(虚拟动物园)(SPI)-✅
+1. 墨水屏：SSD1608(虚拟动物园)(SPI)-✅
 2. 触摸屏(基于QT的GUI)(Video:HDMI,Touch:USB)
 3. 蜂鸣器:紧急异常报警(High/Low Pin Level)-✅
 
@@ -198,6 +225,12 @@ Q2:执行`sudo apt-get upgrade`时，某些pack(例如linux内核)被保留，�
 ### 2.1 获取SleepPanda源码
 
 `git clone https://github.com/xddcore/SleepPanda.git`
+
+**Note:如果你是开发人员，记得通过以下命令切换到dev分支:**
+```
+git checkout dev
+git branch -l
+```
 
 ### 2.2 cpp单元测试框架
 
@@ -217,22 +250,104 @@ sudo apt install -y libcppunit-dev
 #### 2.2.2 google test(gtest)
 * 直接加载编译好的动态链接库文件
 
-gtest动态链接库路径`SleepPanda/tools/gtest/lib/`, gtest头文件路径`SleepPanda/tools/gtest/include/`
+**For Ubuntu Desktop 22.04 64bit**
+gtest动态链接库路径`SleepPanda/tools/gtest/ubuntu22.04_64bit/lib/`, gtest头文件路径`SleepPanda/tools/gtest/ubuntu22.04_64bit/include/`
 
 ```
 # g++ build demo
 
 # cd to workscape
-cd /SleepPanda/src/app/gtest_demo
+cd ./SleepPanda/src/app/gtest_demo
 
 # build code
-g++ -std=c++14 ./gtest_demo.cpp -I ../../../tools/gtest/include/ ../../../tools/gtest/lib/libgtest.so -lpthread -o gtest_demo
+g++ -std=c++14 ./gtest_demo.cpp -I ../../../tools/gtest/ubuntu22.04_64bit/include/ ../../../tools/gtest/ubuntu22.04_64bit/lib/libgtest.so -lpthread -o gtest_demo
 
 # Export the gtest dynamic link library to the system environment variable (temporary)
-export LD_LIBRARY_PATH=../../../tools/gtest/lib/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=../../../tools/gtest/ubuntu22.04_64bit/lib/:$LD_LIBRARY_PATH
 
 # run gtest demo
 ./gtest_demo
+```
+
+**For Raspberry Pi OS 32bit**
+gtest动态链接库路径`SleepPanda/tools/gtest/rpios_32bit/lib/`, gtest头文件路径`SleepPanda/tools/gtest/rpios_32bit/include/`
+**使用g++进行编译**
+```
+# g++ build demo
+
+# cd to workscape
+cd ./SleepPanda/src/app/gtest_demo
+
+# build code
+g++ -std=c++14 ./gtest_demo.cpp -I ../../../tools/gtest/rpios_32bit/include/ ../../../tools/gtest/rpios_32bit/lib/libgtest.so -lpthread -o gtest_demo
+
+# Export the gtest dynamic link library to the system environment variable (temporary)
+export LD_LIBRARY_PATH=../../../tools/gtest/rpios_32bit/lib/:$LD_LIBRARY_PATH
+
+# run gtest demo
+./gtest_demo
+```
+**使用cmake进行编译**
+```
+# g++ build demo
+
+# cd to workscape
+cd ./SleepPanda/src/app/gtest_demo/build
+
+# build code
+cmake .. && make
+
+# Export the gtest dynamic link library to the system environment variable (temporary)
+export LD_LIBRARY_PATH=../../../tools/gtest/rpios_32bit/lib/:$LD_LIBRARY_PATH
+
+# run gtest demo
+./gtest_demo
+```
+**Error:在使用cmake编译时，可能会出现如下报错:**
+```
+CMake Error: The source "/home/pi/xddcore/SleepPanda/src/app/gtest_demo/CMakeLists.txt" does not match the source "/home/ubuntu/xddcore/SleepPanda/src/app/gtest_demo/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.
+```
+**解决办法:**
+```
+# remove /build dir
+rm -rf build/
+
+# create new /build dir
+mkdir build
+
+# go to build dir
+cd build
+
+# build code
+cmake .. && make
+
+# run gtest demo code
+cd .. && ./gtest_demo
+
+```
+
+理论上，你将获得如下运行结果:
+```
+./gtest_demo
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from FooTest
+[ RUN      ] FooTest.test_add
+[       OK ] FooTest.test_add (0 ms)
+[ RUN      ] FooTest.test_minus
+./gtest_demo.cpp:54: Failure
+Expected equality of these values:
+  foo->GetNum()
+    Which is: 1
+  0
+[  FAILED  ] FooTest.test_minus (0 ms)
+[----------] 2 tests from FooTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.test_minus
 ```
 
 * 自己通过google test源码编译动态链接库文件
@@ -258,8 +373,21 @@ ls install/
 # include lib
 
 ```
+### 2.3 软件架构
 
-### 2.3 传感器&执行器驱动开发
+![Software_Architecture](./img/Software_Architecture.png) 
+
+|Index| 层|-|注释|
+|:----:|:----:|:----:|:----:|
+|7(Top)|GUI界面层(QT)|-|与用户交互|
+|6|C++逻辑层|-|Opencv，TensorFlow Lite，MQTT Client等|
+|5|硬件驱动层(Sensor Class)|-|硬件(传感器等)的配置/驱动|
+|4|硬件隔离层(Rpi4b Class)|-|隔离软件逻辑和硬件依赖，目的是为了可以抛开底层硬件依赖(比如pigpio)，单独运行/测试上层代码。|
+|3|pigpiod嵌套字通信进程|-|驱动rpi4b(bcm2711)寄存器|
+|2|系统调用|-|由Linux内核提供|
+|1(Bottom)|Linux内核模块|-|分配中断|
+
+### 2.4 传感器&执行器驱动开发
 
 >Ref:  
 >https://berndporr.github.io/realtime_cpp_coding/  
@@ -296,6 +424,27 @@ sudo killall pigpiod
 # Then you should get 'pigpio initialisation failed (-2003).', because pigpio daemon not runing.
 ```
 >Note: 在每次使用pigpio时，你都应先运行`sudo pigpiod`，以打开守护程序。
+
+理论上，你将获得如下运行结果:
+```
+Testing pigpio C I/F
+pigpio version 79.
+Hardware revision 13644052.
+Mode/PUD/read/write tests.
+TEST  1.1  PASS (set mode, get mode: 0)
+TEST  1.2  PASS (set pull up down, read: 1)
+TEST  1.3  PASS (set pull up down, read: 0)
+TEST  1.4  PASS (write, get mode: 1)
+TEST  1.5  PASS (read: 0)
+TEST  1.6  PASS (write, read: 1)
+PWM dutycycle/range/frequency tests.
+TEST  2.1  PASS (set PWM range, set/get PWM frequency: 10)
+TEST  2.2  PASS (get PWM dutycycle: 0)
+TEST  2.3  PASS (set PWM dutycycle, callback: 0)
+TEST  2.4  PASS (get PWM dutycycle: 12
+
+...etc
+```
 
 ---
 Q1: ERROR: **initAllocDMAMem: mbox open failed(No such device or address)**
@@ -338,6 +487,7 @@ Can't initialise pigpio library
 pigpio initialisation failed (-2003).
 ```
 Fixup: 因为pigpio依赖BCM2711芯片硬件功能实现超低延迟的DMA操作，而qemu的DMA无法支持这一操作，所以在QEMU环境下，无法完成pigpio仿真。
-#### 2.3.1 蜂鸣器
+
+#### 2.4.1 蜂鸣器
 
 

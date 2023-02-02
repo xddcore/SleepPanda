@@ -14,7 +14,7 @@ jobs:
     - uses: pguyot/arm-runner-action@v2
       with:
         image_additional_mb: 1024
-        base_image: https://cdimage.ubuntu.com/releases/22.04.1/release/ubuntu-22.04.1-preinstalled-server-arm64+raspi.img.xz
+        base_image: https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2022-09-26/2022-09-22-raspios-bullseye-armhf.img.xz
         cpu: cortex-a7:cortex-a53
         cpu_info: cpuinfo/raspberrypi_4b
         commands: |
@@ -27,5 +27,5 @@ jobs:
             make
             sudo apt-get install -y python-setuptools python3-setuptools
             sudo make install 
-            #sudo pigpiod
-            #sudo ./x_pigpiod_if2
+            sudo pigpiod
+            sudo ./x_pigpiod_if2
