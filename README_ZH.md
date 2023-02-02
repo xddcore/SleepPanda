@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-02 16:01:59
+ * @LastEditTime: 2023-02-02 16:06:12
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -48,6 +48,8 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 >如果你对本项目有任何建议，欢迎发邮件至xddcore@gmail.com
 
 ## 项目开发规划
+
+>[点我查看开发会议纪要](./doc/meeting/)
 
 #### Global
 - [x] 构建Github仓库&README文档，完成基础开发环境配置，固定Linux内核源码，测试内核模块编译。 
@@ -199,6 +201,7 @@ Q2:执行`sudo apt-get upgrade`时，某些pack(例如linux内核)被保留，�
 ### 1.5 传感器&执行器&服务器
 
 >[点我下载BOM](./doc/BOM/SleepPanda_BOM.xlsx)
+>[点我下载datasheet](./doc/datasheet/)
 
 **传感器**
 1. 扬声器&麦克风:WM8960(Control:IIC;Audio:IIS)+Sound Sensor(电压比较器Dout)-✅
