@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-02 16:07:26
+ * @LastEditTime: 2023-02-03 06:27:56
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -42,9 +42,9 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 |  Name   | ID  |  Role  |
 |  ----  | ----  | ----  |
 | Chengsen Dong  | 2789825d | 嵌入式工程师 |
-| Rui Liu  | 2756138L | 项目管理&宣传 |
-| Hui Wang  | 2810919W | 测试工程师 |
-| Yihan Wang  | 2696441W | 项目管理&宣传 |
+| Rui Liu  | 2756138L | 项目管理&宣传&软件工程师 |
+| Hui Wang  | 2810919W | 硬件工程师&测试工程师 |
+| Yihan Wang  | 2696441W | 项目管理&宣传&软件工程师 |
 >如果你对本项目有任何建议，欢迎发邮件至xddcore@gmail.com
 
 ## 项目开发规划
