@@ -81,6 +81,7 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 
 #### Yihan Wang
 - [ ] 同步更新README_ZH.md&README.md的内容(每周一次)
+- [x] 创建Youtube频道，用于推广SleepPanda项目
 - [x] Pitch Session PPT幻灯片初稿
 - [x] 制作成本核算&原件选行Excel表格
 - [ ] To do later...
