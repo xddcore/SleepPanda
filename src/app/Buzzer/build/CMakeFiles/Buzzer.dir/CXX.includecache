@@ -9,12 +9,12 @@
 /home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.cpp
 iostream
 -
-Buzzer.h
-/home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.h
-../config/config.h
-/home/pi/xddcore/SleepPanda/src/app/config/config.h
 stdio.h
 /home/pi/xddcore/SleepPanda/src/app/Buzzer/stdio.h
+Buzzer.h
+/home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.h
+../Config/Config.h
+/home/pi/xddcore/SleepPanda/src/app/Config/Config.h
 pigpio.h
 -
 unistd.h
@@ -22,5 +22,5 @@ unistd.h
 
 /home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.h
 
-/home/pi/xddcore/SleepPanda/src/app/config/config.h
+/home/pi/xddcore/SleepPanda/src/app/Config/Config.h
 

@@ -3,5 +3,5 @@
 
 CMakeFiles/Buzzer.dir/Buzzer.cpp.o: ../Buzzer.cpp
 CMakeFiles/Buzzer.dir/Buzzer.cpp.o: ../Buzzer.h
-CMakeFiles/Buzzer.dir/Buzzer.cpp.o: /home/pi/xddcore/SleepPanda/src/app/config/config.h
+CMakeFiles/Buzzer.dir/Buzzer.cpp.o: /home/pi/xddcore/SleepPanda/src/app/Config/Config.h
 
