@@ -15,6 +15,11 @@
 
 ![GPL V3 Licence](https://img.shields.io/github/license/xddcore/SleepPanda)
 
+![Youtube](https://img.shields.io/youtube/channel/subscribers/UCP2-6ywKLy2js1dzJQ5hR_g?style=social)
+
+>[点我访问Youtube频道](https://www.youtube.com/@SleepPanda666)
+
+
 Change README Language: [English](./README.md) ｜ [中文](./README_ZH.md)
 
 ## Auto Unit Test
@@ -76,13 +81,14 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 
 #### Yihan Wang
 - [ ] 同步更新README_ZH.md&README.md的内容(每周一次)
+- [x] 创建Youtube频道，用于推广SleepPanda项目
 - [x] Pitch Session PPT幻灯片初稿
 - [x] 制作成本核算&原件选行Excel表格
 - [ ] To do later...
 
 #### Rui Liu
 - [ ] 同步更新README_ZH.md&README.md的内容(每周一次)
-- [x] 小组会议记录(每周一次)
+- [x] 同步更新会议记录的内容(每周一次)
 - [x] 设计SleepPanda Logo
 - [x] Pitch Session PPT幻灯片终稿&pitch session演讲准备
 - [x] 制作成本核算&原件选行Excel表格
