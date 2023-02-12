@@ -2,8 +2,8 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-02-07 12:52:10
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-12 14:22:50
- * @FilePath: /SleepPanda/src/main/Buzzer.cpp
+ * @LastEditTime: 2023-02-12 16:58:53
+ * @FilePath: /SleepPanda/src/app/Buzzer/Buzzer.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
  */
@@ -26,6 +26,16 @@ class Buzzer{
 //蜂鸣器构造函数
 Buzzer::Buzzer() {
 #if(DEBUG==0)
+    if (gpioInitialise() < 0)
+    {
+        printf("Run: Buzzer pigpio initialisation failed.\r\n");
+   // pigpio initialisation failed.
+    }
+    else
+    {
+        printf("Run: Buzzer pigpio initialised okay.\r\n");
+   // pigpio initialised okay.
+    }
     //此处添加蜂鸣器Buzzer_GPIO_Pin 6 的初始化代码
 #else
     printf("DEBUG: Buzzer Init.\r\n");
