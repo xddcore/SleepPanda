@@ -1,3 +1,12 @@
+/*
+ * @Author: Chengsen Dong 1034029664@qq.com
+ * @Date: 2023-02-07 12:52:10
+ * @LastEditors: Chengsen Dong 1034029664@qq.com
+ * @LastEditTime: 2023-02-12 14:22:50
+ * @FilePath: /SleepPanda/src/main/Buzzer.cpp
+ * @Description: 
+ * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
+ */
 #include <iostream>
 #include "Buzzer.h"
 #include "config.h"
@@ -39,6 +48,7 @@ int Buzzer::Buzzer_Contorl(unsigned int Buzzer_OnOff) {
     else if(Buzzer_OnOff==Buzzer_Off){
         //此处添加蜂鸣器关闭代码Buzzer_Off_Level
     }
+    return 0;
 #else
     if(Buzzer_OnOff==Buzzer_On){
         printf("DEBUG: Buzzer On.\r\n");
@@ -46,6 +56,7 @@ int Buzzer::Buzzer_Contorl(unsigned int Buzzer_OnOff) {
     else if(Buzzer_OnOff==Buzzer_Off){
         printf("DEBUG: Buzzer Off.\r\n");
     }
+    return 0;
 #endif
 }
 
