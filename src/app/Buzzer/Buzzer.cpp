@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-02-07 12:52:10
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-12 19:19:53
+ * @LastEditTime: 2023-02-12 19:54:55
  * @FilePath: /SleepPanda/src/app/Buzzer/Buzzer.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -17,7 +17,7 @@
 #define UNIT_TEST 1
 
 //蜂鸣器构造函数
-Buzzer::Buzzer() {
+Buzzer::Buzzer(Buzzer_Settings My_Buzzer_Settings) {
 #if(RPI_DEBUG==1)
     int err;
     err = gpioInitialise();    
@@ -31,7 +31,7 @@ Buzzer::Buzzer() {
         printf("RPI DEBUG: Buzzer pigpio initialised okay.\r\n");
         // pigpio initialised okay.
 	// set gpio6 mode to output
-	gpioSetMode(Buzzer_GPIO_Pin, PI_OUTPUT); // Set GPIO6 as output.
+	gpioSetMode(My_Buzzer_Settings.Buzzer_GPIO_Pin, PI_OUTPUT); // Set GPIO6 as output.
     }
     //此处添加蜂鸣器Buzzer_GPIO_Pin 6 的初始化代码
 #else
@@ -55,12 +55,12 @@ int Buzzer::Buzzer_Contorl(unsigned int Buzzer_OnOff) {
 #if(RPI_DEBUG==1)
     if(Buzzer_OnOff==Buzzer_On){
         //此处添加蜂鸣器触发代码Buzzer_On_Level
-	gpioWrite(Buzzer_GPIO_Pin, Buzzer_On_Level); // Set GPIO6 low.
+	gpioWrite(My_Buzzer_Settings.Buzzer_GPIO_Pin, My_Buzzer_Settings.Buzzer_On_Level); // Set GPIO6 low.
 	printf("RPI DEBUG: Buzzer On.\r\n");
     }
     else if(Buzzer_OnOff==Buzzer_Off){
         //此处添加蜂鸣器关闭代码Buzzer_Off_Level
-	gpioWrite(Buzzer_GPIO_Pin, Buzzer_Off_Level); // Set GPIO6 high.
+	gpioWrite(My_Buzzer_Settings.Buzzer_GPIO_Pin, My_Buzzer_Settings.Buzzer_Off_Level); // Set GPIO6 high.
 	printf("RPI DEBUG: Buzzer Off.\r\n");
     }
     return 0;
@@ -82,7 +82,8 @@ int Buzzer::Buzzer_Contorl(unsigned int Buzzer_OnOff) {
 //What you will see: The buzzer turns on for one second and then turns off.
 
 int main() {
-    Buzzer MyBuzzer;
+    Buzzer_Settings My_Buzzer_Settings;
+    Buzzer MyBuzzer(My_Buzzer_Settings);
     MyBuzzer.Buzzer_Contorl(Buzzer_On);
     sleep(1);
     MyBuzzer.Buzzer_Contorl(Buzzer_Off);
