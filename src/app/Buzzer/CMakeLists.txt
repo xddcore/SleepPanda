@@ -5,7 +5,7 @@ add_compile_options(-std=c++11 -Wall -Wconversion -Wextra -pedantic)
 
 set(CMAKE_CXX_STANDARD 11)
 
-
+include_directories(../config)
 
 add_executable(Buzzer Buzzer.cpp config.h Buzzer.h)
 
