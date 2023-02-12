@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-02-07 12:52:10
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-12 19:54:55
+ * @LastEditTime: 2023-02-12 20:04:15
  * @FilePath: /SleepPanda/src/app/Buzzer/Buzzer.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -17,9 +17,10 @@
 #define UNIT_TEST 1
 
 //蜂鸣器构造函数
-Buzzer::Buzzer(Buzzer_Settings My_Buzzer_Settings) {
+Buzzer::Buzzer(Buzzer_Settings buzzer_settings) {
 #if(RPI_DEBUG==1)
     int err;
+    My_Buzzer_Settings = buzzer_settings;
     err = gpioInitialise();    
     if (err < 0)
     {
