@@ -130,17 +130,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named src
+# Target rules for targets named Buzzer
 
 # Build rule for target.
-src: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src
-.PHONY : src
+Buzzer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Buzzer
+.PHONY : Buzzer
 
 # fast build rule for target.
-src/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/build
-.PHONY : src/fast
+Buzzer/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer.dir/build.make CMakeFiles/Buzzer.dir/build
+.PHONY : Buzzer/fast
 
 Buzzer.o: Buzzer.cpp.o
 
@@ -148,7 +148,7 @@ Buzzer.o: Buzzer.cpp.o
 
 # target to build an object file
 Buzzer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/Buzzer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer.dir/build.make CMakeFiles/Buzzer.dir/Buzzer.cpp.o
 .PHONY : Buzzer.cpp.o
 
 Buzzer.i: Buzzer.cpp.i
@@ -157,7 +157,7 @@ Buzzer.i: Buzzer.cpp.i
 
 # target to preprocess a source file
 Buzzer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/Buzzer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer.dir/build.make CMakeFiles/Buzzer.dir/Buzzer.cpp.i
 .PHONY : Buzzer.cpp.i
 
 Buzzer.s: Buzzer.cpp.s
@@ -166,7 +166,7 @@ Buzzer.s: Buzzer.cpp.s
 
 # target to generate assembly for a file
 Buzzer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/src.dir/build.make CMakeFiles/src.dir/Buzzer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer.dir/build.make CMakeFiles/Buzzer.dir/Buzzer.cpp.s
 .PHONY : Buzzer.cpp.s
 
 # Help Target
@@ -177,7 +177,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... src"
+	@echo "... Buzzer"
 	@echo "... Buzzer.o"
 	@echo "... Buzzer.i"
 	@echo "... Buzzer.s"

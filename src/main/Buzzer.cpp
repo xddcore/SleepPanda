@@ -12,6 +12,8 @@
 #include "config.h"
 #include "stdio.h"
 
+#include <pigpio.h>
+
 #define CLASS_DEBUG 1
 
 class Buzzer{
