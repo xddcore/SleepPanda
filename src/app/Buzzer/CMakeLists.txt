@@ -8,6 +8,6 @@ add_compile_options(-std=c++11 -Wall -Wconversion -Wextra -pedantic)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Buzzer Buzzer.cpp ../config/config.h Buzzer.h)
+add_executable(Buzzer Buzzer.cpp ../Config/Config.h Buzzer.h)
 
 target_link_libraries(Buzzer pigpio)

@@ -2,26 +2,19 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-02-07 12:52:10
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-12 16:58:53
+ * @LastEditTime: 2023-02-12 19:19:53
  * @FilePath: /SleepPanda/src/app/Buzzer/Buzzer.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
  */
 #include <iostream>
-#include "Buzzer.h"
-#include "../config/config.h"
 #include "stdio.h"
 
+#include "Buzzer.h"
+#include "../Config/Config.h"
 #include <pigpio.h>
 
 #define UNIT_TEST 1
-
-class Buzzer{
-    public:
-    Buzzer();
-    ~Buzzer();
-    int Buzzer_Contorl(unsigned int Buzzer_OnOff);
-};
 
 //蜂鸣器构造函数
 Buzzer::Buzzer() {
