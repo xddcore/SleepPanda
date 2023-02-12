@@ -14,7 +14,7 @@
 
 #include <pigpio.h>
 
-#define CLASS_DEBUG 1
+#define UNIT_TEST 1
 
 class Buzzer{
     public:
@@ -25,58 +25,73 @@ class Buzzer{
 
 //蜂鸣器构造函数
 Buzzer::Buzzer() {
-#if(DEBUG==0)
-    if (gpioInitialise() < 0)
+#if(RPI_DEBUG==1)
+    int err;
+    err = gpioInitialise();    
+    if (err < 0)
     {
-        printf("Run: Buzzer pigpio initialisation failed.\r\n");
-   // pigpio initialisation failed.
+        printf("RPI DEBUG: Buzzer pigpio initialisation failed.\r\n");
+        // pigpio initialisation failed.
     }
     else
     {
-        printf("Run: Buzzer pigpio initialised okay.\r\n");
-   // pigpio initialised okay.
+        printf("RPI DEBUG: Buzzer pigpio initialised okay.\r\n");
+        // pigpio initialised okay.
+	// set gpio6 mode to output
+	gpioSetMode(Buzzer_GPIO_Pin, PI_OUTPUT); // Set GPIO6 as output.
     }
     //此处添加蜂鸣器Buzzer_GPIO_Pin 6 的初始化代码
 #else
-    printf("DEBUG: Buzzer Init.\r\n");
+    printf("LOGIC DEBUG: Buzzer Init.\r\n");
 #endif
 }
 
 //蜂鸣器析构函数
 Buzzer::~Buzzer() {
-#if(DEBUG==0)
+#if(RPI_DEBUG==1)
     //此处添加蜂鸣器GPIO资源释放代码(程序执行结束后自动释放)
+    gpioTerminate();
+    printf("RPI DEBUG: Buzzer Delete.\r\n");
 #else
-    printf("DEBUG: Buzzer Delete.\r\n");
+    printf("LOGIC DEBUG: Buzzer Delete.\r\n");
 #endif
 }
 
 //蜂鸣器开关状态控制函数
 int Buzzer::Buzzer_Contorl(unsigned int Buzzer_OnOff) {
-#if(DEBUG==0)
+#if(RPI_DEBUG==1)
     if(Buzzer_OnOff==Buzzer_On){
         //此处添加蜂鸣器触发代码Buzzer_On_Level
+	gpioWrite(Buzzer_GPIO_Pin, Buzzer_On_Level); // Set GPIO6 low.
+	printf("RPI DEBUG: Buzzer On.\r\n");
     }
     else if(Buzzer_OnOff==Buzzer_Off){
         //此处添加蜂鸣器关闭代码Buzzer_Off_Level
+	gpioWrite(Buzzer_GPIO_Pin, Buzzer_Off_Level); // Set GPIO6 high.
+	printf("RPI DEBUG: Buzzer Off.\r\n");
     }
     return 0;
 #else
     if(Buzzer_OnOff==Buzzer_On){
-        printf("DEBUG: Buzzer On.\r\n");
+        printf("LOGIC DEBUG: Buzzer On.\r\n");
     }
     else if(Buzzer_OnOff==Buzzer_Off){
-        printf("DEBUG: Buzzer Off.\r\n");
+        printf("LOGIC DEBUG: Buzzer Off.\r\n");
     }
     return 0;
 #endif
 }
 
-#if(CLASS_DEBUG==1)
-//以下代码用于基本逻辑测试
+#if(UNIT_TEST==1)
+
+#include <unistd.h>
+//The following code is used for the unit test of the buzzer.
+//What you will see: The buzzer turns on for one second and then turns off.
+
 int main() {
     Buzzer MyBuzzer;
     MyBuzzer.Buzzer_Contorl(Buzzer_On);
+    sleep(1);
     MyBuzzer.Buzzer_Contorl(Buzzer_Off);
     return 0;
 }

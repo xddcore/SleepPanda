@@ -17,6 +17,8 @@ stdio.h
 /home/pi/xddcore/SleepPanda/src/app/Buzzer/stdio.h
 pigpio.h
 -
+unistd.h
+-
 
 /home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.h
 

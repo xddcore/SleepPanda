@@ -17,6 +17,8 @@
 #ifndef SRC_CONFIG_H
 #define SRC_CONFIG_H
 
-#define DEBUG 0
+// RPI_DEBUG == 1: RPI 4b Run code
+// RPI_DEBUG == 0 : Any computer Run code(test code logic)
+#define RPI_DEBUG 1
 
 #endif //SRC_CONFIG_H
