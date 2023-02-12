@@ -2,14 +2,11 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-02-12 12:50:52
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-12 19:20:15
+ * @LastEditTime: 2023-02-12 19:21:28
  * @FilePath: /SleepPanda/src/app/Buzzer/Buzzer.h
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
  */
-//
-// Created by 董程森 on 2023/2/12.
-//
 
 #ifndef SRC_BUZZER_H
 #define SRC_BUZZER_H
