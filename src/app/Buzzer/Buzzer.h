@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-02-12 12:50:52
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-12 19:57:25
+ * @LastEditTime: 2023-02-12 20:01:14
  * @FilePath: /SleepPanda/src/app/Buzzer/Buzzer.h
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -23,7 +23,7 @@ struct Buzzer_Settings {
 
 class Buzzer{
     public:
-    Buzzer();
+    Buzzer(Buzzer_Settings My_Buzzer_Settings);
     ~Buzzer();
     int Buzzer_Contorl(unsigned int Buzzer_OnOff);
 };
