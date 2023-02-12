@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/xddcore/SleepPanda/src/main/Buzzer.cpp" "/home/pi/xddcore/SleepPanda/src/main/build/CMakeFiles/Buzzer.dir/Buzzer.cpp.o"
+  "/home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.cpp" "/home/pi/xddcore/SleepPanda/src/app/Buzzer/build/CMakeFiles/Buzzer.dir/Buzzer.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
