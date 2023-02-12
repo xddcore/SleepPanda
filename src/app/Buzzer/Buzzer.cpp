@@ -9,7 +9,7 @@
  */
 #include <iostream>
 #include "Buzzer.h"
-#include "config.h"
+#include "../config/config.h"
 #include "stdio.h"
 
 #include <pigpio.h>

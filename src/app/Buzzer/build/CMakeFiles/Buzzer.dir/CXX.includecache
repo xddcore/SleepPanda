@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/xddcore/SleepPanda/src/main/Buzzer.cpp
+/home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.cpp
 iostream
 -
 Buzzer.h
-/home/pi/xddcore/SleepPanda/src/main/Buzzer.h
-config.h
-/home/pi/xddcore/SleepPanda/src/main/config.h
+/home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.h
+../config/config.h
+/home/pi/xddcore/SleepPanda/src/app/config/config.h
 stdio.h
-/home/pi/xddcore/SleepPanda/src/main/stdio.h
+/home/pi/xddcore/SleepPanda/src/app/Buzzer/stdio.h
 pigpio.h
 -
 
-/home/pi/xddcore/SleepPanda/src/main/Buzzer.h
+/home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.h
 
-/home/pi/xddcore/SleepPanda/src/main/config.h
+/home/pi/xddcore/SleepPanda/src/app/config/config.h
 
