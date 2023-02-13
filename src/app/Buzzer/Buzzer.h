@@ -2,14 +2,14 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-02-12 12:50:52
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-12 20:05:05
+ * @LastEditTime: 2023-02-13 10:11:35
  * @FilePath: /SleepPanda/src/app/Buzzer/Buzzer.h
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
  */
 
-#ifndef SRC_BUZZER_H
-#define SRC_BUZZER_H
+#ifndef _BUZZER_H
+#define _BUZZER_H
 
 
 struct Buzzer_Settings {
@@ -31,4 +31,4 @@ class Buzzer{
     Buzzer_Settings My_Buzzer_Settings;
 };
 
-#endif //SRC_BUZZER_H
+#endif //_BUZZER_H
