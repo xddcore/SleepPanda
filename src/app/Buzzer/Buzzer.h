@@ -16,6 +16,11 @@ struct Buzzer_Settings {
     unsigned int Buzzer_GPIO_Pin = 6; //GPIO6(PIN31) will be used
     unsigned int Buzzer_On_Level = 0; //蜂鸣器低电平触发
     unsigned int Buzzer_Off_Level = 1; //蜂鸣器高电平不触发
+
+    /**
+	 * If set to true the pigpio will be initialised
+	 **/
+	bool initPIGPIO = true;
 };
 
 #define Buzzer_On 1

@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-02-07 12:52:10
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-12 20:04:15
+ * @LastEditTime: 2023-02-13 15:06:12
  * @FilePath: /SleepPanda/src/app/Buzzer/Buzzer.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -19,20 +19,25 @@
 //蜂鸣器构造函数
 Buzzer::Buzzer(Buzzer_Settings buzzer_settings) {
 #if(RPI_DEBUG==1)
-    int err;
-    My_Buzzer_Settings = buzzer_settings;
-    err = gpioInitialise();    
-    if (err < 0)
-    {
-        printf("RPI DEBUG: Buzzer pigpio initialisation failed.\r\n");
-        // pigpio initialisation failed.
-    }
-    else
-    {
-        printf("RPI DEBUG: Buzzer pigpio initialised okay.\r\n");
-        // pigpio initialised okay.
-	// set gpio6 mode to output
-	gpioSetMode(My_Buzzer_Settings.Buzzer_GPIO_Pin, PI_OUTPUT); // Set GPIO6 as output.
+    if (buzzer_settings.initPIGPIO) {
+        int cfg = gpioCfgGetInternals();
+        cfg |= PI_CFG_NOSIGHANDLER;
+        gpioCfgSetInternals(cfg);
+        int err;
+        My_Buzzer_Settings = buzzer_settings;
+        err = gpioInitialise();    
+        if (err < 0)
+        {
+            printf("RPI DEBUG: Buzzer pigpio initialisation failed.\r\n");
+            // pigpio initialisation failed.
+        }
+        else
+        {
+            printf("RPI DEBUG: Buzzer pigpio initialised okay.\r\n");
+            // pigpio initialised okay.
+	        // set gpio6 mode to output
+	        gpioSetMode(My_Buzzer_Settings.Buzzer_GPIO_Pin, PI_OUTPUT); // Set GPIO6 as output.
+        }
     }
     //此处添加蜂鸣器Buzzer_GPIO_Pin 6 的初始化代码
 #else
