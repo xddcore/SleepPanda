@@ -80,6 +80,7 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 
 #### Yihan Wang
 - [ ] 同步更新README_ZH.md&README.md的内容(每周一次)
+- [ ] 同步更新会议记录meeting的内容（每周一次）
 - [x] 创建Youtube频道，用于推广SleepPanda项目
 - [x] Pitch Session PPT幻灯片初稿
 - [x] 制作成本核算&原件选行Excel表格
@@ -88,7 +89,8 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 
 #### Rui Liu
 - [ ] 同步更新README_ZH.md&README.md的内容(每周一次)
-- [x] 同步更新会议记录的内容(每周一次)
+- [ ] 同步更新会议记录meeting的内容（每周一次）
+- [ ] 按照人员分类，创造甘特图安排任务
 - [x] 设计SleepPanda Logo
 - [x] Pitch Session PPT幻灯片终稿&pitch session演讲准备
 - [x] 制作成本核算&原件选行Excel表格
@@ -284,7 +286,8 @@ export LD_LIBRARY_PATH=../../../tools/gtest/ubuntu22.04_64bit/lib/:$LD_LIBRARY_P
 
 ###### 2.2.2.1.2 For Raspberry Pi OS 32bit**
 
-gtest动态链接库路径`SleepPanda/tools/gtest/rpios_32bit/lib/`, gtest头文件路径`SleepPanda/tools/gtest/rpios_32bit/include/`
+gtest动态链接库路径`SleepPanda/tools/gtest/rpios_32bit/lib/`
+gtest头文件路径`SleepPanda/tools/gtest/rpios_32bit/include/`
 
 * 使用g++进行编译(两种编译方式二选一，也可都尝试一下)
 ```
