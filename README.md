@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-15 14:12:01
+ * @LastEditTime: 2023-02-15 14:13:39
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -54,7 +54,7 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 
 ## Project Development Planning
 
->[Click here to view the minutes of the development meeting](./doc/meeting/)
+>[Click here to view the minutes of the development meeting](./doc/meeting/)  
 >[Click me to visit the Gantt chart](./doc/project%20management/)
 
 #### Global
