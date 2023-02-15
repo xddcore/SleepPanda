@@ -1,0 +1,3 @@
+/home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/CMakeFiles/rebuild_cache.dir
+/home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/CMakeFiles/edit_cache.dir
+/home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/CMakeFiles/SoundSensor.dir
