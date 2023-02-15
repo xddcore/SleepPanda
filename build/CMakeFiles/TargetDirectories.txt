@@ -1,0 +1,3 @@
+/home/pi/xddcore/SleepPanda/build/CMakeFiles/rebuild_cache.dir
+/home/pi/xddcore/SleepPanda/build/CMakeFiles/edit_cache.dir
+/home/pi/xddcore/SleepPanda/build/CMakeFiles/Buzzer.dir

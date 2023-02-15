@@ -1,8 +1,8 @@
 <!--
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
- * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-15 15:19:39
+ * @LastEditors: Yihan Wang yihanwangg@163.com
+ * @LastEditTime: 2023-02-15 21:08:34
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -574,7 +574,7 @@ DO在声强达到阈值时输出低电平和高电平信号
 
 **Unit Test DEMO**
 
-您将看到的现象: 制造声音，声音传感器DO引脚电平将由高电平跳变为低电平(下降沿中断)，触发声音事件，屏幕将打印`Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.`。 
+您将看到的现象: 制造声音，声音传感器DO引脚电平将由低电平跳变为高电平(上升沿中断)，触发声音事件，屏幕将打印`Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.`。 
 
 ```
 #include "SoundSensor.h"

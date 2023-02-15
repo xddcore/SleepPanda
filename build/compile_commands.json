@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/pi/xddcore/SleepPanda/build",
+  "command": "/usr/bin/c++   -g -std=c++11 -Wall -Wconversion -Wextra -pedantic -std=gnu++11 -o CMakeFiles/Buzzer.dir/Buzzer.cpp.o -c /home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.cpp",
+  "file": "/home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.cpp"
+}
+]

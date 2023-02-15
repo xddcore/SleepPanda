@@ -2,7 +2,7 @@
  * @Author: Yihan Wang yihanwangg@163.com
  * @Date: 2023-02-13 10:03:05
  * @LastEditors: Yihan Wang yihanwangg@163.com
- * @LastEditTime: 2023-02-15 12:25:43
+ * @LastEditTime: 2023-02-15 20:58:37
  * @FilePath: /SleepPanda/src/app/SoundSensor/SoundSensor.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -84,7 +84,7 @@ class Rpi_SoundSensor : public SoundSensor {
 
 int main() {
     SoundSensor_Settings My_SoundSensor_Settings;
-    My_SoundSensor_Settings.Trigger_Method = FALLING_EDGE; //when sound appears
+    My_SoundSensor_Settings.Trigger_Method = RISING_EDGE; //when sound appears
     Rpi_SoundSensor My_Rpi_SoundSensor(My_SoundSensor_Settings);
     getchar();
     return 0;

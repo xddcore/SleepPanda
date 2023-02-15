@@ -1,0 +1,6 @@
+{
+    "cmake.sourceDirectory": "${workspaceFolder}/src/app/Buzzer",
+    "files.associations": {
+        "iostream": "cpp"
+    }
+}

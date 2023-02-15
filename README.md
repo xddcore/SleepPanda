@@ -1,8 +1,8 @@
 <!--
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
- * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-15 15:19:27
+ * @LastEditors: Yihan Wang yihanwangg@163.com
+ * @LastEditTime: 2023-02-15 21:08:54
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -574,7 +574,7 @@ Sensitivity is adjustable by adjusting the potentiometer
 
 **Unit Test DEMO**
 
-What you will see: Make a sound, the DO pin level of the sound sensor will jump from high level to low level (falling edge interrupt), trigger a sound event, and the screen will print `Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered .`.  
+What you will see: Make a sound, the DO pin level of the sound sensor will jump from low level to high level (rising edge interrupt), trigger a sound event, and the screen will print `Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered .`. 
 
 ```
 #include "SoundSensor.h"
