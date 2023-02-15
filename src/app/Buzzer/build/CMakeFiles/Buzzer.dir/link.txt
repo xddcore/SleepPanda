@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Buzzer.dir/Buzzer.cpp.o -o Buzzer  -lpigpio 

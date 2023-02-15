@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/xddcore/SleepPanda/src/app/Config/Config.h
+
+/home/pi/xddcore/SleepPanda/src/app/SoundSensor/SoundSensor.cpp
+iostream
+-
+stdio.h
+/home/pi/xddcore/SleepPanda/src/app/SoundSensor/stdio.h
+SoundSensor.h
+/home/pi/xddcore/SleepPanda/src/app/SoundSensor/SoundSensor.h
+../Config/Config.h
+/home/pi/xddcore/SleepPanda/src/app/Config/Config.h
+pigpio.h
+-
+unistd.h
+-
+
+/home/pi/xddcore/SleepPanda/src/app/SoundSensor/SoundSensor.h
+

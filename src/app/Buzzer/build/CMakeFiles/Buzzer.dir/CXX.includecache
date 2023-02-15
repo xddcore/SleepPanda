@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.cpp
+iostream
+-
+stdio.h
+/home/pi/xddcore/SleepPanda/src/app/Buzzer/stdio.h
+Buzzer.h
+/home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.h
+../Config/Config.h
+/home/pi/xddcore/SleepPanda/src/app/Config/Config.h
+pigpio.h
+-
+unistd.h
+-
+
+/home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.h
+
+/home/pi/xddcore/SleepPanda/src/app/Config/Config.h
+

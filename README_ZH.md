@@ -1,8 +1,8 @@
 <!--
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
- * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-07 12:50:52
+ * @LastEditors: Yihan Wang yihanwangg@163.com
+ * @LastEditTime: 2023-02-15 13:11:01
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -14,6 +14,11 @@
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)  
 
 ![GPL V3 Licence](https://img.shields.io/github/license/xddcore/SleepPanda)
+
+![Youtube](https://img.shields.io/youtube/channel/subscribers/UCP2-6ywKLy2js1dzJQ5hR_g?style=social)
+
+>[点我访问Youtube频道](https://www.youtube.com/@SleepPanda666)
+
 
 Change README Language: [English](./README.md) ｜ [中文](./README_ZH.md)
 
@@ -61,8 +66,7 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 
 #### Chengsen Dong
 - [ ] 更新README文档(随着开发过程同步更新)
-- [ ] 蜂鸣器驱动开发
-- [ ] Sound Sensor驱动开发
+- [x] 蜂鸣器驱动开发
 - [ ] MAX30101驱动开发
 - [ ] MLX90640驱动开发
 - [ ] Tensorflow Lite神经网络推理框架(C++版本)
@@ -76,12 +80,17 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 
 #### Yihan Wang
 - [ ] 同步更新README_ZH.md&README.md的内容(每周一次)
+- [ ] 同步更新会议记录meeting的内容（每周一次）
+- [x] 创建Youtube频道，用于推广SleepPanda项目
 - [x] Pitch Session PPT幻灯片初稿
 - [x] 制作成本核算&原件选行Excel表格
+- [x] Sound Sensor驱动开发
 - [ ] To do later...
 
 #### Rui Liu
 - [ ] 同步更新README_ZH.md&README.md的内容(每周一次)
+- [ ] 同步更新会议记录meeting的内容（每周一次）
+- [ ] 按照人员分类，创造甘特图安排任务
 - [x] 设计SleepPanda Logo
 - [x] Pitch Session PPT幻灯片终稿&pitch session演讲准备
 - [x] 制作成本核算&原件选行Excel表格
@@ -277,7 +286,8 @@ export LD_LIBRARY_PATH=../../../tools/gtest/ubuntu22.04_64bit/lib/:$LD_LIBRARY_P
 
 ###### 2.2.2.1.2 For Raspberry Pi OS 32bit**
 
-gtest动态链接库路径`SleepPanda/tools/gtest/rpios_32bit/lib/`, gtest头文件路径`SleepPanda/tools/gtest/rpios_32bit/include/`
+gtest动态链接库路径`SleepPanda/tools/gtest/rpios_32bit/lib/`
+gtest头文件路径`SleepPanda/tools/gtest/rpios_32bit/include/`
 
 * 使用g++进行编译(两种编译方式二选一，也可都尝试一下)
 ```
@@ -382,7 +392,11 @@ ls install/
 # include lib
 
 ```
-### 2.3 软件架构
+### 2.3 硬件架构
+
+![Hardware_Architecture](./img/Hardware_Architecture.png)
+
+### 2.4 软件架构
 
 ![Software_Architecture](./img/Software_Architecture.png) 
 
@@ -396,13 +410,23 @@ ls install/
 |2|系统调用|-|由Linux内核提供|
 |1(Bottom)|Linux内核模块|-|分配中断|
 
-### 2.4 传感器&执行器驱动开发
+### 2.5 传感器&执行器驱动开发
 
 >Ref:  
 >https://berndporr.github.io/realtime_cpp_coding/  
 >https://github.com/berndporr/realtime_cpp_coding  
 
 **在开始之前**，你需要执行以下命令，以安装必须的依赖。在此，对pigpio库(https://github.com/joan2937/pigpio)的开发者表示由衷的感谢。
+
+**Raspberry Pi OS安装方法**
+
+运行如下命令，即可一键安装piopig
+
+```
+sudo apt-get install libpigpio-dev
+```
+
+**其他操作系统安装方法**
 
 ```
 apt-get install cmake
@@ -497,6 +521,21 @@ pigpio initialisation failed (-2003).
 ```
 Fixup: 因为pigpio依赖BCM2711芯片硬件功能实现超低延迟的DMA操作，而qemu的DMA无法支持这一操作，所以在QEMU环境下，无法完成pigpio仿真。
 
-#### 2.4.1 蜂鸣器
+#### 2.5.1 蜂鸣器
 
+#### 2.5.2 声音传感器
+>Author: Yihan Wang  
+
+**规格：**
+工作电压：DC 3.3V-5.5V  
+标称频率：40KHz  
+印刷电路板尺寸：35 x 15 毫米/1.38 x 0.59 英寸（长 x 宽）  
+固定孔径：3mm  
+主芯片：LM393，驻极体电容麦克风  
+输出形式：数字和模拟输出  
+
+**笔记：**
+AO 输出麦克风的实时电压信号。  
+DO在声强达到阈值时输出低电平和高电平信号  
+灵敏度可通过调节电位器来调节  
 

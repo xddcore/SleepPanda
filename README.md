@@ -1,8 +1,8 @@
 <!--
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
- * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-03 06:28:58
+ * @LastEditors: Yihan Wang yihanwangg@163.com
+ * @LastEditTime: 2023-02-15 13:09:57
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -14,6 +14,11 @@
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/ )
 
 ![GPL V3 License](https://img.shields.io/github/license/xddcore/SleepPanda)
+
+![Youtube](https://img.shields.io/youtube/channel/subscribers/UCP2-6ywKLy2js1dzJQ5hR_g?style=social)
+
+>[Click me to visit the Youtube channel](https://www.youtube.com/@SleepPanda666)
+
 
 Change README Language: [English](./README.md) ｜ [Chinese](./README_ZH.md)
 
@@ -49,6 +54,8 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 
 ## Project Development Planning
 
+>[Click here to view the minutes of the development meeting](./doc/meeting/)
+
 #### Global
 - [x] Build the Github warehouse & README document, complete the basic development environment configuration, fix the Linux kernel source code, and test the compilation of the kernel module.
 - [x] build dev branch
@@ -59,8 +66,7 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 
 #### Chengsen Dong
 - [ ] Update the README document (synchronized with the development process)
-- [ ] Buzzer driver development
-- [ ] Sound Sensor driver development
+- [x] Buzzer driver development
 - [ ] MAX30101 driver development
 - [ ] MLX90640 driver development
 - [ ] Tensorflow Lite neural network reasoning framework (C++ version)
@@ -74,12 +80,17 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 
 #### Yihan Wang
 - [ ] Synchronously update the contents of README_ZH.md & README.md (once a week)
+- [ ] Simultaneous updates of the minutesmeeting (once a week)
+- [x] Creation of a Youtube channel to promote the SleepPanda project
 - [x] Pitch Session PPT slide draft
 - [x] Make cost accounting & original row selection Excel table
+- [x] Sound Sensor Driver Development
 - [ ] To do later...
 
 #### Rui Liu
 - [ ] Synchronously update the contents of README_ZH.md & README.md (once a week)
+- [ ] Simultaneous updates of the minutesmeeting (once a week)
+- [ ] Create Gantt charts to organise tasks according to the classification of people
 - [x] Design SleepPanda Logo
 - [x] Pitch Session PPT slide final draft & pitch session speech preparation
 - [x] Make cost accounting & original row selection Excel table
@@ -95,6 +106,7 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 
 ### 1.1 Software and hardware version
 
+0. **C++11 Standard Template Library**
 1. Raspberry Pi 4B (4GB/8GB)｜bcm2711
 2. Linux distribution: Ubuntu Desktop 22.04.01 LTS (64Bit)
 3. Kernel version: 5.15.0-1023-raspi | Retrieve all Linux kernel `apt-cache search linux-raspi-headers`
@@ -132,10 +144,37 @@ sudo apt-get install ssh vim gcc g++ screen htop git make
 6. At this point, the Raspberry Pi is completely separated from the keyboard, mouse and monitor, and can be operated remotely by other computers
 7. Use Termius software to SSH to connect to the LAN IP of the Raspberry Pi. Username: `ubuntu` Password: `ubuntu`
 
-### 1.3 Build cross-compilation environment & local compilation environment
+### 1.3 Take the Raspberry Pi off the keypad & monitor (For Raspberry Pi OS)
+
+0. Software to be installed on your Windows PC: `1.Termius (for SSH)` `2.VNC Viewer (for remote desktop, download link https://www.realvnc.com/en/connect/download/viewer/)` `3.Visual Studio code (Universal Editor)` `Raspberry Pi Image (image burning) ` `5.Github Desktop(Optional)`
+1. Burn the `Raspberry Pi OS(32bit)` image to the SD card using Raspberry Pi Image (Raspberry Pi OS image:`https://www.raspberrypi.com/software/operating-systems/`)
+>Before burning, click on the gear button in the bottom right hand corner to configure the following:
+> 1. check Set hostname -> raspberrypi.local
+> 2. check Enable SSH service -> Login with password
+> 3. Check Set username and password -> Username: pi | Password: pi
+> 4. Click Save
+2. Connect the Raspberry Pi to the power supply and start the Raspberry Pi. Wait for a while and then connect to the Raspberry Pi via SSH with `termius` software. 
+3. Enter the `sudo raspi-config` command and use the **direction keys** to configure the following:
+> 1. Set the boot option to automatically log into the desktop. `System Options -> Boot/Auto Login -> Desktop Autologin`
+> 2. Open VNC Remote Desktop. `Interface Options -> VNC -> YES` 
+> 3. Open the SPI port. ` Interface Options -> SPI -> YES` 
+> 4. Open the IIC port. `Interface Options -> I2C -> YES` 
+> 5. Select Finish to save the settings. 
+4. Enter the `reboot` command to reboot the Raspberry Pi. (Wait a while after performing this step) 
+5. At this point, the Raspberry Pi is ready to be accessed via `VNC Viewer` remote desktop.
+>The corresponding VNC package on the Raspberry Pi is `realvnc-vnc-server` (Raspberry Pi OS comes with it, no need to install it)
+6. packages to be installed: ssh vim gcc g++ screen htop git make, execute the following command:
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install ssh vim gcc g++ screen htop git make
+```
+4. Enter the `reboot` command to reboot the Raspberry Pi. At this point, the basic environment configuration is complete.
+
+### 1.4 Build cross-compilation environment & local compilation environment
 Considering that the computing power of the Raspberry Pi is insufficient, using a server will significantly improve compilation efficiency, version control, code backup, and collaborative work. We use a centralized server (`I9-12900k+RTX3090TI+32GB DDR4+512G SSD`) during the development of this project, and build a cross-compilation environment in the server.
 
-#### 1.3.1 Cross-compilation environment (server)
+#### 1.4.1 Cross-compilation environment (server)
 
 1. Install the aarch64-linux-gnu-cross-compilation toolchain, and other compilation tools required to compile the linux kernel
 2. Get the Raspberry Pi kernel source code
@@ -149,7 +188,7 @@ apt-get source linux-image-$(uname -r) #5.15.0-1023-raspi
 
 ![helloworld_modinfo](./img/helloworld_modinfo.png)
 
-#### 1.3.2 Local compilation environment (Raspberry Pi)
+#### 1.4.2 Local compilation environment (Raspberry Pi)
 
 1. Compile `helloworld` module code
 
@@ -169,9 +208,11 @@ Q2: When `sudo apt-get upgrade` is executed, some packs (such as the linux kerne
 > `sudo apt-get --with-new-pkgs upgrade`
 
 
-### 1.4 Sensors & Actuators & Servers
+### 1.5 Sensors & Actuators & Servers
 
 >[Click me to download BOM](./doc/BOM/SleepPanda_BOM.xlsx)
+
+>[Click me to download datasheet](./doc/datasheet/)
 
 **sensor**
 1. Speaker & Microphone: WM8960(Control:IIC;Audio:IIS)+Sound Sensor(Voltage Comparator Dout)-✅
@@ -199,6 +240,12 @@ Facing the world, it is responsible for storing user data and undertaking visits
 
 `git clone https://github.com/xddcore/SleepPanda.git`
 
+**Note: If you are a developer, remember to switch to the dev branch with the following command:**
+```
+git checkout dev
+git branch -l
+```
+
 ### 2.2 cpp unit testing framework
 
 #### 2.2.1 cppunit
@@ -215,7 +262,9 @@ sudo apt install -y libcppunit-dev
 > So this project uses google test (gtest) for unit testing
 
 #### 2.2.2 google test(gtest)
-* Directly load the compiled dynamic link library file
+##### 2.2.2.1 Directly load the compiled dynamic link library file
+
+###### 2.2.2.1.1 For Ubuntu Desktop 22.04 64bit
 
 gtest dynamic link library path `SleepPanda/tools/gtest/lib/`, gtest header file path `SleepPanda/tools/gtest/include/`
 
@@ -235,7 +284,92 @@ export LD_LIBRARY_PATH=../../../tools/gtest/lib/:$LD_LIBRARY_PATH
 ./gtest_demo
 ```
 
-* Compile the dynamic link library file by yourself through the google test source code
+###### 2.2.2.1.2 For Raspberry Pi OS 32bit**
+
+gtest dynamic link library path`SleepPanda/tools/gtest/rpios_32bit/lib/`
+gtest header file path`SleepPanda/tools/gtest/rpios_32bit/include/`
+
+* Compile using g++ (choose one of the two compilation methods, or try both)
+```
+# g++ build demo
+
+# cd to workscape
+cd ./SleepPanda/src/app/gtest_demo
+
+# build code
+g++ -std=c++14 ./gtest_demo.cpp -I ../../../tools/gtest/rpios_32bit/include/ ../../../tools/gtest/rpios_32bit/lib/libgtest.so -lpthread -o gtest_demo
+
+# Export the gtest dynamic link library to the system environment variable (temporary)
+export LD_LIBRARY_PATH=../../../tools/gtest/rpios_32bit/lib/:$LD_LIBRARY_PATH
+
+# run gtest demo
+./gtest_demo
+```
+
+* Compile with cmake (choose one of the two compilation methods, or try both)
+```
+# g++ build demo
+
+# cd to workscape
+cd ./SleepPanda/src/app/gtest_demo/build
+
+# build code
+cmake .. && make
+
+# Export the gtest dynamic link library to the system environment variable (temporary)
+export LD_LIBRARY_PATH=../../../tools/gtest/rpios_32bit/lib/:$LD_LIBRARY_PATH
+
+# run gtest demo
+./gtest_demo
+```
+**Error: When compiling with cmake, the following error may occur:**
+```
+CMake Error: The source "/home/pi/xddcore/SleepPanda/src/app/gtest_demo/CMakeLists.txt" does not match the source "/home/ubuntu/xddcore/SleepPanda/src/app/gtest_demo/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.
+```
+**Solution:**
+```
+# remove /build dir
+rm -rf build/
+
+# create new /build dir
+mkdir build
+
+# go to build dir
+cd build
+
+# build code
+cmake .. && make
+
+# run gtest demo code
+cd .. && ./gtest_demo
+
+```
+
+Theoretically, you will get the following running result:
+```
+./gtest_demo
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from FooTest
+[ RUN      ] FooTest.test_add
+[       OK ] FooTest.test_add (0 ms)
+[ RUN      ] FooTest.test_minus
+./gtest_demo.cpp:54: Failure
+Expected equality of these values:
+  foo->GetNum()
+    Which is: 1
+  0
+[  FAILED  ] FooTest.test_minus (0 ms)
+[----------] 2 tests from FooTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] FooTest.test_minus
+```
+
+##### 2.2.2.2 Compile the dynamic link library file by yourself through the google test source code
 ```
 # install dependencies
 sudo apt-get install cmake
@@ -258,7 +392,12 @@ ls install /
 # include lib
 
 ```
-### 2.3 Software Architecture
+
+### 2.3 Hardware Architecture
+
+![Hardware_Architecture](./img/Hardware_Architecture.png)
+
+### 2.4 Software Architecture
 
 ![Software_Architecture](./img/Software_Architecture.png) 
 
@@ -267,19 +406,28 @@ ls install /
 |7(Top)|GUI Interface Layer(QT)|-|Interaction with users|
 |6|C++ Logic Layer|-|Opencv, TensorFlow Lite, MQTT Client, etc.|
 |5|Hardware Driver Layer (Sensor Class)|-|Configuration/Driver of Hardware (Sensor, etc.)|
-|4|Hardware Isolation Layer (Rpi4b Class)|-|Isolate software logic and hardware dependencies, the purpose is to run/test the upper layer code independently of the underlying hardware dependencies (such as pigpio). |
+|~~4~~|~~Hardware Isolation Layer (Rpi4b Class)~~|-|~~Isolate software logic and hardware dependencies, the purpose is to run/test the upper layer code independently of the underlying hardware dependencies (such as pigpio).~~|
 |3|Pigpiod Nested Word Communication Process|-|Drive rpi4b(bcm2711) register|
 |2|System Call|-|Provided by the linux kernel|
 |1(Bottom)|Linux Kernel Modules|-|Allocate interrupt|
 
-
-### 2.4 Sensor & Actuator Driver Development
+### 2.5 Sensor & Actuator Driver Development
 
 >Ref:
 > https://berndporr.github.io/realtime_cpp_coding/
 > https://github.com/berndporr/realtime_cpp_coding
 
 **Before you start**, you need to execute the following commands to install the necessary dependencies. Here, I would like to express my sincere thanks to the developers of the pigpio library (https://github.com/joan2937/pigpio).
+
+**How to install Raspberry Pi OS**
+
+Run the following command to install piopig with one click
+
+```
+sudo apt-get install libpigpio-dev
+```
+
+**Other operating system installation methods**
 
 ```
 apt-get install cmake
@@ -310,6 +458,27 @@ sudo killall pigpiod
 # Then you should get 'pigpio initialisation failed (-2003).', because pigpio daemon not running.
 ```
 >Note: Every time you use pigpio, you should first run `sudo pigpiod` to start the daemon.
+
+Theoretically, you will get the following running result:
+```
+Testing pigpio C I/F
+pigpio version 79.
+Hardware revision 13644052.
+Mode/PUD/read/write tests.
+TEST  1.1  PASS (set mode, get mode: 0)
+TEST  1.2  PASS (set pull up down, read: 1)
+TEST  1.3  PASS (set pull up down, read: 0)
+TEST  1.4  PASS (write, get mode: 1)
+TEST  1.5  PASS (read: 0)
+TEST  1.6  PASS (write, read: 1)
+PWM dutycycle/range/frequency tests.
+TEST  2.1  PASS (set PWM range, set/get PWM frequency: 10)
+TEST  2.2  PASS (get PWM dutycycle: 0)
+TEST  2.3  PASS (set PWM dutycycle, callback: 0)
+TEST  2.4  PASS (get PWM dutycycle: 12
+
+...etc
+```
 
 ---
 Q1: ERROR: **initAllocDMAMem: mbox open failed(No such device or address)**
@@ -353,4 +522,20 @@ pigpio initialisation failed (-2003).
 ```
 Fixup: Because pigpio relies on the BCM2711 chip hardware function to achieve ultra-low-latency DMA operations, and qemu's DMA cannot support this operation, so pigpio simulation cannot be completed in the QEMU environment.
 
-#### 2.4.1 Buzzer
+#### 2.5.1 Buzzer
+
+#### 2.5.2 Sound Sensor
+>Author: Yihan Wang
+
+**Specification:**
+Working Voltage: DC 3.3V-5.5V  
+Nominal Frequency: 40KHz  
+PCB Size: 35 x 15mm / 1.38 x 0.59" (LxW)  
+Fixed Hole Diameter: 3mm  
+Main chip:LM393, Electret condenser microphone  
+Output form: Digital and Analog Output  
+
+**Note:**
+AO outputs real-time voltage signal of the microphone.  
+DO outputs low and high lever signal when the sound intensity reaches a threshold  
+Sensitivity is adjustable by adjusting the potentiometer  

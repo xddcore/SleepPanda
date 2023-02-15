@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-25 20:43:04
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-01-25 20:46:02
+ * @LastEditTime: 2023-02-08 15:20:53
  * @FilePath: /SleepPanda/src/app/helloworld/helloworld_test.cpp
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -26,7 +26,7 @@ public:
  void tearDown(void) {}
 protected:
  void testHelloWorld(void) {
- system("./helloworld >nul 2>nul");
+ system("./helloworld >logg 2>logg");
  }
 };
 CPPUNIT_TEST_SUITE_REGISTRATION(Test);
