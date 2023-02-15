@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-15 13:41:15
+ * @LastEditTime: 2023-02-15 14:03:22
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -552,4 +552,36 @@ Output form: Digital and Analog Output
 **Note:**
 AO outputs real-time voltage signal of the microphone.  
 DO outputs low and high lever signal when the sound intensity reaches a threshold  
-Sensitivity is adjustable by adjusting the potentiometer  
+Sensitivity is adjustable by adjusting the potentiometer 
+
+
+#### 2.5.3 MAX30101
+>Author:Chengsen Dong
+
+>Ref:
+>1. https://github.com/pimoroni/max30105-python
+>2. https://shop.pimoroni.com/products/max30101-breakout-heart-rate-oximeter-smoke-sensor?variant=21482065985619
+
+#### 2.5.4 WM8960
+>Author:Chengsen Dong
+
+>Ref:
+>1. https://wiki.seeedstudio.com/ReSpeaker_2_Mics_Pi_HAT/
+>2. https://shop.pimoroni.com/products/respeaker-2-mics-phat?variant=49979573706
+
+#### 2.5.5 Ink Screen(SSD1608)
+>Author:
+
+>Ref:
+>1. https://github.com/pimoroni/inky
+>2. https://shop.pimoroni.com/products/inky-phat?variant=12549254905939
+
+#### 2.5.6 MLX90640
+>Author:
+
+>Ref:
+>1. https://github.com/pimoroni/mlx90640-library
+>2. https://shop.pimoroni.com/products/mlx90640-thermal-camera-breakout?variant=12536948654163
+
+#### 2.5.7 USB Camera
+>Author:Chengsen Dong
