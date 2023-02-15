@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-15 16:26:30
+ * @LastEditTime: 2023-02-15 16:29:50
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -99,6 +99,7 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 
 #### Hui Wang
 - [x] 查询所有传感器/芯片的数据手册，并上传至github仓库
+- [ ] MLX90640驱动开发
 - [ ] To do later...
 
 # 指南
