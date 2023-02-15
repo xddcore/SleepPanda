@@ -1,8 +1,8 @@
 /*
- * @Author: Chengsen Dong 1034029664@qq.com
+ * @Author: Yihan Wang yihanwangg@163.com
  * @Date: 2023-02-13 10:03:05
- * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-15 12:04:33
+ * @LastEditors: Yihan Wang yihanwangg@163.com
+ * @LastEditTime: 2023-02-15 12:25:43
  * @FilePath: /SleepPanda/src/app/SoundSensor/SoundSensor.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
