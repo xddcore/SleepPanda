@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-15 13:39:55
+ * @LastEditTime: 2023-02-15 13:41:10
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -395,6 +395,9 @@ ls install/
 ### 2.3 硬件架构
 
 ![Hardware_Architecture](./img/Hardware_Architecture.png)
+
+>Ref:https://abyz.me.uk/rpi/pigpio/index.html
+
 ![Pigpio-Rpi-PinMap](./img/pigpio_rpi_pinmap.jpeg)
 
 ### 2.4 软件架构
