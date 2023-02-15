@@ -1,8 +1,8 @@
 <!--
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
- * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-13 11:56:15
+ * @LastEditors: Yihan Wang yihanwangg@163.com
+ * @LastEditTime: 2023-02-15 13:11:01
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -84,7 +84,7 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 - [x] 创建Youtube频道，用于推广SleepPanda项目
 - [x] Pitch Session PPT幻灯片初稿
 - [x] 制作成本核算&原件选行Excel表格
-- [ ] Sound Sensor驱动开发
+- [x] Sound Sensor驱动开发
 - [ ] To do later...
 
 #### Rui Liu
@@ -523,4 +523,19 @@ Fixup: 因为pigpio依赖BCM2711芯片硬件功能实现超低延迟的DMA操作
 
 #### 2.5.1 蜂鸣器
 
+#### 2.5.2 声音传感器
+>Author: Yihan Wang  
+
+**规格：**
+工作电压：DC 3.3V-5.5V  
+标称频率：40KHz  
+印刷电路板尺寸：35 x 15 毫米/1.38 x 0.59 英寸（长 x 宽）  
+固定孔径：3mm  
+主芯片：LM393，驻极体电容麦克风  
+输出形式：数字和模拟输出  
+
+**笔记：**
+AO 输出麦克风的实时电压信号。  
+DO在声强达到阈值时输出低电平和高电平信号  
+灵敏度可通过调节电位器来调节  
 

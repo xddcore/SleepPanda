@@ -1,8 +1,8 @@
 <!--
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
- * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-03 06:28:58
+ * @LastEditors: Yihan Wang yihanwangg@163.com
+ * @LastEditTime: 2023-02-15 13:09:57
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -84,7 +84,7 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 - [x] Creation of a Youtube channel to promote the SleepPanda project
 - [x] Pitch Session PPT slide draft
 - [x] Make cost accounting & original row selection Excel table
-- [ ] Sound Sensor Driver Development
+- [x] Sound Sensor Driver Development
 - [ ] To do later...
 
 #### Rui Liu
@@ -392,7 +392,12 @@ ls install /
 # include lib
 
 ```
-### 2.3 Software Architecture
+
+### 2.3 Hardware Architecture
+
+![Hardware_Architecture](./img/Hardware_Architecture.png)
+
+### 2.4 Software Architecture
 
 ![Software_Architecture](./img/Software_Architecture.png) 
 
@@ -401,12 +406,12 @@ ls install /
 |7(Top)|GUI Interface Layer(QT)|-|Interaction with users|
 |6|C++ Logic Layer|-|Opencv, TensorFlow Lite, MQTT Client, etc.|
 |5|Hardware Driver Layer (Sensor Class)|-|Configuration/Driver of Hardware (Sensor, etc.)|
-|4|Hardware Isolation Layer (Rpi4b Class)|-|Isolate software logic and hardware dependencies, the purpose is to run/test the upper layer code independently of the underlying hardware dependencies (such as pigpio). |
+|~~4~~|~~Hardware Isolation Layer (Rpi4b Class)~~|-|~~Isolate software logic and hardware dependencies, the purpose is to run/test the upper layer code independently of the underlying hardware dependencies (such as pigpio).~~|
 |3|Pigpiod Nested Word Communication Process|-|Drive rpi4b(bcm2711) register|
 |2|System Call|-|Provided by the linux kernel|
 |1(Bottom)|Linux Kernel Modules|-|Allocate interrupt|
 
-### 2.4 Sensor & Actuator Driver Development
+### 2.5 Sensor & Actuator Driver Development
 
 >Ref:
 > https://berndporr.github.io/realtime_cpp_coding/
@@ -517,6 +522,20 @@ pigpio initialisation failed (-2003).
 ```
 Fixup: Because pigpio relies on the BCM2711 chip hardware function to achieve ultra-low-latency DMA operations, and qemu's DMA cannot support this operation, so pigpio simulation cannot be completed in the QEMU environment.
 
-#### 2.4.1 Buzzer
+#### 2.5.1 Buzzer
 
+#### 2.5.2 Sound Sensor
+>Author: Yihan Wang
 
+**Specification:**
+Working Voltage: DC 3.3V-5.5V  
+Nominal Frequency: 40KHz  
+PCB Size: 35 x 15mm / 1.38 x 0.59" (LxW)  
+Fixed Hole Diameter: 3mm  
+Main chip:LM393, Electret condenser microphone  
+Output form: Digital and Analog Output  
+
+**Note:**
+AO outputs real-time voltage signal of the microphone.  
+DO outputs low and high lever signal when the sound intensity reaches a threshold  
+Sensitivity is adjustable by adjusting the potentiometer  
