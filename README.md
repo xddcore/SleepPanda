@@ -2,8 +2,8 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
 <<<<<<< HEAD
- * @LastEditors: Yihan Wang yihanwangg@163.com
- * @LastEditTime: 2023-02-15 21:08:54
+ * @LastEditors: Chengsen Dong 1034029664@qq.com
+ * @LastEditTime: 2023-02-15 21:16:44
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:27:55
@@ -76,7 +76,6 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 - [ ] MAX30101 driver development
 - [ ] Tensorflow Lite neural network reasoning framework (C++ version)
 - [ ] MLX90640+ Convolutional Neural Network Gesture Recognition
-- [ ] WM8960 driver development (low priority)
 - [ ] 4K 30FPS camera (opencv c++ framework)
 - [ ] Convolutional Neural Network Sleeping Position Classification
 - [ ] Touch screen (QT-based GUI) development
@@ -89,6 +88,7 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 - [x] Pitch Session PPT slide draft
 - [x] Make cost accounting & original row selection Excel table
 - [x] Sound Sensor Driver Development
+- [ ] WM8960 driver development (low priority)
 - [ ] To do later...
 
 #### Rui Liu
