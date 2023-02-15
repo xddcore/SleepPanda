@@ -1,8 +1,8 @@
 <!--
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
- * @LastEditors: Yihan Wang yihanwangg@163.com
- * @LastEditTime: 2023-02-15 13:09:57
+ * @LastEditors: Chengsen Dong 1034029664@qq.com
+ * @LastEditTime: 2023-02-15 13:29:53
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -523,6 +523,16 @@ pigpio initialisation failed (-2003).
 Fixup: Because pigpio relies on the BCM2711 chip hardware function to achieve ultra-low-latency DMA operations, and qemu's DMA cannot support this operation, so pigpio simulation cannot be completed in the QEMU environment.
 
 #### 2.5.1 Buzzer
+>Author: Chengsen Dong
+
+**Features:**   
+The module is driven by S8550 transistor.   
+Working voltage 3.3V-5V.    
+Low level trigger.   
+Designed with holes for fixing with bolt, so it is easy to assemble.    
+VCC: External 3.3V-5V voltage (can be directly connected with 5V single-chip microcomputer and 3.3V single-chip microcomputer)    
+GND: External GND   
+I/O: External micro-controller IO port   
 
 #### 2.5.2 Sound Sensor
 >Author: Yihan Wang

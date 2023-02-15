@@ -1,8 +1,8 @@
 <!--
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
- * @LastEditors: Yihan Wang yihanwangg@163.com
- * @LastEditTime: 2023-02-15 13:11:01
+ * @LastEditors: Chengsen Dong 1034029664@qq.com
+ * @LastEditTime: 2023-02-15 13:30:06
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -522,6 +522,16 @@ pigpio initialisation failed (-2003).
 Fixup: 因为pigpio依赖BCM2711芯片硬件功能实现超低延迟的DMA操作，而qemu的DMA无法支持这一操作，所以在QEMU环境下，无法完成pigpio仿真。
 
 #### 2.5.1 蜂鸣器
+>Author: Chengsen Dong
+
+**特征：**  
+该模块由 S8550 晶体管驱动。  
+工作电压3.3V-5V。  
+低电平触发。  
+设计有用于螺栓固定的孔，因此易于组装。  
+VCC：外接3.3V-5V电压（可直接接5V单片机和3.3V单片机）  
+GND：外部接地  
+I/O：外部微控制器IO口  
 
 #### 2.5.2 声音传感器
 >Author: Yihan Wang  
