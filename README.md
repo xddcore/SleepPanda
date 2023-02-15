@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-15 14:03:22
+ * @LastEditTime: 2023-02-15 14:08:54
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -112,7 +112,7 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 3. Kernel version: 5.15.0-1023-raspi | Retrieve all Linux kernel `apt-cache search linux-raspi-headers`
 4. g++: `g++ (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
 5. gcc: `gcc (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
-
+6. Unit Test Framework: Google Test
 
 ### 1.2 Separate Raspberry Pi from keyboard, mouse & monitor
 0. Software that needs to be installed on a Windows computer: `1.Termius (for SSH)` `2.Microsoft Remote Desktop (for remote desktop) 3.Visual Studio code (universal editor)`
