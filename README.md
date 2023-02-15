@@ -1,8 +1,8 @@
 <!--
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
- * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-15 14:26:18
+ * @LastEditors: Yihan Wang yihanwangg@163.com
+ * @LastEditTime: 2023-02-15 14:28:17
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -572,6 +572,28 @@ AO outputs real-time voltage signal of the microphone.
 DO outputs low and high lever signal when the sound intensity reaches a threshold  
 Sensitivity is adjustable by adjusting the potentiometer 
 
+**Unit Test DEMO**
+
+What you will see: Make a sound, the DO pin level of the sound sensor will jump from high level to low level (falling edge interrupt), trigger a sound event, and the screen will print `Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered .`.  
+
+```
+#include "SoundSensor.h"
+
+class Rpi_SoundSensor : public SoundSensor {
+    using SoundSensor::SoundSensor;
+	virtual void SoundSensor_SoundEvent_Handle() {
+		printf("Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.\r\n");
+	}
+};
+
+int main() {
+    SoundSensor_Settings My_SoundSensor_Settings;
+    My_SoundSensor_Settings.Trigger_Method = FALLING_EDGE; //when sound appears
+    Rpi_SoundSensor My_Rpi_SoundSensor(My_SoundSensor_Settings);
+    getchar();
+    return 0;
+}
+```
 
 #### 2.5.3 MAX30101
 >Author:Chengsen Dong
