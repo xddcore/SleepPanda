@@ -392,7 +392,11 @@ ls install/
 # include lib
 
 ```
-### 2.3 软件架构
+### 2.3 硬件架构
+
+![Hardware_Architecture](./img/Hardware_Architecture.png)
+
+### 2.4 软件架构
 
 ![Software_Architecture](./img/Software_Architecture.png) 
 
@@ -406,7 +410,7 @@ ls install/
 |2|系统调用|-|由Linux内核提供|
 |1(Bottom)|Linux内核模块|-|分配中断|
 
-### 2.4 传感器&执行器驱动开发
+### 2.5 传感器&执行器驱动开发
 
 >Ref:  
 >https://berndporr.github.io/realtime_cpp_coding/  
@@ -517,6 +521,6 @@ pigpio initialisation failed (-2003).
 ```
 Fixup: 因为pigpio依赖BCM2711芯片硬件功能实现超低延迟的DMA操作，而qemu的DMA无法支持这一操作，所以在QEMU环境下，无法完成pigpio仿真。
 
-#### 2.4.1 蜂鸣器
+#### 2.5.1 蜂鸣器
 
 
