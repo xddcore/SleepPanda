@@ -1,8 +1,8 @@
 <!--
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
- * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-15 14:13:39
+ * @LastEditors: Yihan Wang yihanwangg@163.com
+ * @LastEditTime: 2023-02-15 14:20:41
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -564,7 +564,7 @@ Sensitivity is adjustable by adjusting the potentiometer
 >2. https://shop.pimoroni.com/products/max30101-breakout-heart-rate-oximeter-smoke-sensor?variant=21482065985619
 
 #### 2.5.4 WM8960
->Author:Chengsen Dong
+>Author:Yihan Wang
 
 >Ref:
 >1. https://wiki.seeedstudio.com/ReSpeaker_2_Mics_Pi_HAT/

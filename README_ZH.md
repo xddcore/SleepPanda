@@ -563,7 +563,7 @@ DO在声强达到阈值时输出低电平和高电平信号
 >2. https://shop.pimoroni.com/products/max30101-breakout-heart-rate-oximeter-smoke-sensor?variant=21482065985619
 
 #### 2.5.4 WM8960
->Author:Chengsen Dong
+>Author:Yihan Wang
 
 >Ref:
 >1. https://wiki.seeedstudio.com/ReSpeaker_2_Mics_Pi_HAT/
