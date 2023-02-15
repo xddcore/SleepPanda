@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-15 15:19:39
+ * @LastEditTime: 2023-02-15 16:26:30
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -69,11 +69,9 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 - [ ] 更新README文档(随着开发过程同步更新)
 - [x] 蜂鸣器驱动开发
 - [ ] MAX30101驱动开发
-- [ ] MLX90640驱动开发
 - [ ] Tensorflow Lite神经网络推理框架(C++版本)
 - [ ] MLX90640+卷积神经网络手势识别
 - [ ] WM8960驱动开发(低优先级)
-- [ ] 墨水屏驱动开发(虚拟动物园)
 - [ ] 4K 30FPS摄像头(opencv c++框架)
 - [ ] 卷积神经网络睡姿分类
 - [ ] 触摸屏(基于QT的GUI)开发
@@ -86,6 +84,7 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 - [x] Pitch Session PPT幻灯片初稿
 - [x] 制作成本核算&原件选行Excel表格
 - [x] Sound Sensor驱动开发
+- [ ] MLX90640驱动开发
 - [ ] To do later...
 
 #### Rui Liu
@@ -95,6 +94,7 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 - [x] 设计SleepPanda Logo
 - [x] Pitch Session PPT幻灯片终稿&pitch session演讲准备
 - [x] 制作成本核算&原件选行Excel表格
+- [ ] 墨水屏驱动开发(虚拟动物园)
 - [ ] To do later...
 
 #### Hui Wang
@@ -610,14 +610,14 @@ int main() {
 >2. https://shop.pimoroni.com/products/respeaker-2-mics-phat?variant=49979573706
 
 #### 2.5.5 Ink Screen(SSD1608)
->Author:
+>Author: Rui Liu
 
 >Ref:
 >1. https://github.com/pimoroni/inky
 >2. https://shop.pimoroni.com/products/inky-phat?variant=12549254905939
 
 #### 2.5.6 MLX90640
->Author:
+>Author: Hui Wang
 
 >Ref:
 >1. https://github.com/pimoroni/mlx90640-library
