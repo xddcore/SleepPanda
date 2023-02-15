@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-15 14:12:55
+ * @LastEditTime: 2023-02-15 14:15:44
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -411,7 +411,7 @@ ls install/
 |7(Top)|GUI界面层(QT)|-|与用户交互|
 |6|C++逻辑层|-|Opencv，TensorFlow Lite，MQTT Client等|
 |5|硬件驱动层(Sensor Class)|-|硬件(传感器等)的配置/驱动|
-|4|硬件隔离层(Rpi4b Class)|-|隔离软件逻辑和硬件依赖，目的是为了可以抛开底层硬件依赖(比如pigpio)，单独运行/测试上层代码。|
+|~~4~~|~~硬件隔离层(Rpi4b Class)~~|-|~~隔离软件逻辑和硬件依赖，目的是为了可以抛开底层硬件依赖(比如pigpio)，单独运行/测试上层代码。~~|
 |3|pigpiod嵌套字通信进程|-|驱动rpi4b(bcm2711)寄存器|
 |2|系统调用|-|由Linux内核提供|
 |1(Bottom)|Linux内核模块|-|分配中断|
