@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-15 15:03:32
+ * @LastEditTime: 2023-02-15 15:19:39
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -571,6 +571,29 @@ int main() {
 AO 输出麦克风的实时电压信号。  
 DO在声强达到阈值时输出低电平和高电平信号  
 灵敏度可通过调节电位器来调节  
+
+**Unit Test DEMO**
+
+您将看到的现象: 制造声音，声音传感器DO引脚电平将由高电平跳变为低电平(下降沿中断)，触发声音事件，屏幕将打印`Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.`。 
+
+```
+#include "SoundSensor.h"
+
+class Rpi_SoundSensor : public SoundSensor {
+    using SoundSensor::SoundSensor;
+	virtual void SoundSensor_SoundEvent_Handle() {
+		printf("Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.\r\n");
+	}
+};
+
+int main() {
+    SoundSensor_Settings My_SoundSensor_Settings;
+    My_SoundSensor_Settings.Trigger_Method = FALLING_EDGE; //when sound appears
+    Rpi_SoundSensor My_Rpi_SoundSensor(My_SoundSensor_Settings);
+    getchar();
+    return 0;
+}
+```
 
 #### 2.5.3 MAX30101
 >Author:Chengsen Dong
