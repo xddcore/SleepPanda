@@ -1,8 +1,13 @@
 <!--
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
+<<<<<<< HEAD
  * @LastEditors: Yihan Wang yihanwangg@163.com
  * @LastEditTime: 2023-02-15 21:08:54
+=======
+ * @LastEditors: Chengsen Dong 1034029664@qq.com
+ * @LastEditTime: 2023-02-15 16:27:55
+>>>>>>> 249ff8955d897cad0304e78fe3cb63d7f345510c
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -69,11 +74,9 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 - [ ] Update the README document (synchronized with the development process)
 - [x] Buzzer driver development
 - [ ] MAX30101 driver development
-- [ ] MLX90640 driver development
 - [ ] Tensorflow Lite neural network reasoning framework (C++ version)
 - [ ] MLX90640+ Convolutional Neural Network Gesture Recognition
 - [ ] WM8960 driver development (low priority)
-- [ ] ink screen driver development (virtual zoo)
 - [ ] 4K 30FPS camera (opencv c++ framework)
 - [ ] Convolutional Neural Network Sleeping Position Classification
 - [ ] Touch screen (QT-based GUI) development
@@ -95,10 +98,12 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 - [x] Design SleepPanda Logo
 - [x] Pitch Session PPT slide final draft & pitch session speech preparation
 - [x] Make cost accounting & original row selection Excel table
+- [ ] ink screen driver development (virtual zoo)
 - [ ] To do later...
 
 #### Hui Wang
 - [x] Query the data sheets of all sensors/chips and upload them to the github repository
+- [ ] MLX90640 driver development
 - [ ] To do later...
 
 # guide
@@ -610,14 +615,14 @@ int main() {
 >2. https://shop.pimoroni.com/products/respeaker-2-mics-phat?variant=49979573706
 
 #### 2.5.5 Ink Screen(SSD1608)
->Author:
+>Author:Rui Liu
 
 >Ref:
 >1. https://github.com/pimoroni/inky
 >2. https://shop.pimoroni.com/products/inky-phat?variant=12549254905939
 
 #### 2.5.6 MLX90640
->Author:
+>Author:Hui Wang
 
 >Ref:
 >1. https://github.com/pimoroni/mlx90640-library
