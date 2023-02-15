@@ -1,8 +1,8 @@
 <!--
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
- * @LastEditors: Yihan Wang yihanwangg@163.com
- * @LastEditTime: 2023-02-15 14:20:41
+ * @LastEditors: Chengsen Dong 1034029664@qq.com
+ * @LastEditTime: 2023-02-15 14:25:00
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -538,6 +538,21 @@ Designed with holes for fixing with bolt, so it is easy to assemble.
 VCC: External 3.3V-5V voltage (can be directly connected with 5V single-chip microcomputer and 3.3V single-chip microcomputer)    
 GND: External GND   
 I/O: External micro-controller IO port   
+
+**Unit Test DEMO**
+What you will see: The buzzer turns on for one second and then turns off.   
+```
+#include "Buzzer.h"
+
+int main() {
+    Buzzer_Settings My_Buzzer_Settings;
+    Buzzer MyBuzzer(My_Buzzer_Settings);
+    MyBuzzer.Buzzer_Contorl(Buzzer_On);
+    sleep(1);
+    MyBuzzer.Buzzer_Contorl(Buzzer_Off);
+    return 0;
+}
+```
 
 #### 2.5.2 Sound Sensor
 >Author: Yihan Wang

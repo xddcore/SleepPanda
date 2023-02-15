@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-15 14:15:44
+ * @LastEditTime: 2023-02-15 14:25:23
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -538,6 +538,21 @@ Fixup: 因为pigpio依赖BCM2711芯片硬件功能实现超低延迟的DMA操作
 VCC：外接3.3V-5V电压（可直接接5V单片机和3.3V单片机）  
 GND：外部接地  
 I/O：外部微控制器IO口  
+
+**Unit Test DEMO**
+您将看到的现象：蜂鸣器打开一秒钟，然后关闭。 
+```
+#include "Buzzer.h"
+
+int main() {
+    Buzzer_Settings My_Buzzer_Settings;
+    Buzzer MyBuzzer(My_Buzzer_Settings);
+    MyBuzzer.Buzzer_Contorl(Buzzer_On);
+    sleep(1);
+    MyBuzzer.Buzzer_Contorl(Buzzer_Off);
+    return 0;
+}
+```
 
 #### 2.5.2 声音传感器
 >Author: Yihan Wang  
