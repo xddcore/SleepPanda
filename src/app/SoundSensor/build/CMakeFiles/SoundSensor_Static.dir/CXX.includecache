@@ -11,8 +11,6 @@
 /home/pi/xddcore/SleepPanda/src/app/SoundSensor/SoundSensor.cpp
 SoundSensor.h
 /home/pi/xddcore/SleepPanda/src/app/SoundSensor/SoundSensor.h
-unistd.h
--
 
 /home/pi/xddcore/SleepPanda/src/app/SoundSensor/SoundSensor.h
 stdint.h

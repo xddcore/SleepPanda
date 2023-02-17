@@ -2,14 +2,12 @@
  * @Author: Yihan Wang yihanwangg@163.com
  * @Date: 2023-02-13 10:03:05
  * @LastEditors: Yihan Wang yihanwangg@163.com
- * @LastEditTime: 2023-02-17 20:31:50
+ * @LastEditTime: 2023-02-17 21:03:18
  * @FilePath: /SleepPanda/src/app/SoundSensor/SoundSensor.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
  */
 #include "SoundSensor.h"
-
-#define UNIT_TEST 0
 
 //声音传感器构造函数
 SoundSensor::SoundSensor(SoundSensor_Settings soundsensor_settings) {
@@ -63,28 +61,3 @@ void SoundSensor::Sound_Event() {
     printf("LOGIC DEBUG: SoundSensor SoundEvent was triggered.\r\n");
 #endif
 }
-
-#if(UNIT_TEST==1)
-
-#include <unistd.h>
-//The following code is used for the unit test of the buzzer.
-//What you will see: The buzzer turns on for one second and then turns off.
-
-class Rpi_SoundSensor : public SoundSensor {
-    using SoundSensor::SoundSensor;
-	virtual void SoundSensor_SoundEvent_Handle() {
-		printf("Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.\r\n");
-	}
-};
-
-int main() {
-    SoundSensor_Settings My_SoundSensor_Settings;
-    My_SoundSensor_Settings.Trigger_Method = RISING_EDGE; //when sound appears
-    Rpi_SoundSensor My_Rpi_SoundSensor(My_SoundSensor_Settings);
-    getchar();
-    return 0;
-}
-
-#else
-
-#endif
