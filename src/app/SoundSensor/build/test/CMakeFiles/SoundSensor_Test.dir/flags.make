@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/pi/xddcore/SleepPanda/src/app/SoundSensor/test/../../../../tools/gtest/rpios_32bit/include -I/home/pi/xddcore/SleepPanda/src/app/SoundSensor/test/..
 
 CXX_FLAGS = -std=c++11 -Wall -Wconversion -Wextra -pedantic -std=gnu++14
 

@@ -120,17 +120,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -154,16 +143,27 @@ test/fast: test
 
 .PHONY : test/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/CMakeFiles /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/CMakeFiles /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/test//CMakeFiles/progress.marks
+	cd /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/clean
 .PHONY : clean
 
 # The main clean target
@@ -173,71 +173,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named SoundSensor_Static
+# Convenience name for target.
+test/CMakeFiles/SoundSensor_Test.dir/rule:
+	cd /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/SoundSensor_Test.dir/rule
+.PHONY : test/CMakeFiles/SoundSensor_Test.dir/rule
 
-# Build rule for target.
-SoundSensor_Static: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SoundSensor_Static
-.PHONY : SoundSensor_Static
+# Convenience name for target.
+SoundSensor_Test: test/CMakeFiles/SoundSensor_Test.dir/rule
 
-# fast build rule for target.
-SoundSensor_Static/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoundSensor_Static.dir/build.make CMakeFiles/SoundSensor_Static.dir/build
-.PHONY : SoundSensor_Static/fast
-
-#=============================================================================
-# Target rules for targets named SoundSensor_Test
-
-# Build rule for target.
-SoundSensor_Test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SoundSensor_Test
 .PHONY : SoundSensor_Test
 
 # fast build rule for target.
 SoundSensor_Test/fast:
-	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/SoundSensor_Test.dir/build.make test/CMakeFiles/SoundSensor_Test.dir/build
+	cd /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/SoundSensor_Test.dir/build.make test/CMakeFiles/SoundSensor_Test.dir/build
 .PHONY : SoundSensor_Test/fast
 
-SoundSensor.o: SoundSensor.cpp.o
+SoundSensor_Test.o: SoundSensor_Test.cpp.o
 
-.PHONY : SoundSensor.o
+.PHONY : SoundSensor_Test.o
 
 # target to build an object file
-SoundSensor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoundSensor_Static.dir/build.make CMakeFiles/SoundSensor_Static.dir/SoundSensor.cpp.o
-.PHONY : SoundSensor.cpp.o
+SoundSensor_Test.cpp.o:
+	cd /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/SoundSensor_Test.dir/build.make test/CMakeFiles/SoundSensor_Test.dir/SoundSensor_Test.cpp.o
+.PHONY : SoundSensor_Test.cpp.o
 
-SoundSensor.i: SoundSensor.cpp.i
+SoundSensor_Test.i: SoundSensor_Test.cpp.i
 
-.PHONY : SoundSensor.i
+.PHONY : SoundSensor_Test.i
 
 # target to preprocess a source file
-SoundSensor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoundSensor_Static.dir/build.make CMakeFiles/SoundSensor_Static.dir/SoundSensor.cpp.i
-.PHONY : SoundSensor.cpp.i
+SoundSensor_Test.cpp.i:
+	cd /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/SoundSensor_Test.dir/build.make test/CMakeFiles/SoundSensor_Test.dir/SoundSensor_Test.cpp.i
+.PHONY : SoundSensor_Test.cpp.i
 
-SoundSensor.s: SoundSensor.cpp.s
+SoundSensor_Test.s: SoundSensor_Test.cpp.s
 
-.PHONY : SoundSensor.s
+.PHONY : SoundSensor_Test.s
 
 # target to generate assembly for a file
-SoundSensor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoundSensor_Static.dir/build.make CMakeFiles/SoundSensor_Static.dir/SoundSensor.cpp.s
-.PHONY : SoundSensor.cpp.s
+SoundSensor_Test.cpp.s:
+	cd /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/SoundSensor_Test.dir/build.make test/CMakeFiles/SoundSensor_Test.dir/SoundSensor_Test.cpp.s
+.PHONY : SoundSensor_Test.cpp.s
 
 # Help Target
 help:
@@ -252,11 +241,10 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... SoundSensor_Static"
 	@echo "... SoundSensor_Test"
-	@echo "... SoundSensor.o"
-	@echo "... SoundSensor.i"
-	@echo "... SoundSensor.s"
+	@echo "... SoundSensor_Test.o"
+	@echo "... SoundSensor_Test.i"
+	@echo "... SoundSensor_Test.s"
 .PHONY : help
 
 
@@ -268,6 +256,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

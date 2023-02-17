@@ -2,19 +2,14 @@
  * @Author: Yihan Wang yihanwangg@163.com
  * @Date: 2023-02-13 10:03:05
  * @LastEditors: Yihan Wang yihanwangg@163.com
- * @LastEditTime: 2023-02-15 20:58:37
+ * @LastEditTime: 2023-02-17 20:31:50
  * @FilePath: /SleepPanda/src/app/SoundSensor/SoundSensor.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
  */
-#include <iostream>
-#include "stdio.h"
-
 #include "SoundSensor.h"
-#include "../Config/Config.h"
-#include <pigpio.h>
 
-#define UNIT_TEST 1
+#define UNIT_TEST 0
 
 //声音传感器构造函数
 SoundSensor::SoundSensor(SoundSensor_Settings soundsensor_settings) {
@@ -89,5 +84,7 @@ int main() {
     getchar();
     return 0;
 }
+
+#else
 
 #endif

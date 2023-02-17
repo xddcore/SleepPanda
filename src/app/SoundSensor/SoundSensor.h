@@ -2,7 +2,7 @@
  * @Author: Yihan Wang yihanwangg@163.com
  * @Date: 2023-02-13 10:03:21
  * @LastEditors: Yihan Wang yihanwangg@163.com
- * @LastEditTime: 2023-02-15 12:25:53
+ * @LastEditTime: 2023-02-17 20:20:49
  * @FilePath: /SleepPanda/src/app/SoundSensor/SoundSensor.h
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -10,6 +10,15 @@
 
 #ifndef _SoundSensor_H
 #define _SoundSensor_H
+
+#include <stdint.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <pigpio.h>
+#include <assert.h>
+
+#include "../Config/Config.h"
 
 struct SoundSensor_Settings {
     unsigned int SoundSensor_GPIO_Pin = 5; //GPIO5(PIN29) will be used

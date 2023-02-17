@@ -1,0 +1,39 @@
+Start testing: Feb 17 21:00 GMT
+----------------------------------------------------------
+1/1 Testing: SoundSensor_Test
+1/1 Test: SoundSensor_Test
+Command: "/home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/test/SoundSensor_Test"
+Directory: /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/test
+"SoundSensor_Test" start time: Feb 17 21:00 GMT
+Output:
+----------------------------------------------------------
+
+Make a sound please, then press the ENTER of the keyboard.
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SoundSensor_Test
+[ RUN      ] SoundSensor_Test.Check_SoundSensor_Event_ISR
+RPI DEBUG: SoundSensor pigpio initialised okay.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+My_Rpi_SoundSensor.ISR_CheckPoint:1
+RPI DEBUG: SoundSensor Delete.
+[       OK ] SoundSensor_Test.Check_SoundSensor_Event_ISR (3741 ms)
+[----------] 1 test from SoundSensor_Test (3741 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (3742 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   3.75 sec
+----------------------------------------------------------
+Test Passed.
+"SoundSensor_Test" end time: Feb 17 21:00 GMT
+"SoundSensor_Test" time elapsed: 00:00:03
+----------------------------------------------------------
+
+End testing: Feb 17 21:00 GMT
