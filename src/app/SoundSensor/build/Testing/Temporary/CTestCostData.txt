@@ -1,2 +1,3 @@
-SoundSensor_Test 16 0.277819
+SoundSensor_Test 16 0
 ---
+SoundSensor_Test

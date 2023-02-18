@@ -1,10 +1,10 @@
-Start testing: Feb 17 21:04 GMT
+Start testing: Feb 18 12:27 GMT
 ----------------------------------------------------------
 1/1 Testing: SoundSensor_Test
 1/1 Test: SoundSensor_Test
 Command: "/home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/test/SoundSensor_Test"
 Directory: /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/test
-"SoundSensor_Test" start time: Feb 17 21:04 GMT
+"SoundSensor_Test" start time: Feb 18 12:27 GMT
 Output:
 ----------------------------------------------------------
 
@@ -14,62 +14,28 @@ Make a sound please, then press the ENTER of the keyboard.
 [----------] 1 test from SoundSensor_Test
 [ RUN      ] SoundSensor_Test.Check_SoundSensor_Event_ISR
 RPI DEBUG: SoundSensor pigpio initialised okay.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
-RPI DEBUG: SoundSensor SoundEvent was triggered.
-My_Rpi_SoundSensor.ISR_CheckPoint:1
+My_Rpi_SoundSensor.ISR_CheckPoint:0
+/home/pi/xddcore/SleepPanda/src/app/SoundSensor/test/SoundSensor_Test.cpp:26: Failure
+Value of: My_Rpi_SoundSensor.ISR_CheckPoint
+  Actual: false
+Expected: true
 RPI DEBUG: SoundSensor Delete.
-[       OK ] SoundSensor_Test.Check_SoundSensor_Event_ISR (4432 ms)
-[----------] 1 test from SoundSensor_Test (4433 ms total)
+[  FAILED  ] SoundSensor_Test.Check_SoundSensor_Event_ISR (3484 ms)
+[----------] 1 test from SoundSensor_Test (3484 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (4433 ms total)
-[  PASSED  ] 1 test.
+[==========] 1 test from 1 test suite ran. (3484 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] SoundSensor_Test.Check_SoundSensor_Event_ISR
+
+ 1 FAILED TEST
 <end of output>
-Test time =   4.45 sec
+Test time =   3.50 sec
 ----------------------------------------------------------
-Test Passed.
-"SoundSensor_Test" end time: Feb 17 21:04 GMT
-"SoundSensor_Test" time elapsed: 00:00:04
+Test Failed.
+"SoundSensor_Test" end time: Feb 18 12:27 GMT
+"SoundSensor_Test" time elapsed: 00:00:03
 ----------------------------------------------------------
 
-End testing: Feb 17 21:04 GMT
+End testing: Feb 18 12:27 GMT

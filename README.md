@@ -2,8 +2,8 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
 <<<<<<< HEAD
- * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-18 12:23:31
+ * @LastEditors: Yihan Wang yihanwangg@163.com
+ * @LastEditTime: 2023-02-18 12:29:13
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:27:55
@@ -578,23 +578,16 @@ Sensitivity is adjustable by adjusting the potentiometer
 
 What you will see: Make a sound, the DO pin level of the sound sensor will jump from low level to high level (rising edge interrupt), trigger a sound event, and the screen will print `Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered .`. 
 
+When the unit test program runs:
+Make a sound and press ENTER on your keyboard.
+
+Execute the following command to run unit tests:
 ```
-#include "SoundSensor.h"
+## change to work dir
+cd SleepPanda/src/app/SoundSensor/build
 
-class Rpi_SoundSensor : public SoundSensor {
-    using SoundSensor::SoundSensor;
-	virtual void SoundSensor_SoundEvent_Handle() {
-		printf("Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.\r\n");
-	}
-};
-
-int main() {
-    SoundSensor_Settings My_SoundSensor_Settings;
-    My_SoundSensor_Settings.Trigger_Method = FALLING_EDGE; //when sound appears
-    Rpi_SoundSensor My_Rpi_SoundSensor(My_SoundSensor_Settings);
-    getchar();
-    return 0;
-}
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
 ```
 
 #### 2.5.3 MAX30101

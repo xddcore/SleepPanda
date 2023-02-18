@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-18 12:22:34
+ * @LastEditTime: 2023-02-18 12:25:25
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -576,25 +576,18 @@ DO在声强达到阈值时输出低电平和高电平信号
 
 **Unit Test DEMO**
 
-您将看到的现象: 制造声音，声音传感器DO引脚电平将由低电平跳变为高电平(上升沿中断)，触发声音事件，屏幕将打印`Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.`。 
+您将看到的现象: 制造声音，声音传感器DO引脚电平将由低电平跳变为高电平(上升沿中断)，触发声音事件，屏幕将打印`Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.`。
 
+当单元测试程序运行时:
+请发出声音，然后按键盘的 ENTER。
+
+请执行以下命令以运行单元测试：
 ```
-#include "SoundSensor.h"
+## change to work dir
+cd SleepPanda/src/app/SoundSensor/build
 
-class Rpi_SoundSensor : public SoundSensor {
-    using SoundSensor::SoundSensor;
-	virtual void SoundSensor_SoundEvent_Handle() {
-		printf("Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.\r\n");
-	}
-};
-
-int main() {
-    SoundSensor_Settings My_SoundSensor_Settings;
-    My_SoundSensor_Settings.Trigger_Method = FALLING_EDGE; //when sound appears
-    Rpi_SoundSensor My_Rpi_SoundSensor(My_SoundSensor_Settings);
-    getchar();
-    return 0;
-}
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
 ```
 
 #### 2.5.3 MAX30101
