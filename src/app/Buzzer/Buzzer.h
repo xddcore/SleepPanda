@@ -11,6 +11,14 @@
 #ifndef _BUZZER_H
 #define _BUZZER_H
 
+#include <stdint.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <pigpio.h>
+#include <assert.h>
+
+#include "../Config/Config.h"
 
 struct Buzzer_Settings {
     unsigned int Buzzer_GPIO_Pin = 6; //GPIO6(PIN31) will be used

@@ -7,9 +7,12 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "CMakeFiles/3.18.4/CMakeCCompiler.cmake"
   "CMakeFiles/3.18.4/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.18.4/CMakeSystem.cmake"
   "/home/pi/xddcore/SleepPanda/src/app/Buzzer/CMakeLists.txt"
+  "/home/pi/xddcore/SleepPanda/src/app/Buzzer/test/CMakeLists.txt"
+  "/usr/share/cmake-3.18/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.18/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.18/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
   "/usr/share/cmake-3.18/Modules/CMakeCommonLanguageInclude.cmake"
@@ -19,9 +22,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.18/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake-3.18/Modules/CMakeSystemSpecificInitialize.cmake"
   "/usr/share/cmake-3.18/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+  "/usr/share/cmake-3.18/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-3.18/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.18/Modules/Compiler/GNU.cmake"
   "/usr/share/cmake-3.18/Modules/Internal/CMakeCheckCompilerFlag.cmake"
+  "/usr/share/cmake-3.18/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/share/cmake-3.18/Modules/Platform/Linux-GNU-CXX.cmake"
   "/usr/share/cmake-3.18/Modules/Platform/Linux-GNU.cmake"
   "/usr/share/cmake-3.18/Modules/Platform/Linux.cmake"
@@ -37,9 +42,11 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "test/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Buzzer.dir/DependInfo.cmake"
+  "CMakeFiles/Buzzer_Static.dir/DependInfo.cmake"
+  "test/CMakeFiles/Buzzer_Test.dir/DependInfo.cmake"
   )

@@ -1,7 +1,12 @@
 [
 {
   "directory": "/home/pi/xddcore/SleepPanda/build",
-  "command": "/usr/bin/c++   -g -std=c++11 -Wall -Wconversion -Wextra -pedantic -std=gnu++11 -o CMakeFiles/Buzzer.dir/Buzzer.cpp.o -c /home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.cpp",
+  "command": "/usr/bin/c++   -g -std=c++11 -Wall -Wconversion -Wextra -pedantic -std=gnu++14 -o CMakeFiles/Buzzer_Static.dir/Buzzer.cpp.o -c /home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.cpp",
   "file": "/home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.cpp"
+},
+{
+  "directory": "/home/pi/xddcore/SleepPanda/build/test",
+  "command": "/usr/bin/c++  -I/home/pi/xddcore/SleepPanda/src/app/Buzzer/test/../../../../tools/gtest/rpios_32bit/include -I/home/pi/xddcore/SleepPanda/src/app/Buzzer/test/.. -g -std=c++11 -Wall -Wconversion -Wextra -pedantic -std=gnu++14 -o CMakeFiles/Buzzer_Test.dir/Buzzer_Test.cpp.o -c /home/pi/xddcore/SleepPanda/src/app/Buzzer/test/Buzzer_Test.cpp",
+  "file": "/home/pi/xddcore/SleepPanda/src/app/Buzzer/test/Buzzer_Test.cpp"
 }
 ]

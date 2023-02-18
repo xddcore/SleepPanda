@@ -1,13 +1,35 @@
 cmake_minimum_required(VERSION 3.14)
-project(Buzzer VERSION 1.0.0 LANGUAGES CXX)
+project(SoundSensor VERSION 1.0.0 LANGUAGES CXX)
 
 #print work path
 MESSAGE(STATUS "Current path : ${CMAKE_CURRENT_SOURCE_DIR}")
 
+#enable ctest
+enable_testing()
+
+#add ./test dir
+add_subdirectory(test)
+
 add_compile_options(-std=c++11 -Wall -Wconversion -Wextra -pedantic)
 
-set(CMAKE_CXX_STANDARD 11)
+# GoogleTest requires at least C++14
+set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Buzzer Buzzer.cpp ../Config/Config.h Buzzer.h)
+set(LIBSRC Buzzer.cpp)
+set(LIBINCLUDE Buzzer.h)
 
-target_link_libraries(Buzzer pigpio)
+
+add_library(Buzzer_Static
+  STATIC
+  ${LIBSRC}
+)
+
+set_target_properties(Buzzer_Static PROPERTIES
+  PUBLIC_HEADER "${LIBINCLUDE}")
+
+target_link_libraries(Buzzer_Static pigpio)
+
+install(TARGETS Buzzer_Static EXPORT Buzzer_Static-Targets
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
