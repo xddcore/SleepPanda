@@ -3,7 +3,7 @@
  * @Date: 2023-01-18 00:44:11
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-15 21:16:44
+ * @LastEditTime: 2023-02-18 12:23:31
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:27:55
@@ -546,19 +546,16 @@ I/O: External micro-controller IO port
 
 **Unit Test DEMO**
 
-What you will see: The buzzer turns on for one second and then turns off.   
+When the unit test program runs:
+If you hear the buzzer, please use the keyboard to type "Y" and press ENTER.
 
+Execute the following command to run unit tests:
 ```
-#include "Buzzer.h"
+## change to work dir
+cd SleepPanda/src/app/Buzzer/build
 
-int main() {
-    Buzzer_Settings My_Buzzer_Settings;
-    Buzzer MyBuzzer(My_Buzzer_Settings);
-    MyBuzzer.Buzzer_Contorl(Buzzer_On);
-    sleep(1);
-    MyBuzzer.Buzzer_Contorl(Buzzer_Off);
-    return 0;
-}
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
 ```
 
 #### 2.5.2 Sound Sensor

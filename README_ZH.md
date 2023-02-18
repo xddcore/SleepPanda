@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-15 21:16:26
+ * @LastEditTime: 2023-02-18 12:22:34
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -546,19 +546,16 @@ I/O：外部微控制器IO口
 
 **Unit Test DEMO**
 
-您将看到的现象：蜂鸣器打开一秒钟，然后关闭。 
+当单元测试程序运行时:
+如果你听到蜂鸣器的声音，请使用键盘输入"Y"，然后按下ENTER键。
 
+请执行以下命令以运行单元测试：
 ```
-#include "Buzzer.h"
+## change to work dir
+cd SleepPanda/src/app/Buzzer/build
 
-int main() {
-    Buzzer_Settings My_Buzzer_Settings;
-    Buzzer MyBuzzer(My_Buzzer_Settings);
-    MyBuzzer.Buzzer_Contorl(Buzzer_On);
-    sleep(1);
-    MyBuzzer.Buzzer_Contorl(Buzzer_Off);
-    return 0;
-}
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
 ```
 
 #### 2.5.2 声音传感器

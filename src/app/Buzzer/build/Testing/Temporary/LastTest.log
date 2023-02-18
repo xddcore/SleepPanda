@@ -1,10 +1,10 @@
-Start testing: Feb 18 12:12 GMT
+Start testing: Feb 18 12:22 GMT
 ----------------------------------------------------------
 1/1 Testing: Buzzer_Test
 1/1 Test: Buzzer_Test
 Command: "/home/pi/xddcore/SleepPanda/src/app/Buzzer/build/test/Buzzer_Test"
 Directory: /home/pi/xddcore/SleepPanda/src/app/Buzzer/build/test
-"Buzzer_Test" start time: Feb 18 12:12 GMT
+"Buzzer_Test" start time: Feb 18 12:22 GMT
 Output:
 ----------------------------------------------------------
 
@@ -15,29 +15,20 @@ Please confirm whether the buzzer sounds (Y/N):
 [ RUN      ] Buzzer_Test.Check_If_Buzzer_Sounds
 RPI DEBUG: Buzzer pigpio initialised okay.
 RPI DEBUG: Buzzer On.
-/home/pi/xddcore/SleepPanda/src/app/Buzzer/test/Buzzer_Test.cpp:13: Failure
-Expected equality of these values:
-  "Y"
-  (const char*)&Keyboard_Input
-    Which is: "N"
 RPI DEBUG: Buzzer Off.
 RPI DEBUG: Buzzer Delete.
-[  FAILED  ] Buzzer_Test.Check_If_Buzzer_Sounds (8439 ms)
-[----------] 1 test from Buzzer_Test (8439 ms total)
+[       OK ] Buzzer_Test.Check_If_Buzzer_Sounds (1487 ms)
+[----------] 1 test from Buzzer_Test (1488 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (8439 ms total)
-[  PASSED  ] 0 tests.
-[  FAILED  ] 1 test, listed below:
-[  FAILED  ] Buzzer_Test.Check_If_Buzzer_Sounds
-
- 1 FAILED TEST
+[==========] 1 test from 1 test suite ran. (1488 ms total)
+[  PASSED  ] 1 test.
 <end of output>
-Test time =   8.45 sec
+Test time =   1.50 sec
 ----------------------------------------------------------
-Test Failed.
-"Buzzer_Test" end time: Feb 18 12:12 GMT
-"Buzzer_Test" time elapsed: 00:00:08
+Test Passed.
+"Buzzer_Test" end time: Feb 18 12:22 GMT
+"Buzzer_Test" time elapsed: 00:00:01
 ----------------------------------------------------------
 
-End testing: Feb 18 12:12 GMT
+End testing: Feb 18 12:22 GMT
