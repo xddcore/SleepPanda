@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
-project(Buzzer_Test)
+project(Buzzer_Test VERSION 1.0.0 LANGUAGES CXX)
+
 #print work path
 MESSAGE(STATUS "Current path : ${CMAKE_CURRENT_SOURCE_DIR}")
 
@@ -8,14 +9,18 @@ add_compile_options(-std=c++14 -Wall -Wconversion -Wextra -pedantic)
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
 
+set(LIBSRC Buzzer_Test.cpp)
+set(LIBSTATIC Buzzer_Static)
+set(LIBTESTNAME Buzzer_Test)
+
 set(GTEST_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../../../tools/gtest/rpios_32bit") #
 
 include_directories(${GTEST_PATH}/include)
 link_directories(${GTEST_PATH}/lib)
 
 
-add_executable(Buzzer_Test Buzzer_Test.cpp)
-target_link_libraries(Buzzer_Test ${GTEST_PATH}/lib/libgtest.so pigpio Buzzer_Static)
-target_include_directories(Buzzer_Test PRIVATE ..)
+add_executable(${LIBTESTNAME} ${LIBSRC})
+target_link_libraries(${LIBTESTNAME} ${LIBSTATIC} ${GTEST_PATH}/lib/libgtest.so pigpio)
+target_include_directories(${LIBTESTNAME} PRIVATE ..)
 
-add_test(Buzzer_Test Buzzer_Test)
+add_test(${LIBTESTNAME} ${LIBTESTNAME})
