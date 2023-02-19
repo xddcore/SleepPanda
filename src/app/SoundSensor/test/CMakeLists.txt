@@ -3,7 +3,7 @@ project(SoundSensor_Test)
 #print work path
 MESSAGE(STATUS "Current path : ${CMAKE_CURRENT_SOURCE_DIR}")
 
-add_compile_options(-std=c++11 -Wall -Wconversion -Wextra -pedantic)
+add_compile_options(-std=c++14 -Wall -Wconversion -Wextra -pedantic)
 
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)

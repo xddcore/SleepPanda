@@ -10,7 +10,7 @@ enable_testing()
 #add ./test dir
 add_subdirectory(test)
 
-add_compile_options(-std=c++11 -Wall -Wconversion -Wextra -pedantic)
+add_compile_options(-std=c++14 -Wall -Wconversion -Wextra -pedantic)
 
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
