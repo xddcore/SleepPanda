@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
-project(SoundSensor_Test)
+project(SoundSensor_Test VERSION 1.0.0 LANGUAGES CXX)
+
 #print work path
 MESSAGE(STATUS "Current path : ${CMAKE_CURRENT_SOURCE_DIR}")
 
@@ -8,14 +9,18 @@ add_compile_options(-std=c++14 -Wall -Wconversion -Wextra -pedantic)
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
 
+set(LIBSRC SoundSensor_Test.cpp)
+set(LIBSTATIC SoundSensor_Static)
+set(LIBTESTNAME SoundSensor_Test)
+
 set(GTEST_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../../../tools/gtest/rpios_32bit") #
 
 include_directories(${GTEST_PATH}/include)
 link_directories(${GTEST_PATH}/lib)
 
 
-add_executable(SoundSensor_Test SoundSensor_Test.cpp)
-target_link_libraries(SoundSensor_Test ${GTEST_PATH}/lib/libgtest.so pigpio SoundSensor_Static)
-target_include_directories(SoundSensor_Test PRIVATE ..)
+add_executable(${LIBTESTNAME} ${LIBSRC})
+target_link_libraries(${LIBTESTNAME} ${LIBSTATIC} ${GTEST_PATH}/lib/libgtest.so pigpio)
+target_include_directories(${LIBTESTNAME} PRIVATE ..)
 
-add_test(SoundSensor_Test SoundSensor_Test)
+add_test(${LIBTESTNAME} ${LIBTESTNAME})

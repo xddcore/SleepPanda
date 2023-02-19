@@ -17,19 +17,20 @@ set(CMAKE_CXX_STANDARD 14)
 
 set(LIBSRC SoundSensor.cpp)
 set(LIBINCLUDE SoundSensor.h)
+set(LIBSTATIC SoundSensor_Static)
+set(LIBSTATIC_TARGETS SoundSensor_Static-Targets)
 
-
-add_library(SoundSensor_Static
+add_library(${LIBSTATIC}
   STATIC
   ${LIBSRC}
 )
 
-set_target_properties(SoundSensor_Static PROPERTIES
+set_target_properties(${LIBSTATIC} PROPERTIES
   PUBLIC_HEADER "${LIBINCLUDE}")
 
-target_link_libraries(SoundSensor_Static pigpio)
+target_link_libraries(${LIBSTATIC} pigpio)
 
-install(TARGETS SoundSensor_Static EXPORT SoundSensor_Static-Targets
+install(TARGETS ${LIBSTATIC} EXPORT ${LIBSTATIC_TARGETS}
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
   PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
