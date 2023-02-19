@@ -98,8 +98,8 @@ Buzzer_Test_EXTERNAL_OBJECTS =
 
 test/Buzzer_Test: test/CMakeFiles/Buzzer_Test.dir/Buzzer_Test.cpp.o
 test/Buzzer_Test: test/CMakeFiles/Buzzer_Test.dir/build.make
-test/Buzzer_Test: /home/pi/xddcore/SleepPanda/src/app/Buzzer/test/../../../../tools/gtest/rpios_32bit/lib/libgtest.so
 test/Buzzer_Test: libBuzzer_Static.a
+test/Buzzer_Test: /home/pi/xddcore/SleepPanda/src/app/Buzzer/test/../../../../tools/gtest/rpios_32bit/lib/libgtest.so
 test/Buzzer_Test: test/CMakeFiles/Buzzer_Test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/xddcore/SleepPanda/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Buzzer_Test"
 	cd /home/pi/xddcore/SleepPanda/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Buzzer_Test.dir/link.txt --verbose=$(VERBOSE)

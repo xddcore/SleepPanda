@@ -29,37 +29,37 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 17,
+				"line" : 22,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 14,
+				"line" : 19,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 18,
+				"line" : 23,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 6,
+				"line" : 7,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 13,
+				"line" : 18,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 19,
+				"line" : 24,
 				"parent" : 0
 			}
 		]
@@ -74,7 +74,7 @@
 				},
 				{
 					"backtrace" : 4,
-					"fragment" : "-std=c++11"
+					"fragment" : "-std=c++14"
 				},
 				{
 					"backtrace" : 4,
@@ -145,17 +145,12 @@
 			},
 			{
 				"backtrace" : 3,
-				"fragment" : "/home/pi/xddcore/SleepPanda/src/app/Buzzer/test/../../../../tools/gtest/rpios_32bit/lib/libgtest.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
-				"fragment" : "-lpigpio",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
 				"fragment" : "../libBuzzer_Static.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/home/pi/xddcore/SleepPanda/src/app/Buzzer/test/../../../../tools/gtest/rpios_32bit/lib/libgtest.so",
 				"role" : "libraries"
 			},
 			{

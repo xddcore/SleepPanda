@@ -98,8 +98,8 @@ SoundSensor_Test_EXTERNAL_OBJECTS =
 
 test/SoundSensor_Test: test/CMakeFiles/SoundSensor_Test.dir/SoundSensor_Test.cpp.o
 test/SoundSensor_Test: test/CMakeFiles/SoundSensor_Test.dir/build.make
-test/SoundSensor_Test: ../test/../../../../tools/gtest/rpios_32bit/lib/libgtest.so
 test/SoundSensor_Test: libSoundSensor_Static.a
+test/SoundSensor_Test: ../test/../../../../tools/gtest/rpios_32bit/lib/libgtest.so
 test/SoundSensor_Test: test/CMakeFiles/SoundSensor_Test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable SoundSensor_Test"
 	cd /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SoundSensor_Test.dir/link.txt --verbose=$(VERBOSE)

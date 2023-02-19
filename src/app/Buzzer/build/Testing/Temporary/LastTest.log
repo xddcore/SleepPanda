@@ -1,10 +1,10 @@
-Start testing: Feb 18 12:22 GMT
+Start testing: Feb 19 16:44 GMT
 ----------------------------------------------------------
 1/1 Testing: Buzzer_Test
 1/1 Test: Buzzer_Test
 Command: "/home/pi/xddcore/SleepPanda/src/app/Buzzer/build/test/Buzzer_Test"
 Directory: /home/pi/xddcore/SleepPanda/src/app/Buzzer/build/test
-"Buzzer_Test" start time: Feb 18 12:22 GMT
+"Buzzer_Test" start time: Feb 19 16:44 GMT
 Output:
 ----------------------------------------------------------
 
@@ -17,18 +17,18 @@ RPI DEBUG: Buzzer pigpio initialised okay.
 RPI DEBUG: Buzzer On.
 RPI DEBUG: Buzzer Off.
 RPI DEBUG: Buzzer Delete.
-[       OK ] Buzzer_Test.Check_If_Buzzer_Sounds (1487 ms)
-[----------] 1 test from Buzzer_Test (1488 ms total)
+[       OK ] Buzzer_Test.Check_If_Buzzer_Sounds (5698 ms)
+[----------] 1 test from Buzzer_Test (5698 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (1488 ms total)
+[==========] 1 test from 1 test suite ran. (5698 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   1.50 sec
+Test time =   5.71 sec
 ----------------------------------------------------------
 Test Passed.
-"Buzzer_Test" end time: Feb 18 12:22 GMT
-"Buzzer_Test" time elapsed: 00:00:01
+"Buzzer_Test" end time: Feb 19 16:44 GMT
+"Buzzer_Test" time elapsed: 00:00:05
 ----------------------------------------------------------
 
-End testing: Feb 18 12:22 GMT
+End testing: Feb 19 16:44 GMT

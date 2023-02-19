@@ -49,7 +49,7 @@
 					[
 						0
 					],
-					"name" : "SoundSensor",
+					"name" : "Buzzer",
 					"targetIndexes" : 
 					[
 						0
@@ -73,14 +73,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Buzzer_Static::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Buzzer_Static-Debug-8b264175353d46c3309e.json",
+					"jsonFile" : "target-Buzzer_Static-Debug-09056f118e77ddf19c7e.json",
 					"name" : "Buzzer_Static",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "Buzzer_Test::@36f028580bb02cc8272a",
-					"jsonFile" : "target-Buzzer_Test-Debug-6e5495e2e64105e76382.json",
+					"jsonFile" : "target-Buzzer_Test-Debug-4d7f64ac6242d498f7a2.json",
 					"name" : "Buzzer_Test",
 					"projectIndex" : 1
 				}

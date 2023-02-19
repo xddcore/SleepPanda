@@ -883,7 +883,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "SoundSensor"
+			"value" : "Buzzer"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",

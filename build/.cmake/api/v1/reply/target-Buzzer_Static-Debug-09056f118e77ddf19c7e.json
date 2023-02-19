@@ -27,13 +27,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 22,
+				"line" : 23,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 32,
+				"line" : 33,
 				"parent" : 0
 			},
 			{
@@ -54,7 +54,7 @@
 				},
 				{
 					"backtrace" : 3,
-					"fragment" : "-std=c++11"
+					"fragment" : "-std=c++14"
 				},
 				{
 					"backtrace" : 3,

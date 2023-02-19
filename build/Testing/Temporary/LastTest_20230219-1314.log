@@ -1,0 +1,43 @@
+Start testing: Feb 19 13:14 GMT
+----------------------------------------------------------
+1/1 Testing: Buzzer_Test
+1/1 Test: Buzzer_Test
+Command: "/home/pi/xddcore/SleepPanda/build/test/Buzzer_Test"
+Directory: /home/pi/xddcore/SleepPanda/build/test
+"Buzzer_Test" start time: Feb 19 13:14 GMT
+Output:
+----------------------------------------------------------
+
+Please confirm whether the buzzer sounds (Y/N):
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Buzzer_Test
+[ RUN      ] Buzzer_Test.Check_If_Buzzer_Sounds
+RPI DEBUG: Buzzer pigpio initialisation failed.
+RPI DEBUG: Buzzer On.
+/home/pi/xddcore/SleepPanda/src/app/Buzzer/test/Buzzer_Test.cpp:15: Failure
+Expected equality of these values:
+  "Y"
+  (const char*)&Keyboard_Input
+    Which is: "\xFF\xFF\xFF\xFF\x6"
+RPI DEBUG: Buzzer Off.
+RPI DEBUG: Buzzer Delete.
+[  FAILED  ] Buzzer_Test.Check_If_Buzzer_Sounds (0 ms)
+[----------] 1 test from Buzzer_Test (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] Buzzer_Test.Check_If_Buzzer_Sounds
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"Buzzer_Test" end time: Feb 19 13:14 GMT
+"Buzzer_Test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 19 13:14 GMT
