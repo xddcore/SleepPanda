@@ -1,2 +1,0 @@
-/usr/bin/ar qc libBuzzer_Static.a CMakeFiles/Buzzer_Static.dir/Buzzer.cpp.o
-/usr/bin/ranlib libBuzzer_Static.a
