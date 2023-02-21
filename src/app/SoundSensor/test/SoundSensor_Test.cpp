@@ -1,3 +1,12 @@
+/*
+ * @Author: Chengsen Dong 1034029664@qq.com
+ * @Date: 2023-02-17 19:28:49
+ * @LastEditors: Chengsen Dong 1034029664@qq.com
+ * @LastEditTime: 2023-02-21 13:22:27
+ * @FilePath: /SleepPanda/src/app/SoundSensor/test/SoundSensor_Test.cpp
+ * @Description: 
+ * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
+ */
 #include "../SoundSensor.h"
 
 #include "gtest/gtest.h"
@@ -19,7 +28,6 @@ class Rpi_SoundSensor : public SoundSensor {
 TEST(SoundSensor_Test, Check_SoundSensor_Event_ISR)
 {
     SoundSensor_Settings My_SoundSensor_Settings;
-    My_SoundSensor_Settings.Trigger_Method = RISING_EDGE; //when sound appears
     Rpi_SoundSensor My_Rpi_SoundSensor(My_SoundSensor_Settings);
     getchar();
     printf("My_Rpi_SoundSensor.ISR_CheckPoint:%d\r\n",My_Rpi_SoundSensor.ISR_CheckPoint);
