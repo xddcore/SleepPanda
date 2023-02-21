@@ -1,0 +1,43 @@
+Start testing: Feb 21 18:34 GMT
+----------------------------------------------------------
+1/1 Testing: MAX30101_Test
+1/1 Test: MAX30101_Test
+Command: "/home/pi/xddcore/SleepPanda/src/app/MAX30101/build/test/MAX30101_Test"
+Directory: /home/pi/xddcore/SleepPanda/src/app/MAX30101/build/test
+"MAX30101_Test" start time: Feb 21 18:34 GMT
+Output:
+----------------------------------------------------------
+
+MAX30101 SENSOR:
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MAX30101_Test
+[ RUN      ] MAX30101_Test.Check_MAX30101_Event_ISR
+RPI DEBUG: MAX30101 pigpio initialised okay.
+Device_Init: MAX30101 i2cOpen Succeeded!  fd = 0
+RPI DEBUG: MAX30101 Device Init ok.
+Rpi_MAX30101.ISR_CheckPoint:0
+/home/pi/xddcore/SleepPanda/src/app/MAX30101/test/MAX30101_Test.cpp:34: Failure
+Value of: My_Rpi_MAX30101.ISR_CheckPoint
+  Actual: false
+Expected: true
+RPI DEBUG: MAX30101 Delete.
+[  FAILED  ] MAX30101_Test.Check_MAX30101_Event_ISR (9318 ms)
+[----------] 1 test from MAX30101_Test (9318 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (9319 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] MAX30101_Test.Check_MAX30101_Event_ISR
+
+ 1 FAILED TEST
+<end of output>
+Test time =   9.33 sec
+----------------------------------------------------------
+Test Failed.
+"MAX30101_Test" end time: Feb 21 18:34 GMT
+"MAX30101_Test" time elapsed: 00:00:09
+----------------------------------------------------------
+
+End testing: Feb 21 18:34 GMT

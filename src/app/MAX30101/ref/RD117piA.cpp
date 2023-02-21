@@ -47,7 +47,7 @@
 #include "algorithm2_by_RF.cpp"
 
 #define DUMPREGSSIZE 20
-#define ITER 10
+#define ITER 1000
 
 int setup(int* i2cDevHndl);
 int writeReadingsToLog(FILE *ofpL, int basePtr);
@@ -160,14 +160,6 @@ int main (int argc, char **argv)
     rf_heart_rate_and_oxygen_saturation(aun_ir_buffer, BUFFER_SIZE, aun_red_buffer,
                                         &n_spo2, &ch_spo2_valid, &n_heart_rate,
                                         &ch_hr_valid, &ratio, &correl); 
-
-    if (ch_spo2_valid == 1)
-    {
-      sprintf(spbuff, "%4.1f", n_spo2);
-      gtk_label_set_text (GTK_LABEL (lbl3), spbuff);
-      sprintf(spbuff, "%3d", n_heart_rate);
-      gtk_label_set_text (GTK_LABEL (lbl4), spbuff);
-    }
     
     printf("RF: SpO2: %lf\n", n_spo2);
     printf("    HR:   %d\n", n_heart_rate);
@@ -180,6 +172,33 @@ int main (int argc, char **argv)
     printf("MX: SpO2: %lf\n", n_spo2_maxim);
     printf("    HR:   %d\n", n_heart_rate_maxim);
     printf("---------------\n");
+
+    if(0) //use rf alg
+    {
+      if (ch_spo2_valid == 1)
+      {
+        sprintf(spbuff, "%4.1f", n_spo2);
+        gtk_label_set_text (GTK_LABEL (lbl3), spbuff);
+      }
+      if (ch_hr_valid == 1)
+      {
+        sprintf(spbuff, "%3d", n_heart_rate);
+        gtk_label_set_text (GTK_LABEL (lbl4), spbuff);
+      }
+    }
+    else
+    {
+      if (ch_spo2_valid_maxim == 1)
+      {
+        sprintf(spbuff, "%4.1f", n_spo2_maxim);
+        gtk_label_set_text (GTK_LABEL (lbl3), spbuff);
+      }
+      if (ch_hr_valid_maxim == 1)
+      {
+        sprintf(spbuff, "%3d", n_heart_rate_maxim);
+        gtk_label_set_text (GTK_LABEL (lbl4), spbuff);
+      }
+    }
 
     writeReadingsToLog(ofpL, k);
 

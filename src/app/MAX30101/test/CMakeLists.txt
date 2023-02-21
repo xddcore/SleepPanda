@@ -7,6 +7,7 @@ MESSAGE(STATUS "Current path : ${CMAKE_CURRENT_SOURCE_DIR}")
 add_compile_options(-std=c++14 -Wall -Wconversion -Wextra -pedantic)
 
 # GoogleTest requires at least C++14
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 14)
 
 set(LIBSRC MAX30101_Test.cpp)

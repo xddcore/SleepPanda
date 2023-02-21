@@ -231,7 +231,7 @@ void maxim_find_peaks( int32_t *pn_locs, int32_t *n_npks,  int32_t  *pn_x, int32
   maxim_remove_close_peaks( pn_locs, n_npks, pn_x, n_min_distance );
   //*n_npks = min( *n_npks, n_max_num );
   //Chengsen Dong
-  *n_npks = (*n_npks) < (n_max_num) ? (*n_npks) : (n_max_num);
+  *n_npks = ((*n_npks) < (n_max_num) ? (*n_npks) : (n_max_num));
 }
 
 void maxim_peaks_above_min_height( int32_t *pn_locs, int32_t *n_npks,  int32_t  *pn_x, int32_t n_size, \

@@ -13,10 +13,11 @@ add_subdirectory(test)
 add_compile_options(-std=c++14 -Wall -Wconversion -Wextra -pedantic)
 
 # GoogleTest requires at least C++14
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 14)
 
-set(LIBSRC MAX30101.cpp)
-set(LIBINCLUDE MAX30101.h)
+set(LIBSRC MAX30101.cpp algorithm2.cpp algorithm2_by_RF.cpp)
+set(LIBINCLUDE MAX30101.h algorithm2.h algorithm2_by_RF.h)
 set(LIBSTATIC MAX30101_Static)
 set(LIBSTATIC_TARGETS MAX30101_Static-Targets)
 
