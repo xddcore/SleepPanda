@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-02-19 15:55:20
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-21 18:25:21
+ * @LastEditTime: 2023-02-21 20:20:15
  * @FilePath: /SleepPanda/src/app/MAX30101/MAX30101.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -32,6 +32,8 @@ MAX30101::MAX30101(MAX30101_Settings max30101_settings) {
             gpioSetMode(My_MAX30101_Settings.MAX30101_Interrupt_GPIO_Pin,PI_INPUT);
             //Must connect pull-up to INT Pin
             gpioSetPullUpDown(My_MAX30101_Settings.MAX30101_Interrupt_GPIO_Pin, PI_PUD_UP);
+            //GPIO Interrupt
+            gpioSetISRFuncEx(My_MAX30101_Settings.MAX30101_Interrupt_GPIO_Pin,My_MAX30101_Settings.Trigger_Method,My_MAX30101_Settings.ISR_TIMEOUT,gpioISR,(void*)this);
             //MAX30101 Init below
             i2cHndl = Device_Init(My_MAX30101_Settings);
             if (i2cHndl == -1)
@@ -224,7 +226,7 @@ int MAX30101::Read_FIFO(int fd, uint32_t *pun_red_led, uint32_t *pun_ir_led)
 
 //MAX30101开始读取数据
 void MAX30101::Start(){
-    gpioSetISRFuncEx(My_MAX30101_Settings.MAX30101_Interrupt_GPIO_Pin,My_MAX30101_Settings.Trigger_Method,My_MAX30101_Settings.ISR_TIMEOUT,gpioISR,(void*)this);
+    //gpioSetISRFuncEx(My_MAX30101_Settings.MAX30101_Interrupt_GPIO_Pin,My_MAX30101_Settings.Trigger_Method,My_MAX30101_Settings.ISR_TIMEOUT,gpioISR,(void*)this);
     i2cReadByteData(i2cHndl, REG_INTR_STATUS_1);                           // Clear ISR1.
     Read_FIFO(i2cHndl, (aun_red_buffer+BUFFER_SIZE_i), (aun_ir_buffer+BUFFER_SIZE_i));  // Read from MAX30102 FIFO.
     BUFFER_SIZE_i++;
