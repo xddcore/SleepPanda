@@ -2,8 +2,8 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
- * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-01 10:51:32
+ * @LastEditors: Yihan Wang yihanwangg@163.com
+ * @LastEditTime: 2023-03-01 21:08:07
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -678,7 +678,7 @@ card 3: seeed2micvoicec [seeed-2mic-voicecard], device 0: bcm2835-i2s-wm8960-hif
 
 **录音命令**:
 ```
-arecord -D plughw:3,0 -d 2 -f cd -c 2 -v -t wav test.wav
+arecord -D “plughw:3,0” -d 2 -f cd -c 2 -v -t wav test.wav
 ```
 >-D 指定录音设备  
 -d 设置录音时长  
@@ -692,6 +692,22 @@ test.wav 输出文件的路径、名称
 aplay -D "plughw:3,0" test.wav
 ```
 
+**Unit Test DEMO**
+
+您将看到的现象: 将使用WM8960录音3秒并创建一个Record_Wav_File_Test.wav文件。
+
+当单元测试程序运行时:
+请发出声音/播放歌曲。
+
+请执行以下命令以运行单元测试：
+```
+## change to work dir
+cd SleepPanda/src/app/WM8960/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
+>Note:如果成功创建Record_Wav_File_Test.wav文件，但是打开播放却无声音，请使用`alsamixer`声卡管理程序启用WM8960声卡的麦克风。
 
 #### 2.5.5 Ink Screen(SSD1608)
 >Author: Rui Liu

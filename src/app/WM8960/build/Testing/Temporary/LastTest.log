@@ -1,15 +1,15 @@
-Start testing: Mar 01 14:28 GMT
+Start testing: Mar 01 21:08 GMT
 ----------------------------------------------------------
 1/1 Testing: WM8960_Test
 1/1 Test: WM8960_Test
 Command: "/home/pi/xddcore/SleepPanda/src/app/WM8960/build/test/WM8960_Test"
 Directory: /home/pi/xddcore/SleepPanda/src/app/WM8960/build/test
-"WM8960_Test" start time: Mar 01 14:28 GMT
+"WM8960_Test" start time: Mar 01 21:08 GMT
 Output:
 ----------------------------------------------------------
-[==========] Running 1 test from 1 test suite.
+[==========] Running 2 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 1 test from WM8960_Test
+[----------] 2 tests from WM8960_Test
 [ RUN      ] WM8960_Test.Record_Wav_File_Test
 Recording WAVE 'Record_Wav_File_Test.wav' : Signed 16 bit Little Endian, Rate 44100 Hz, Stereo
 Plug PCM: Hardware PCM card 3 'seeed-2mic-voicecard' device 0 subdevice 0
@@ -38,21 +38,22 @@ Its setup is:
   appl_ptr     : 0
   hw_ptr       : 0
 RPI DEBUG: WM8960 initialisation success.
-
-arecord -D plughw:3,0 -d 3 -f cd -c 2 -v -t wav Record_Wav_File_Test.wav
+RPI DEBUG: WM8960 Recording(time = 3, Wav File = Record_Wav_File_Test.wav).
 RPI DEBUG: WM8960 Delete.
-[       OK ] WM8960_Test.Record_Wav_File_Test (305 ms)
-[----------] 1 test from WM8960_Test (305 ms total)
+[       OK ] WM8960_Test.Record_Wav_File_Test (3293 ms)
+[ RUN      ] WM8960_Test.Check_Wav_File_Exists
+[       OK ] WM8960_Test.Check_Wav_File_Exists (0 ms)
+[----------] 2 tests from WM8960_Test (3293 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (306 ms total)
-[  PASSED  ] 1 test.
+[==========] 2 tests from 1 test suite ran. (3294 ms total)
+[  PASSED  ] 2 tests.
 <end of output>
-Test time =   0.32 sec
+Test time =   3.30 sec
 ----------------------------------------------------------
 Test Passed.
-"WM8960_Test" end time: Mar 01 14:28 GMT
-"WM8960_Test" time elapsed: 00:00:00
+"WM8960_Test" end time: Mar 01 21:08 GMT
+"WM8960_Test" time elapsed: 00:00:03
 ----------------------------------------------------------
 
-End testing: Mar 01 14:28 GMT
+End testing: Mar 01 21:08 GMT
