@@ -1,0 +1,58 @@
+Start testing: Mar 01 14:28 GMT
+----------------------------------------------------------
+1/1 Testing: WM8960_Test
+1/1 Test: WM8960_Test
+Command: "/home/pi/xddcore/SleepPanda/src/app/WM8960/build/test/WM8960_Test"
+Directory: /home/pi/xddcore/SleepPanda/src/app/WM8960/build/test
+"WM8960_Test" start time: Mar 01 14:28 GMT
+Output:
+----------------------------------------------------------
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from WM8960_Test
+[ RUN      ] WM8960_Test.Record_Wav_File_Test
+Recording WAVE 'Record_Wav_File_Test.wav' : Signed 16 bit Little Endian, Rate 44100 Hz, Stereo
+Plug PCM: Hardware PCM card 3 'seeed-2mic-voicecard' device 0 subdevice 0
+Its setup is:
+  stream       : CAPTURE
+  access       : RW_INTERLEAVED
+  format       : S16_LE
+  subformat    : STD
+  channels     : 2
+  rate         : 44100
+  exact rate   : 44100 (44100/1)
+  msbits       : 16
+  buffer_size  : 22052
+  period_size  : 5513
+  period_time  : 125011
+  tstamp_mode  : NONE
+  tstamp_type  : MONOTONIC
+  period_step  : 1
+  avail_min    : 5513
+  period_event : 0
+  start_threshold  : 1
+  stop_threshold   : 22052
+  silence_threshold: 0
+  silence_size : 0
+  boundary     : 1445199872
+  appl_ptr     : 0
+  hw_ptr       : 0
+RPI DEBUG: WM8960 initialisation success.
+
+arecord -D plughw:3,0 -d 3 -f cd -c 2 -v -t wav Record_Wav_File_Test.wav
+RPI DEBUG: WM8960 Delete.
+[       OK ] WM8960_Test.Record_Wav_File_Test (305 ms)
+[----------] 1 test from WM8960_Test (305 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (306 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.32 sec
+----------------------------------------------------------
+Test Passed.
+"WM8960_Test" end time: Mar 01 14:28 GMT
+"WM8960_Test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 01 14:28 GMT

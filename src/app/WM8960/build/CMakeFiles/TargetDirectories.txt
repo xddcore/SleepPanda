@@ -1,0 +1,16 @@
+/home/pi/xddcore/SleepPanda/src/app/WM8960/build/CMakeFiles/install/strip.dir
+/home/pi/xddcore/SleepPanda/src/app/WM8960/build/CMakeFiles/list_install_components.dir
+/home/pi/xddcore/SleepPanda/src/app/WM8960/build/CMakeFiles/install/local.dir
+/home/pi/xddcore/SleepPanda/src/app/WM8960/build/CMakeFiles/rebuild_cache.dir
+/home/pi/xddcore/SleepPanda/src/app/WM8960/build/CMakeFiles/edit_cache.dir
+/home/pi/xddcore/SleepPanda/src/app/WM8960/build/CMakeFiles/install.dir
+/home/pi/xddcore/SleepPanda/src/app/WM8960/build/CMakeFiles/test.dir
+/home/pi/xddcore/SleepPanda/src/app/WM8960/build/CMakeFiles/WM8960_Static.dir
+/home/pi/xddcore/SleepPanda/src/app/WM8960/build/test/CMakeFiles/install/strip.dir
+/home/pi/xddcore/SleepPanda/src/app/WM8960/build/test/CMakeFiles/list_install_components.dir
+/home/pi/xddcore/SleepPanda/src/app/WM8960/build/test/CMakeFiles/install/local.dir
+/home/pi/xddcore/SleepPanda/src/app/WM8960/build/test/CMakeFiles/rebuild_cache.dir
+/home/pi/xddcore/SleepPanda/src/app/WM8960/build/test/CMakeFiles/edit_cache.dir
+/home/pi/xddcore/SleepPanda/src/app/WM8960/build/test/CMakeFiles/install.dir
+/home/pi/xddcore/SleepPanda/src/app/WM8960/build/test/CMakeFiles/test.dir
+/home/pi/xddcore/SleepPanda/src/app/WM8960/build/test/CMakeFiles/WM8960_Test.dir

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libWM8960_Static.a CMakeFiles/WM8960_Static.dir/WM8960.cpp.o
+/usr/bin/ranlib libWM8960_Static.a

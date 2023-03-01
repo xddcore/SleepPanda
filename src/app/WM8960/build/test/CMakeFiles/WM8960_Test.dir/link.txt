@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/WM8960_Test.dir/WM8960_Test.cpp.o -o WM8960_Test   -L/home/pi/xddcore/SleepPanda/src/app/WM8960/test/../../../../tools/gtest/rpios_32bit/lib  -Wl,-rpath,/home/pi/xddcore/SleepPanda/src/app/WM8960/test/../../../../tools/gtest/rpios_32bit/lib ../libWM8960_Static.a ../../test/../../../../tools/gtest/rpios_32bit/lib/libgtest.so -lpigpio 
