@@ -696,9 +696,37 @@ aplay -D "plughw:3,0" test.wav
 #### 2.5.5 Ink Screen(SSD1608)
 >Author: Rui Liu
 
+**Features：**
+2.13" EPD display
+Inky pHAT pinout
+Compatible with all 40-pin header Raspberry Pi models
+Python library
+Comes fully assembled
+
+
+**笔记：**
+Overall dimensions: 65x30x8.5mm (WxHxD, depth includes header and display)
+Display usable area dimensions: 48.5x23.8mm (WxH), 2.13" diagonal
+
 >Ref:
 >1. https://github.com/pimoroni/inky
 >2. https://shop.pimoroni.com/products/inky-phat?variant=12549254905939
+
+**Unit Test DEMO**
+
+
+
+当单元测试程序运行时:
+请，然后按键盘的 ENTER。
+
+请执行以下命令以运行单元测试：
+```
+## change to work dir
+cd SleepPanda/src/app/SoundSensor/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
 
 #### 2.5.6 MLX90640
 >Author: Hui Wang
