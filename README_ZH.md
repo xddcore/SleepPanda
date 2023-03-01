@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-18 12:25:25
+ * @LastEditTime: 2023-03-01 10:51:32
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -603,6 +603,95 @@ cmake .. && make && sudo ctest --verbose
 >Ref:
 >1. https://wiki.seeedstudio.com/ReSpeaker_2_Mics_Pi_HAT/
 >2. https://shop.pimoroni.com/products/respeaker-2-mics-phat?variant=49979573706
+
+使用系统自带的arecord命令后, 系统Log如下:  
+显然，声卡驱动没有被支持。
+```
+sudo arecord -D hw:3,0 -d 2 -f cd -c 2 -v -t wav test.wav
+
+Recording WAVE 'test.wav' : Signed 16 bit Little Endian, Rate 44100 Hz, Stereo
+arecord: set_params:1407: Unable to install hw params:
+ACCESS:  RW_INTERLEAVED
+FORMAT:  S16_LE
+SUBFORMAT:  STD
+SAMPLE_BITS: 16
+FRAME_BITS: 32
+CHANNELS: 2
+RATE: 44100
+PERIOD_TIME: (125011 125012)
+PERIOD_SIZE: 5513
+PERIOD_BYTES: 22052
+PERIODS: 4
+BUFFER_TIME: (500045 500046)
+BUFFER_SIZE: 22052
+BUFFER_BYTES: 88208
+TICK_TIME: 0
+```
+解决方案:
+> 1.https://github.com/respeaker/seeed-voicecard/pull/323
+> 2.https://github.com/respeaker/seeed-voicecard/issues/326
+> 3.https://github.com/HinTak/seeed-voicecard
+
+执行以下命令(用非官方fork来修复bug):
+```
+git clone https://github.com/HinTak/seeed-voicecard.git
+cd seeed-voicecard
+sudo ./install.sh
+sudo reboot now
+```
+---
+**WM8960设备驱动测试**
+
+播放设备:
+```
+aplay -l
+**** List of PLAYBACK Hardware Devices ****
+card 0: Headphones [bcm2835 Headphones], device 0: bcm2835 Headphones [bcm2835 Headphones]
+  Subdevices: 8/8
+  Subdevice #0: subdevice #0
+  Subdevice #1: subdevice #1
+  Subdevice #2: subdevice #2
+  Subdevice #3: subdevice #3
+  Subdevice #4: subdevice #4
+  Subdevice #5: subdevice #5
+  Subdevice #6: subdevice #6
+  Subdevice #7: subdevice #7
+card 1: vc4hdmi0 [vc4-hdmi-0], device 0: MAI PCM i2s-hifi-0 [MAI PCM i2s-hifi-0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 2: vc4hdmi1 [vc4-hdmi-1], device 0: MAI PCM i2s-hifi-0 [MAI PCM i2s-hifi-0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 3: seeed2micvoicec [seeed-2mic-voicecard], device 0: bcm2835-i2s-wm8960-hifi wm8960-hifi-0 [bcm2835-i2s-wm8960-hifi wm8960-hifi-0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+```
+
+录音设备:
+```
+arecord -l
+**** List of CAPTURE Hardware Devices ****
+card 3: seeed2micvoicec [seeed-2mic-voicecard], device 0: bcm2835-i2s-wm8960-hifi wm8960-hifi-0 [bcm2835-i2s-wm8960-hifi wm8960-hifi-0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+```
+
+**录音命令**:
+```
+arecord -D plughw:3,0 -d 2 -f cd -c 2 -v -t wav test.wav
+```
+>-D 指定录音设备  
+-d 设置录音时长  
+-f 录音示例格式  
+-c 指定频道  
+-t 录音输出的文件类型   
+test.wav 输出文件的路径、名称  
+
+**播放命令**:
+```
+aplay -D "plughw:3,0" test.wav
+```
+
 
 #### 2.5.5 Ink Screen(SSD1608)
 >Author: Rui Liu
