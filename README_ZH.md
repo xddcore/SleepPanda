@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-02 09:40:25
+ * @LastEditTime: 2023-03-02 09:58:22
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -404,6 +404,8 @@ ls install/
 ![Hardware_Architecture](./img/Hardware_Architecture.png)
 
 >Ref:https://abyz.me.uk/rpi/pigpio/index.html
+
+>如果你想更快速的查询GPIO，你可以访问如下网址:https://pinout.xyz/pinout/
 
 ![Pigpio-Rpi-PinMap](./img/pigpio_rpi_pinmap.jpeg)
 
