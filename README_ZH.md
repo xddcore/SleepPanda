@@ -2,8 +2,8 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
- * @LastEditors: Yihan Wang yihanwangg@163.com
- * @LastEditTime: 2023-03-01 21:08:07
+ * @LastEditors: Chengsen Dong 1034029664@qq.com
+ * @LastEditTime: 2023-03-02 09:40:25
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -597,6 +597,51 @@ cmake .. && make && sudo ctest --verbose
 >1. https://github.com/pimoroni/max30105-python
 >2. https://shop.pimoroni.com/products/max30101-breakout-heart-rate-oximeter-smoke-sensor?variant=21482065985619
 
+>Note: 通过`raspi-gpio get`查询发现，原计划使用的Interrupt Pin -4被其他程序占用，导致输入电平始终为0，无法实现外部中断功能。所以将使用GPIO6连接MAX30101的INT引脚。
+
+**Unit Test DEMO**
+
+请执行以下命令以运行单元测试：
+```
+## change to work dir
+cd SleepPanda/src/app/MAX30101/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
+
+您将看到的现象: 将你的手指尖放在MAX30101传感器上，等待15秒后，按下键盘的回车键。即可完成单元测试。程序将会输出当前心率和血氧数值。你将得到类似以下的输出:
+```
+1: Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate:71, spo2: 99.525826
+1: ir_mean: 136982.530000,  red_mean: 121904.060000
+1: beta_ir: -4.232085,  beta_red: -2.549403
+1: n_last_peak_interval test = GOOD
+1: boundary test = GOOD
+1: Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate:78, spo2: 99.414008
+1: ir_mean: 136578.920000,  red_mean: 121704.060000
+1: beta_ir: 4.154383,  beta_red: 0.232127
+1: n_last_peak_interval test = GOOD
+1: boundary test = GOOD
+1: Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate:83, spo2: 99.427597
+1: ir_mean: 137294.050000,  red_mean: 121818.950000
+1: beta_ir: 8.709769,  beta_red: 1.685311
+1: n_last_peak_interval test = GOOD
+1: boundary test = GOOD
+1: Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate:75, spo2: 99.445994
+1: Rpi_MAX30101.ISR_CheckPoint:1
+1: RPI DEBUG: MAX30101 Delete.
+1: [       OK ] MAX30101_Test.Check_MAX30101_ISR_HeartRate_SPO2 (45287 ms)
+1: [----------] 1 test from MAX30101_Test (45287 ms total)
+1: 
+1: [----------] Global test environment tear-down
+1: [==========] 1 test from 1 test suite ran. (45287 ms total)
+1: [  PASSED  ] 1 test.
+1/1 Test #1: MAX30101_Test ....................   Passed   45.30 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =  45.30 sec
+```
 #### 2.5.4 WM8960
 >Author:Yihan Wang
 
