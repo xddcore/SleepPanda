@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-02-17 19:28:49
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-02 09:35:14
+ * @LastEditTime: 2023-03-02 09:46:28
  * @FilePath: /SleepPanda/src/app/MAX30101/test/MAX30101_Test.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
