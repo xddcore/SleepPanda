@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMAX30101_Static.a CMakeFiles/MAX30101_Static.dir/MAX30101.cpp.o CMakeFiles/MAX30101_Static.dir/algorithm2.cpp.o CMakeFiles/MAX30101_Static.dir/algorithm2_by_RF.cpp.o
+/usr/bin/ranlib libMAX30101_Static.a

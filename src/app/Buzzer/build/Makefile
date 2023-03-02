@@ -75,6 +75,40 @@ CMAKE_BINARY_DIR = /home/pi/xddcore/SleepPanda/src/app/Buzzer/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -96,6 +130,29 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -130,17 +187,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Buzzer
+# Target rules for targets named Buzzer_Static
 
 # Build rule for target.
-Buzzer: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Buzzer
-.PHONY : Buzzer
+Buzzer_Static: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Buzzer_Static
+.PHONY : Buzzer_Static
 
 # fast build rule for target.
-Buzzer/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer.dir/build.make CMakeFiles/Buzzer.dir/build
-.PHONY : Buzzer/fast
+Buzzer_Static/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer_Static.dir/build.make CMakeFiles/Buzzer_Static.dir/build
+.PHONY : Buzzer_Static/fast
+
+#=============================================================================
+# Target rules for targets named Buzzer_Test
+
+# Build rule for target.
+Buzzer_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Buzzer_Test
+.PHONY : Buzzer_Test
+
+# fast build rule for target.
+Buzzer_Test/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/Buzzer_Test.dir/build.make test/CMakeFiles/Buzzer_Test.dir/build
+.PHONY : Buzzer_Test/fast
 
 Buzzer.o: Buzzer.cpp.o
 
@@ -148,7 +218,7 @@ Buzzer.o: Buzzer.cpp.o
 
 # target to build an object file
 Buzzer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer.dir/build.make CMakeFiles/Buzzer.dir/Buzzer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer_Static.dir/build.make CMakeFiles/Buzzer_Static.dir/Buzzer.cpp.o
 .PHONY : Buzzer.cpp.o
 
 Buzzer.i: Buzzer.cpp.i
@@ -157,7 +227,7 @@ Buzzer.i: Buzzer.cpp.i
 
 # target to preprocess a source file
 Buzzer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer.dir/build.make CMakeFiles/Buzzer.dir/Buzzer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer_Static.dir/build.make CMakeFiles/Buzzer_Static.dir/Buzzer.cpp.i
 .PHONY : Buzzer.cpp.i
 
 Buzzer.s: Buzzer.cpp.s
@@ -166,7 +236,7 @@ Buzzer.s: Buzzer.cpp.s
 
 # target to generate assembly for a file
 Buzzer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer.dir/build.make CMakeFiles/Buzzer.dir/Buzzer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer_Static.dir/build.make CMakeFiles/Buzzer_Static.dir/Buzzer.cpp.s
 .PHONY : Buzzer.cpp.s
 
 # Help Target
@@ -176,8 +246,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... Buzzer"
+	@echo "... test"
+	@echo "... Buzzer_Static"
+	@echo "... Buzzer_Test"
 	@echo "... Buzzer.o"
 	@echo "... Buzzer.i"
 	@echo "... Buzzer.s"

@@ -1,8 +1,8 @@
 /*
  * @Author: Yihan Wang yihanwangg@163.com
  * @Date: 2023-02-13 10:03:21
- * @LastEditors: Yihan Wang yihanwangg@163.com
- * @LastEditTime: 2023-02-15 12:25:53
+ * @LastEditors: Chengsen Dong 1034029664@qq.com
+ * @LastEditTime: 2023-02-21 13:22:04
  * @FilePath: /SleepPanda/src/app/SoundSensor/SoundSensor.h
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -11,9 +11,18 @@
 #ifndef _SoundSensor_H
 #define _SoundSensor_H
 
+#include <stdint.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <pigpio.h>
+#include <assert.h>
+
+#include "../Config/Config.h"
+
 struct SoundSensor_Settings {
     unsigned int SoundSensor_GPIO_Pin = 5; //GPIO5(PIN29) will be used
-    unsigned int Trigger_Method;
+    unsigned int Trigger_Method = RISING_EDGE; //when sound appears
     unsigned int ISR_TIMEOUT = -1; //一直等待声音传感器的触发信号(<0)
 
     /**

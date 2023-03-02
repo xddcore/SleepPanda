@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-02-12 12:50:52
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-13 10:11:35
+ * @LastEditTime: 2023-03-02 09:55:22
  * @FilePath: /SleepPanda/src/app/Buzzer/Buzzer.h
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -11,9 +11,17 @@
 #ifndef _BUZZER_H
 #define _BUZZER_H
 
+#include <stdint.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <pigpio.h>
+#include <assert.h>
+
+#include "../Config/Config.h"
 
 struct Buzzer_Settings {
-    unsigned int Buzzer_GPIO_Pin = 6; //GPIO6(PIN31) will be used
+    unsigned int Buzzer_GPIO_Pin = 17; //GPIO17(PIN11) will be used
     unsigned int Buzzer_On_Level = 0; //蜂鸣器低电平触发
     unsigned int Buzzer_Off_Level = 1; //蜂鸣器高电平不触发
 

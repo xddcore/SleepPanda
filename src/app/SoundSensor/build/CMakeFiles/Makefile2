@@ -72,46 +72,93 @@ CMAKE_BINARY_DIR = /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/SoundSensor.dir/all
+all: CMakeFiles/SoundSensor_Static.dir/all
+all: test/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: test/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/SoundSensor.dir/clean
+clean: CMakeFiles/SoundSensor_Static.dir/clean
+clean: test/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/SoundSensor.dir
+# Directory level rules for directory test
+
+# Recursive "all" directory target.
+test/all: test/CMakeFiles/SoundSensor_Test.dir/all
+
+.PHONY : test/all
+
+# Recursive "preinstall" directory target.
+test/preinstall:
+
+.PHONY : test/preinstall
+
+# Recursive "clean" directory target.
+test/clean: test/CMakeFiles/SoundSensor_Test.dir/clean
+
+.PHONY : test/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/SoundSensor_Static.dir
 
 # All Build rule for target.
-CMakeFiles/SoundSensor.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoundSensor.dir/build.make CMakeFiles/SoundSensor.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoundSensor.dir/build.make CMakeFiles/SoundSensor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/CMakeFiles --progress-num=1,2 "Built target SoundSensor"
-.PHONY : CMakeFiles/SoundSensor.dir/all
+CMakeFiles/SoundSensor_Static.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoundSensor_Static.dir/build.make CMakeFiles/SoundSensor_Static.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoundSensor_Static.dir/build.make CMakeFiles/SoundSensor_Static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/CMakeFiles --progress-num=1,2 "Built target SoundSensor_Static"
+.PHONY : CMakeFiles/SoundSensor_Static.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/SoundSensor.dir/rule: cmake_check_build_system
+CMakeFiles/SoundSensor_Static.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SoundSensor.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/SoundSensor_Static.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/CMakeFiles 0
-.PHONY : CMakeFiles/SoundSensor.dir/rule
+.PHONY : CMakeFiles/SoundSensor_Static.dir/rule
 
 # Convenience name for target.
-SoundSensor: CMakeFiles/SoundSensor.dir/rule
+SoundSensor_Static: CMakeFiles/SoundSensor_Static.dir/rule
 
-.PHONY : SoundSensor
+.PHONY : SoundSensor_Static
 
 # clean rule for target.
-CMakeFiles/SoundSensor.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoundSensor.dir/build.make CMakeFiles/SoundSensor.dir/clean
-.PHONY : CMakeFiles/SoundSensor.dir/clean
+CMakeFiles/SoundSensor_Static.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoundSensor_Static.dir/build.make CMakeFiles/SoundSensor_Static.dir/clean
+.PHONY : CMakeFiles/SoundSensor_Static.dir/clean
+
+#=============================================================================
+# Target rules for target test/CMakeFiles/SoundSensor_Test.dir
+
+# All Build rule for target.
+test/CMakeFiles/SoundSensor_Test.dir/all: CMakeFiles/SoundSensor_Static.dir/all
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/SoundSensor_Test.dir/build.make test/CMakeFiles/SoundSensor_Test.dir/depend
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/SoundSensor_Test.dir/build.make test/CMakeFiles/SoundSensor_Test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/CMakeFiles --progress-num=3,4 "Built target SoundSensor_Test"
+.PHONY : test/CMakeFiles/SoundSensor_Test.dir/all
+
+# Build rule for subdir invocation for target.
+test/CMakeFiles/SoundSensor_Test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/SoundSensor_Test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/CMakeFiles 0
+.PHONY : test/CMakeFiles/SoundSensor_Test.dir/rule
+
+# Convenience name for target.
+SoundSensor_Test: test/CMakeFiles/SoundSensor_Test.dir/rule
+
+.PHONY : SoundSensor_Test
+
+# clean rule for target.
+test/CMakeFiles/SoundSensor_Test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/SoundSensor_Test.dir/build.make test/CMakeFiles/SoundSensor_Test.dir/clean
+.PHONY : test/CMakeFiles/SoundSensor_Test.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -1,20 +1,22 @@
 /*
- * @Author: Chengsen Dong 1034029664@qq.com
- * @Date: 2023-02-07 12:52:10
- * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-13 15:06:12
+ * @Author: Yihan Wang yihanwangg@163.com
+ * @Date: 2023-02-12 20:04:33
+ * @LastEditors: Yihan Wang yihanwangg@163.com
+ * @LastEditTime: 2023-02-18 11:48:51
  * @FilePath: /SleepPanda/src/app/Buzzer/Buzzer.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
  */
-#include <iostream>
-#include "stdio.h"
-
+/*
+ * @Author: Chengsen Dong 1034029664@qq.com
+ * @Date: 2023-02-07 12:52:10
+ * @LastEditors: Yihan Wang yihanwangg@163.com
+ * @LastEditTime: 2023-02-18 11:48:27
+ * @FilePath: /SleepPanda/src/app/Buzzer/Buzzer.cpp
+ * @Description: 
+ * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
+ */
 #include "Buzzer.h"
-#include "../Config/Config.h"
-#include <pigpio.h>
-
-#define UNIT_TEST 1
 
 //蜂鸣器构造函数
 Buzzer::Buzzer(Buzzer_Settings buzzer_settings) {
@@ -80,22 +82,5 @@ int Buzzer::Buzzer_Contorl(unsigned int Buzzer_OnOff) {
     return 0;
 #endif
 }
-
-#if(UNIT_TEST==1)
-
-#include <unistd.h>
-//The following code is used for the unit test of the buzzer.
-//What you will see: The buzzer turns on for one second and then turns off.
-
-int main() {
-    Buzzer_Settings My_Buzzer_Settings;
-    Buzzer MyBuzzer(My_Buzzer_Settings);
-    MyBuzzer.Buzzer_Contorl(Buzzer_On);
-    sleep(1);
-    MyBuzzer.Buzzer_Contorl(Buzzer_Off);
-    return 0;
-}
-#endif
-
 
 

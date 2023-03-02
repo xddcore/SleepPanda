@@ -1,0 +1,59 @@
+Start testing: Mar 01 21:08 GMT
+----------------------------------------------------------
+1/1 Testing: WM8960_Test
+1/1 Test: WM8960_Test
+Command: "/home/pi/xddcore/SleepPanda/src/app/WM8960/build/test/WM8960_Test"
+Directory: /home/pi/xddcore/SleepPanda/src/app/WM8960/build/test
+"WM8960_Test" start time: Mar 01 21:08 GMT
+Output:
+----------------------------------------------------------
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from WM8960_Test
+[ RUN      ] WM8960_Test.Record_Wav_File_Test
+Recording WAVE 'Record_Wav_File_Test.wav' : Signed 16 bit Little Endian, Rate 44100 Hz, Stereo
+Plug PCM: Hardware PCM card 3 'seeed-2mic-voicecard' device 0 subdevice 0
+Its setup is:
+  stream       : CAPTURE
+  access       : RW_INTERLEAVED
+  format       : S16_LE
+  subformat    : STD
+  channels     : 2
+  rate         : 44100
+  exact rate   : 44100 (44100/1)
+  msbits       : 16
+  buffer_size  : 22052
+  period_size  : 5513
+  period_time  : 125011
+  tstamp_mode  : NONE
+  tstamp_type  : MONOTONIC
+  period_step  : 1
+  avail_min    : 5513
+  period_event : 0
+  start_threshold  : 1
+  stop_threshold   : 22052
+  silence_threshold: 0
+  silence_size : 0
+  boundary     : 1445199872
+  appl_ptr     : 0
+  hw_ptr       : 0
+RPI DEBUG: WM8960 initialisation success.
+RPI DEBUG: WM8960 Recording(time = 3, Wav File = Record_Wav_File_Test.wav).
+RPI DEBUG: WM8960 Delete.
+[       OK ] WM8960_Test.Record_Wav_File_Test (3293 ms)
+[ RUN      ] WM8960_Test.Check_Wav_File_Exists
+[       OK ] WM8960_Test.Check_Wav_File_Exists (0 ms)
+[----------] 2 tests from WM8960_Test (3293 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (3294 ms total)
+[  PASSED  ] 2 tests.
+<end of output>
+Test time =   3.30 sec
+----------------------------------------------------------
+Test Passed.
+"WM8960_Test" end time: Mar 01 21:08 GMT
+"WM8960_Test" time elapsed: 00:00:03
+----------------------------------------------------------
+
+End testing: Mar 01 21:08 GMT

@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/xddcore/SleepPanda/src/app/Config/Config.h
+
+/home/pi/xddcore/SleepPanda/src/app/WM8960/WM8960.cpp
+WM8960.h
+/home/pi/xddcore/SleepPanda/src/app/WM8960/WM8960.h
+
+/home/pi/xddcore/SleepPanda/src/app/WM8960/WM8960.h
+stdint.h
+-
+unistd.h
+-
+stdio.h
+-
+stdlib.h
+-
+pigpio.h
+-
+assert.h
+-
+string
+-
+../Config/Config.h
+/home/pi/xddcore/SleepPanda/src/app/Config/Config.h
+

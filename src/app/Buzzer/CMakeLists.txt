@@ -4,10 +4,33 @@ project(Buzzer VERSION 1.0.0 LANGUAGES CXX)
 #print work path
 MESSAGE(STATUS "Current path : ${CMAKE_CURRENT_SOURCE_DIR}")
 
-add_compile_options(-std=c++11 -Wall -Wconversion -Wextra -pedantic)
+#enable ctest
+enable_testing()
 
-set(CMAKE_CXX_STANDARD 11)
+#add ./test dir
+add_subdirectory(test)
 
-add_executable(Buzzer Buzzer.cpp ../Config/Config.h Buzzer.h)
+add_compile_options(-std=c++14 -Wall -Wconversion -Wextra -pedantic)
 
-target_link_libraries(Buzzer pigpio)
+# GoogleTest requires at least C++14
+set(CMAKE_CXX_STANDARD 14)
+
+set(LIBSRC Buzzer.cpp)
+set(LIBINCLUDE Buzzer.h)
+set(LIBSTATIC Buzzer_Static)
+set(LIBSTATIC_TARGETS Buzzer_Static-Targets)
+
+add_library(${LIBSTATIC}
+  STATIC
+  ${LIBSRC}
+)
+
+set_target_properties(${LIBSTATIC} PROPERTIES
+  PUBLIC_HEADER "${LIBINCLUDE}")
+
+target_link_libraries(${LIBSTATIC} pigpio)
+
+install(TARGETS ${LIBSTATIC} EXPORT ${LIBSTATIC_TARGETS}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})

@@ -1,8 +1,13 @@
 <!--
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
- * @LastEditors: Yihan Wang yihanwangg@163.com
- * @LastEditTime: 2023-02-15 13:09:57
+<<<<<<< HEAD
+ * @LastEditors: Chengsen Dong 1034029664@qq.com
+ * @LastEditTime: 2023-03-02 10:14:30
+=======
+ * @LastEditors: Chengsen Dong 1034029664@qq.com
+ * @LastEditTime: 2023-02-15 16:27:55
+>>>>>>> 249ff8955d897cad0304e78fe3cb63d7f345510c
  * @FilePath: /SleepPanda/README.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -54,7 +59,8 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 
 ## Project Development Planning
 
->[Click here to view the minutes of the development meeting](./doc/meeting/)
+>[Click here to view the minutes of the development meeting](./doc/meeting/)  
+>[Click me to visit the Gantt chart](./doc/project%20management/)
 
 #### Global
 - [x] Build the Github warehouse & README document, complete the basic development environment configuration, fix the Linux kernel source code, and test the compilation of the kernel module.
@@ -67,12 +73,9 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 #### Chengsen Dong
 - [ ] Update the README document (synchronized with the development process)
 - [x] Buzzer driver development
-- [ ] MAX30101 driver development
-- [ ] MLX90640 driver development
+- [x] MAX30101 driver development
 - [ ] Tensorflow Lite neural network reasoning framework (C++ version)
 - [ ] MLX90640+ Convolutional Neural Network Gesture Recognition
-- [ ] WM8960 driver development (low priority)
-- [ ] ink screen driver development (virtual zoo)
 - [ ] 4K 30FPS camera (opencv c++ framework)
 - [ ] Convolutional Neural Network Sleeping Position Classification
 - [ ] Touch screen (QT-based GUI) development
@@ -85,6 +88,7 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 - [x] Pitch Session PPT slide draft
 - [x] Make cost accounting & original row selection Excel table
 - [x] Sound Sensor Driver Development
+- [x] WM8960 driver development (low priority)
 - [ ] To do later...
 
 #### Rui Liu
@@ -94,10 +98,12 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 - [x] Design SleepPanda Logo
 - [x] Pitch Session PPT slide final draft & pitch session speech preparation
 - [x] Make cost accounting & original row selection Excel table
+- [ ] ink screen driver development (virtual zoo)
 - [ ] To do later...
 
 #### Hui Wang
 - [x] Query the data sheets of all sensors/chips and upload them to the github repository
+- [ ] MLX90640 driver development
 - [ ] To do later...
 
 # guide
@@ -112,7 +118,7 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 3. Kernel version: 5.15.0-1023-raspi | Retrieve all Linux kernel `apt-cache search linux-raspi-headers`
 4. g++: `g++ (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
 5. gcc: `gcc (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
-
+6. Unit Test Framework: Google Test + ctest
 
 ### 1.2 Separate Raspberry Pi from keyboard, mouse & monitor
 0. Software that needs to be installed on a Windows computer: `1.Termius (for SSH)` `2.Microsoft Remote Desktop (for remote desktop) 3.Visual Studio code (universal editor)`
@@ -397,6 +403,12 @@ ls install /
 
 ![Hardware_Architecture](./img/Hardware_Architecture.png)
 
+>Ref:https://abyz.me.uk/rpi/pigpio/index.html
+
+> If you want to query GPIO more quickly, you can visit the following URL: https://pinout.xyz/pinout/
+
+![Pigpio-Rpi-PinMap](./img/pigpio_rpi_pinmap.jpeg)
+
 ### 2.4 Software Architecture
 
 ![Software_Architecture](./img/Software_Architecture.png) 
@@ -523,6 +535,30 @@ pigpio initialisation failed (-2003).
 Fixup: Because pigpio relies on the BCM2711 chip hardware function to achieve ultra-low-latency DMA operations, and qemu's DMA cannot support this operation, so pigpio simulation cannot be completed in the QEMU environment.
 
 #### 2.5.1 Buzzer
+>Author: Chengsen Dong
+
+**Features:**   
+The module is driven by S8550 transistor.   
+Working voltage 3.3V-5V.    
+Low level trigger.   
+Designed with holes for fixing with bolt, so it is easy to assemble.    
+VCC: External 3.3V-5V voltage (can be directly connected with 5V single-chip microcomputer and 3.3V single-chip microcomputer)    
+GND: External GND   
+I/O: External micro-controller IO port   
+
+**Unit Test DEMO**
+
+When the unit test program runs:
+If you hear the buzzer, please use the keyboard to type "Y" and press ENTER.
+
+Execute the following command to run unit tests:
+```
+## change to work dir
+cd SleepPanda/src/app/Buzzer/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
 
 #### 2.5.2 Sound Sensor
 >Author: Yihan Wang
@@ -538,4 +574,202 @@ Output form: Digital and Analog Output
 **Note:**
 AO outputs real-time voltage signal of the microphone.  
 DO outputs low and high lever signal when the sound intensity reaches a threshold  
-Sensitivity is adjustable by adjusting the potentiometer  
+Sensitivity is adjustable by adjusting the potentiometer 
+
+**Unit Test DEMO**
+
+What you will see: Make a sound, the DO pin level of the sound sensor will jump from low level to high level (rising edge interrupt), trigger a sound event, and the screen will print `Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered .`. 
+
+When the unit test program runs:
+Make a sound and press ENTER on your keyboard.
+
+Execute the following command to run unit tests:
+```
+## change to work dir
+cd SleepPanda/src/app/SoundSensor/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
+
+#### 2.5.3 MAX30101
+>Author:Chengsen Dong
+
+>Ref:
+>1. https://github.com/pimoroni/max30105-python
+>2. https://shop.pimoroni.com/products/max30101-breakout-heart-rate-oximeter-smoke-sensor?variant=21482065985619
+
+>Note: Through the `raspi-gpio get` query, it is found that the Interrupt Pin -4 originally planned to be used is occupied by other programs, resulting in the input level being always 0, and the external interrupt function cannot be realized. So will use GPIO6 to connect to INT pin of MAX30101.
+
+**Unit Test DEMO**
+
+Execute the following command to run unit tests:
+```
+## change to work dir
+cd SleepPanda/src/app/MAX30101/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
+
+What you'll see: Put your fingertip on the MAX30101 sensor, wait 15 seconds, and press the Enter key on your keyboard. Unit testing is complete. The program will output the current heart rate and blood oxygen values. You will get output similar to:
+```
+1: Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate: 71, spo2: 99.525826
+1: ir_mean: 136982.530000, red_mean: 121904.060000
+1: beta_ir: -4.232085, beta_red: -2.549403
+1: n_last_peak_interval test = GOOD
+1: boundary test = GOOD
+1: Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate: 78, spo2: 99.414008
+1: ir_mean: 136578.920000, red_mean: 121704.060000
+1: beta_ir: 4.154383, beta_red: 0.232127
+1: n_last_peak_interval test = GOOD
+1: boundary test = GOOD
+1: Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate: 83, spo2: 99.427597
+1: ir_mean: 137294.050000, red_mean: 121818.950000
+1: beta_ir: 8.709769, beta_red: 1.685311
+1: n_last_peak_interval test = GOOD
+1: boundary test = GOOD
+1: Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate: 75, spo2: 99.445994
+1: Rpi_MAX30101.ISR_CheckPoint: 1
+1: RPI DEBUG: MAX30101 Delete.
+1: [ OK ] MAX30101_Test.Check_MAX30101_ISR_HeartRate_SPO2 (45287 ms)
+1: [----------] 1 test from MAX30101_Test (45287 ms total)
+1: 
+1: [----------] Global test environment tear-down
+1: [==========] 1 test from 1 test suite ran. (45287 ms total)
+1: [ PASSED ] 1 test.
+1/1 Test #1: MAX30101_Test ................... Passed 45.30 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) = 45.30 sec
+```
+
+#### 2.5.4 WM8960
+>Author:Yihan Wang
+
+>Ref:
+>1. https://wiki.seeedstudio.com/ReSpeaker_2_Mics_Pi_HAT/
+>2. https://shop.pimoroni.com/products/respeaker-2-mics-phat?variant=49979573706
+
+After using the arecord command that comes with the system, the system Log is as follows:
+Apparently, the sound card driver is not supported.
+```
+sudo arecord -D hw:3,0 -d 2 -f cd -c 2 -v -t wav test.wav
+
+Recording WAVE 'test.wav' : Signed 16 bit Little Endian, Rate 44100 Hz, Stereo
+arecord: set_params:1407: Unable to install hw params:
+ACCESS: RW_INTERLEAVED
+FORMAT: S16_LE
+SUBFORMAT: STD
+SAMPLE_BITS: 16
+FRAME_BITS: 32
+CHANNELS: 2
+RATE: 44100
+PERIOD_TIME: (125011 125012)
+PERIOD_SIZE: 5513
+PERIOD_BYTES: 22052
+PERIODS: 4
+BUFFER_TIME: (500045 500046)
+BUFFER_SIZE: 22052
+BUFFER_BYTES: 88208
+TICK_TIME: 0
+```
+solution:
+> 1. https://github.com/respeaker/seeed-voicecard/pull/323
+> 2. https://github.com/respeaker/seeed-voicecard/issues/326
+> 3. https://github.com/HinTak/seeed-voicecard
+
+Execute the following command (using an unofficial fork to fix bugs):
+```
+git clone https://github.com/HinTak/seeed-voicecard.git
+cd seen-voicecard
+sudo ./install.sh
+sudo reboot now
+```
+---
+**WM8960 device driver test**
+
+Playback device:
+```
+aplay -l
+**** List of PLAYBACK Hardware Devices ****
+card 0: Headphones [bcm2835 Headphones], device 0: bcm2835 Headphones [bcm2835 Headphones]
+   Subdevices: 8/8
+   Subdevice #0: subdevice #0
+   Subdevice #1: subdevice #1
+   Subdevice #2: subdevice #2
+   Subdevice #3: subdevice #3
+   Subdevice #4: subdevice #4
+   Subdevice #5: subdevice #5
+   Subdevice #6: subdevice #6
+   Subdevice #7: subdevice #7
+card 1: vc4hdmi0 [vc4-hdmi-0], device 0: MAI PCM i2s-hifi-0 [MAI PCM i2s-hifi-0]
+   Subdevices: 1/1
+   Subdevice #0: subdevice #0
+card 2: vc4hdmi1 [vc4-hdmi-1], device 0: MAI PCM i2s-hifi-0 [MAI PCM i2s-hifi-0]
+   Subdevices: 1/1
+   Subdevice #0: subdevice #0
+card 3: seeed2micvoicec [seeed-2mic-voicecard], device 0: bcm2835-i2s-wm8960-hifi wm8960-hifi-0 [bcm2835-i2s-wm8960-hifi wm8960-hifi-0]
+   Subdevices: 1/1
+   Subdevice #0: subdevice #0
+```
+
+Recording equipment:
+```
+arecord -l
+**** List of CAPTURE Hardware Devices ****
+card 3: seeed2micvoicec [seeed-2mic-voicecard], device 0: bcm2835-i2s-wm8960-hifi wm8960-hifi-0 [bcm2835-i2s-wm8960-hifi wm8960-hifi-0]
+   Subdevices: 1/1
+   Subdevice #0: subdevice #0
+```
+
+**Recording command**:
+```
+arecord -D "plughw:3,0" -d 2 -f cd -c 2 -v -t wav test.wav
+```
+>-D specifies the recording device
+-d set recording duration
+-f recording sample format
+-c specifies the channel
+-t file type of recording output
+path and name of test.wav output file
+
+**Play command**:
+```
+aplay -D "plughw:3,0" test.wav
+```
+
+**Unit Test DEMO**
+
+What you will see: WM8960 will record for 3 seconds and create a Record_Wav_File_Test.wav file.
+
+When the unit test program runs:
+Please make a sound/play a song.
+
+Execute the following command to run unit tests:
+```
+## change to work dir
+cd SleepPanda/src/app/WM8960/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
+>Note: If the Record_Wav_File_Test.wav file is successfully created, but there is no sound when it is opened and played, please use the `alsamixer` sound card management program to enable the microphone of the WM8960 sound card.
+
+#### 2.5.5 Ink Screen(SSD1608)
+>Author:Rui Liu
+
+>Ref:
+>1. https://github.com/pimoroni/inky
+>2. https://shop.pimoroni.com/products/inky-phat?variant=12549254905939
+
+#### 2.5.6 MLX90640
+>Author:Hui Wang
+
+>Ref:
+>1. https://github.com/pimoroni/mlx90640-library
+>2. https://shop.pimoroni.com/products/mlx90640-thermal-camera-breakout?variant=12536948654163
+
+#### 2.5.7 USB Camera
+>Author:Chengsen Dong

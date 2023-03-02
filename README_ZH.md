@@ -1,8 +1,13 @@
 <!--
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-15 20:09:22
- * @LastEditors: Yihan Wang yihanwangg@163.com
- * @LastEditTime: 2023-02-15 13:11:01
+<<<<<<< HEAD
+ * @LastEditors: Chengsen Dong 1034029664@qq.com
+ * @LastEditTime: 2023-03-02 10:15:51
+=======
+ * @LastEditors: Chengsen Dong 1034029664@qq.com
+ * @LastEditTime: 2023-02-15 16:29:50
+>>>>>>> 249ff8955d897cad0304e78fe3cb63d7f345510c
  * @FilePath: /SleepPanda/README_ZH.md
  * @Description: 
  * Copyright (c) 2023 by Chengsen Dong 1034029664@qq.com(www.github.com/xddcore), All Rights Reserved. 
@@ -54,7 +59,8 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 
 ## 项目开发规划
 
->[点我查看开发会议纪要](./doc/meeting/)
+>[点我查看开发会议纪要](./doc/meeting/)  
+>[点我访问甘特图](./doc/project%20management/)
 
 #### Global
 - [x] 构建Github仓库&README文档，完成基础开发环境配置，固定Linux内核源码，测试内核模块编译。 
@@ -67,12 +73,9 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 #### Chengsen Dong
 - [ ] 更新README文档(随着开发过程同步更新)
 - [x] 蜂鸣器驱动开发
-- [ ] MAX30101驱动开发
-- [ ] MLX90640驱动开发
+- [x] MAX30101驱动开发
 - [ ] Tensorflow Lite神经网络推理框架(C++版本)
 - [ ] MLX90640+卷积神经网络手势识别
-- [ ] WM8960驱动开发(低优先级)
-- [ ] 墨水屏驱动开发(虚拟动物园)
 - [ ] 4K 30FPS摄像头(opencv c++框架)
 - [ ] 卷积神经网络睡姿分类
 - [ ] 触摸屏(基于QT的GUI)开发
@@ -85,6 +88,7 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 - [x] Pitch Session PPT幻灯片初稿
 - [x] 制作成本核算&原件选行Excel表格
 - [x] Sound Sensor驱动开发
+- [x] WM8960驱动开发(低优先级)
 - [ ] To do later...
 
 #### Rui Liu
@@ -94,10 +98,12 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 - [x] 设计SleepPanda Logo
 - [x] Pitch Session PPT幻灯片终稿&pitch session演讲准备
 - [x] 制作成本核算&原件选行Excel表格
+- [ ] 墨水屏驱动开发(虚拟动物园)
 - [ ] To do later...
 
 #### Hui Wang
 - [x] 查询所有传感器/芯片的数据手册，并上传至github仓库
+- [ ] MLX90640驱动开发
 - [ ] To do later...
 
 # 指南
@@ -112,6 +118,7 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 3. 内核版本: Linux raspberrypi 5.15.84-v7l+ #1613|5.15.0-1023-raspi |检索所有Linux内核`apt-cache search linux-raspi-headers`
 4. g++: `g++ version 10.2.1 20210110 (Raspbian 10.2.1-6+rpi1)`｜`g++ (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
 5. gcc: `gcc version 10.2.1 20210110 (Raspbian 10.2.1-6+rpi1)`｜`gcc (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0`
+6. Unit Test Framework: Google Test + ctest
 
 
 ### 1.2 将树莓派脱离键鼠&显示器(For Ubuntu Desktop)
@@ -396,6 +403,12 @@ ls install/
 
 ![Hardware_Architecture](./img/Hardware_Architecture.png)
 
+>Ref:https://abyz.me.uk/rpi/pigpio/index.html
+
+>如果你想更快速的查询GPIO，你可以访问如下网址:https://pinout.xyz/pinout/
+
+![Pigpio-Rpi-PinMap](./img/pigpio_rpi_pinmap.jpeg)
+
 ### 2.4 软件架构
 
 ![Software_Architecture](./img/Software_Architecture.png) 
@@ -405,7 +418,7 @@ ls install/
 |7(Top)|GUI界面层(QT)|-|与用户交互|
 |6|C++逻辑层|-|Opencv，TensorFlow Lite，MQTT Client等|
 |5|硬件驱动层(Sensor Class)|-|硬件(传感器等)的配置/驱动|
-|4|硬件隔离层(Rpi4b Class)|-|隔离软件逻辑和硬件依赖，目的是为了可以抛开底层硬件依赖(比如pigpio)，单独运行/测试上层代码。|
+|~~4~~|~~硬件隔离层(Rpi4b Class)~~|-|~~隔离软件逻辑和硬件依赖，目的是为了可以抛开底层硬件依赖(比如pigpio)，单独运行/测试上层代码。~~|
 |3|pigpiod嵌套字通信进程|-|驱动rpi4b(bcm2711)寄存器|
 |2|系统调用|-|由Linux内核提供|
 |1(Bottom)|Linux内核模块|-|分配中断|
@@ -522,6 +535,30 @@ pigpio initialisation failed (-2003).
 Fixup: 因为pigpio依赖BCM2711芯片硬件功能实现超低延迟的DMA操作，而qemu的DMA无法支持这一操作，所以在QEMU环境下，无法完成pigpio仿真。
 
 #### 2.5.1 蜂鸣器
+>Author: Chengsen Dong
+
+**特征：**  
+该模块由 S8550 晶体管驱动。  
+工作电压3.3V-5V。  
+低电平触发。  
+设计有用于螺栓固定的孔，因此易于组装。  
+VCC：外接3.3V-5V电压（可直接接5V单片机和3.3V单片机）  
+GND：外部接地  
+I/O：外部微控制器IO口  
+
+**Unit Test DEMO**
+
+当单元测试程序运行时:
+如果你听到蜂鸣器的声音，请使用键盘输入"Y"，然后按下ENTER键。
+
+请执行以下命令以运行单元测试：
+```
+## change to work dir
+cd SleepPanda/src/app/Buzzer/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
 
 #### 2.5.2 声音传感器
 >Author: Yihan Wang  
@@ -539,3 +576,227 @@ AO 输出麦克风的实时电压信号。
 DO在声强达到阈值时输出低电平和高电平信号  
 灵敏度可通过调节电位器来调节  
 
+**Unit Test DEMO**
+
+您将看到的现象: 制造声音，声音传感器DO引脚电平将由低电平跳变为高电平(上升沿中断)，触发声音事件，屏幕将打印`Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.`。
+
+当单元测试程序运行时:
+请发出声音，然后按键盘的 ENTER。
+
+请执行以下命令以运行单元测试：
+```
+## change to work dir
+cd SleepPanda/src/app/SoundSensor/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
+
+#### 2.5.3 MAX30101
+>Author:Chengsen Dong
+
+>Ref:
+>1. https://github.com/pimoroni/max30105-python
+>2. https://shop.pimoroni.com/products/max30101-breakout-heart-rate-oximeter-smoke-sensor?variant=21482065985619
+
+>Note: 通过`raspi-gpio get`查询发现，原计划使用的Interrupt Pin -4被其他程序占用，导致输入电平始终为0，无法实现外部中断功能。所以将使用GPIO6连接MAX30101的INT引脚。
+
+**Unit Test DEMO**
+
+请执行以下命令以运行单元测试：
+```
+## change to work dir
+cd SleepPanda/src/app/MAX30101/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
+
+您将看到的现象: 将你的手指尖放在MAX30101传感器上，等待15秒后，按下键盘的回车键。即可完成单元测试。程序将会输出当前心率和血氧数值。你将得到类似以下的输出:
+```
+1: Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate:71, spo2: 99.525826
+1: ir_mean: 136982.530000,  red_mean: 121904.060000
+1: beta_ir: -4.232085,  beta_red: -2.549403
+1: n_last_peak_interval test = GOOD
+1: boundary test = GOOD
+1: Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate:78, spo2: 99.414008
+1: ir_mean: 136578.920000,  red_mean: 121704.060000
+1: beta_ir: 4.154383,  beta_red: 0.232127
+1: n_last_peak_interval test = GOOD
+1: boundary test = GOOD
+1: Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate:83, spo2: 99.427597
+1: ir_mean: 137294.050000,  red_mean: 121818.950000
+1: beta_ir: 8.709769,  beta_red: 1.685311
+1: n_last_peak_interval test = GOOD
+1: boundary test = GOOD
+1: Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate:75, spo2: 99.445994
+1: Rpi_MAX30101.ISR_CheckPoint:1
+1: RPI DEBUG: MAX30101 Delete.
+1: [       OK ] MAX30101_Test.Check_MAX30101_ISR_HeartRate_SPO2 (45287 ms)
+1: [----------] 1 test from MAX30101_Test (45287 ms total)
+1: 
+1: [----------] Global test environment tear-down
+1: [==========] 1 test from 1 test suite ran. (45287 ms total)
+1: [  PASSED  ] 1 test.
+1/1 Test #1: MAX30101_Test ....................   Passed   45.30 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =  45.30 sec
+```
+#### 2.5.4 WM8960
+>Author:Yihan Wang
+
+>Ref:
+>1. https://wiki.seeedstudio.com/ReSpeaker_2_Mics_Pi_HAT/
+>2. https://shop.pimoroni.com/products/respeaker-2-mics-phat?variant=49979573706
+
+使用系统自带的arecord命令后, 系统Log如下:  
+显然，声卡驱动没有被支持。
+```
+sudo arecord -D hw:3,0 -d 2 -f cd -c 2 -v -t wav test.wav
+
+Recording WAVE 'test.wav' : Signed 16 bit Little Endian, Rate 44100 Hz, Stereo
+arecord: set_params:1407: Unable to install hw params:
+ACCESS:  RW_INTERLEAVED
+FORMAT:  S16_LE
+SUBFORMAT:  STD
+SAMPLE_BITS: 16
+FRAME_BITS: 32
+CHANNELS: 2
+RATE: 44100
+PERIOD_TIME: (125011 125012)
+PERIOD_SIZE: 5513
+PERIOD_BYTES: 22052
+PERIODS: 4
+BUFFER_TIME: (500045 500046)
+BUFFER_SIZE: 22052
+BUFFER_BYTES: 88208
+TICK_TIME: 0
+```
+解决方案:
+> 1.https://github.com/respeaker/seeed-voicecard/pull/323
+> 2.https://github.com/respeaker/seeed-voicecard/issues/326
+> 3.https://github.com/HinTak/seeed-voicecard
+
+执行以下命令(用非官方fork来修复bug):
+```
+git clone https://github.com/HinTak/seeed-voicecard.git
+cd seeed-voicecard
+sudo ./install.sh
+sudo reboot now
+```
+---
+**WM8960设备驱动测试**
+
+播放设备:
+```
+aplay -l
+**** List of PLAYBACK Hardware Devices ****
+card 0: Headphones [bcm2835 Headphones], device 0: bcm2835 Headphones [bcm2835 Headphones]
+  Subdevices: 8/8
+  Subdevice #0: subdevice #0
+  Subdevice #1: subdevice #1
+  Subdevice #2: subdevice #2
+  Subdevice #3: subdevice #3
+  Subdevice #4: subdevice #4
+  Subdevice #5: subdevice #5
+  Subdevice #6: subdevice #6
+  Subdevice #7: subdevice #7
+card 1: vc4hdmi0 [vc4-hdmi-0], device 0: MAI PCM i2s-hifi-0 [MAI PCM i2s-hifi-0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 2: vc4hdmi1 [vc4-hdmi-1], device 0: MAI PCM i2s-hifi-0 [MAI PCM i2s-hifi-0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+card 3: seeed2micvoicec [seeed-2mic-voicecard], device 0: bcm2835-i2s-wm8960-hifi wm8960-hifi-0 [bcm2835-i2s-wm8960-hifi wm8960-hifi-0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+```
+
+录音设备:
+```
+arecord -l
+**** List of CAPTURE Hardware Devices ****
+card 3: seeed2micvoicec [seeed-2mic-voicecard], device 0: bcm2835-i2s-wm8960-hifi wm8960-hifi-0 [bcm2835-i2s-wm8960-hifi wm8960-hifi-0]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+```
+
+**录音命令**:
+```
+arecord -D “plughw:3,0” -d 2 -f cd -c 2 -v -t wav test.wav
+```
+>-D 指定录音设备  
+-d 设置录音时长  
+-f 录音示例格式  
+-c 指定频道  
+-t 录音输出的文件类型   
+test.wav 输出文件的路径、名称  
+
+**播放命令**:
+```
+aplay -D "plughw:3,0" test.wav
+```
+
+**Unit Test DEMO**
+
+您将看到的现象: 将使用WM8960录音3秒并创建一个Record_Wav_File_Test.wav文件。
+
+当单元测试程序运行时:
+请发出声音/播放歌曲。
+
+请执行以下命令以运行单元测试：
+```
+## change to work dir
+cd SleepPanda/src/app/WM8960/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
+>Note:如果成功创建Record_Wav_File_Test.wav文件，但是打开播放却无声音，请使用`alsamixer`声卡管理程序启用WM8960声卡的麦克风。
+
+#### 2.5.5 Ink Screen(SSD1608)
+>Author: Rui Liu
+
+**Features：**
+2.13" EPD display
+Inky pHAT pinout
+Compatible with all 40-pin header Raspberry Pi models
+Python library
+Comes fully assembled
+
+
+**笔记：**
+Overall dimensions: 65x30x8.5mm (WxHxD, depth includes header and display)
+Display usable area dimensions: 48.5x23.8mm (WxH), 2.13" diagonal
+
+>Ref:
+>1. https://github.com/pimoroni/inky
+>2. https://shop.pimoroni.com/products/inky-phat?variant=12549254905939
+
+**Unit Test DEMO**
+
+
+
+当单元测试程序运行时:
+请，然后按键盘的 ENTER。
+
+请执行以下命令以运行单元测试：
+```
+## change to work dir
+cd SleepPanda/src/app/SoundSensor/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
+
+#### 2.5.6 MLX90640
+>Author: Hui Wang
+
+>Ref:
+>1. https://github.com/pimoroni/mlx90640-library
+>2. https://shop.pimoroni.com/products/mlx90640-thermal-camera-breakout?variant=12536948654163
+
+#### 2.5.7 USB Camera
+>Author:Chengsen Dong

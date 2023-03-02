@@ -72,46 +72,93 @@ CMAKE_BINARY_DIR = /home/pi/xddcore/SleepPanda/src/app/Buzzer/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Buzzer.dir/all
+all: CMakeFiles/Buzzer_Static.dir/all
+all: test/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: test/preinstall
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Buzzer.dir/clean
+clean: CMakeFiles/Buzzer_Static.dir/clean
+clean: test/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Buzzer.dir
+# Directory level rules for directory test
+
+# Recursive "all" directory target.
+test/all: test/CMakeFiles/Buzzer_Test.dir/all
+
+.PHONY : test/all
+
+# Recursive "preinstall" directory target.
+test/preinstall:
+
+.PHONY : test/preinstall
+
+# Recursive "clean" directory target.
+test/clean: test/CMakeFiles/Buzzer_Test.dir/clean
+
+.PHONY : test/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Buzzer_Static.dir
 
 # All Build rule for target.
-CMakeFiles/Buzzer.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer.dir/build.make CMakeFiles/Buzzer.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer.dir/build.make CMakeFiles/Buzzer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/Buzzer/build/CMakeFiles --progress-num=1,2 "Built target Buzzer"
-.PHONY : CMakeFiles/Buzzer.dir/all
+CMakeFiles/Buzzer_Static.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer_Static.dir/build.make CMakeFiles/Buzzer_Static.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer_Static.dir/build.make CMakeFiles/Buzzer_Static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/Buzzer/build/CMakeFiles --progress-num=1,2 "Built target Buzzer_Static"
+.PHONY : CMakeFiles/Buzzer_Static.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Buzzer.dir/rule: cmake_check_build_system
+CMakeFiles/Buzzer_Static.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/Buzzer/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Buzzer.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Buzzer_Static.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/Buzzer/build/CMakeFiles 0
-.PHONY : CMakeFiles/Buzzer.dir/rule
+.PHONY : CMakeFiles/Buzzer_Static.dir/rule
 
 # Convenience name for target.
-Buzzer: CMakeFiles/Buzzer.dir/rule
+Buzzer_Static: CMakeFiles/Buzzer_Static.dir/rule
 
-.PHONY : Buzzer
+.PHONY : Buzzer_Static
 
 # clean rule for target.
-CMakeFiles/Buzzer.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer.dir/build.make CMakeFiles/Buzzer.dir/clean
-.PHONY : CMakeFiles/Buzzer.dir/clean
+CMakeFiles/Buzzer_Static.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Buzzer_Static.dir/build.make CMakeFiles/Buzzer_Static.dir/clean
+.PHONY : CMakeFiles/Buzzer_Static.dir/clean
+
+#=============================================================================
+# Target rules for target test/CMakeFiles/Buzzer_Test.dir
+
+# All Build rule for target.
+test/CMakeFiles/Buzzer_Test.dir/all: CMakeFiles/Buzzer_Static.dir/all
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/Buzzer_Test.dir/build.make test/CMakeFiles/Buzzer_Test.dir/depend
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/Buzzer_Test.dir/build.make test/CMakeFiles/Buzzer_Test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/Buzzer/build/CMakeFiles --progress-num=3,4 "Built target Buzzer_Test"
+.PHONY : test/CMakeFiles/Buzzer_Test.dir/all
+
+# Build rule for subdir invocation for target.
+test/CMakeFiles/Buzzer_Test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/Buzzer/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/Buzzer_Test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/Buzzer/build/CMakeFiles 0
+.PHONY : test/CMakeFiles/Buzzer_Test.dir/rule
+
+# Convenience name for target.
+Buzzer_Test: test/CMakeFiles/Buzzer_Test.dir/rule
+
+.PHONY : Buzzer_Test
+
+# clean rule for target.
+test/CMakeFiles/Buzzer_Test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/Buzzer_Test.dir/build.make test/CMakeFiles/Buzzer_Test.dir/clean
+.PHONY : test/CMakeFiles/Buzzer_Test.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
