@@ -1,43 +1,54 @@
-Start testing: Feb 21 20:48 GMT
+Start testing: Mar 02 09:39 GMT
 ----------------------------------------------------------
 1/1 Testing: MAX30101_Test
 1/1 Test: MAX30101_Test
 Command: "/home/pi/xddcore/SleepPanda/src/app/MAX30101/build/test/MAX30101_Test"
 Directory: /home/pi/xddcore/SleepPanda/src/app/MAX30101/build/test
-"MAX30101_Test" start time: Feb 21 20:48 GMT
+"MAX30101_Test" start time: Mar 02 09:39 GMT
 Output:
 ----------------------------------------------------------
 
-MAX30101 SENSOR:
+Place your fingertip on the MAX30101 sensor, wait 5 seconds, and press the Enter key on your keyboard.
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 1 test from MAX30101_Test
-[ RUN      ] MAX30101_Test.Check_MAX30101_Event_ISR
+[ RUN      ] MAX30101_Test.Check_MAX30101_ISR_HeartRate_SPO2
 RPI DEBUG: MAX30101 pigpio initialised okay.
 Device_Init: MAX30101 i2cOpen Succeeded!  fd = 0
 RPI DEBUG: MAX30101 Device Init ok.
-Rpi_MAX30101.ISR_CheckPoint:0
-/home/pi/xddcore/SleepPanda/src/app/MAX30101/test/MAX30101_Test.cpp:43: Failure
-Value of: My_Rpi_MAX30101.ISR_CheckPoint
-  Actual: false
-Expected: true
+ir_mean: 134004.990000,  red_mean: 119867.560000
+beta_ir: 25.848155,  beta_red: 19.333069
+n_last_peak_interval test = BAD
+Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate:-999, spo2: -999.000000
+ir_mean: 134090.460000,  red_mean: 119940.180000
+beta_ir: -4.245533,  beta_red: -2.665455
+n_last_peak_interval test = GOOD
+boundary test = GOOD
+Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate:65, spo2: 99.737002
+ir_mean: 133670.460000,  red_mean: 119647.130000
+beta_ir: -5.862598,  beta_red: -3.583336
+n_last_peak_interval test = GOOD
+boundary test = GOOD
+Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate:65, spo2: 99.720427
+ir_mean: 133556.830000,  red_mean: 119475.230000
+beta_ir: -4.332067,  beta_red: -2.424740
+n_last_peak_interval test = GOOD
+boundary test = GOOD
+Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate:65, spo2: 99.706986
+Rpi_MAX30101.ISR_CheckPoint:1
 RPI DEBUG: MAX30101 Delete.
-[  FAILED  ] MAX30101_Test.Check_MAX30101_Event_ISR (3304 ms)
-[----------] 1 test from MAX30101_Test (3304 ms total)
+[       OK ] MAX30101_Test.Check_MAX30101_ISR_HeartRate_SPO2 (22213 ms)
+[----------] 1 test from MAX30101_Test (22213 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (3304 ms total)
-[  PASSED  ] 0 tests.
-[  FAILED  ] 1 test, listed below:
-[  FAILED  ] MAX30101_Test.Check_MAX30101_Event_ISR
-
- 1 FAILED TEST
+[==========] 1 test from 1 test suite ran. (22214 ms total)
+[  PASSED  ] 1 test.
 <end of output>
-Test time =   3.32 sec
+Test time =  22.23 sec
 ----------------------------------------------------------
-Test Failed.
-"MAX30101_Test" end time: Feb 21 20:49 GMT
-"MAX30101_Test" time elapsed: 00:00:03
+Test Passed.
+"MAX30101_Test" end time: Mar 02 09:40 GMT
+"MAX30101_Test" time elapsed: 00:00:22
 ----------------------------------------------------------
 
-End testing: Feb 21 20:49 GMT
+End testing: Mar 02 09:40 GMT

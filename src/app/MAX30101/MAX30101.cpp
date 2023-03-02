@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-02-19 15:55:20
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-21 20:20:15
+ * @LastEditTime: 2023-03-02 09:21:28
  * @FilePath: /SleepPanda/src/app/MAX30101/MAX30101.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -33,7 +33,7 @@ MAX30101::MAX30101(MAX30101_Settings max30101_settings) {
             //Must connect pull-up to INT Pin
             gpioSetPullUpDown(My_MAX30101_Settings.MAX30101_Interrupt_GPIO_Pin, PI_PUD_UP);
             //GPIO Interrupt
-            gpioSetISRFuncEx(My_MAX30101_Settings.MAX30101_Interrupt_GPIO_Pin,My_MAX30101_Settings.Trigger_Method,My_MAX30101_Settings.ISR_TIMEOUT,gpioISR,(void*)this);
+            //gpioSetISRFuncEx(My_MAX30101_Settings.MAX30101_Interrupt_GPIO_Pin,My_MAX30101_Settings.Trigger_Method,My_MAX30101_Settings.ISR_TIMEOUT,gpioISR,(void*)this);
             //MAX30101 Init below
             i2cHndl = Device_Init(My_MAX30101_Settings);
             if (i2cHndl == -1)
@@ -45,7 +45,6 @@ MAX30101::MAX30101(MAX30101_Settings max30101_settings) {
             {
                 printf("RPI DEBUG: MAX30101 Device Init ok.\r\n");
             }
-            i2cReadByteData(i2cHndl, REG_INTR_STATUS_1);  // clear ISR1.
             DumpRegs(i2cHndl, regDumpArray);
             sleep(1);
         }
@@ -75,12 +74,12 @@ MAX30101::~MAX30101() {
 //MAX30101_DataReady事件函数
 void MAX30101::DataReady_Event() {
 #if(RPI_DEBUG==1)
-    printf("RPI DEBUG: MAX30101 DataReady was triggered.\r\n");
+    //printf("RPI DEBUG: MAX30101 DataReady was triggered.\r\n");
     if(BUFFER_SIZE_i<BUFFER_SIZE){
-        i2cReadByteData(i2cHndl, REG_INTR_STATUS_1);                           // Clear ISR1.
+        i2cReadByteData(i2cHndl, REG_INTR_STATUS_1);    // Clear ISR1.
         Read_FIFO(i2cHndl, (aun_red_buffer+BUFFER_SIZE_i), (aun_ir_buffer+BUFFER_SIZE_i));  // Read from MAX30102 FIFO.
         BUFFER_SIZE_i++;
-        printf("RPI DEBUG: MAX30101 Read_FIFO was runed.|BUFFER_SIZE_i=%d\r\n",BUFFER_SIZE_i);
+        //printf("RPI DEBUG: MAX30101 Read_FIFO was runed.|BUFFER_SIZE_i=%d\r\n",BUFFER_SIZE_i);
     }
     else
     {
@@ -88,19 +87,22 @@ void MAX30101::DataReady_Event() {
         rf_heart_rate_and_oxygen_saturation(aun_ir_buffer, BUFFER_SIZE, aun_red_buffer,
                                             &n_spo2, &ch_spo2_valid, &n_heart_rate,
                                             &ch_hr_valid, &ratio, &correl); 
-    
+        /*
         printf("RF: SpO2: %lf\n", n_spo2);
         printf("    HR:   %d\n", n_heart_rate);
         printf("---------------\n");
-
+        */
         maxim_heart_rate_and_oxygen_saturation(aun_ir_buffer, BUFFER_SIZE, aun_red_buffer,
                                                &n_spo2_maxim, &ch_spo2_valid_maxim,
 					                           &n_heart_rate_maxim, &ch_hr_valid_maxim);
-
+        /*
         printf("MX: SpO2: %lf\n", n_spo2_maxim);
         printf("    HR:   %d\n", n_heart_rate_maxim);
         printf("---------------\n");
+        */
+        //call back function
         MAX30101_DataReadyEvent_Handle(n_heart_rate,n_spo2);
+        i2cReadByteData(i2cHndl, REG_INTR_STATUS_1);    // Clear ISR1.
     }
 #else
     printf("LOGIC DEBUG: MAX30101 DataReady was triggered.\r\n");
@@ -145,6 +147,9 @@ int MAX30101::Device_Init(MAX30101_Settings My_MAX30101_Settings){
   i2cWriteByteData(i2cDevHandle, REG_LED1_PA,       0x24); // Choose value for ~ 7mA for LED1
   i2cWriteByteData(i2cDevHandle, REG_LED2_PA,       0x24); // Choose value for ~ 7mA for LED2
   i2cWriteByteData(i2cDevHandle, REG_PILOT_PA,      0x7f); // Choose value for ~ 25mA for Pilot LED
+
+  i2cReadByteData(i2cDevHandle, REG_INTR_STATUS_1);  // clear ISR1.
+  i2cReadByteData(i2cDevHandle, REG_INTR_STATUS_2);  // clear ISR2.
 
   return i2cDevHandle;
 }
@@ -226,10 +231,8 @@ int MAX30101::Read_FIFO(int fd, uint32_t *pun_red_led, uint32_t *pun_ir_led)
 
 //MAX30101开始读取数据
 void MAX30101::Start(){
-    //gpioSetISRFuncEx(My_MAX30101_Settings.MAX30101_Interrupt_GPIO_Pin,My_MAX30101_Settings.Trigger_Method,My_MAX30101_Settings.ISR_TIMEOUT,gpioISR,(void*)this);
-    i2cReadByteData(i2cHndl, REG_INTR_STATUS_1);                           // Clear ISR1.
-    Read_FIFO(i2cHndl, (aun_red_buffer+BUFFER_SIZE_i), (aun_ir_buffer+BUFFER_SIZE_i));  // Read from MAX30102 FIFO.
-    BUFFER_SIZE_i++;
+    gpioSetISRFuncEx(My_MAX30101_Settings.MAX30101_Interrupt_GPIO_Pin,My_MAX30101_Settings.Trigger_Method,My_MAX30101_Settings.ISR_TIMEOUT,gpioISR,(void*)this);
+    i2cReadByteData(i2cHndl, REG_INTR_STATUS_1);  // Clear ISR1.
 }
 
 //MAX30101停止读取数据
@@ -254,4 +257,5 @@ int MAX30101::WriteRegsToLog(){
 //清除MAX30101的INT flag
 void MAX30101::ClearINT(){
     i2cReadByteData(i2cHndl, REG_INTR_STATUS_1);                           // Clear ISR1.
+    i2cReadByteData(i2cHndl, REG_INTR_STATUS_2);                           // Clear ISR2.
 }

@@ -1,8 +1,8 @@
 /*
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-02-19 15:55:46
- * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-21 20:38:11
+ * @LastEditors: Yihan Wang yihanwangg@163.com
+ * @LastEditTime: 2023-03-02 09:02:58
  * @FilePath: /SleepPanda/src/app/MAX30101/MAX30101.h
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -53,7 +53,7 @@
 #define REG_PART_ID 0xFF
 
 struct MAX30101_Settings {
-    unsigned int MAX30101_Interrupt_GPIO_Pin = 4; //GPIO4(PIN7) will be used to connect with MAX30101 INT Pin
+    unsigned int MAX30101_Interrupt_GPIO_Pin = 6; //GPIO4(PIN7) will be used to connect with MAX30101 INT Pin
     unsigned int Trigger_Method = FALLING_EDGE; //Interrupt is low level
     unsigned int ISR_TIMEOUT = -1; //一直等待MAX30101的INT触发信号(<0)
 
