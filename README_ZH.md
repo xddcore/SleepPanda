@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-02 09:58:22
+ * @LastEditTime: 2023-03-02 10:15:51
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -73,7 +73,7 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 #### Chengsen Dong
 - [ ] 更新README文档(随着开发过程同步更新)
 - [x] 蜂鸣器驱动开发
-- [ ] MAX30101驱动开发
+- [x] MAX30101驱动开发
 - [ ] Tensorflow Lite神经网络推理框架(C++版本)
 - [ ] MLX90640+卷积神经网络手势识别
 - [ ] 4K 30FPS摄像头(opencv c++框架)
@@ -88,7 +88,7 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 - [x] Pitch Session PPT幻灯片初稿
 - [x] 制作成本核算&原件选行Excel表格
 - [x] Sound Sensor驱动开发
-- [ ] WM8960驱动开发(低优先级)
+- [x] WM8960驱动开发(低优先级)
 - [ ] To do later...
 
 #### Rui Liu

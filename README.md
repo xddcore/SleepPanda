@@ -2,8 +2,8 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-01-18 00:44:11
 <<<<<<< HEAD
- * @LastEditors: Yihan Wang yihanwangg@163.com
- * @LastEditTime: 2023-02-18 12:29:13
+ * @LastEditors: Chengsen Dong 1034029664@qq.com
+ * @LastEditTime: 2023-03-02 10:14:30
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:27:55
@@ -73,7 +73,7 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 #### Chengsen Dong
 - [ ] Update the README document (synchronized with the development process)
 - [x] Buzzer driver development
-- [ ] MAX30101 driver development
+- [x] MAX30101 driver development
 - [ ] Tensorflow Lite neural network reasoning framework (C++ version)
 - [ ] MLX90640+ Convolutional Neural Network Gesture Recognition
 - [ ] 4K 30FPS camera (opencv c++ framework)
@@ -88,7 +88,7 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 - [x] Pitch Session PPT slide draft
 - [x] Make cost accounting & original row selection Excel table
 - [x] Sound Sensor Driver Development
-- [ ] WM8960 driver development (low priority)
+- [x] WM8960 driver development (low priority)
 - [ ] To do later...
 
 #### Rui Liu
@@ -405,6 +405,8 @@ ls install /
 
 >Ref:https://abyz.me.uk/rpi/pigpio/index.html
 
+> If you want to query GPIO more quickly, you can visit the following URL: https://pinout.xyz/pinout/
+
 ![Pigpio-Rpi-PinMap](./img/pigpio_rpi_pinmap.jpeg)
 
 ### 2.4 Software Architecture
@@ -597,12 +599,163 @@ cmake .. && make && sudo ctest --verbose
 >1. https://github.com/pimoroni/max30105-python
 >2. https://shop.pimoroni.com/products/max30101-breakout-heart-rate-oximeter-smoke-sensor?variant=21482065985619
 
+>Note: Through the `raspi-gpio get` query, it is found that the Interrupt Pin -4 originally planned to be used is occupied by other programs, resulting in the input level being always 0, and the external interrupt function cannot be realized. So will use GPIO6 to connect to INT pin of MAX30101.
+
+**Unit Test DEMO**
+
+Execute the following command to run unit tests:
+```
+## change to work dir
+cd SleepPanda/src/app/MAX30101/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
+
+What you'll see: Put your fingertip on the MAX30101 sensor, wait 15 seconds, and press the Enter key on your keyboard. Unit testing is complete. The program will output the current heart rate and blood oxygen values. You will get output similar to:
+```
+1: Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate: 71, spo2: 99.525826
+1: ir_mean: 136982.530000, red_mean: 121904.060000
+1: beta_ir: -4.232085, beta_red: -2.549403
+1: n_last_peak_interval test = GOOD
+1: boundary test = GOOD
+1: Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate: 78, spo2: 99.414008
+1: ir_mean: 136578.920000, red_mean: 121704.060000
+1: beta_ir: 4.154383, beta_red: 0.232127
+1: n_last_peak_interval test = GOOD
+1: boundary test = GOOD
+1: Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate: 83, spo2: 99.427597
+1: ir_mean: 137294.050000, red_mean: 121818.950000
+1: beta_ir: 8.709769, beta_red: 1.685311
+1: n_last_peak_interval test = GOOD
+1: boundary test = GOOD
+1: Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate: 75, spo2: 99.445994
+1: Rpi_MAX30101.ISR_CheckPoint: 1
+1: RPI DEBUG: MAX30101 Delete.
+1: [ OK ] MAX30101_Test.Check_MAX30101_ISR_HeartRate_SPO2 (45287 ms)
+1: [----------] 1 test from MAX30101_Test (45287 ms total)
+1: 
+1: [----------] Global test environment tear-down
+1: [==========] 1 test from 1 test suite ran. (45287 ms total)
+1: [ PASSED ] 1 test.
+1/1 Test #1: MAX30101_Test ................... Passed 45.30 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) = 45.30 sec
+```
+
 #### 2.5.4 WM8960
 >Author:Yihan Wang
 
 >Ref:
 >1. https://wiki.seeedstudio.com/ReSpeaker_2_Mics_Pi_HAT/
 >2. https://shop.pimoroni.com/products/respeaker-2-mics-phat?variant=49979573706
+
+After using the arecord command that comes with the system, the system Log is as follows:
+Apparently, the sound card driver is not supported.
+```
+sudo arecord -D hw:3,0 -d 2 -f cd -c 2 -v -t wav test.wav
+
+Recording WAVE 'test.wav' : Signed 16 bit Little Endian, Rate 44100 Hz, Stereo
+arecord: set_params:1407: Unable to install hw params:
+ACCESS: RW_INTERLEAVED
+FORMAT: S16_LE
+SUBFORMAT: STD
+SAMPLE_BITS: 16
+FRAME_BITS: 32
+CHANNELS: 2
+RATE: 44100
+PERIOD_TIME: (125011 125012)
+PERIOD_SIZE: 5513
+PERIOD_BYTES: 22052
+PERIODS: 4
+BUFFER_TIME: (500045 500046)
+BUFFER_SIZE: 22052
+BUFFER_BYTES: 88208
+TICK_TIME: 0
+```
+solution:
+> 1. https://github.com/respeaker/seeed-voicecard/pull/323
+> 2. https://github.com/respeaker/seeed-voicecard/issues/326
+> 3. https://github.com/HinTak/seeed-voicecard
+
+Execute the following command (using an unofficial fork to fix bugs):
+```
+git clone https://github.com/HinTak/seeed-voicecard.git
+cd seen-voicecard
+sudo ./install.sh
+sudo reboot now
+```
+---
+**WM8960 device driver test**
+
+Playback device:
+```
+aplay -l
+**** List of PLAYBACK Hardware Devices ****
+card 0: Headphones [bcm2835 Headphones], device 0: bcm2835 Headphones [bcm2835 Headphones]
+   Subdevices: 8/8
+   Subdevice #0: subdevice #0
+   Subdevice #1: subdevice #1
+   Subdevice #2: subdevice #2
+   Subdevice #3: subdevice #3
+   Subdevice #4: subdevice #4
+   Subdevice #5: subdevice #5
+   Subdevice #6: subdevice #6
+   Subdevice #7: subdevice #7
+card 1: vc4hdmi0 [vc4-hdmi-0], device 0: MAI PCM i2s-hifi-0 [MAI PCM i2s-hifi-0]
+   Subdevices: 1/1
+   Subdevice #0: subdevice #0
+card 2: vc4hdmi1 [vc4-hdmi-1], device 0: MAI PCM i2s-hifi-0 [MAI PCM i2s-hifi-0]
+   Subdevices: 1/1
+   Subdevice #0: subdevice #0
+card 3: seeed2micvoicec [seeed-2mic-voicecard], device 0: bcm2835-i2s-wm8960-hifi wm8960-hifi-0 [bcm2835-i2s-wm8960-hifi wm8960-hifi-0]
+   Subdevices: 1/1
+   Subdevice #0: subdevice #0
+```
+
+Recording equipment:
+```
+arecord -l
+**** List of CAPTURE Hardware Devices ****
+card 3: seeed2micvoicec [seeed-2mic-voicecard], device 0: bcm2835-i2s-wm8960-hifi wm8960-hifi-0 [bcm2835-i2s-wm8960-hifi wm8960-hifi-0]
+   Subdevices: 1/1
+   Subdevice #0: subdevice #0
+```
+
+**Recording command**:
+```
+arecord -D "plughw:3,0" -d 2 -f cd -c 2 -v -t wav test.wav
+```
+>-D specifies the recording device
+-d set recording duration
+-f recording sample format
+-c specifies the channel
+-t file type of recording output
+path and name of test.wav output file
+
+**Play command**:
+```
+aplay -D "plughw:3,0" test.wav
+```
+
+**Unit Test DEMO**
+
+What you will see: WM8960 will record for 3 seconds and create a Record_Wav_File_Test.wav file.
+
+When the unit test program runs:
+Please make a sound/play a song.
+
+Execute the following command to run unit tests:
+```
+## change to work dir
+cd SleepPanda/src/app/WM8960/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
+>Note: If the Record_Wav_File_Test.wav file is successfully created, but there is no sound when it is opened and played, please use the `alsamixer` sound card management program to enable the microphone of the WM8960 sound card.
 
 #### 2.5.5 Ink Screen(SSD1608)
 >Author:Rui Liu
