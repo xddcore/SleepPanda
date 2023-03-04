@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-04 10:26:51
+ * @LastEditTime: 2023-03-04 10:28:39
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -803,7 +803,7 @@ cmake .. && make && sudo ctest --verbose
 
 ##### 2.5.7.1 安装OpenCV
 
-**Step 0:更新GPU Memory**
+**Step 0:更新GPU Memory**  
 CPU 和 GPU 都使用物理 RAM 芯片。 在 Raspberry Pi 2 或 3 上，默认为 GPU 分配 64 MB。 Raspberry Pi 4 的 GPU 内存大小为 76 MB。 对于视觉项目来说，它可能有点小，现在最好将其更改为 128 MB。 要增加 GPU 的内存量，请使用以下菜单：
 
 ![Change_GPU_Memory_Size_1](./img/Change_GPU_Memory_Size_1.png)
