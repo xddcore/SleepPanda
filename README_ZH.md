@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-04 17:57:48
+ * @LastEditTime: 2023-03-04 18:16:37
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -908,9 +908,10 @@ sudo ldconfig
 
 ##### 2.5.7.2 浅度睡眠/深度睡眠判断思路
 
-通过OpenCV的面部检测器获取面部的中心坐标。程序通过判断单位时间内的位移长度，从而判断用户处于浅度睡眠 OR 深度睡眠。
-
 级联检测: 面部&侧面部->眼睛
+
+当同时检测出正脸(红色圈)和侧脸(蓝色圈)时，代表用户正睡。当只检测出侧脸(蓝色圈)时，代表用户侧睡。
+通过测量单位时间内用户的状态改变(正睡和侧睡的改变频率)，来判断用户处于深度睡眠还是浅度睡眠。
 
 ```
 wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascade_upperbody.xml

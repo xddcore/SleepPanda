@@ -1,10 +1,10 @@
-Start testing: Mar 04 18:01 GMT
+Start testing: Mar 04 18:42 GMT
 ----------------------------------------------------------
 1/1 Testing: Camera_Test
 1/1 Test: Camera_Test
 Command: "/home/pi/xddcore/SleepPanda/src/app/Camera/build/test/Camera_Test"
 Directory: /home/pi/xddcore/SleepPanda/src/app/Camera/build/test
-"Camera_Test" start time: Mar 04 18:01 GMT
+"Camera_Test" start time: Mar 04 18:42 GMT
 Output:
 ----------------------------------------------------------
 
@@ -13,18 +13,19 @@ Please confirm whether the buzzer sounds (Y/N):
 [----------] Global test environment set-up.
 [----------] 1 test from Camera_Test
 [ RUN      ] Camera_Test.Check_Cemera_Detection
-[       OK ] Camera_Test.Check_Cemera_Detection (124919 ms)
-[----------] 1 test from Camera_Test (124919 ms total)
+[0]Frontal_Face_Position | x: 308, y: 189
+[       OK ] Camera_Test.Check_Cemera_Detection (6995 ms)
+[----------] 1 test from Camera_Test (6995 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (124919 ms total)
+[==========] 1 test from 1 test suite ran. (6996 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time = 125.11 sec
+Test time =   7.19 sec
 ----------------------------------------------------------
 Test Passed.
-"Camera_Test" end time: Mar 04 18:03 GMT
-"Camera_Test" time elapsed: 00:02:05
+"Camera_Test" end time: Mar 04 18:42 GMT
+"Camera_Test" time elapsed: 00:00:07
 ----------------------------------------------------------
 
-End testing: Mar 04 18:03 GMT
+End testing: Mar 04 18:42 GMT

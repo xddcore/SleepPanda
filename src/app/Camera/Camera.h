@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-03-04 10:37:06
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-04 17:21:55
+ * @LastEditTime: 2023-03-04 18:19:19
  * @FilePath: /SleepPanda/src/app/Camera/Camera.h
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -45,10 +45,14 @@ class Camera{
     CascadeClassifier Profile_Face_Cascade;
     CascadeClassifier Eye_Cascade;
     VideoCapture capture;
+    std::vector<Rect> Frontal_Face_Position;
+    std::vector<Rect> Frontal_Face_Eye_Position;
+    std::vector<Rect> Profile_Face_Position;
+    std::vector<Rect> Profile_Face_Eye_Position;
 
     Camera(Camera_Settings My_Camera_Settings);
     ~Camera();
-    Mat Detection(Mat frame);//检测函数
+    Mat Detection(Mat frame,bool show_result);//检测函数
     Mat Start();
     
     private:
