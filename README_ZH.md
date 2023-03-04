@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-04 10:28:39
+ * @LastEditTime: 2023-03-04 10:36:09
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -892,8 +892,17 @@ int main()
 }
 ```
 
-**Step 10:编译测试程序:**
+**Step 10:编译测试程序(SleepPanda/src/app/Camera/OpenCV_Test):**
 ```
-g++ test.cpp -o test `pkg-config --cflags --libs opencv4`
+g++ OpenCV_Test.cpp -o OpenCV_Test `pkg-config --cflags --libs opencv4`
+```
+```
+sudo ./OpenCV_Test
+```
+>如果出现报错:./OpenCV_Test: error while loading shared libraries: libopencv_highgui.so.407: cannot open shared object file: No such file or directory
+
+请使用如下命令更新链接器配置:
+```
+sudo ldconfig
 ```
 
