@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-04 10:36:09
+ * @LastEditTime: 2023-03-04 17:57:48
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -906,3 +906,23 @@ sudo ./OpenCV_Test
 sudo ldconfig
 ```
 
+##### 2.5.7.2 浅度睡眠/深度睡眠判断思路
+
+通过OpenCV的面部检测器获取面部的中心坐标。程序通过判断单位时间内的位移长度，从而判断用户处于浅度睡眠 OR 深度睡眠。
+
+级联检测: 面部&侧面部->眼睛
+
+```
+wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascade_upperbody.xml
+
+wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascade_profileface.xml
+
+wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascade_frontalface_alt.xml
+
+wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascade_eye_tree_eyeglasses.xml
+```
+
+##### 2.5.7.3 Frame异步(中断)实现思路
+
+通过新建线程，互斥锁，队列来实现。  
+工作线程不断的Read新Frame，当新Frame有效时，通过队列通知主线程来取Frame。
