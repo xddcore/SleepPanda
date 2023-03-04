@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-02 10:15:51
+ * @LastEditTime: 2023-03-04 10:26:51
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -800,3 +800,100 @@ cmake .. && make && sudo ctest --verbose
 
 #### 2.5.7 USB Camera
 >Author:Chengsen Dong
+
+##### 2.5.7.1 安装OpenCV
+
+**Step 0:更新GPU Memory**
+CPU 和 GPU 都使用物理 RAM 芯片。 在 Raspberry Pi 2 或 3 上，默认为 GPU 分配 64 MB。 Raspberry Pi 4 的 GPU 内存大小为 76 MB。 对于视觉项目来说，它可能有点小，现在最好将其更改为 128 MB。 要增加 GPU 的内存量，请使用以下菜单：
+
+![Change_GPU_Memory_Size_1](./img/Change_GPU_Memory_Size_1.png)
+![Change_GPU_Memory_Size_2](./img/Change_GPU_Memory_Size_2.png)
+
+
+**Step 1:下载openCV源码**
+```
+git clone https://github.com/opencv/opencv.git
+```
+
+**Step 2:安装依赖包**
+```
+sudo apt-get install cmake
+sudo apt-get install build-essential libgtk2.0-dev libavcodec-dev libavformat-dev libjpeg-dev libswscale-dev libtiff5-dev
+sudo apt-get install libgtk2.0-dev
+sudo apt-get install pkg-config
+```
+
+**Step 3:编译安装openCV**
+```
+# change to your dir
+cd /home/opencv
+
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release -DOPENCV_GENERATE_PKGCONFIG=ON -DCMAKE_INSTALL_PREFIX=/usr/local ..
+sudo make
+sudo make install
+```
+
+**Step 4: 配置OpenCV环境**
+```
+cd /etc/ld.so.conf.d/
+sudo touch opencv4.conf
+sudo sh -c 'echo "/usr/local/lib" > opencv4.conf'
+```
+
+**Step 5: 更新链接器配置(pkg-config)**
+```
+sudo ldconfig
+```
+
+**Step 6:复制opencv.pc文件到/usr/lib/pkgconfig/下**
+```
+sudo cp -f /usr/local/lib/arm-linux-gnueabihf/pkgconfig/opencv4.pc  /usr/lib/pkgconfig/
+```
+
+**Step 7:添加环境变量**
+```
+sudo vim /etc/bash.bashrc
+
+#在文件末尾添加：
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig
+export PKG_CONFIG_PATH
+```
+
+**Step 8:测试是否安装成功**
+```
+pkg-config --modversion opencv4
+
+#maybe output: 4.7.0
+```
+
+**Step 9:测试程序**
+```
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
+#include <iostream>
+ 
+using namespace cv;
+using namespace std;
+ 
+int main()
+{
+	Mat img(512, 512, CV_8UC3, Scalar(255, 255, 255));
+	circle(img, Point(256, 256), 256, Scalar(0, 0, 255), FILLED);
+	Rect roi(128, 128, 256, 256);
+	rectangle(img, roi, Scalar(255, 255, 255), FILLED);
+	line(img, Point(256, 128), Point(256, 256), Scalar(255, 255, 0), 3);
+	putText(img, "I'am CV", Point(256, 128), FONT_HERSHEY_DUPLEX, 1, Scalar(0, 0, 0), 2);
+	imshow("img", img);
+	waitKey(0);
+    return 0;
+}
+```
+
+**Step 10:编译测试程序:**
+```
+g++ test.cpp -o test `pkg-config --cflags --libs opencv4`
+```
+
