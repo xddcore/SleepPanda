@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-05 16:04:09
+ * @LastEditTime: 2023-03-05 16:18:04
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -74,7 +74,7 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 - [ ] 更新README文档(随着开发过程同步更新)
 - [x] 蜂鸣器驱动开发
 - [x] MAX30101驱动开发
-- [ ] 4K 30FPS摄像头(opencv c++框架)
+- [x] 4K 30FPS摄像头(opencv c++框架)
 - [ ] 触摸屏(基于QT的GUI)开发&顶层C++逻辑
 - [ ] MQTT服务器搭建(低优先级)
 - [ ] 检查内存管理和内存泄漏(使用STL管理内存)
@@ -930,4 +930,21 @@ wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascade_e
 2.
 使用Qt的QTime类，timeout()事件来触发摄像头帧读取。
 >摄像头FPS=30,经测试程序处理速度小于摄像头FPS，故使用QTime类timeout()事件是合适的。
+
+**Unit Test DEMO**
+
+您将看到的现象: 实时显示摄像头画面，使用红色圈标记正脸和眼睛，使用蓝色圈标记侧脸和眼睛。
+
+请执行以下命令以运行单元测试：
+```
+## change to work dir
+cd SleepPanda/src/app/Camera/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
+
+你将看到如下效果:
+![Opencv_Test1](./img/Opencv_Test1.jpeg)
+![Opencv_Test2](./img/Opencv_Test2.jpeg)
 

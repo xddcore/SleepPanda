@@ -11,9 +11,10 @@
 
 #include "gtest/gtest.h"
 
-//The following code is used for the unit test of the buzzer.
+//The following code is used for the unit test of the camera.
 //When the unit test program runs:
-//If you hear the buzzer, please use the keyboard to type "Y" and press ENTER.
+//Display the camera image in real time, use the red circle to mark the front face and eyes, 
+//and use the blue circle to mark the side face and eyes.
 
 TEST(Camera_Test, Check_Cemera_Detection)
 {
