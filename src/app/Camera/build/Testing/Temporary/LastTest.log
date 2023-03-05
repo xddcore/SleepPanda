@@ -1,31 +1,51 @@
-Start testing: Mar 04 18:42 GMT
+Start testing: Mar 05 15:58 GMT
 ----------------------------------------------------------
 1/1 Testing: Camera_Test
 1/1 Test: Camera_Test
 Command: "/home/pi/xddcore/SleepPanda/src/app/Camera/build/test/Camera_Test"
 Directory: /home/pi/xddcore/SleepPanda/src/app/Camera/build/test
-"Camera_Test" start time: Mar 04 18:42 GMT
+"Camera_Test" start time: Mar 05 15:58 GMT
 Output:
 ----------------------------------------------------------
-
-Please confirm whether the buzzer sounds (Y/N):
 [==========] Running 1 test from 1 test suite.
 [----------] Global test environment set-up.
 [----------] 1 test from Camera_Test
 [ RUN      ] Camera_Test.Check_Cemera_Detection
-[0]Frontal_Face_Position | x: 308, y: 189
-[       OK ] Camera_Test.Check_Cemera_Detection (6995 ms)
-[----------] 1 test from Camera_Test (6995 ms total)
+[0]Frontal_Face_Position | x: 473, y: 186
+[0]Frontal_Face_Position | x: 470, y: 177
+[0]Frontal_Face_Position | x: 375, y: 174
+[0]Frontal_Face_Eye_Position | x: 50, y: 65
+[1]Frontal_Face_Eye_Position | x: 101, y: 37
+[2]Frontal_Face_Eye_Position | x: 33, y: 57
+[0]Frontal_Face_Position | x: 396, y: 184
+[0]Frontal_Face_Eye_Position | x: 28, y: 52
+[1]Frontal_Face_Eye_Position | x: 72, y: 29
+[0]Frontal_Face_Position | x: 388, y: 181
+[0]Frontal_Face_Eye_Position | x: 37, y: 57
+[1]Frontal_Face_Eye_Position | x: 84, y: 30
+[0]Frontal_Face_Position | x: 389, y: 183
+[0]Frontal_Face_Eye_Position | x: 30, y: 50
+[1]Frontal_Face_Eye_Position | x: 68, y: 91
+[2]Frontal_Face_Eye_Position | x: 80, y: 28
+[0]Frontal_Face_Position | x: 385, y: 182
+[0]Frontal_Face_Eye_Position | x: 35, y: 53
+[1]Frontal_Face_Eye_Position | x: 87, y: 36
+[0]Frontal_Face_Position | x: 390, y: 185
+[0]Frontal_Face_Eye_Position | x: 91, y: 40
+[1]Frontal_Face_Eye_Position | x: 76, y: 27
+[2]Frontal_Face_Eye_Position | x: 30, y: 50
+[       OK ] Camera_Test.Check_Cemera_Detection (29689 ms)
+[----------] 1 test from Camera_Test (29689 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (6996 ms total)
+[==========] 1 test from 1 test suite ran. (29690 ms total)
 [  PASSED  ] 1 test.
 <end of output>
-Test time =   7.19 sec
+Test time =  29.90 sec
 ----------------------------------------------------------
 Test Passed.
-"Camera_Test" end time: Mar 04 18:42 GMT
-"Camera_Test" time elapsed: 00:00:07
+"Camera_Test" end time: Mar 05 15:59 GMT
+"Camera_Test" time elapsed: 00:00:29
 ----------------------------------------------------------
 
-End testing: Mar 04 18:42 GMT
+End testing: Mar 05 15:59 GMT

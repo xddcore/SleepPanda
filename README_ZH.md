@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-04 18:16:37
+ * @LastEditTime: 2023-03-05 16:01:24
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -925,5 +925,11 @@ wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascade_e
 
 ##### 2.5.7.3 Frame异步(中断)实现思路
 
+1.
 通过新建线程，互斥锁，队列来实现。  
 工作线程不断的Read新Frame，当新Frame有效时，通过队列通知主线程来取Frame。
+
+2.
+使用Qt的QTime类，timeout()事件来触发摄像头帧读取。
+>摄像头FPS=30,经测试程序处理速度小于摄像头FPS，故使用QTime类timeout()事件是合适的。
+

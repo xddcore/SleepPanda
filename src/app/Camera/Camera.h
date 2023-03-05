@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-03-04 10:37:06
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-04 18:19:19
+ * @LastEditTime: 2023-03-05 15:57:59
  * @FilePath: /SleepPanda/src/app/Camera/Camera.h
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -40,11 +40,6 @@ struct Camera_Settings {
 
 class Camera{
     public:
-    CascadeClassifier Upperbody_Cascade;
-    CascadeClassifier Frontal_Face_Cascade;
-    CascadeClassifier Profile_Face_Cascade;
-    CascadeClassifier Eye_Cascade;
-    VideoCapture capture;
     std::vector<Rect> Frontal_Face_Position;
     std::vector<Rect> Frontal_Face_Eye_Position;
     std::vector<Rect> Profile_Face_Position;
@@ -57,6 +52,11 @@ class Camera{
     
     private:
     Camera_Settings My_Camera_Settings;
+    VideoCapture capture;
+    CascadeClassifier Upperbody_Cascade;
+    CascadeClassifier Frontal_Face_Cascade;
+    CascadeClassifier Profile_Face_Cascade;
+    CascadeClassifier Eye_Cascade;
 };
 
 #endif //_Camera_H
