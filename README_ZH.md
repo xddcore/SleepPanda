@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-05 20:24:09
+ * @LastEditTime: 2023-03-05 20:29:03
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -944,9 +944,9 @@ cd SleepPanda/src/app/Camera/build
 cmake .. && make && sudo ctest --verbose
 ```
 
-你将看到如下效果:
-**正睡**
+你将看到如下效果:  
 ![Opencv_Test1](./img/Opencv_Test1.jpeg)
-**侧睡**
-![Opencv_Test2](./img/Opencv_Test2.jpeg)
+<p align="center">正睡(红色圈标记)</p>  
 
+![Opencv_Test2](./img/Opencv_Test2.jpeg)
+<p align="center">侧睡(蓝色圈标记)</p>
