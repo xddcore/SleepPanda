@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-05 20:29:03
+ * @LastEditTime: 2023-03-05 20:58:16
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -950,3 +950,11 @@ cmake .. && make && sudo ctest --verbose
 
 ![Opencv_Test2](./img/Opencv_Test2.jpeg)
 <p align="center">侧睡(蓝色圈标记)</p>
+
+### 2.6 QT&C++逻辑开发
+
+#### 2.6.1 安装QT5和Qwt
+```
+sudo apt-get install qtdeclarative5-dev-tools
+sudo apt-get install libqwt-qt5-dev
+```
