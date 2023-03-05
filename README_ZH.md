@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-05 16:18:04
+ * @LastEditTime: 2023-03-05 20:24:09
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -129,7 +129,7 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install ssh vim gcc g++ screen htop git make
 ```
->Note:注意`sudo apt-get upgrade`命令默认把内核升级为最新版本，请手动将内核版本保持至5.15.0-1023-raspi
+>**Note**:注意`sudo apt-get upgrade`命令默认把内核升级为最新版本，请手动将内核版本保持至5.15.0-1023-raspi
 4. 开启ubuntu远程桌面:Setting-share-开启远程桌面-修改用户名和密码为`ubuntu`
 
    4.1 允许hdmi热插拔，避免不插hdmi时无法访问远程桌面。｜`未解决！！！`|尝试使用HDMI伪负载解决  
@@ -245,7 +245,7 @@ Q2:执行`sudo apt-get upgrade`时，某些pack(例如linux内核)被保留，�
 
 `git clone https://github.com/xddcore/SleepPanda.git`
 
-**Note:如果你是开发人员，记得通过以下命令切换到dev分支:**
+>**Note**:如果你是开发人员，记得通过以下命令切换到dev分支:
 ```
 git checkout dev
 git branch -l
@@ -467,7 +467,7 @@ sudo killall pigpiod
 ./x_pigpiod_if2 # check C      I/F to daemon
 # Then you should get 'pigpio initialisation failed (-2003).', because pigpio daemon not runing.
 ```
->Note: 在每次使用pigpio时，你都应先运行`sudo pigpiod`，以打开守护程序。
+>**Note**: 在每次使用pigpio时，你都应先运行`sudo pigpiod`，以打开守护程序。
 
 理论上，你将获得如下运行结果:
 ```
@@ -597,7 +597,7 @@ cmake .. && make && sudo ctest --verbose
 >1. https://github.com/pimoroni/max30105-python
 >2. https://shop.pimoroni.com/products/max30101-breakout-heart-rate-oximeter-smoke-sensor?variant=21482065985619
 
->Note: 通过`raspi-gpio get`查询发现，原计划使用的Interrupt Pin -4被其他程序占用，导致输入电平始终为0，无法实现外部中断功能。所以将使用GPIO6连接MAX30101的INT引脚。
+>**Note**: 通过`raspi-gpio get`查询发现，原计划使用的Interrupt Pin -4被其他程序占用，导致输入电平始终为0，无法实现外部中断功能。所以将使用GPIO6连接MAX30101的INT引脚。
 
 **Unit Test DEMO**
 
@@ -752,7 +752,7 @@ cd SleepPanda/src/app/WM8960/build
 # build, and run unit test(gtest)
 cmake .. && make && sudo ctest --verbose
 ```
->Note:如果成功创建Record_Wav_File_Test.wav文件，但是打开播放却无声音，请使用`alsamixer`声卡管理程序启用WM8960声卡的麦克风。
+>**Note**:如果成功创建Record_Wav_File_Test.wav文件，但是打开播放却无声音，请使用`alsamixer`声卡管理程序启用WM8960声卡的麦克风。
 
 #### 2.5.5 Ink Screen(SSD1608)
 >Author: Rui Liu
@@ -908,7 +908,7 @@ sudo ldconfig
 
 级联检测: 面部&侧面部->眼睛
 
-当同时检测出正脸(红色圈)和侧脸(蓝色圈)时，代表用户正睡。当只检测出侧脸(蓝色圈)时，代表用户侧睡。
+当同时检测出正脸(红色圈)时，代表用户正睡。当只检测出侧脸(蓝色圈)时，代表用户侧睡。
 通过测量单位时间内用户的状态改变(正睡和侧睡的改变频率)，来判断用户处于深度睡眠还是浅度睡眠。
 
 ```
@@ -945,6 +945,8 @@ cmake .. && make && sudo ctest --verbose
 ```
 
 你将看到如下效果:
+**正睡**
 ![Opencv_Test1](./img/Opencv_Test1.jpeg)
+**侧睡**
 ![Opencv_Test2](./img/Opencv_Test2.jpeg)
 
