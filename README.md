@@ -3,7 +3,7 @@
  * @Date: 2023-01-18 00:44:11
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-02 10:14:30
+ * @LastEditTime: 2023-03-09 17:39:12
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:27:55
@@ -74,12 +74,10 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 - [ ] Update the README document (synchronized with the development process)
 - [x] Buzzer driver development
 - [x] MAX30101 driver development
-- [ ] Tensorflow Lite neural network reasoning framework (C++ version)
-- [ ] MLX90640+ Convolutional Neural Network Gesture Recognition
-- [ ] 4K 30FPS camera (opencv c++ framework)
-- [ ] Convolutional Neural Network Sleeping Position Classification
-- [ ] Touch screen (QT-based GUI) development
+- [x] 4K 30FPS camera (opencv c++ framework)
+- [ ] Touch screen (QT-based GUI) development & top-level C++ logic
 - [ ] MQTT server setup (low priority)
+- [ ] Check memory management and memory leaks (using STL to manage memory)
 
 #### Yihan Wang
 - [ ] Synchronously update the contents of README_ZH.md & README.md (once a week)
@@ -773,3 +771,163 @@ cmake .. && make && sudo ctest --verbose
 
 #### 2.5.7 USB Camera
 >Author:Chengsen Dong
+
+##### 2.5.7.1 Install OpenCV
+
+**Step 0:Update GPU Memory**
+Both CPUs and GPUs use physical RAM chips. On a Raspberry Pi 2 or 3, the GPU is allocated 64 MB by default. The Raspberry Pi 4 has a GPU memory size of 76 MB. It might be a bit small for a visual project, it's best to change it to 128 MB for now. To increase the amount of memory for the GPU, use the following menus:
+
+![Change_GPU_Memory_Size_1](./img/Change_GPU_Memory_Size_1.png)
+![Change_GPU_Memory_Size_2](./img/Change_GPU_Memory_Size_2.png)
+
+
+**Step 1: Download openCV source code**
+```
+git clone https://github.com/opencv/opencv.git
+```
+
+**Step 2: Install dependency packages**
+```
+sudo apt-get install cmake
+sudo apt-get install build-essential libgtk2.0-dev libavcodec-dev libavformat-dev libjpeg-dev libswscale-dev libtiff5-dev
+sudo apt-get install libgtk2.0-dev
+sudo apt-get install pkg-config
+```
+
+**Step 3: Compile and install openCV**
+```
+# change to your dir
+cd /home/opencv
+
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release -DOPENCV_GENERATE_PKGCONFIG=ON -DCMAKE_INSTALL_PREFIX=/usr/local ..
+sudo make
+sudo make install
+```
+
+**Step 4: Configure the OpenCV environment**
+```
+cd /etc/ld.so.conf.d/
+sudo touch opencv4.conf
+sudo sh -c 'echo "/usr/local/lib" > opencv4.conf'
+```
+
+**Step 5: Update linker configuration (pkg-config)**
+```
+sudo ldconfig
+```
+
+**Step 6: Copy the opencv.pc file to /usr/lib/pkgconfig/**
+```
+sudo cp -f /usr/local/lib/arm-linux-gnueabihf/pkgconfig/opencv4.pc /usr/lib/pkgconfig/
+```
+
+**Step 7: Add environment variables**
+```
+sudo vim /etc/bash.bashrc
+
+#Add at the end of the file:
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig
+export PKG_CONFIG_PATH
+```
+
+**Step 8: Test whether the installation is successful**
+```
+pkg-config --modversion opencv4
+
+#maybe output: 4.7.0
+```
+
+**Step 9: Test procedure**
+```
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
+#include <iostream>
+ 
+using namespace cv;
+using namespace std;
+ 
+int main()
+{
+Mat img(512, 512, CV_8UC3, Scalar(255, 255, 255));
+circle(img, Point(256, 256), 256, Scalar(0, 0, 255), FILLED);
+Rect roi(128, 128, 256, 256);
+rectangle(img, roi, Scalar(255, 255, 255), FILLED);
+line(img, Point(256, 128), Point(256, 256), Scalar(255, 255, 0), 3);
+putText(img, "I'am CV", Point(256, 128), FONT_HERSHEY_DUPLEX, 1, Scalar(0, 0, 0), 2);
+imshow("img", img);
+waitKey(0);
+     return 0;
+}
+```
+
+**Step 10: Compile the test program (SleepPanda/src/app/Camera/OpenCV_Test):**
+```
+g++ OpenCV_Test.cpp -o OpenCV_Test `pkg-config --cflags --libs opencv4`
+```
+```
+sudo ./OpenCV_Test
+```
+>If an error occurs: ./OpenCV_Test: error while loading shared libraries: libopencv_highgui.so.407: cannot open shared object file: No such file or directory
+
+Please update the linker configuration with the following command:
+```
+sudo ldconfig
+```
+
+##### 2.5.7.2 Light sleep/deep sleep judgment ideas
+
+Cascade Detection: Face & Profile -> Eyes
+
+When a positive face (red circle) is detected at the same time, it means that the user is sleeping. When only the side face (blue circle) is detected, it means the user is sleeping on the side.
+By measuring the user's state change per unit time (the change frequency of sleeping on the side and sleeping on the side), it is judged whether the user is in deep sleep or light sleep.
+
+```
+wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascades_upperbody.xml
+
+wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascade_profileface.xml
+
+wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascade_frontalface_alt.xml
+
+wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascade_eye_tree_eyeglasses.xml
+```
+
+##### 2.5.7.3 Frame asynchronous (interrupt) implementation ideas
+
+1.
+It is realized by creating new threads, mutexes, and queues.
+The worker thread reads the new Frame continuously, and when the new Frame is valid, the main thread is notified to fetch the Frame through the queue.
+
+2.
+Use Qt's QTime class, timeout() event to trigger camera frame reading.
+>Camera FPS=30, the processing speed of the test program is lower than the camera FPS, so it is appropriate to use the QTime class timeout() event.
+
+**Unit Test DEMO**
+
+What you will see: The camera image is displayed in real time, the frontal face and eyes are marked with red circles, and the side face and eyes are marked with blue circles.
+
+Execute the following command to run unit tests:
+```
+## change to work dir
+cd SleepPanda/src/app/Camera/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
+
+You will see the following effect:
+![Opencv_Test1](./img/Opencv_Test1.jpeg)
+<p align="center">Sleeping (marked with a red circle)</p>
+
+![Opencv_Test2](./img/Opencv_Test2.jpeg)
+<p align="center">Sleeping on your side (marked with a blue circle)</p>
+
+### 2.6 QT&C++ logic development
+
+#### 2.6.1 Install QT5 and Qwt
+```
+sudo apt-get install qtdeclarative5-dev-tools
+sudo apt-get install libqwt-qt5-dev
+```

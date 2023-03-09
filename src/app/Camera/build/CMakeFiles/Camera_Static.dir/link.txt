@@ -1,0 +1,2 @@
+/usr/bin/ar qc libCamera_Static.a CMakeFiles/Camera_Static.dir/Camera.cpp.o
+/usr/bin/ranlib libCamera_Static.a

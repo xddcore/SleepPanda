@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-02 10:15:51
+ * @LastEditTime: 2023-03-05 20:58:16
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -74,12 +74,10 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 - [ ] 更新README文档(随着开发过程同步更新)
 - [x] 蜂鸣器驱动开发
 - [x] MAX30101驱动开发
-- [ ] Tensorflow Lite神经网络推理框架(C++版本)
-- [ ] MLX90640+卷积神经网络手势识别
-- [ ] 4K 30FPS摄像头(opencv c++框架)
-- [ ] 卷积神经网络睡姿分类
-- [ ] 触摸屏(基于QT的GUI)开发
+- [x] 4K 30FPS摄像头(opencv c++框架)
+- [ ] 触摸屏(基于QT的GUI)开发&顶层C++逻辑
 - [ ] MQTT服务器搭建(低优先级)
+- [ ] 检查内存管理和内存泄漏(使用STL管理内存)
 
 #### Yihan Wang
 - [ ] 同步更新README_ZH.md&README.md的内容(每周一次)
@@ -131,7 +129,7 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install ssh vim gcc g++ screen htop git make
 ```
->Note:注意`sudo apt-get upgrade`命令默认把内核升级为最新版本，请手动将内核版本保持至5.15.0-1023-raspi
+>**Note**:注意`sudo apt-get upgrade`命令默认把内核升级为最新版本，请手动将内核版本保持至5.15.0-1023-raspi
 4. 开启ubuntu远程桌面:Setting-share-开启远程桌面-修改用户名和密码为`ubuntu`
 
    4.1 允许hdmi热插拔，避免不插hdmi时无法访问远程桌面。｜`未解决！！！`|尝试使用HDMI伪负载解决  
@@ -247,7 +245,7 @@ Q2:执行`sudo apt-get upgrade`时，某些pack(例如linux内核)被保留，�
 
 `git clone https://github.com/xddcore/SleepPanda.git`
 
-**Note:如果你是开发人员，记得通过以下命令切换到dev分支:**
+>**Note**:如果你是开发人员，记得通过以下命令切换到dev分支:
 ```
 git checkout dev
 git branch -l
@@ -469,7 +467,7 @@ sudo killall pigpiod
 ./x_pigpiod_if2 # check C      I/F to daemon
 # Then you should get 'pigpio initialisation failed (-2003).', because pigpio daemon not runing.
 ```
->Note: 在每次使用pigpio时，你都应先运行`sudo pigpiod`，以打开守护程序。
+>**Note**: 在每次使用pigpio时，你都应先运行`sudo pigpiod`，以打开守护程序。
 
 理论上，你将获得如下运行结果:
 ```
@@ -599,7 +597,7 @@ cmake .. && make && sudo ctest --verbose
 >1. https://github.com/pimoroni/max30105-python
 >2. https://shop.pimoroni.com/products/max30101-breakout-heart-rate-oximeter-smoke-sensor?variant=21482065985619
 
->Note: 通过`raspi-gpio get`查询发现，原计划使用的Interrupt Pin -4被其他程序占用，导致输入电平始终为0，无法实现外部中断功能。所以将使用GPIO6连接MAX30101的INT引脚。
+>**Note**: 通过`raspi-gpio get`查询发现，原计划使用的Interrupt Pin -4被其他程序占用，导致输入电平始终为0，无法实现外部中断功能。所以将使用GPIO6连接MAX30101的INT引脚。
 
 **Unit Test DEMO**
 
@@ -754,7 +752,7 @@ cd SleepPanda/src/app/WM8960/build
 # build, and run unit test(gtest)
 cmake .. && make && sudo ctest --verbose
 ```
->Note:如果成功创建Record_Wav_File_Test.wav文件，但是打开播放却无声音，请使用`alsamixer`声卡管理程序启用WM8960声卡的麦克风。
+>**Note**:如果成功创建Record_Wav_File_Test.wav文件，但是打开播放却无声音，请使用`alsamixer`声卡管理程序启用WM8960声卡的麦克风。
 
 #### 2.5.5 Ink Screen(SSD1608)
 >Author: Rui Liu
@@ -800,3 +798,163 @@ cmake .. && make && sudo ctest --verbose
 
 #### 2.5.7 USB Camera
 >Author:Chengsen Dong
+
+##### 2.5.7.1 安装OpenCV
+
+**Step 0:更新GPU Memory**  
+CPU 和 GPU 都使用物理 RAM 芯片。 在 Raspberry Pi 2 或 3 上，默认为 GPU 分配 64 MB。 Raspberry Pi 4 的 GPU 内存大小为 76 MB。 对于视觉项目来说，它可能有点小，现在最好将其更改为 128 MB。 要增加 GPU 的内存量，请使用以下菜单：
+
+![Change_GPU_Memory_Size_1](./img/Change_GPU_Memory_Size_1.png)
+![Change_GPU_Memory_Size_2](./img/Change_GPU_Memory_Size_2.png)
+
+
+**Step 1:下载openCV源码**
+```
+git clone https://github.com/opencv/opencv.git
+```
+
+**Step 2:安装依赖包**
+```
+sudo apt-get install cmake
+sudo apt-get install build-essential libgtk2.0-dev libavcodec-dev libavformat-dev libjpeg-dev libswscale-dev libtiff5-dev
+sudo apt-get install libgtk2.0-dev
+sudo apt-get install pkg-config
+```
+
+**Step 3:编译安装openCV**
+```
+# change to your dir
+cd /home/opencv
+
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release -DOPENCV_GENERATE_PKGCONFIG=ON -DCMAKE_INSTALL_PREFIX=/usr/local ..
+sudo make
+sudo make install
+```
+
+**Step 4: 配置OpenCV环境**
+```
+cd /etc/ld.so.conf.d/
+sudo touch opencv4.conf
+sudo sh -c 'echo "/usr/local/lib" > opencv4.conf'
+```
+
+**Step 5: 更新链接器配置(pkg-config)**
+```
+sudo ldconfig
+```
+
+**Step 6:复制opencv.pc文件到/usr/lib/pkgconfig/下**
+```
+sudo cp -f /usr/local/lib/arm-linux-gnueabihf/pkgconfig/opencv4.pc  /usr/lib/pkgconfig/
+```
+
+**Step 7:添加环境变量**
+```
+sudo vim /etc/bash.bashrc
+
+#在文件末尾添加：
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig
+export PKG_CONFIG_PATH
+```
+
+**Step 8:测试是否安装成功**
+```
+pkg-config --modversion opencv4
+
+#maybe output: 4.7.0
+```
+
+**Step 9:测试程序**
+```
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
+#include <iostream>
+ 
+using namespace cv;
+using namespace std;
+ 
+int main()
+{
+	Mat img(512, 512, CV_8UC3, Scalar(255, 255, 255));
+	circle(img, Point(256, 256), 256, Scalar(0, 0, 255), FILLED);
+	Rect roi(128, 128, 256, 256);
+	rectangle(img, roi, Scalar(255, 255, 255), FILLED);
+	line(img, Point(256, 128), Point(256, 256), Scalar(255, 255, 0), 3);
+	putText(img, "I'am CV", Point(256, 128), FONT_HERSHEY_DUPLEX, 1, Scalar(0, 0, 0), 2);
+	imshow("img", img);
+	waitKey(0);
+    return 0;
+}
+```
+
+**Step 10:编译测试程序(SleepPanda/src/app/Camera/OpenCV_Test):**
+```
+g++ OpenCV_Test.cpp -o OpenCV_Test `pkg-config --cflags --libs opencv4`
+```
+```
+sudo ./OpenCV_Test
+```
+>如果出现报错:./OpenCV_Test: error while loading shared libraries: libopencv_highgui.so.407: cannot open shared object file: No such file or directory
+
+请使用如下命令更新链接器配置:
+```
+sudo ldconfig
+```
+
+##### 2.5.7.2 浅度睡眠/深度睡眠判断思路
+
+级联检测: 面部&侧面部->眼睛
+
+当同时检测出正脸(红色圈)时，代表用户正睡。当只检测出侧脸(蓝色圈)时，代表用户侧睡。
+通过测量单位时间内用户的状态改变(正睡和侧睡的改变频率)，来判断用户处于深度睡眠还是浅度睡眠。
+
+```
+wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascade_upperbody.xml
+
+wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascade_profileface.xml
+
+wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascade_frontalface_alt.xml
+
+wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascade_eye_tree_eyeglasses.xml
+```
+
+##### 2.5.7.3 Frame异步(中断)实现思路
+
+1.
+通过新建线程，互斥锁，队列来实现。  
+工作线程不断的Read新Frame，当新Frame有效时，通过队列通知主线程来取Frame。
+
+2.
+使用Qt的QTime类，timeout()事件来触发摄像头帧读取。
+>摄像头FPS=30,经测试程序处理速度小于摄像头FPS，故使用QTime类timeout()事件是合适的。
+
+**Unit Test DEMO**
+
+您将看到的现象: 实时显示摄像头画面，使用红色圈标记正脸和眼睛，使用蓝色圈标记侧脸和眼睛。
+
+请执行以下命令以运行单元测试：
+```
+## change to work dir
+cd SleepPanda/src/app/Camera/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
+
+你将看到如下效果:  
+![Opencv_Test1](./img/Opencv_Test1.jpeg)
+<p align="center">正睡(红色圈标记)</p>  
+
+![Opencv_Test2](./img/Opencv_Test2.jpeg)
+<p align="center">侧睡(蓝色圈标记)</p>
+
+### 2.6 QT&C++逻辑开发
+
+#### 2.6.1 安装QT5和Qwt
+```
+sudo apt-get install qtdeclarative5-dev-tools
+sudo apt-get install libqwt-qt5-dev
+```

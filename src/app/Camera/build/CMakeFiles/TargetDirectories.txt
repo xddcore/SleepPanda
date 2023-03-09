@@ -1,0 +1,16 @@
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles/install/strip.dir
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles/list_install_components.dir
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles/install/local.dir
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles/rebuild_cache.dir
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles/edit_cache.dir
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles/install.dir
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles/test.dir
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles/Camera_Static.dir
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/test/CMakeFiles/list_install_components.dir
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/test/CMakeFiles/install/local.dir
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/test/CMakeFiles/rebuild_cache.dir
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/test/CMakeFiles/edit_cache.dir
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/test/CMakeFiles/install.dir
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/test/CMakeFiles/test.dir
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/test/CMakeFiles/install/strip.dir
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/test/CMakeFiles/Camera_Test.dir
