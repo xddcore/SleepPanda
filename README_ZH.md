@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-05 20:58:16
+ * @LastEditTime: 2023-03-10 16:44:24
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -54,7 +54,7 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 | Chengsen Dong  | 2789825d | 嵌入式工程师 |
 | Rui Liu  | 2756138L | 项目管理&宣传&软件工程师 |
 | Hui Wang  | 2810919W | 硬件工程师&测试工程师 |
-| Yihan Wang  | 2696441W | 项目管理&宣传&软件工程师 |
+| Yihan Wang  | 2696441W | 软件工程师 |
 >如果你对本项目有任何建议，欢迎发邮件至xddcore@gmail.com
 
 ## 项目开发规划
