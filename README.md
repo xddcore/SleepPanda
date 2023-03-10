@@ -3,7 +3,7 @@
  * @Date: 2023-01-18 00:44:11
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-09 17:39:12
+ * @LastEditTime: 2023-03-10 16:44:41
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:27:55
@@ -54,7 +54,7 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 | Chengsen Dong | 2789825d | Embedded Engineer |
 | Rui Liu | 2756138L | Project Management & Publicity & Software Engineer |
 | Hui Wang | 2810919W | Hardware Engineer & Test Engineer |
-| Yihan Wang | 2696441W | Project Management & Publicity & Software Engineer |
+| Yihan Wang | 2696441W | Software Engineer |
 > If you have any suggestions for this project, please email to xddcore@gmail.com
 
 ## Project Development Planning
