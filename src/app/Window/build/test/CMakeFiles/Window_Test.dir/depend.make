@@ -114,12 +114,17 @@ test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueab
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qmatrix.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qpaintdevice.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qpalette.h
+test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qpen.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qpixelformat.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qpixmap.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qpolygon.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qregion.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qrgb.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qrgba64.h
+test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtextcursor.h
+test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtextdocument.h
+test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtextformat.h
+test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtextoption.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtgui-config.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtguiglobal.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtouchdevice.h
@@ -132,7 +137,9 @@ test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueab
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLCDNumber
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QPushButton
+test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QTextEdit
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qabstractbutton.h
+test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qabstractscrollarea.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qapplication.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qboxlayout.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qdesktopwidget.h
@@ -144,6 +151,7 @@ test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueab
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlcdnumber.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qpushbutton.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qsizepolicy.h
+test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qtextedit.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qtwidgets-config.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qtwidgetsglobal.h
 test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qwidget.h

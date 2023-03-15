@@ -6,13 +6,14 @@
 #include <qwt/qwt_plot.h>
 #include <qwt/qwt_plot_curve.h>
 
-//#include <QtWidgets> //包含所有QT5控件，这将会增加编译时间
 
+//Qt Weights控件
+//#include <QtWidgets> //包含所有QT5控件，这将会增加编译时间
 #include <QBoxLayout>
 #include <QPushButton>
-
 #include <QLCDNumber>
 #include <QLabel>
+#include <QTextEdit>
 
 
 // class definition 'Window'
@@ -63,11 +64,29 @@ private:
 
 
     /*************控件************/
+    //摄像头
+    QLabel *Camera_Display_Label;
+    QLabel *Camera_Text_Label;
+    QLabel *Camera_SleepStatus_Label;
+    QTextEdit *Camera_Log_TextEdit;
     //血氧控件
-    QLabel *Blood_Oxygen_Label;
-    QLCDNumber *Blood_Oxygen_Lcdnumber;
-    QwtPlot      *Blood_Oxygen_Plot;
-	QwtPlotCurve *Blood_Oxygen_Curve;
+    QLabel *BloodOxygen_Label;
+    QLCDNumber *BloodOxygen_Lcdnumber;
+    QwtPlot      *BloodOxygen_Plot;
+	QwtPlotCurve *BloodOxygen_Curve;
+    //心率控件
+    QLabel *HeartRate_Label;
+    QLCDNumber *HeartRate_Lcdnumber;
+    QwtPlot      *HeartRate_Plot;
+	QwtPlotCurve *HeartRate_Curve;
+    //呼吸暂停综合症
+    QLabel *ApneaSyndrome_Label;
+    QLabel *ApneaSyndrome_PowerStatus_Label;
+    QPushButton  *ApneaSyndrome_TurnOn_Button;
+    QPushButton  *ApneaSyndrome_TurnOff_Button;
+    QTextEdit *ApneaSyndrome__Log_TextEdit;
+    //报警设置
+    QLabel *AlarmSettings_Label;
 
 	// layout elements from Qt itself http://qt-project.org/doc/qt-4.8/classes.html
 	QVBoxLayout  *vLayout;  // vertical layout

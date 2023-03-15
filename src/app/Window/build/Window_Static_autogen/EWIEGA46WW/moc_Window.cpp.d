@@ -118,6 +118,7 @@
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qtcore-config.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qtextstream.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qtypeinfo.h \
+  /usr/include/arm-linux-gnueabihf/qt5/QtCore/qurl.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qvariant.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qvarlengtharray.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qvector.h \
@@ -143,6 +144,9 @@
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qregion.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qrgb.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qrgba64.h \
+  /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtextcursor.h \
+  /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtextdocument.h \
+  /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtextformat.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtextoption.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtgui-config.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtguiglobal.h \
@@ -152,7 +156,9 @@
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLCDNumber \
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel \
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QPushButton \
+  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QTextEdit \
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qabstractbutton.h \
+  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qabstractscrollarea.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qboxlayout.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qframe.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qgridlayout.h \
@@ -162,6 +168,7 @@
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlcdnumber.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qpushbutton.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qsizepolicy.h \
+  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qtextedit.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qtwidgets-config.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qtwidgetsglobal.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qwidget.h \

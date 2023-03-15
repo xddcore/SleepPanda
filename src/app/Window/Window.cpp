@@ -6,6 +6,38 @@
 Window::Window()
 {
     /*************Box************/
+    // = new QVBoxLayout();
+    // = new QHBoxLayout();
+    //主Box
+    Main_vLayout = new QVBoxLayout();
+    Main_vLayout->addLayout(V1_vLayout);
+    Main_vLayout->addLayout(V2_vLayout);
+    Main_vLayout->addLayout(V3_vLayout);
+    //Test
+    Main_vLayout->addLayout(hLayout);
+    //主box中第1行
+    V1_vLayout = new QVBoxLayout();  // vertical layout
+    V1_vLayout->addLayout(Camera_hLayout);
+    //主box中第2行
+    V2_vLayout = new QVBoxLayout();  // vertical layout
+    V2_vLayout->addLayout(BloodOxygen_HeartRate_hLayout);
+    //主box中第3行
+    V3_vLayout = new QVBoxLayout();  // vertical layout
+    V3_vLayout->addLayout(ApneaSyndrome_AlarmSettings_hLayout);
+    //主box中第1行中的Camera
+    Camera_hLayout = new QHBoxLayout();;  // horizontal layout
+    Camera_vLayout = new QVBoxLayout();  // vertical layout
+
+    //主box中第2行中的血氧和心率
+    BloodOxygen_HeartRate_hLayout = new QHBoxLayout();;
+    BloodOxygen_vLayout = new QVBoxLayout();  // vertical layout
+    HeartRate_vLayout = new QVBoxLayout();  // vertical layout
+
+    //主box中第3行中的呼吸暂停综合症和报警设置
+    ApneaSyndrome_AlarmSettings_hLayout = new QHBoxLayout();;
+    ApneaSyndrome_vLayout = new QVBoxLayout();  // vertical layout
+    AlarmSettings_vLayout = new QVBoxLayout();  // vertical layout
+
 
 	// set up the thermometer
 	thermo = new QwtThermo; 
