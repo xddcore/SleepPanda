@@ -1,0 +1,17 @@
+/home/pi/xddcore/SleepPanda/src/app/Window/build/CMakeFiles/install/strip.dir
+/home/pi/xddcore/SleepPanda/src/app/Window/build/CMakeFiles/list_install_components.dir
+/home/pi/xddcore/SleepPanda/src/app/Window/build/CMakeFiles/install/local.dir
+/home/pi/xddcore/SleepPanda/src/app/Window/build/CMakeFiles/rebuild_cache.dir
+/home/pi/xddcore/SleepPanda/src/app/Window/build/CMakeFiles/edit_cache.dir
+/home/pi/xddcore/SleepPanda/src/app/Window/build/CMakeFiles/install.dir
+/home/pi/xddcore/SleepPanda/src/app/Window/build/CMakeFiles/test.dir
+/home/pi/xddcore/SleepPanda/src/app/Window/build/CMakeFiles/Window_Static.dir
+/home/pi/xddcore/SleepPanda/src/app/Window/build/CMakeFiles/Window_Static_autogen.dir
+/home/pi/xddcore/SleepPanda/src/app/Window/build/test/CMakeFiles/install/strip.dir
+/home/pi/xddcore/SleepPanda/src/app/Window/build/test/CMakeFiles/list_install_components.dir
+/home/pi/xddcore/SleepPanda/src/app/Window/build/test/CMakeFiles/install/local.dir
+/home/pi/xddcore/SleepPanda/src/app/Window/build/test/CMakeFiles/rebuild_cache.dir
+/home/pi/xddcore/SleepPanda/src/app/Window/build/test/CMakeFiles/edit_cache.dir
+/home/pi/xddcore/SleepPanda/src/app/Window/build/test/CMakeFiles/install.dir
+/home/pi/xddcore/SleepPanda/src/app/Window/build/test/CMakeFiles/test.dir
+/home/pi/xddcore/SleepPanda/src/app/Window/build/test/CMakeFiles/Window_Test.dir

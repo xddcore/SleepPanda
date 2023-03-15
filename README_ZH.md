@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-10 16:44:24
+ * @LastEditTime: 2023-03-15 11:40:32
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -850,7 +850,12 @@ sudo ldconfig
 sudo cp -f /usr/local/lib/arm-linux-gnueabihf/pkgconfig/opencv4.pc  /usr/lib/pkgconfig/
 ```
 
-**Step 7:添加环境变量**
+**Step 7:复制OpenCVConfig.cmake文件到/SleepPanda/src/app/Camera（这一个步骤是Cmake使用find_package()去查找OpenCV的基础）**
+```
+sudo cp -f /usr/local/lib/arm-linux-gnueabihf/cmake/opencv4/OpenCVConfig.cmake /SleepPanda/src/app/Camera
+```
+
+**Step 8:添加环境变量**
 ```
 sudo vim /etc/bash.bashrc
 
@@ -859,14 +864,14 @@ PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig
 export PKG_CONFIG_PATH
 ```
 
-**Step 8:测试是否安装成功**
+**Step 9:测试是否安装成功**
 ```
 pkg-config --modversion opencv4
 
 #maybe output: 4.7.0
 ```
 
-**Step 9:测试程序**
+**Step 10:测试程序**
 ```
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/highgui.hpp>
@@ -890,7 +895,7 @@ int main()
 }
 ```
 
-**Step 10:编译测试程序(SleepPanda/src/app/Camera/OpenCV_Test):**
+**Step 11:编译测试程序(SleepPanda/src/app/Camera/OpenCV_Test):**
 ```
 g++ OpenCV_Test.cpp -o OpenCV_Test `pkg-config --cflags --libs opencv4`
 ```
@@ -954,7 +959,14 @@ cmake .. && make && sudo ctest --verbose
 ### 2.6 QT&C++逻辑开发
 
 #### 2.6.1 安装QT5和Qwt
+
+**Step1:安装QT5所需包**
 ```
 sudo apt-get install qtdeclarative5-dev-tools
 sudo apt-get install libqwt-qt5-dev
+sudo apt-get install qtbase5-dev
+sudo apt-get install qtdeclarative5-dev
+```
+**Step2:将Qt5Config.cmake拷贝至项目**
+```
 ```
