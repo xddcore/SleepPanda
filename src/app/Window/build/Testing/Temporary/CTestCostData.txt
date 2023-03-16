@@ -1,2 +1,2 @@
-Window_Test 10 0.875263
+Window_Test 47 22.7995
 ---

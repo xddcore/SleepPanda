@@ -29,6 +29,8 @@ QLabel
 -
 QTextEdit
 -
+QLineEdit
+-
 
 /usr/include/arm-linux-gnueabihf/qt5/QtCore/qalgorithms.h
 QtCore/qglobal.h
@@ -1112,6 +1114,10 @@ qlcdnumber.h
 qlabel.h
 /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlabel.h
 
+/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLineEdit
+qlineedit.h
+/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlineedit.h
+
 /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QPushButton
 qpushbutton.h
 /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qpushbutton.h
@@ -1202,6 +1208,18 @@ limits.h
 QtWidgets/qtwidgetsglobal.h
 -
 QtWidgets/qframe.h
+-
+
+/usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlineedit.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qframe.h
+-
+QtGui/qtextcursor.h
+-
+QtCore/qstring.h
+-
+QtCore/qmargins.h
 -
 
 /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qpushbutton.h

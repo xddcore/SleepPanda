@@ -110,6 +110,7 @@ CMakeFiles/Window_Static.dir/Window.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/
 CMakeFiles/Window_Static.dir/Window.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QBoxLayout
 CMakeFiles/Window_Static.dir/Window.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLCDNumber
 CMakeFiles/Window_Static.dir/Window.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel
+CMakeFiles/Window_Static.dir/Window.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLineEdit
 CMakeFiles/Window_Static.dir/Window.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QPushButton
 CMakeFiles/Window_Static.dir/Window.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QTextEdit
 CMakeFiles/Window_Static.dir/Window.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qabstractbutton.h
@@ -121,6 +122,7 @@ CMakeFiles/Window_Static.dir/Window.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/
 CMakeFiles/Window_Static.dir/Window.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlayout.h
 CMakeFiles/Window_Static.dir/Window.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlayoutitem.h
 CMakeFiles/Window_Static.dir/Window.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlcdnumber.h
+CMakeFiles/Window_Static.dir/Window.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlineedit.h
 CMakeFiles/Window_Static.dir/Window.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qpushbutton.h
 CMakeFiles/Window_Static.dir/Window.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qsizepolicy.h
 CMakeFiles/Window_Static.dir/Window.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qtextedit.h
@@ -238,6 +240,7 @@ CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o: /usr/
 CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QBoxLayout
 CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLCDNumber
 CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel
+CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLineEdit
 CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QPushButton
 CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QTextEdit
 CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qabstractbutton.h
@@ -249,6 +252,7 @@ CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o: /usr/
 CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlayout.h
 CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlayoutitem.h
 CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlcdnumber.h
+CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlineedit.h
 CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qpushbutton.h
 CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qsizepolicy.h
 CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qtextedit.h

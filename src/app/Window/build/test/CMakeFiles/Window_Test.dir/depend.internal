@@ -137,6 +137,7 @@ test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QBoxLayout
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLCDNumber
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLabel
+ /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLineEdit
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QPushButton
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QTextEdit
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qabstractbutton.h
@@ -150,6 +151,7 @@ test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlayout.h
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlayoutitem.h
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlcdnumber.h
+ /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qlineedit.h
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qpushbutton.h
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qsizepolicy.h
  /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/qtextedit.h

@@ -1,26 +1,19 @@
-Start testing: Mar 15 17:20 GMT
+Start testing: Mar 16 12:06 GMT
 ----------------------------------------------------------
 1/1 Testing: Window_Test
 1/1 Test: Window_Test
 Command: "/home/pi/xddcore/SleepPanda/src/app/Window/build/test/Window_Test"
 Directory: /home/pi/xddcore/SleepPanda/src/app/Window/build/test
-"Window_Test" start time: Mar 15 17:20 GMT
+"Window_Test" start time: Mar 16 12:06 GMT
 Output:
 ----------------------------------------------------------
-QLayout: Cannot add a null layout to QVBoxLayout/
-QLayout: Cannot add a null layout to QVBoxLayout/
-QLayout: Cannot add a null layout to QVBoxLayout/
-QLayout: Cannot add a null layout to QVBoxLayout/
-QLayout: Cannot add a null layout to QVBoxLayout/
-QLayout: Cannot add a null layout to QVBoxLayout/
-QLayout: Cannot add a null layout to QVBoxLayout/
 qt.qpa.xcb: QXcbConnection: XCB error: 148 (Unknown), sequence: 192, resource id: 0, major code: 140 (Unknown), minor code: 20
 <end of output>
-Test time =   8.75 sec
+Test time = 1071.58 sec
 ----------------------------------------------------------
 Test Passed.
-"Window_Test" end time: Mar 15 17:20 GMT
-"Window_Test" time elapsed: 00:00:08
+"Window_Test" end time: Mar 16 12:24 GMT
+"Window_Test" time elapsed: 00:17:51
 ----------------------------------------------------------
 
-End testing: Mar 15 17:20 GMT
+End testing: Mar 16 12:24 GMT
