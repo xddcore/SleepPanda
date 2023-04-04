@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inky Frame Image Upload</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="inky.css">
+  </head>
+  <script src="inky.js"></script>
+  <body onload="inkyMain();">
+    <h1>Inky Photo Frame <span class="version">alpha</span></h1>
+
+    <h2>Current Photo</h2>
+    <img src="/current_photo.png"></img>
+
+    <h2>Upload New Photo</h2>
+    <form action="/post_photo" method="post" enctype="multipart/form-data">
+      <div>
+          <label for="file">Select files</label>
+          <input name="images" id="file" type="file" />
+      </div>
+      <button type="submit">Upload</button>
+    </form>
+
+  </body>
+    
+</html>
