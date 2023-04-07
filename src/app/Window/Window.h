@@ -1,11 +1,22 @@
 #ifndef _WINDOW_H
 #define _WINDOW_H
 
+//opencv
+#include "opencv2/objdetect.hpp"
+#include "opencv2/highgui.hpp"
+#include "opencv2/imgproc.hpp"
+#include "opencv2/videoio.hpp"
+
 //Qwt控件
 #include <qwt/qwt_thermo.h>
 #include <qwt/qwt_plot.h>
 #include <qwt/qwt_plot_curve.h>
 
+//Unit LIB
+#include "../MAX30101/MAX30101.h"
+#include "../Camera/Camera.h"
+#include "../SoundSensor/SoundSensor.h"
+#include "../Buzzer/Buzzer.h"
 
 //Qt Weights控件
 //#include <QtWidgets> //包含所有QT5控件，这将会增加编译时间
@@ -15,7 +26,9 @@
 #include <QLabel>
 #include <QTextEdit>
 #include <QLineEdit>
-
+#include <QString>
+#include <QDoubleValidator>
+#include <QIntValidator>
 
 // class definition 'Window'
 class Window : public QWidget
@@ -25,12 +38,12 @@ class Window : public QWidget
 
 public:
 	Window(); // default constructor - called when a Window is declared without arguments
-
+    ~Window();
 	void timerEvent( QTimerEvent * );
 
 // internal variables for the window class
 private:
-	static constexpr int plotDataSize = 100;
+	static constexpr int plotDataSize = 1000;
 	static constexpr double gain = 7.5;
 
 	QPushButton  *button;
@@ -120,12 +133,35 @@ private:
 	QHBoxLayout  *hLayout;  // horizontal layout
 
 	// data arrays for the plot
-	double xData[plotDataSize];
-	double yData[plotDataSize];
+    //心率
+	double HeartRate_xData[plotDataSize];
+	double HeartRate_yData[plotDataSize];
+    //血氧
+    double BloodOxygen_xData[plotDataSize];
+	double BloodOxygen_yData[plotDataSize];
+    //Camera
+    void updateImage(const cv::Mat &mat);
+    struct MyCallback : Camera::SceneCallback {
+		Window* window = nullptr;
+		virtual void nextScene(const cv::Mat &mat) {
+			if (nullptr != window) {
+				window->updateImage(mat);
+			}
+		}
+	};
+	MyCallback myCallback;
+    //数值校验器
+    QIntValidator *IntValidator;
+	QDoubleValidator *DoubleValidator;
 
 	long count = 0;
+    void TurnOn_SoundSensor(); 
+    void TurnOff_SoundSensor(); 
+	void Update_Alarm_Threshold();
 
-	void reset();
+    //开启/关闭呼吸暂停综合症报警
+    void TurnOn_Alarm_ApneaSyndrome();
+    void TurnOff_Alarm_ApneaSyndrome();
 };
 
 #endif // WINDOW_H

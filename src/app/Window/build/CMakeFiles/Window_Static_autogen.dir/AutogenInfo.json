@@ -25,6 +25,12 @@
 		"/usr/share/cmake-3.18/Modules/Platform/Linux-GNU-CXX.cmake",
 		"/usr/share/cmake-3.18/Modules/Platform/Linux-GNU.cmake",
 		"/usr/share/cmake-3.18/Modules/CMakeCommonLanguageInclude.cmake",
+		"/usr/local/lib/arm-linux-gnueabihf/cmake/opencv4/OpenCVConfig-version.cmake",
+		"/usr/local/lib/arm-linux-gnueabihf/cmake/opencv4/OpenCVConfig.cmake",
+		"/usr/share/cmake-3.18/Modules/FindPackageHandleStandardArgs.cmake",
+		"/usr/share/cmake-3.18/Modules/FindPackageMessage.cmake",
+		"/usr/local/lib/arm-linux-gnueabihf/cmake/opencv4/OpenCVModules.cmake",
+		"/usr/local/lib/arm-linux-gnueabihf/cmake/opencv4/OpenCVModules-release.cmake",
 		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5/Qt5ConfigVersion.cmake",
 		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5/Qt5Config.cmake",
 		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5/Qt5ModuleLocation.cmake",
@@ -90,6 +96,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"/usr/local/include/opencv4",
 		"/usr/include/arm-linux-gnueabihf/qt5",
 		"/usr/include/arm-linux-gnueabihf/qt5/QtWidgets",
 		"/usr/include/arm-linux-gnueabihf/qt5/QtGui",

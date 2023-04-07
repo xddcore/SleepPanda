@@ -54,6 +54,20 @@ QLabel
 Camera.h
 /home/pi/xddcore/SleepPanda/src/app/Camera/Camera.h
 
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/Camera_Static_autogen/EWIEGA46WW/moc_WindowsForCamera.cpp
+memory
+-
+../../../WindowsForCamera.h
+/home/pi/xddcore/SleepPanda/src/app/Camera/WindowsForCamera.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/Camera_Static_autogen/mocs_compilation.cpp
+EWIEGA46WW/moc_WindowsForCamera.cpp
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/Camera_Static_autogen/EWIEGA46WW/moc_WindowsForCamera.cpp
+
 /home/pi/xddcore/SleepPanda/src/app/Config/Config.h
 
 /usr/include/arm-linux-gnueabihf/qt5/QtCore/qalgorithms.h

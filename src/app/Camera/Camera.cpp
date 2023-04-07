@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-03-04 10:36:54
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-04-07 14:33:06
+ * @LastEditTime: 2023-04-07 18:06:19
  * @FilePath: /SleepPanda/src/app/Camera/Camera.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -32,6 +32,9 @@ Camera::Camera(Camera_Settings camera_settings){
     };
 
     capture.open(My_Camera_Settings.Camera_Device);
+    //设置图像长宽，防止最后的sleepPanda无法完全显示
+    capture.set(3,320);//width:320
+    capture.set(4,240);//h:240
     if (!capture.isOpened())
     {
         printf("RPI DEBUG: Camera Error opening video capture.\r\n");

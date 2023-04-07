@@ -1,10 +1,10 @@
-Start testing: Mar 02 09:47 GMT
+Start testing: Apr 07 16:48 BST
 ----------------------------------------------------------
 1/1 Testing: MAX30101_Test
 1/1 Test: MAX30101_Test
 Command: "/home/pi/xddcore/SleepPanda/src/app/MAX30101/build/test/MAX30101_Test"
 Directory: /home/pi/xddcore/SleepPanda/src/app/MAX30101/build/test
-"MAX30101_Test" start time: Mar 02 09:47 GMT
+"MAX30101_Test" start time: Apr 07 16:48 BST
 Output:
 ----------------------------------------------------------
 
@@ -16,29 +16,30 @@ Place your fingertip on the MAX30101 sensor, wait 15 seconds, and press the Ente
 RPI DEBUG: MAX30101 pigpio initialised okay.
 Device_Init: MAX30101 i2cOpen Succeeded!  fd = 0
 RPI DEBUG: MAX30101 Device Init ok.
-ir_mean: 134543.940000,  red_mean: 118966.380000
-beta_ir: 28.846517,  beta_red: 16.902190
+ir_mean: 45323.980000,  red_mean: 45937.500000
+beta_ir: 1183.223006,  beta_red: 1037.180942
 n_last_peak_interval test = BAD
 Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate:-999, spo2: -999.000000
-ir_mean: 135884.310000,  red_mean: 119318.680000
-beta_ir: 10.849487,  beta_red: 1.373345
-n_last_peak_interval test = GOOD
-boundary test = GOOD
-Rpi_MAX30101 Class DEBUG: MAX30101_DataReadyEvent_Handle() was triggered.|heart_rate:62, spo2: 99.704428
 Rpi_MAX30101.ISR_CheckPoint:1
+/home/pi/xddcore/SleepPanda/src/app/MAX30101/test/MAX30101_Test.cpp:52: Failure
+Expected: (My_Rpi_MAX30101.heart_rate_test) != (-999), actual: -999 vs -999
 RPI DEBUG: MAX30101 Delete.
-[       OK ] MAX30101_Test.Check_MAX30101_ISR_HeartRate_SPO2 (12521 ms)
-[----------] 1 test from MAX30101_Test (12521 ms total)
+[  FAILED  ] MAX30101_Test.Check_MAX30101_ISR_HeartRate_SPO2 (9290 ms)
+[----------] 1 test from MAX30101_Test (9290 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (12522 ms total)
-[  PASSED  ] 1 test.
+[==========] 1 test from 1 test suite ran. (9290 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] MAX30101_Test.Check_MAX30101_ISR_HeartRate_SPO2
+
+ 1 FAILED TEST
 <end of output>
-Test time =  12.53 sec
+Test time =   9.31 sec
 ----------------------------------------------------------
-Test Passed.
-"MAX30101_Test" end time: Mar 02 09:47 GMT
-"MAX30101_Test" time elapsed: 00:00:12
+Test Failed.
+"MAX30101_Test" end time: Apr 07 16:48 BST
+"MAX30101_Test" time elapsed: 00:00:09
 ----------------------------------------------------------
 
-End testing: Mar 02 09:47 GMT
+End testing: Apr 07 16:48 BST
