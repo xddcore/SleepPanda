@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-16 12:35:21
+ * @LastEditTime: 2023-04-07 14:48:09
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -936,11 +936,14 @@ wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascade_e
 使用Qt的QTime类，timeout()事件来触发摄像头帧读取。
 >摄像头FPS=30,经测试程序处理速度小于摄像头FPS，故使用QTime类timeout()事件是合适的。
 
+**最终使用Thread和Callback来实现帧获取**
+
 **Unit Test DEMO**
 
 您将看到的现象: 实时显示摄像头画面，使用红色圈标记正脸和眼睛，使用蓝色圈标记侧脸和眼睛。
 
 请执行以下命令以运行单元测试：
+>**Note**: 请确保你在图形桌面环境下。命令行环境无法显示GUI。
 ```
 ## change to work dir
 cd SleepPanda/src/app/Camera/build
