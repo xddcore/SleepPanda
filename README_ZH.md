@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-15 11:40:32
+ * @LastEditTime: 2023-03-16 12:35:21
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -958,15 +958,34 @@ cmake .. && make && sudo ctest --verbose
 
 ### 2.6 QT&C++逻辑开发
 
-#### 2.6.1 安装QT5和Qwt
+#### 2.6.1 QT5和Qwt
 
-**Step1:安装QT5所需包**
+**安装QT5所需包**
 ```
 sudo apt-get install qtdeclarative5-dev-tools
 sudo apt-get install libqwt-qt5-dev
 sudo apt-get install qtbase5-dev
 sudo apt-get install qtdeclarative5-dev
 ```
-**Step2:将Qt5Config.cmake拷贝至项目**
+
+**开发记录**
+
+>自豪的使用纯C++编写GUI，不使用Qt Creator，这将避免引入QML。
+
+**Unit Test DEMO**
+
+您将看到的现象: 使用QT5开发的GUI将被显示。
+
+请执行以下命令以运行单元测试：
 ```
+## change to work dir
+cd SleepPanda/src/app/Window/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
 ```
+>**Note**: 请确保你在图形桌面环境下。命令行环境无法显示GUI。
+
+你将看到如下效果:  
+![GUI](./img/GUI.jpeg)
+<p align="center">Sleep Panda GUI</p>  

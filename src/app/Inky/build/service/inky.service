@@ -1,0 +1,18 @@
+[Unit]
+Description=Inky Frame Service
+After=network.target ntpdate.service
+
+[Service]
+Environment=DISPLAY=:0
+ExecStart=/home/pi/inky-cpp
+WorkingDirectory=/home/pi/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+RestartSec=1
+StartLimitIntervalSec=0
+User=root
+Group=video
+
+[Install]
+WantedBy=multi-user.target
