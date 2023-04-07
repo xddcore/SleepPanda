@@ -115,6 +115,9 @@ test/Camera_Test: /usr/local/lib/arm-linux-gnueabihf/libopencv_videoio.so.4.7.0
 test/Camera_Test: /usr/local/lib/arm-linux-gnueabihf/libopencv_imgcodecs.so.4.7.0
 test/Camera_Test: /usr/local/lib/arm-linux-gnueabihf/libopencv_imgproc.so.4.7.0
 test/Camera_Test: /usr/local/lib/arm-linux-gnueabihf/libopencv_core.so.4.7.0
+test/Camera_Test: /usr/lib/arm-linux-gnueabihf/libQt5Widgets.so.5.15.2
+test/Camera_Test: /usr/lib/arm-linux-gnueabihf/libQt5Gui.so.5.15.2
+test/Camera_Test: /usr/lib/arm-linux-gnueabihf/libQt5Core.so.5.15.2
 test/Camera_Test: test/CMakeFiles/Camera_Test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Camera_Test"
 	cd /home/pi/xddcore/SleepPanda/src/app/Camera/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Camera_Test.dir/link.txt --verbose=$(VERBOSE)

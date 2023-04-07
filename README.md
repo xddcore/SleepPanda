@@ -3,7 +3,7 @@
  * @Date: 2023-01-18 00:44:11
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-10 16:44:41
+ * @LastEditTime: 2023-04-07 14:56:28
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:27:55
@@ -904,11 +904,14 @@ The worker thread reads the new Frame continuously, and when the new Frame is va
 Use Qt's QTime class, timeout() event to trigger camera frame reading.
 >Camera FPS=30, the processing speed of the test program is lower than the camera FPS, so it is appropriate to use the QTime class timeout() event.
 
+**Finally use Thread and Callback to achieve frame acquisition**
+
 **Unit Test DEMO**
 
 What you will see: The camera image is displayed in real time, the frontal face and eyes are marked with red circles, and the side face and eyes are marked with blue circles.
 
 Execute the following command to run unit tests:
+>**Note**: Make sure you are in a graphical desktop environment. The command line environment cannot display a GUI.
 ```
 ## change to work dir
 cd SleepPanda/src/app/Camera/build
@@ -926,8 +929,34 @@ You will see the following effect:
 
 ### 2.6 QT&C++ logic development
 
-#### 2.6.1 Install QT5 and Qwt
+#### 2.6.1 QT5 and Qwt
+
+**Package required to install QT5**
 ```
 sudo apt-get install qtdeclarative5-dev-tools
 sudo apt-get install libqwt-qt5-dev
+sudo apt-get install qtbase5-dev
+sudo apt-get install qtdeclarative5-dev
 ```
+
+**Development Record**
+
+> Proudly use pure C++ to write GUI, not using Qt Creator, which will avoid introducing QML.
+
+**Unit Test DEMO**
+
+What you will see: The GUI developed with QT5 will be displayed.
+
+Execute the following command to run unit tests:
+```
+## change to work dir
+cd SleepPanda/src/app/Window/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
+>**Note**: Make sure you are in a graphical desktop environment. The command line environment cannot display a GUI.
+
+You will see the following effect:
+![GUI](./img/GUI.jpeg)
+<p align="center">Sleep Panda GUI</p>

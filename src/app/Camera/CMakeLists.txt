@@ -16,14 +16,20 @@ add_compile_options(-std=c++14 -Wall -Wconversion -Wextra -pedantic)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 14)
 
-set(LIBSRC Camera.cpp)
-set(LIBINCLUDE Camera.h)
+set(LIBSRC Camera.cpp WindowsForCamera.cpp)
+set(LIBINCLUDE Camera.h WindowsForCamera.h)
 set(LIBSTATIC Camera_Static)
 set(LIBSTATIC_TARGETS Camera_Static-Targets)
 
 #OpenCV
 set(opencv_DIR "./") # xxxx目录包含OpenCVConfig.cmake
 find_package(OpenCV REQUIRED)	# 找到opencv库
+
+#QT5
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+find_package(Qt5 COMPONENTS Widgets REQUIRED)	# 找到QT5库
 
 
 add_library(${LIBSTATIC}
@@ -34,7 +40,7 @@ add_library(${LIBSTATIC}
 set_target_properties(${LIBSTATIC} PROPERTIES
   PUBLIC_HEADER "${LIBINCLUDE} ${OpenCV_INCLUDE_DIRS}")
 
-target_link_libraries(${LIBSTATIC} pigpio ${OpenCV_LIBRARIES})
+target_link_libraries(${LIBSTATIC} pigpio ${OpenCV_LIBRARIES} Qt5::Widgets qwt-qt5 pthread)
 
 install(TARGETS ${LIBSTATIC} EXPORT ${LIBSTATIC_TARGETS}
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}

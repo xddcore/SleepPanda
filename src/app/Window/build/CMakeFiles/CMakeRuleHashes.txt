@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+db15d2cccdc6b684565a3a2fb6f412bd CMakeFiles/Window_Static_autogen

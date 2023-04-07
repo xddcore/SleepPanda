@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+9d9d4d27c53d4ad823ec7570a2d56e65 CMakeFiles/Camera_Static_autogen

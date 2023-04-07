@@ -1,0 +1,19 @@
+Start testing: Mar 16 12:06 GMT
+----------------------------------------------------------
+1/1 Testing: Window_Test
+1/1 Test: Window_Test
+Command: "/home/pi/xddcore/SleepPanda/src/app/Window/build/test/Window_Test"
+Directory: /home/pi/xddcore/SleepPanda/src/app/Window/build/test
+"Window_Test" start time: Mar 16 12:06 GMT
+Output:
+----------------------------------------------------------
+qt.qpa.xcb: QXcbConnection: XCB error: 148 (Unknown), sequence: 192, resource id: 0, major code: 140 (Unknown), minor code: 20
+<end of output>
+Test time = 1071.58 sec
+----------------------------------------------------------
+Test Passed.
+"Window_Test" end time: Mar 16 12:24 GMT
+"Window_Test" time elapsed: 00:17:51
+----------------------------------------------------------
+
+End testing: Mar 16 12:24 GMT

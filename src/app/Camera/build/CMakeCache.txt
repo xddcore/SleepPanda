@@ -213,6 +213,18 @@ Camera_Test_SOURCE_DIR:STATIC=/home/pi/xddcore/SleepPanda/src/app/Camera/test
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=/usr/local/lib/arm-linux-gnueabihf/cmake/opencv4
 
+//The directory containing a CMake configuration file for Qt5Core.
+Qt5Core_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/Qt5Core
+
+//The directory containing a CMake configuration file for Qt5Gui.
+Qt5Gui_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui
+
+//The directory containing a CMake configuration file for Qt5Widgets.
+Qt5Widgets_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/Qt5Widgets
+
+//The directory containing a CMake configuration file for Qt5.
+Qt5_DIR:PATH=/usr/lib/arm-linux-gnueabihf/cmake/Qt5
+
 //The directory containing a CMake configuration file for opencv.
 opencv_DIR:PATH=opencv_DIR-NOTFOUND
 

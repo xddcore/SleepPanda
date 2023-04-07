@@ -76,9 +76,22 @@ include CMakeFiles/Camera_Static.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Camera_Static.dir/flags.make
 
+CMakeFiles/Camera_Static.dir/Camera_Static_autogen/mocs_compilation.cpp.o: CMakeFiles/Camera_Static.dir/flags.make
+CMakeFiles/Camera_Static.dir/Camera_Static_autogen/mocs_compilation.cpp.o: Camera_Static_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Camera_Static.dir/Camera_Static_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Camera_Static.dir/Camera_Static_autogen/mocs_compilation.cpp.o -c /home/pi/xddcore/SleepPanda/src/app/Camera/build/Camera_Static_autogen/mocs_compilation.cpp
+
+CMakeFiles/Camera_Static.dir/Camera_Static_autogen/mocs_compilation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Camera_Static.dir/Camera_Static_autogen/mocs_compilation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/xddcore/SleepPanda/src/app/Camera/build/Camera_Static_autogen/mocs_compilation.cpp > CMakeFiles/Camera_Static.dir/Camera_Static_autogen/mocs_compilation.cpp.i
+
+CMakeFiles/Camera_Static.dir/Camera_Static_autogen/mocs_compilation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Camera_Static.dir/Camera_Static_autogen/mocs_compilation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/xddcore/SleepPanda/src/app/Camera/build/Camera_Static_autogen/mocs_compilation.cpp -o CMakeFiles/Camera_Static.dir/Camera_Static_autogen/mocs_compilation.cpp.s
+
 CMakeFiles/Camera_Static.dir/Camera.cpp.o: CMakeFiles/Camera_Static.dir/flags.make
 CMakeFiles/Camera_Static.dir/Camera.cpp.o: ../Camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Camera_Static.dir/Camera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Camera_Static.dir/Camera.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Camera_Static.dir/Camera.cpp.o -c /home/pi/xddcore/SleepPanda/src/app/Camera/Camera.cpp
 
 CMakeFiles/Camera_Static.dir/Camera.cpp.i: cmake_force
@@ -89,17 +102,34 @@ CMakeFiles/Camera_Static.dir/Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Camera_Static.dir/Camera.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/xddcore/SleepPanda/src/app/Camera/Camera.cpp -o CMakeFiles/Camera_Static.dir/Camera.cpp.s
 
+CMakeFiles/Camera_Static.dir/WindowsForCamera.cpp.o: CMakeFiles/Camera_Static.dir/flags.make
+CMakeFiles/Camera_Static.dir/WindowsForCamera.cpp.o: ../WindowsForCamera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Camera_Static.dir/WindowsForCamera.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Camera_Static.dir/WindowsForCamera.cpp.o -c /home/pi/xddcore/SleepPanda/src/app/Camera/WindowsForCamera.cpp
+
+CMakeFiles/Camera_Static.dir/WindowsForCamera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Camera_Static.dir/WindowsForCamera.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/xddcore/SleepPanda/src/app/Camera/WindowsForCamera.cpp > CMakeFiles/Camera_Static.dir/WindowsForCamera.cpp.i
+
+CMakeFiles/Camera_Static.dir/WindowsForCamera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Camera_Static.dir/WindowsForCamera.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/xddcore/SleepPanda/src/app/Camera/WindowsForCamera.cpp -o CMakeFiles/Camera_Static.dir/WindowsForCamera.cpp.s
+
 # Object files for target Camera_Static
 Camera_Static_OBJECTS = \
-"CMakeFiles/Camera_Static.dir/Camera.cpp.o"
+"CMakeFiles/Camera_Static.dir/Camera_Static_autogen/mocs_compilation.cpp.o" \
+"CMakeFiles/Camera_Static.dir/Camera.cpp.o" \
+"CMakeFiles/Camera_Static.dir/WindowsForCamera.cpp.o"
 
 # External object files for target Camera_Static
 Camera_Static_EXTERNAL_OBJECTS =
 
+libCamera_Static.a: CMakeFiles/Camera_Static.dir/Camera_Static_autogen/mocs_compilation.cpp.o
 libCamera_Static.a: CMakeFiles/Camera_Static.dir/Camera.cpp.o
+libCamera_Static.a: CMakeFiles/Camera_Static.dir/WindowsForCamera.cpp.o
 libCamera_Static.a: CMakeFiles/Camera_Static.dir/build.make
 libCamera_Static.a: CMakeFiles/Camera_Static.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libCamera_Static.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libCamera_Static.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/Camera_Static.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Camera_Static.dir/link.txt --verbose=$(VERBOSE)
 

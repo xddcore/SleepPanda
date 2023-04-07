@@ -1,0 +1,2 @@
+/usr/bin/ar qc libWindow_Static.a CMakeFiles/Window_Static.dir/Window_Static_autogen/mocs_compilation.cpp.o CMakeFiles/Window_Static.dir/Window.cpp.o
+/usr/bin/ranlib libWindow_Static.a

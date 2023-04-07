@@ -200,6 +200,19 @@ Camera_Static/fast:
 .PHONY : Camera_Static/fast
 
 #=============================================================================
+# Target rules for targets named Camera_Static_autogen
+
+# Build rule for target.
+Camera_Static_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Camera_Static_autogen
+.PHONY : Camera_Static_autogen
+
+# fast build rule for target.
+Camera_Static_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Camera_Static_autogen.dir/build.make CMakeFiles/Camera_Static_autogen.dir/build
+.PHONY : Camera_Static_autogen/fast
+
+#=============================================================================
 # Target rules for targets named Camera_Test
 
 # Build rule for target.
@@ -239,6 +252,60 @@ Camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Camera_Static.dir/build.make CMakeFiles/Camera_Static.dir/Camera.cpp.s
 .PHONY : Camera.cpp.s
 
+Camera_Static_autogen/mocs_compilation.o: Camera_Static_autogen/mocs_compilation.cpp.o
+
+.PHONY : Camera_Static_autogen/mocs_compilation.o
+
+# target to build an object file
+Camera_Static_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Camera_Static.dir/build.make CMakeFiles/Camera_Static.dir/Camera_Static_autogen/mocs_compilation.cpp.o
+.PHONY : Camera_Static_autogen/mocs_compilation.cpp.o
+
+Camera_Static_autogen/mocs_compilation.i: Camera_Static_autogen/mocs_compilation.cpp.i
+
+.PHONY : Camera_Static_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+Camera_Static_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Camera_Static.dir/build.make CMakeFiles/Camera_Static.dir/Camera_Static_autogen/mocs_compilation.cpp.i
+.PHONY : Camera_Static_autogen/mocs_compilation.cpp.i
+
+Camera_Static_autogen/mocs_compilation.s: Camera_Static_autogen/mocs_compilation.cpp.s
+
+.PHONY : Camera_Static_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+Camera_Static_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Camera_Static.dir/build.make CMakeFiles/Camera_Static.dir/Camera_Static_autogen/mocs_compilation.cpp.s
+.PHONY : Camera_Static_autogen/mocs_compilation.cpp.s
+
+WindowsForCamera.o: WindowsForCamera.cpp.o
+
+.PHONY : WindowsForCamera.o
+
+# target to build an object file
+WindowsForCamera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Camera_Static.dir/build.make CMakeFiles/Camera_Static.dir/WindowsForCamera.cpp.o
+.PHONY : WindowsForCamera.cpp.o
+
+WindowsForCamera.i: WindowsForCamera.cpp.i
+
+.PHONY : WindowsForCamera.i
+
+# target to preprocess a source file
+WindowsForCamera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Camera_Static.dir/build.make CMakeFiles/Camera_Static.dir/WindowsForCamera.cpp.i
+.PHONY : WindowsForCamera.cpp.i
+
+WindowsForCamera.s: WindowsForCamera.cpp.s
+
+.PHONY : WindowsForCamera.s
+
+# target to generate assembly for a file
+WindowsForCamera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Camera_Static.dir/build.make CMakeFiles/Camera_Static.dir/WindowsForCamera.cpp.s
+.PHONY : WindowsForCamera.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -252,11 +319,18 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... Camera_Static_autogen"
 	@echo "... Camera_Static"
 	@echo "... Camera_Test"
 	@echo "... Camera.o"
 	@echo "... Camera.i"
 	@echo "... Camera.s"
+	@echo "... Camera_Static_autogen/mocs_compilation.o"
+	@echo "... Camera_Static_autogen/mocs_compilation.i"
+	@echo "... Camera_Static_autogen/mocs_compilation.s"
+	@echo "... WindowsForCamera.o"
+	@echo "... WindowsForCamera.i"
+	@echo "... WindowsForCamera.s"
 .PHONY : help
 
 

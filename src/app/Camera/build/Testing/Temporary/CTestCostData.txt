@@ -1,2 +1,2 @@
-Camera_Test 24 4.51465
+Camera_Test 25 1.81318
 ---

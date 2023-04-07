@@ -1,0 +1,21 @@
+[
+  {
+      "name": "Windows RPi Cross-Compile",
+      "cmakeSettings": {
+          "CMAKE_TOOLCHAIN_FILE" : "${workspaceFolder}/toolchain/windows-cross.cmake"
+      },
+      "compilers": {
+          "C": "C:\\SysGCC\\raspberry\\bin\\arm-linux-gnueabihf-gcc.exe",
+          "CXX": "C:\\SysGCC\\raspberry\\bin\\arm-linux-gnueabihf-g++.exe",
+      }
+  },
+  {
+    "name": "Docker RPi Cross-Compile",
+    "cmakeSettings": {
+        "CMAKE_TOOLCHAIN_FILE" : "${workspaceFolder}/toolchain/docker-cross.cmake"
+    },
+    "environmentVariables":{
+      "QEMU_LD_PREFIX": "/mnt/sysroot"
+    }
+  }
+]

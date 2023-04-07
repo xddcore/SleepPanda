@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-10 16:44:24
+ * @LastEditTime: 2023-04-07 14:48:09
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -850,7 +850,12 @@ sudo ldconfig
 sudo cp -f /usr/local/lib/arm-linux-gnueabihf/pkgconfig/opencv4.pc  /usr/lib/pkgconfig/
 ```
 
-**Step 7:添加环境变量**
+**Step 7:复制OpenCVConfig.cmake文件到/SleepPanda/src/app/Camera（这一个步骤是Cmake使用find_package()去查找OpenCV的基础）**
+```
+sudo cp -f /usr/local/lib/arm-linux-gnueabihf/cmake/opencv4/OpenCVConfig.cmake /SleepPanda/src/app/Camera
+```
+
+**Step 8:添加环境变量**
 ```
 sudo vim /etc/bash.bashrc
 
@@ -859,14 +864,14 @@ PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig
 export PKG_CONFIG_PATH
 ```
 
-**Step 8:测试是否安装成功**
+**Step 9:测试是否安装成功**
 ```
 pkg-config --modversion opencv4
 
 #maybe output: 4.7.0
 ```
 
-**Step 9:测试程序**
+**Step 10:测试程序**
 ```
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/highgui.hpp>
@@ -890,7 +895,7 @@ int main()
 }
 ```
 
-**Step 10:编译测试程序(SleepPanda/src/app/Camera/OpenCV_Test):**
+**Step 11:编译测试程序(SleepPanda/src/app/Camera/OpenCV_Test):**
 ```
 g++ OpenCV_Test.cpp -o OpenCV_Test `pkg-config --cflags --libs opencv4`
 ```
@@ -931,11 +936,14 @@ wget https://github.com/opencv/opencv/raw/master/data/haarcascades/haarcascade_e
 使用Qt的QTime类，timeout()事件来触发摄像头帧读取。
 >摄像头FPS=30,经测试程序处理速度小于摄像头FPS，故使用QTime类timeout()事件是合适的。
 
+**最终使用Thread和Callback来实现帧获取**
+
 **Unit Test DEMO**
 
 您将看到的现象: 实时显示摄像头画面，使用红色圈标记正脸和眼睛，使用蓝色圈标记侧脸和眼睛。
 
 请执行以下命令以运行单元测试：
+>**Note**: 请确保你在图形桌面环境下。命令行环境无法显示GUI。
 ```
 ## change to work dir
 cd SleepPanda/src/app/Camera/build
@@ -953,8 +961,34 @@ cmake .. && make && sudo ctest --verbose
 
 ### 2.6 QT&C++逻辑开发
 
-#### 2.6.1 安装QT5和Qwt
+#### 2.6.1 QT5和Qwt
+
+**安装QT5所需包**
 ```
 sudo apt-get install qtdeclarative5-dev-tools
 sudo apt-get install libqwt-qt5-dev
+sudo apt-get install qtbase5-dev
+sudo apt-get install qtdeclarative5-dev
 ```
+
+**开发记录**
+
+>自豪的使用纯C++编写GUI，不使用Qt Creator，这将避免引入QML。
+
+**Unit Test DEMO**
+
+您将看到的现象: 使用QT5开发的GUI将被显示。
+
+请执行以下命令以运行单元测试：
+```
+## change to work dir
+cd SleepPanda/src/app/Window/build
+
+# build, and run unit test(gtest)
+cmake .. && make && sudo ctest --verbose
+```
+>**Note**: 请确保你在图形桌面环境下。命令行环境无法显示GUI。
+
+你将看到如下效果:  
+![GUI](./img/GUI.jpeg)
+<p align="center">Sleep Panda GUI</p>  
