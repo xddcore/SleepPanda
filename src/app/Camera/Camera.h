@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-03-04 10:37:06
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-05 15:57:59
+ * @LastEditTime: 2023-04-07 13:41:09
  * @FilePath: /SleepPanda/src/app/Camera/Camera.h
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -24,6 +24,7 @@
 #include "opencv2/imgproc.hpp"
 #include "opencv2/videoio.hpp"
 #include <iostream>
+#include <thread>
 
 using namespace std;
 using namespace cv;
@@ -48,7 +49,22 @@ class Camera{
     Camera(Camera_Settings My_Camera_Settings);
     ~Camera();
     Mat Detection(Mat frame,bool show_result);//检测函数
-    Mat Start();
+    void Start();
+    void Stop();
+
+	/**
+	 * Callback which needs to be implemented by the client
+	 **/
+	struct SceneCallback {
+		virtual void nextScene(const cv::Mat &mat) = 0;
+	};
+	/**
+	 * Registers the callback which receives the
+	 * frames.
+	 **/
+	void registerSceneCallback(SceneCallback* sc) {
+		sceneCallback = sc;
+	}
     
     private:
     Camera_Settings My_Camera_Settings;
@@ -57,6 +73,12 @@ class Camera{
     CascadeClassifier Frontal_Face_Cascade;
     CascadeClassifier Profile_Face_Cascade;
     CascadeClassifier Eye_Cascade;
+
+    void postFrame();
+    void threadLoop();
+    std::thread cameraThread;
+    bool isOn = false;
+	SceneCallback* sceneCallback = nullptr;
 };
 
 #endif //_Camera_H

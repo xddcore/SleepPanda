@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-03-04 10:36:54
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-05 15:18:30
+ * @LastEditTime: 2023-04-07 14:33:06
  * @FilePath: /SleepPanda/src/app/Camera/Camera.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -130,13 +130,40 @@ Mat Camera::Detection(Mat frame,bool show_result){
     return frame;
 }
 
-//Camera 开始捕获摄像头帧函数
-Mat Camera::Start(){
-    Mat frame;
-    capture.read(frame);
-    if( frame.empty() )
-    {
-        printf("RPI DEBUG: Camera Error No captured frame.\r\n");
+/*!
+ * Gets the next available frame and passes it on to the registered callback. Relies on the videoCapture.read() OpenCV method which is understood to wait for an intra-frame delay.
+ */
+void Camera::postFrame(){
+    if(nullptr == sceneCallback) return;
+    cv::Mat cap;
+    capture.read(cap);
+    // check if we succeeded
+    if (cap.empty()) {
+        std::cerr << "ERROR! blank frame grabbed\n";
+        return;
     }
-    return frame;
+    cap = Detection(cap,true); // 检测器
+    cvtColor(cap, cap, cv::COLOR_BGR2RGB);//only RGB of Qt(CV:BGR to QT:RGB)
+    sceneCallback->nextScene(cap);
+}
+
+/*!
+ * Loops while camera is on to add frames to the pipeline
+ * 摄像头获取frame线程
+ */
+void Camera::threadLoop(){
+    while(isOn){
+        postFrame();
+    }
+}
+
+//Camera 开始捕获摄像头帧函数
+void Camera::Start(){
+	isOn=true;
+	cameraThread = std::thread(&Camera::threadLoop, this);//开启摄像头get frame线程
+}
+
+void Camera::Stop(){
+    isOn=false;
+    cameraThread.join();
 }

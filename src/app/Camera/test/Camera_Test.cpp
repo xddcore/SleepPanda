@@ -2,12 +2,15 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-03-04 13:47:31
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-05 15:57:34
+ * @LastEditTime: 2023-04-07 14:08:12
  * @FilePath: /SleepPanda/src/app/Camera/test/Camera_Test.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
  */
 #include "Camera.h"
+#include "WindowsForCamera.h"
+
+#include <QApplication>
 
 #include "gtest/gtest.h"
 
@@ -16,6 +19,7 @@
 //Display the camera image in real time, use the red circle to mark the front face and eyes, 
 //and use the blue circle to mark the side face and eyes.
 
+/*
 TEST(Camera_Test, Check_Cemera_Detection)
 {
     Camera_Settings My_Camera_Settings;
@@ -37,8 +41,21 @@ TEST(Camera_Test, Check_Cemera_Detection)
         if( (char)c == 'c' ) { break; } //press c to exit
     }
 }
+*/
 
 int main(int argc, char **argv) {
+    /*
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
+    */
+    ::testing::InitGoogleTest(&argc, argv);
+    //return RUN_ALL_TESTS();
+	QApplication app(argc, argv);
+    // create the window
+	Window window;
+	window.show();
+
+	// call the window.timerEvent function every 40 ms
+	window.startTimer(40);
+	return app.exec();
 }

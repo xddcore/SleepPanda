@@ -6,6 +6,7 @@
 /home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles/install.dir
 /home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles/test.dir
 /home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles/Camera_Static.dir
+/home/pi/xddcore/SleepPanda/src/app/Camera/build/CMakeFiles/Camera_Static_autogen.dir
 /home/pi/xddcore/SleepPanda/src/app/Camera/build/test/CMakeFiles/list_install_components.dir
 /home/pi/xddcore/SleepPanda/src/app/Camera/build/test/CMakeFiles/install/local.dir
 /home/pi/xddcore/SleepPanda/src/app/Camera/build/test/CMakeFiles/rebuild_cache.dir

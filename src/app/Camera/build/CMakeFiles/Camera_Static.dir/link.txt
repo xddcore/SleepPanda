@@ -1,2 +1,2 @@
-/usr/bin/ar qc libCamera_Static.a CMakeFiles/Camera_Static.dir/Camera.cpp.o
+/usr/bin/ar qc libCamera_Static.a CMakeFiles/Camera_Static.dir/Camera_Static_autogen/mocs_compilation.cpp.o CMakeFiles/Camera_Static.dir/Camera.cpp.o CMakeFiles/Camera_Static.dir/WindowsForCamera.cpp.o
 /usr/bin/ranlib libCamera_Static.a

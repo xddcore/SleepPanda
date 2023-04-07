@@ -52,7 +52,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES "/home/pi/xddcore/SleepPanda/src/app/Camera/Camera.h /usr/local/include/opencv4")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES
+    "/home/pi/xddcore/SleepPanda/src/app/Camera/Camera.h"
+    "/home/pi/xddcore/SleepPanda/src/app/Camera/WindowsForCamera.h /usr/local/include/opencv4"
+    )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
