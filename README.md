@@ -23,7 +23,10 @@
 ![Youtube](https://img.shields.io/youtube/channel/subscribers/UCP2-6ywKLy2js1dzJQ5hR_g?style=social)
 
 >[Click me to visit the Youtube channel](https://www.youtube.com/@SleepPanda666)
-
+>[Click me to visit the Facebook Account](https://www.facebook.com/profile.php?id=100090653119559)
+>[Click me to visit the Instgram Account](https://instagram.com/sleeppandapanda?igshid=ZDdkNTZiNTM=)
+>[Click me to visit the Twitter Account](https://twitter.com/SleepPanda32?t=1ddNsPfxyXBGGOhH1Kmxfg&s=09)
+>[Click me to visit the TikTok Account](https://www.tiktok.com/@sleeppanda32?_t=8bIzVLx8Wd4&_r=1)
 
 Change README Language: [English](./README.md) ｜ [Chinese](./README_ZH.md)
 
@@ -757,6 +760,17 @@ cmake .. && make && sudo ctest --verbose
 
 #### 2.5.5 Ink Screen(SSD1608)
 >Author:Rui Liu
+
+**Features：**
+2.13" EPD display
+Inky pHAT pinout
+Compatible with all 40-pin header Raspberry Pi models
+Python library
+Comes fully assembled
+
+**Note：**
+Overall dimensions: 65x30x8.5mm (WxHxD, depth includes header and display)
+Display usable area dimensions: 48.5x23.8mm (WxH), 2.13" diagonal
 
 >Ref:
 >1. https://github.com/pimoroni/inky

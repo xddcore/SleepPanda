@@ -22,8 +22,12 @@
 
 ![Youtube](https://img.shields.io/youtube/channel/subscribers/UCP2-6ywKLy2js1dzJQ5hR_g?style=social)
 
->[点我访问Youtube频道](https://www.youtube.com/@SleepPanda666)
 
+>[点我访问Youtube频道](https://www.youtube.com/@SleepPanda666)
+>[点我访问Facebook账号](https://www.facebook.com/profile.php?id=100090653119559)
+>[点我访问Instgram账号](https://instagram.com/sleeppandapanda?igshid=ZDdkNTZiNTM=)
+>[点我访问Twitter账号](https://twitter.com/SleepPanda32?t=1ddNsPfxyXBGGOhH1Kmxfg&s=09)
+>[点我访问TikTok账号](https://www.tiktok.com/@sleeppanda32?_t=8bIzVLx8Wd4&_r=1)
 
 Change README Language: [English](./README.md) ｜ [中文](./README_ZH.md)
 
@@ -758,36 +762,22 @@ cmake .. && make && sudo ctest --verbose
 >Author: Rui Liu
 
 **Features：**
-2.13" EPD display
-Inky pHAT pinout
-Compatible with all 40-pin header Raspberry Pi models
-Python library
-Comes fully assembled
+2.13英寸EPD显示屏
+墨色pHAT引脚布局
+与所有40针头的Raspberry Pi型号兼容
+Python库
+完全组装完毕
 
 
 **笔记：**
-Overall dimensions: 65x30x8.5mm (WxHxD, depth includes header and display)
-Display usable area dimensions: 48.5x23.8mm (WxH), 2.13" diagonal
+总体尺寸： 65x30x8.5mm（宽x高x深，深度包括机头和显示器）。
+显示屏可使用区域尺寸： 48.5x23.8毫米（宽x高），2.13英寸的对角线
 
 >Ref:
 >1. https://github.com/pimoroni/inky
 >2. https://shop.pimoroni.com/products/inky-phat?variant=12549254905939
 
-**Unit Test DEMO**
 
-
-
-当单元测试程序运行时:
-请，然后按键盘的 ENTER。
-
-请执行以下命令以运行单元测试：
-```
-## change to work dir
-cd SleepPanda/src/app/SoundSensor/build
-
-# build, and run unit test(gtest)
-cmake .. && make && sudo ctest --verbose
-```
 
 #### 2.5.6 MLX90640
 >Author: Hui Wang
