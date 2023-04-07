@@ -1,10 +1,10 @@
-Start testing: Feb 21 14:17 GMT
+Start testing: Apr 07 19:30 BST
 ----------------------------------------------------------
 1/1 Testing: SoundSensor_Test
 1/1 Test: SoundSensor_Test
 Command: "/home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/test/SoundSensor_Test"
 Directory: /home/pi/xddcore/SleepPanda/src/app/SoundSensor/build/test
-"SoundSensor_Test" start time: Feb 21 14:17 GMT
+"SoundSensor_Test" start time: Apr 07 19:30 BST
 Output:
 ----------------------------------------------------------
 
@@ -13,29 +13,111 @@ Make a sound please, then press the ENTER of the keyboard.
 [----------] Global test environment set-up.
 [----------] 1 test from SoundSensor_Test
 [ RUN      ] SoundSensor_Test.Check_SoundSensor_Event_ISR
-RPI DEBUG: SoundSensor pigpio initialisation failed.
-My_Rpi_SoundSensor.ISR_CheckPoint:0
-/home/pi/xddcore/SleepPanda/src/app/SoundSensor/test/SoundSensor_Test.cpp:34: Failure
-Value of: My_Rpi_SoundSensor.ISR_CheckPoint
-  Actual: false
-Expected: true
+RPI DEBUG: SoundSensor pigpio initialised okay.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+Rpi_SoundSensor Class DEBUG: SoundSensor_SoundEvent_Handle() was triggered.
+RPI DEBUG: SoundSensor SoundEvent was triggered.
+My_Rpi_SoundSensor.ISR_CheckPoint:1
 RPI DEBUG: SoundSensor Delete.
-[  FAILED  ] SoundSensor_Test.Check_SoundSensor_Event_ISR (2364 ms)
-[----------] 1 test from SoundSensor_Test (2364 ms total)
+[       OK ] SoundSensor_Test.Check_SoundSensor_Event_ISR (9597 ms)
+[----------] 1 test from SoundSensor_Test (9597 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (2364 ms total)
-[  PASSED  ] 0 tests.
-[  FAILED  ] 1 test, listed below:
-[  FAILED  ] SoundSensor_Test.Check_SoundSensor_Event_ISR
-
- 1 FAILED TEST
+[==========] 1 test from 1 test suite ran. (9598 ms total)
+[  PASSED  ] 1 test.
 <end of output>
-Test time =   2.38 sec
+Test time =   9.61 sec
 ----------------------------------------------------------
-Test Failed.
-"SoundSensor_Test" end time: Feb 21 14:17 GMT
-"SoundSensor_Test" time elapsed: 00:00:02
+Test Passed.
+"SoundSensor_Test" end time: Apr 07 19:30 BST
+"SoundSensor_Test" time elapsed: 00:00:09
 ----------------------------------------------------------
 
-End testing: Feb 21 14:17 GMT
+End testing: Apr 07 19:30 BST

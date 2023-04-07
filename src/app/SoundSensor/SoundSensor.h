@@ -2,7 +2,7 @@
  * @Author: Yihan Wang yihanwangg@163.com
  * @Date: 2023-02-13 10:03:21
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-02-21 13:22:04
+ * @LastEditTime: 2023-04-07 19:28:56
  * @FilePath: /SleepPanda/src/app/SoundSensor/SoundSensor.h
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -35,6 +35,8 @@ class SoundSensor{
     public:
     SoundSensor(SoundSensor_Settings My_SoundSensor_Settings);
     ~SoundSensor();
+    void Start();
+    void Stop();
     virtual void SoundSensor_SoundEvent_Handle()=0; //纯虚函数(规范回调接口)
 
     private:
