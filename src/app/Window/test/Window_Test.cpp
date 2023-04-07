@@ -2,7 +2,7 @@
  * @Author: Chengsen Dong 1034029664@qq.com
  * @Date: 2023-03-15 11:02:57
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-03-15 11:57:34
+ * @LastEditTime: 2023-04-07 17:59:10
  * @FilePath: /SleepPanda/src/app/Window/test/Window_Test.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -10,6 +10,7 @@
 #include "Window.h"
 
 #include <QApplication>
+
 
 #include "gtest/gtest.h"
 
@@ -34,7 +35,7 @@ int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     //return RUN_ALL_TESTS();
 	QApplication app(argc, argv);
-    // create the window
+    // create the window(这里自己建立的窗口window继承自QWidget，其实就是个自定义大控件)
 	Window window;
 	window.show();
 

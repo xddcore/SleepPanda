@@ -20,6 +20,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../test/../../../../tools/gtest/rpios_32bit/include"
   "../test/.."
+  "/usr/local/include/opencv4"
   "/usr/include/arm-linux-gnueabihf/qt5"
   "/usr/include/arm-linux-gnueabihf/qt5/QtWidgets"
   "/usr/include/arm-linux-gnueabihf/qt5/QtGui"

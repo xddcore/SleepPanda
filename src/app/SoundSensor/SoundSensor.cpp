@@ -1,8 +1,8 @@
 /*
  * @Author: Yihan Wang yihanwangg@163.com
  * @Date: 2023-02-13 10:03:05
- * @LastEditors: Yihan Wang yihanwangg@163.com
- * @LastEditTime: 2023-02-17 21:03:18
+ * @LastEditors: Chengsen Dong 1034029664@qq.com
+ * @LastEditTime: 2023-04-07 19:29:13
  * @FilePath: /SleepPanda/src/app/SoundSensor/SoundSensor.cpp
  * @Description: 
  * Copyright (c) 2023 by ${git_name_email}(www.github.com/xddcore), All Rights Reserved. 
@@ -30,7 +30,6 @@ SoundSensor::SoundSensor(SoundSensor_Settings soundsensor_settings) {
             // pigpio initialised okay.
 	        // set gpio5 mode to input
             gpioSetMode(My_SoundSensor_Settings.SoundSensor_GPIO_Pin,PI_INPUT);
-            gpioSetISRFuncEx(My_SoundSensor_Settings.SoundSensor_GPIO_Pin,My_SoundSensor_Settings.Trigger_Method,My_SoundSensor_Settings.ISR_TIMEOUT,gpioISR,(void*)this);
         }
     }
     //此处添加声音传感器的初始化代码
@@ -60,4 +59,14 @@ void SoundSensor::Sound_Event() {
 #else
     printf("LOGIC DEBUG: SoundSensor SoundEvent was triggered.\r\n");
 #endif
+}
+
+//SoundSensor开启中断
+void SoundSensor::Start(){
+    gpioSetISRFuncEx(My_SoundSensor_Settings.SoundSensor_GPIO_Pin,My_SoundSensor_Settings.Trigger_Method,My_SoundSensor_Settings.ISR_TIMEOUT,gpioISR,(void*)this);
+}
+
+//SoundSensor关闭中断
+void SoundSensor::Stop(){
+    gpioSetISRFuncEx(My_SoundSensor_Settings.SoundSensor_GPIO_Pin,RISING_EDGE,-1,NULL,(void*)this);
 }

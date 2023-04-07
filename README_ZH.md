@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-04-07 14:48:09
+ * @LastEditTime: 2023-04-07 20:58:53
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -992,3 +992,16 @@ cmake .. && make && sudo ctest --verbose
 你将看到如下效果:  
 ![GUI](./img/GUI.jpeg)
 <p align="center">Sleep Panda GUI</p>  
+
+### 2.7 组装Unit Code && 得到最终软件
+运行如下代码执行SleepPanda软件:
+>**Note**: 请确保你在图形桌面环境下。命令行环境无法显示GUI。
+```
+cd SleepPanda/src/app/build
+sudo ./SleepPanda
+```
+你将会得到如下结果:
+![SleepPanda](./img/SleepPanda_GUI.jpeg)
+<p align="center">SleepPanda GUI</p>  
+
+### 2.8 至此，SleepPanda所有开发工作完成，感谢大家的付出！！！

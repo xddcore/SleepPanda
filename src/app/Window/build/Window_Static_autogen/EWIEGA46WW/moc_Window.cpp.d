@@ -1,13 +1,25 @@
 /home/pi/xddcore/SleepPanda/src/app/Window/build/Window_Static_autogen/EWIEGA46WW/moc_Window.cpp: /home/pi/xddcore/SleepPanda/src/app/Window/Window.h \
   /home/pi/xddcore/SleepPanda/src/app/Window/build/Window_Static_autogen/moc_predefs.h \
+  /home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.h \
+  /home/pi/xddcore/SleepPanda/src/app/Camera/Camera.h \
+  /home/pi/xddcore/SleepPanda/src/app/Config/Config.h \
+  /home/pi/xddcore/SleepPanda/src/app/MAX30101/MAX30101.h \
+  /home/pi/xddcore/SleepPanda/src/app/MAX30101/algorithm2.h \
+  /home/pi/xddcore/SleepPanda/src/app/MAX30101/algorithm2_by_RF.h \
+  /home/pi/xddcore/SleepPanda/src/app/SoundSensor/SoundSensor.h \
+  /usr/include/arm-linux-gnueabihf/bits/confname.h \
   /usr/include/arm-linux-gnueabihf/bits/cpu-set.h \
   /usr/include/arm-linux-gnueabihf/bits/endian.h \
   /usr/include/arm-linux-gnueabihf/bits/endianness.h \
+  /usr/include/arm-linux-gnueabihf/bits/environments.h \
   /usr/include/arm-linux-gnueabihf/bits/floatn-common.h \
   /usr/include/arm-linux-gnueabihf/bits/floatn.h \
+  /usr/include/arm-linux-gnueabihf/bits/getopt_core.h \
+  /usr/include/arm-linux-gnueabihf/bits/getopt_posix.h \
   /usr/include/arm-linux-gnueabihf/bits/libc-header-start.h \
   /usr/include/arm-linux-gnueabihf/bits/locale.h \
   /usr/include/arm-linux-gnueabihf/bits/long-double.h \
+  /usr/include/arm-linux-gnueabihf/bits/posix_opt.h \
   /usr/include/arm-linux-gnueabihf/bits/pthreadtypes-arch.h \
   /usr/include/arm-linux-gnueabihf/bits/pthreadtypes.h \
   /usr/include/arm-linux-gnueabihf/bits/sched.h \
@@ -43,6 +55,7 @@
   /usr/include/arm-linux-gnueabihf/bits/types/timer_t.h \
   /usr/include/arm-linux-gnueabihf/bits/types/wint_t.h \
   /usr/include/arm-linux-gnueabihf/bits/typesizes.h \
+  /usr/include/arm-linux-gnueabihf/bits/unistd_ext.h \
   /usr/include/arm-linux-gnueabihf/bits/wchar.h \
   /usr/include/arm-linux-gnueabihf/bits/wctype-wchar.h \
   /usr/include/arm-linux-gnueabihf/bits/wordsize.h \
@@ -58,6 +71,7 @@
   /usr/include/arm-linux-gnueabihf/c++/10/bits/os_defines.h \
   /usr/include/arm-linux-gnueabihf/gnu/stubs-hard.h \
   /usr/include/arm-linux-gnueabihf/gnu/stubs.h \
+  /usr/include/arm-linux-gnueabihf/qt5/QtCore/QString \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qalgorithms.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qarraydata.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qatomic.h \
@@ -101,6 +115,7 @@
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qrect.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qrefcount.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qregexp.h \
+  /usr/include/arm-linux-gnueabihf/qt5/QtCore/qregularexpression.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qscopedpointer.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qset.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qshareddata.h \
@@ -123,6 +138,8 @@
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qvarlengtharray.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qvector.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qversiontagging.h \
+  /usr/include/arm-linux-gnueabihf/qt5/QtGui/QDoubleValidator \
+  /usr/include/arm-linux-gnueabihf/qt5/QtGui/QIntValidator \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qbrush.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qcolor.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qcursor.h \
@@ -151,6 +168,7 @@
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtgui-config.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtguiglobal.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtransform.h \
+  /usr/include/arm-linux-gnueabihf/qt5/QtGui/qvalidator.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qwindowdefs.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QBoxLayout \
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLCDNumber \
@@ -209,6 +227,7 @@
   /usr/include/c++/10/bits/hash_bytes.h \
   /usr/include/c++/10/bits/invoke.h \
   /usr/include/c++/10/bits/ios_base.h \
+  /usr/include/c++/10/bits/istream.tcc \
   /usr/include/c++/10/bits/iterator_concepts.h \
   /usr/include/c++/10/bits/list.tcc \
   /usr/include/c++/10/bits/locale_classes.h \
@@ -235,6 +254,7 @@
   /usr/include/c++/10/bits/shared_ptr_atomic.h \
   /usr/include/c++/10/bits/shared_ptr_base.h \
   /usr/include/c++/10/bits/specfun.h \
+  /usr/include/c++/10/bits/sstream.tcc \
   /usr/include/c++/10/bits/std_abs.h \
   /usr/include/c++/10/bits/std_function.h \
   /usr/include/c++/10/bits/stl_algo.h \
@@ -267,13 +287,18 @@
   /usr/include/c++/10/bits/uses_allocator.h \
   /usr/include/c++/10/bits/vector.tcc \
   /usr/include/c++/10/cctype \
+  /usr/include/c++/10/cfloat \
+  /usr/include/c++/10/climits \
   /usr/include/c++/10/clocale \
   /usr/include/c++/10/cmath \
   /usr/include/c++/10/compare \
+  /usr/include/c++/10/complex \
   /usr/include/c++/10/concepts \
   /usr/include/c++/10/cstddef \
   /usr/include/c++/10/cstdint \
+  /usr/include/c++/10/cstdio \
   /usr/include/c++/10/cstdlib \
+  /usr/include/c++/10/cstring \
   /usr/include/c++/10/cwchar \
   /usr/include/c++/10/cwctype \
   /usr/include/c++/10/debug/assertions.h \
@@ -291,11 +316,14 @@
   /usr/include/c++/10/initializer_list \
   /usr/include/c++/10/ios \
   /usr/include/c++/10/iosfwd \
+  /usr/include/c++/10/iostream \
+  /usr/include/c++/10/istream \
   /usr/include/c++/10/iterator \
   /usr/include/c++/10/limits \
   /usr/include/c++/10/list \
   /usr/include/c++/10/map \
   /usr/include/c++/10/memory \
+  /usr/include/c++/10/mutex \
   /usr/include/c++/10/new \
   /usr/include/c++/10/numeric \
   /usr/include/c++/10/optional \
@@ -305,11 +333,13 @@
   /usr/include/c++/10/pstl/glue_memory_defs.h \
   /usr/include/c++/10/pstl/glue_numeric_defs.h \
   /usr/include/c++/10/ranges \
+  /usr/include/c++/10/sstream \
   /usr/include/c++/10/stdexcept \
   /usr/include/c++/10/stdlib.h \
   /usr/include/c++/10/streambuf \
   /usr/include/c++/10/string \
   /usr/include/c++/10/string_view \
+  /usr/include/c++/10/thread \
   /usr/include/c++/10/tr1/bessel_function.tcc \
   /usr/include/c++/10/tr1/beta_function.tcc \
   /usr/include/c++/10/tr1/ell_integral.tcc \
@@ -360,10 +390,51 @@
   /usr/include/string.h \
   /usr/include/strings.h \
   /usr/include/time.h \
+  /usr/include/unistd.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
+  /usr/lib/gcc/arm-linux-gnueabihf/10/include/float.h \
   /usr/lib/gcc/arm-linux-gnueabihf/10/include/limits.h \
   /usr/lib/gcc/arm-linux-gnueabihf/10/include/stdarg.h \
   /usr/lib/gcc/arm-linux-gnueabihf/10/include/stddef.h \
   /usr/lib/gcc/arm-linux-gnueabihf/10/include/stdint.h \
-  /usr/lib/gcc/arm-linux-gnueabihf/10/include/syslimits.h
+  /usr/lib/gcc/arm-linux-gnueabihf/10/include/syslimits.h \
+  /usr/local/include/opencv4/opencv2/core.hpp \
+  /usr/local/include/opencv4/opencv2/core/base.hpp \
+  /usr/local/include/opencv4/opencv2/core/bufferpool.hpp \
+  /usr/local/include/opencv4/opencv2/core/check.hpp \
+  /usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
+  /usr/local/include/opencv4/opencv2/core/cvdef.h \
+  /usr/local/include/opencv4/opencv2/core/cvstd.hpp \
+  /usr/local/include/opencv4/opencv2/core/cvstd.inl.hpp \
+  /usr/local/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
+  /usr/local/include/opencv4/opencv2/core/fast_math.hpp \
+  /usr/local/include/opencv4/opencv2/core/hal/interface.h \
+  /usr/local/include/opencv4/opencv2/core/mat.hpp \
+  /usr/local/include/opencv4/opencv2/core/mat.inl.hpp \
+  /usr/local/include/opencv4/opencv2/core/matx.hpp \
+  /usr/local/include/opencv4/opencv2/core/neon_utils.hpp \
+  /usr/local/include/opencv4/opencv2/core/operations.hpp \
+  /usr/local/include/opencv4/opencv2/core/optim.hpp \
+  /usr/local/include/opencv4/opencv2/core/ovx.hpp \
+  /usr/local/include/opencv4/opencv2/core/persistence.hpp \
+  /usr/local/include/opencv4/opencv2/core/saturate.hpp \
+  /usr/local/include/opencv4/opencv2/core/traits.hpp \
+  /usr/local/include/opencv4/opencv2/core/types.hpp \
+  /usr/local/include/opencv4/opencv2/core/utility.hpp \
+  /usr/local/include/opencv4/opencv2/core/version.hpp \
+  /usr/local/include/opencv4/opencv2/core/vsx_utils.hpp \
+  /usr/local/include/opencv4/opencv2/highgui.hpp \
+  /usr/local/include/opencv4/opencv2/imgcodecs.hpp \
+  /usr/local/include/opencv4/opencv2/imgproc.hpp \
+  /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp \
+  /usr/local/include/opencv4/opencv2/objdetect.hpp \
+  /usr/local/include/opencv4/opencv2/objdetect/aruco_board.hpp \
+  /usr/local/include/opencv4/opencv2/objdetect/aruco_detector.hpp \
+  /usr/local/include/opencv4/opencv2/objdetect/aruco_dictionary.hpp \
+  /usr/local/include/opencv4/opencv2/objdetect/charuco_detector.hpp \
+  /usr/local/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp \
+  /usr/local/include/opencv4/opencv2/objdetect/face.hpp \
+  /usr/local/include/opencv4/opencv2/opencv_modules.hpp \
+  /usr/local/include/opencv4/opencv2/videoio.hpp \
+  /usr/local/include/pigpio.h

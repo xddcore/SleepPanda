@@ -1,62 +1,21 @@
-Start testing: Mar 05 20:54 GMT
+Start testing: Apr 07 17:39 BST
 ----------------------------------------------------------
 1/1 Testing: Camera_Test
 1/1 Test: Camera_Test
 Command: "/home/pi/xddcore/SleepPanda/src/app/Camera/build/test/Camera_Test"
 Directory: /home/pi/xddcore/SleepPanda/src/app/Camera/build/test
-"Camera_Test" start time: Mar 05 20:54 GMT
+"Camera_Test" start time: Apr 07 17:39 BST
 Output:
 ----------------------------------------------------------
-[==========] Running 1 test from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 1 test from Camera_Test
-[ RUN      ] Camera_Test.Check_Cemera_Detection
-[0]Frontal_Face_Position | x: 353, y: 9
-[0]Frontal_Face_Eye_Position | x: 32, y: 51
-[1]Frontal_Face_Eye_Position | x: 89, y: 32
-[0]Frontal_Face_Position | x: 260, y: 12
-[0]Frontal_Face_Position | x: 250, y: 40
-[0]Frontal_Face_Position | x: 252, y: 46
-[0]Frontal_Face_Position | x: 252, y: 40
-[0]Frontal_Face_Position | x: 250, y: 36
-[0]Frontal_Face_Eye_Position | x: 72, y: 42
-[0]Frontal_Face_Position | x: 260, y: 34
-[0]Frontal_Face_Position | x: 249, y: 32
-[0]Frontal_Face_Position | x: 255, y: 34
-[0]Frontal_Face_Position | x: 252, y: 34
-[0]Frontal_Face_Position | x: 257, y: 37
-[0]Frontal_Face_Position | x: 253, y: 35
-[0]Frontal_Face_Position | x: 252, y: 32
-[0]Frontal_Face_Position | x: 252, y: 32
-[0]Frontal_Face_Position | x: 254, y: 34
-[0]Frontal_Face_Position | x: 255, y: 36
-[0]Frontal_Face_Position | x: 254, y: 36
-[0]Frontal_Face_Position | x: 252, y: 33
-[0]Frontal_Face_Position | x: 252, y: 36
-[0]Frontal_Face_Position | x: 251, y: 35
-[0]Frontal_Face_Position | x: 254, y: 38
-[0]Frontal_Face_Position | x: 256, y: 37
-[0]Frontal_Face_Position | x: 243, y: 36
-[0]Frontal_Face_Position | x: 255, y: 38
-[0]Frontal_Face_Position | x: 258, y: 46
-[0]Frontal_Face_Position | x: 254, y: 42
-[0]Frontal_Face_Position | x: 252, y: 38
-[0]Frontal_Face_Position | x: 248, y: 43
-[0]Frontal_Face_Position | x: 254, y: 37
-[0]Frontal_Face_Position | x: 255, y: 33
-[0]Frontal_Face_Position | x: 263, y: 30
-[       OK ] Camera_Test.Check_Cemera_Detection (45115 ms)
-[----------] 1 test from Camera_Test (45115 ms total)
-
-[----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (45115 ms total)
-[  PASSED  ] 1 test.
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+error: XDG_RUNTIME_DIR not set in the environment.
+qt.qpa.xcb: QXcbConnection: XCB error: 148 (Unknown), sequence: 192, resource id: 0, major code: 140 (Unknown), minor code: 20
 <end of output>
-Test time =  45.33 sec
+Test time =   9.51 sec
 ----------------------------------------------------------
 Test Passed.
-"Camera_Test" end time: Mar 05 20:54 GMT
-"Camera_Test" time elapsed: 00:00:45
+"Camera_Test" end time: Apr 07 17:39 BST
+"Camera_Test" time elapsed: 00:00:09
 ----------------------------------------------------------
 
-End testing: Mar 05 20:54 GMT
+End testing: Apr 07 17:39 BST

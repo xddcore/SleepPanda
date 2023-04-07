@@ -3,7 +3,7 @@
  * @Date: 2023-01-18 00:44:11
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-04-07 14:56:28
+ * @LastEditTime: 2023-04-07 20:58:40
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:27:55
@@ -960,3 +960,16 @@ cmake .. && make && sudo ctest --verbose
 You will see the following effect:
 ![GUI](./img/GUI.jpeg)
 <p align="center">Sleep Panda GUI</p>
+
+### 2.7 Assemble Unit Code && get the final software
+Run the following code to execute the SleepPanda software:
+>**Note**: Make sure you are in a graphical desktop environment. The command line environment cannot display a GUI.
+```
+cd SleepPanda/src/app/build
+sudo ./SleepPanda
+```
+You will get the following result:
+![SleepPanda](./img/SleepPanda_GUI.jpeg)
+<p align="center">SleepPanda GUI</p>
+
+### 2.8 So far, all the development work of SleepPanda has been completed, thank you for your efforts! ! !
