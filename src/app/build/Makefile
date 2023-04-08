@@ -202,6 +202,123 @@ SleepPanda_autogen/fast:
 .PHONY : SleepPanda_autogen/fast
 
 #=============================================================================
+# Target rules for targets named Buzzer_Static
+
+# Build rule for target.
+Buzzer_Static: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Buzzer_Static
+.PHONY : Buzzer_Static
+
+# fast build rule for target.
+Buzzer_Static/fast:
+	$(MAKE) $(MAKESILENT) -f Buzzer/CMakeFiles/Buzzer_Static.dir/build.make Buzzer/CMakeFiles/Buzzer_Static.dir/build
+.PHONY : Buzzer_Static/fast
+
+#=============================================================================
+# Target rules for targets named Buzzer_Test
+
+# Build rule for target.
+Buzzer_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Buzzer_Test
+.PHONY : Buzzer_Test
+
+# fast build rule for target.
+Buzzer_Test/fast:
+	$(MAKE) $(MAKESILENT) -f Buzzer/test/CMakeFiles/Buzzer_Test.dir/build.make Buzzer/test/CMakeFiles/Buzzer_Test.dir/build
+.PHONY : Buzzer_Test/fast
+
+#=============================================================================
+# Target rules for targets named Camera_Static
+
+# Build rule for target.
+Camera_Static: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Camera_Static
+.PHONY : Camera_Static
+
+# fast build rule for target.
+Camera_Static/fast:
+	$(MAKE) $(MAKESILENT) -f Camera/CMakeFiles/Camera_Static.dir/build.make Camera/CMakeFiles/Camera_Static.dir/build
+.PHONY : Camera_Static/fast
+
+#=============================================================================
+# Target rules for targets named Camera_Static_autogen
+
+# Build rule for target.
+Camera_Static_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Camera_Static_autogen
+.PHONY : Camera_Static_autogen
+
+# fast build rule for target.
+Camera_Static_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f Camera/CMakeFiles/Camera_Static_autogen.dir/build.make Camera/CMakeFiles/Camera_Static_autogen.dir/build
+.PHONY : Camera_Static_autogen/fast
+
+#=============================================================================
+# Target rules for targets named Camera_Test
+
+# Build rule for target.
+Camera_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Camera_Test
+.PHONY : Camera_Test
+
+# fast build rule for target.
+Camera_Test/fast:
+	$(MAKE) $(MAKESILENT) -f Camera/test/CMakeFiles/Camera_Test.dir/build.make Camera/test/CMakeFiles/Camera_Test.dir/build
+.PHONY : Camera_Test/fast
+
+#=============================================================================
+# Target rules for targets named MAX30101_Static
+
+# Build rule for target.
+MAX30101_Static: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MAX30101_Static
+.PHONY : MAX30101_Static
+
+# fast build rule for target.
+MAX30101_Static/fast:
+	$(MAKE) $(MAKESILENT) -f MAX30101/CMakeFiles/MAX30101_Static.dir/build.make MAX30101/CMakeFiles/MAX30101_Static.dir/build
+.PHONY : MAX30101_Static/fast
+
+#=============================================================================
+# Target rules for targets named MAX30101_Test
+
+# Build rule for target.
+MAX30101_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MAX30101_Test
+.PHONY : MAX30101_Test
+
+# fast build rule for target.
+MAX30101_Test/fast:
+	$(MAKE) $(MAKESILENT) -f MAX30101/test/CMakeFiles/MAX30101_Test.dir/build.make MAX30101/test/CMakeFiles/MAX30101_Test.dir/build
+.PHONY : MAX30101_Test/fast
+
+#=============================================================================
+# Target rules for targets named SoundSensor_Static
+
+# Build rule for target.
+SoundSensor_Static: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SoundSensor_Static
+.PHONY : SoundSensor_Static
+
+# fast build rule for target.
+SoundSensor_Static/fast:
+	$(MAKE) $(MAKESILENT) -f SoundSensor/CMakeFiles/SoundSensor_Static.dir/build.make SoundSensor/CMakeFiles/SoundSensor_Static.dir/build
+.PHONY : SoundSensor_Static/fast
+
+#=============================================================================
+# Target rules for targets named SoundSensor_Test
+
+# Build rule for target.
+SoundSensor_Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SoundSensor_Test
+.PHONY : SoundSensor_Test
+
+# fast build rule for target.
+SoundSensor_Test/fast:
+	$(MAKE) $(MAKESILENT) -f SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/build.make SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/build
+.PHONY : SoundSensor_Test/fast
+
+#=============================================================================
 # Target rules for targets named Window_Static
 
 # Build rule for target.
@@ -306,9 +423,18 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... Camera_Static_autogen"
 	@echo "... SleepPanda_autogen"
 	@echo "... Window_Static_autogen"
+	@echo "... Buzzer_Static"
+	@echo "... Buzzer_Test"
+	@echo "... Camera_Static"
+	@echo "... Camera_Test"
+	@echo "... MAX30101_Static"
+	@echo "... MAX30101_Test"
 	@echo "... SleepPanda"
+	@echo "... SoundSensor_Static"
+	@echo "... SoundSensor_Test"
 	@echo "... Window_Static"
 	@echo "... Window_Test"
 	@echo "... SleepPanda.o"

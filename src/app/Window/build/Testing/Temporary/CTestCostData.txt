@@ -1,2 +1,2 @@
-Window_Test 102 3.73023
+Window_Test 103 0.159893
 ---

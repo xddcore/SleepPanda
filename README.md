@@ -22,11 +22,11 @@
 
 ![Youtube](https://img.shields.io/youtube/channel/subscribers/UCP2-6ywKLy2js1dzJQ5hR_g?style=social)
 
->[Click me to visit the Youtube channel](https://www.youtube.com/@SleepPanda666)
->[Click me to visit the Facebook Account](https://www.facebook.com/profile.php?id=100090653119559)
->[Click me to visit the Instgram Account](https://instagram.com/sleeppandapanda?igshid=ZDdkNTZiNTM=)
->[Click me to visit the Twitter Account](https://twitter.com/SleepPanda32?t=1ddNsPfxyXBGGOhH1Kmxfg&s=09)
->[Click me to visit the TikTok Account](https://www.tiktok.com/@sleeppanda32?_t=8bIzVLx8Wd4&_r=1)
+>[Click me to visit the Youtube channel](https://www.youtube.com/@SleepPanda666)    
+>[Click me to visit the Facebook Account](https://www.facebook.com/profile.php?id=100090653119559)    
+>[Click me to visit the Instgram Account](https://instagram.com/sleeppandapanda?igshid=ZDdkNTZiNTM=)    
+>[Click me to visit the Twitter Account](https://twitter.com/SleepPanda32?t=1ddNsPfxyXBGGOhH1Kmxfg&s=09)    
+>[Click me to visit the TikTok Account](https://www.tiktok.com/@sleeppanda32?_t=8bIzVLx8Wd4&_r=1)    
 
 Change README Language: [English](./README.md) ｜ [Chinese](./README_ZH.md)
 
@@ -980,6 +980,11 @@ Run the following code to execute the SleepPanda software:
 >**Note**: Make sure you are in a graphical desktop environment. The command line environment cannot display a GUI.
 ```
 cd SleepPanda/src/app/build
+
+# Rebuild code
+cmake .. && make
+
+# Run SleepPanda
 sudo ./SleepPanda
 ```
 You will get the following result:

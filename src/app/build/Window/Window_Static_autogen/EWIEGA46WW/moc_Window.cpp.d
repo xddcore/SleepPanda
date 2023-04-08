@@ -1,10 +1,12 @@
 /home/pi/xddcore/SleepPanda/src/app/build/Window/Window_Static_autogen/EWIEGA46WW/moc_Window.cpp: /home/pi/xddcore/SleepPanda/src/app/Window/Window.h \
   /home/pi/xddcore/SleepPanda/src/app/build/Window/Window_Static_autogen/moc_predefs.h \
+  /home/pi/xddcore/SleepPanda/src/app/Buzzer/Buzzer.h \
   /home/pi/xddcore/SleepPanda/src/app/Camera/Camera.h \
   /home/pi/xddcore/SleepPanda/src/app/Config/Config.h \
   /home/pi/xddcore/SleepPanda/src/app/MAX30101/MAX30101.h \
   /home/pi/xddcore/SleepPanda/src/app/MAX30101/algorithm2.h \
   /home/pi/xddcore/SleepPanda/src/app/MAX30101/algorithm2_by_RF.h \
+  /home/pi/xddcore/SleepPanda/src/app/SoundSensor/SoundSensor.h \
   /usr/include/arm-linux-gnueabihf/bits/confname.h \
   /usr/include/arm-linux-gnueabihf/bits/cpu-set.h \
   /usr/include/arm-linux-gnueabihf/bits/endian.h \
@@ -113,6 +115,7 @@
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qrect.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qrefcount.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qregexp.h \
+  /usr/include/arm-linux-gnueabihf/qt5/QtCore/qregularexpression.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qscopedpointer.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qset.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qshareddata.h \
@@ -135,6 +138,8 @@
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qvarlengtharray.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qvector.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtCore/qversiontagging.h \
+  /usr/include/arm-linux-gnueabihf/qt5/QtGui/QDoubleValidator \
+  /usr/include/arm-linux-gnueabihf/qt5/QtGui/QIntValidator \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qbrush.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qcolor.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qcursor.h \
@@ -163,6 +168,7 @@
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtgui-config.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtguiglobal.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtransform.h \
+  /usr/include/arm-linux-gnueabihf/qt5/QtGui/qvalidator.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtGui/qwindowdefs.h \
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QBoxLayout \
   /usr/include/arm-linux-gnueabihf/qt5/QtWidgets/QLCDNumber \

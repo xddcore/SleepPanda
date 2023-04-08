@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSoundSensor_Static.a CMakeFiles/SoundSensor_Static.dir/SoundSensor.cpp.o
+/usr/bin/ranlib libSoundSensor_Static.a

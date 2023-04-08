@@ -1,0 +1,135 @@
+{
+	"BUILD_DIR" : "/home/pi/xddcore/SleepPanda/src/app/build/Camera/Camera_Static_autogen",
+	"CMAKE_BINARY_DIR" : "/home/pi/xddcore/SleepPanda/src/app/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/pi/xddcore/SleepPanda/src/app/build/Camera",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/pi/xddcore/SleepPanda/src/app/Camera",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/pi/xddcore/SleepPanda/src/app/Camera/CMakeLists.txt",
+		"/usr/local/lib/arm-linux-gnueabihf/cmake/opencv4/OpenCVConfig-version.cmake",
+		"/usr/local/lib/arm-linux-gnueabihf/cmake/opencv4/OpenCVConfig.cmake",
+		"/usr/share/cmake-3.18/Modules/FindPackageHandleStandardArgs.cmake",
+		"/usr/share/cmake-3.18/Modules/FindPackageMessage.cmake",
+		"/usr/local/lib/arm-linux-gnueabihf/cmake/opencv4/OpenCVModules.cmake",
+		"/usr/local/lib/arm-linux-gnueabihf/cmake/opencv4/OpenCVModules-release.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5/Qt5Config.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"/usr/share/cmake-3.18/Modules/CMakeParseArguments.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
+		"/usr/lib/arm-linux-gnueabihf/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
+		"/usr/share/cmake-3.18/Modules/CMakeParseArguments.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/pi/xddcore/SleepPanda/src/app",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/home/pi/xddcore/SleepPanda/src/app/Camera/Camera.h",
+			"MU",
+			"EWIEGA46WW/moc_Camera.cpp"
+		],
+		[
+			"/home/pi/xddcore/SleepPanda/src/app/Camera/WindowsForCamera.h",
+			"MU",
+			"EWIEGA46WW/moc_WindowsForCamera.cpp"
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/pi/xddcore/SleepPanda/src/app/build/Camera/Camera_Static_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/pi/xddcore/SleepPanda/src/app/build/Camera/Camera_Static_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NO_DEBUG", "QT_WIDGETS_LIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/usr/local/include/opencv4",
+		"/usr/include/arm-linux-gnueabihf/qt5",
+		"/usr/include/arm-linux-gnueabihf/qt5/QtWidgets",
+		"/usr/include/arm-linux-gnueabihf/qt5/QtGui",
+		"/usr/include/arm-linux-gnueabihf/qt5/QtCore",
+		"/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++",
+		"/usr/include/c++/10",
+		"/usr/include/arm-linux-gnueabihf/c++/10",
+		"/usr/include/c++/10/backward",
+		"/usr/lib/gcc/arm-linux-gnueabihf/10/include",
+		"/usr/local/include",
+		"/usr/include/arm-linux-gnueabihf",
+		"/usr/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.18/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/pi/xddcore/SleepPanda/src/app/build/Camera/Camera_Static_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 1,
+	"PARSE_CACHE_FILE" : "/home/pi/xddcore/SleepPanda/src/app/build/Camera/CMakeFiles/Camera_Static_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "/home/pi/xddcore/SleepPanda/src/app/build/Camera/CMakeFiles/Camera_Static_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "/home/pi/xddcore/SleepPanda/src/app/Camera/Camera.cpp", "MU" ],
+		[
+			"/home/pi/xddcore/SleepPanda/src/app/Camera/WindowsForCamera.cpp",
+			"MU"
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

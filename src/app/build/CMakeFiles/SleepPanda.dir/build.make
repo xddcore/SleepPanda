@@ -117,6 +117,8 @@ SleepPanda: Window/libWindow_Static.a
 SleepPanda: /usr/lib/arm-linux-gnueabihf/libQt5Widgets.so.5.15.2
 SleepPanda: ../MAX30101/build/libMAX30101_Static.a
 SleepPanda: ../Camera/build/libCamera_Static.a
+SleepPanda: ../SoundSensor/build/libSoundSensor_Static.a
+SleepPanda: ../Buzzer/build/libBuzzer_Static.a
 SleepPanda: /usr/local/lib/arm-linux-gnueabihf/libopencv_gapi.so.4.7.0
 SleepPanda: /usr/local/lib/arm-linux-gnueabihf/libopencv_highgui.so.4.7.0
 SleepPanda: /usr/local/lib/arm-linux-gnueabihf/libopencv_ml.so.4.7.0

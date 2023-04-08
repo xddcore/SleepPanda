@@ -23,11 +23,13 @@ Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o
  ../../../tools/gtest/rpios_32bit/include/gtest/internal/gtest-port.h
  ../../../tools/gtest/rpios_32bit/include/gtest/internal/gtest-string.h
  ../../../tools/gtest/rpios_32bit/include/gtest/internal/gtest-type-util.h
+ ../Buzzer/Buzzer.h
  ../Camera/Camera.h
  ../Config/Config.h
  ../MAX30101/MAX30101.h
  ../MAX30101/algorithm2.h
  ../MAX30101/algorithm2_by_RF.h
+ ../SoundSensor/SoundSensor.h
  ../Window/Window.h
  /home/pi/xddcore/SleepPanda/src/app/Window/test/Window_Test.cpp
  /usr/include/arm-linux-gnueabihf/qt5/QtCore/QString
@@ -82,6 +84,7 @@ Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o
  /usr/include/arm-linux-gnueabihf/qt5/QtCore/qrect.h
  /usr/include/arm-linux-gnueabihf/qt5/QtCore/qrefcount.h
  /usr/include/arm-linux-gnueabihf/qt5/QtCore/qregexp.h
+ /usr/include/arm-linux-gnueabihf/qt5/QtCore/qregularexpression.h
  /usr/include/arm-linux-gnueabihf/qt5/QtCore/qscopedpointer.h
  /usr/include/arm-linux-gnueabihf/qt5/QtCore/qset.h
  /usr/include/arm-linux-gnueabihf/qt5/QtCore/qshareddata.h
@@ -106,6 +109,8 @@ Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o
  /usr/include/arm-linux-gnueabihf/qt5/QtCore/qvarlengtharray.h
  /usr/include/arm-linux-gnueabihf/qt5/QtCore/qvector.h
  /usr/include/arm-linux-gnueabihf/qt5/QtCore/qversiontagging.h
+ /usr/include/arm-linux-gnueabihf/qt5/QtGui/QDoubleValidator
+ /usr/include/arm-linux-gnueabihf/qt5/QtGui/QIntValidator
  /usr/include/arm-linux-gnueabihf/qt5/QtGui/qbrush.h
  /usr/include/arm-linux-gnueabihf/qt5/QtGui/qcolor.h
  /usr/include/arm-linux-gnueabihf/qt5/QtGui/qcursor.h
@@ -136,6 +141,7 @@ Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o
  /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtguiglobal.h
  /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtouchdevice.h
  /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtransform.h
+ /usr/include/arm-linux-gnueabihf/qt5/QtGui/qvalidator.h
  /usr/include/arm-linux-gnueabihf/qt5/QtGui/qvector2d.h
  /usr/include/arm-linux-gnueabihf/qt5/QtGui/qwindowdefs.h
  /usr/include/arm-linux-gnueabihf/qt5/QtGui/qwindowdefs_win.h

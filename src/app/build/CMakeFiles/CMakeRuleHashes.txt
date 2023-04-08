@@ -1,3 +1,4 @@
 # Hashes of file build rules.
 073f97a4fd3c2a4783f763d8d7ff435a CMakeFiles/SleepPanda_autogen
+2e90b8a4462378714e94c0041db6e10e Camera/CMakeFiles/Camera_Static_autogen
 1d05b50854e9191863076a799cb60b9b Window/CMakeFiles/Window_Static_autogen

@@ -102,6 +102,8 @@ Window/test/Window_Test: Window/libWindow_Static.a
 Window/test/Window_Test: ../Window/test/../../../../tools/gtest/rpios_32bit/lib/libgtest.so
 Window/test/Window_Test: ../MAX30101/build/libMAX30101_Static.a
 Window/test/Window_Test: ../Camera/build/libCamera_Static.a
+Window/test/Window_Test: ../SoundSensor/build/libSoundSensor_Static.a
+Window/test/Window_Test: ../Buzzer/build/libBuzzer_Static.a
 Window/test/Window_Test: /usr/local/lib/arm-linux-gnueabihf/libopencv_gapi.so.4.7.0
 Window/test/Window_Test: /usr/local/lib/arm-linux-gnueabihf/libopencv_highgui.so.4.7.0
 Window/test/Window_Test: /usr/local/lib/arm-linux-gnueabihf/libopencv_ml.so.4.7.0

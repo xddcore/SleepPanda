@@ -73,11 +73,19 @@ CMAKE_BINARY_DIR = /home/pi/xddcore/SleepPanda/src/app/build
 
 # The main recursive "all" target.
 all: CMakeFiles/SleepPanda.dir/all
+all: Buzzer/all
+all: Camera/all
+all: MAX30101/all
+all: SoundSensor/all
 all: Window/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
+preinstall: Buzzer/preinstall
+preinstall: Camera/preinstall
+preinstall: MAX30101/preinstall
+preinstall: SoundSensor/preinstall
 preinstall: Window/preinstall
 
 .PHONY : preinstall
@@ -85,9 +93,166 @@ preinstall: Window/preinstall
 # The main recursive "clean" target.
 clean: CMakeFiles/SleepPanda.dir/clean
 clean: CMakeFiles/SleepPanda_autogen.dir/clean
+clean: Buzzer/clean
+clean: Camera/clean
+clean: MAX30101/clean
+clean: SoundSensor/clean
 clean: Window/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory Buzzer
+
+# Recursive "all" directory target.
+Buzzer/all: Buzzer/CMakeFiles/Buzzer_Static.dir/all
+Buzzer/all: Buzzer/test/all
+
+.PHONY : Buzzer/all
+
+# Recursive "preinstall" directory target.
+Buzzer/preinstall: Buzzer/test/preinstall
+
+.PHONY : Buzzer/preinstall
+
+# Recursive "clean" directory target.
+Buzzer/clean: Buzzer/CMakeFiles/Buzzer_Static.dir/clean
+Buzzer/clean: Buzzer/test/clean
+
+.PHONY : Buzzer/clean
+
+#=============================================================================
+# Directory level rules for directory Buzzer/test
+
+# Recursive "all" directory target.
+Buzzer/test/all: Buzzer/test/CMakeFiles/Buzzer_Test.dir/all
+
+.PHONY : Buzzer/test/all
+
+# Recursive "preinstall" directory target.
+Buzzer/test/preinstall:
+
+.PHONY : Buzzer/test/preinstall
+
+# Recursive "clean" directory target.
+Buzzer/test/clean: Buzzer/test/CMakeFiles/Buzzer_Test.dir/clean
+
+.PHONY : Buzzer/test/clean
+
+#=============================================================================
+# Directory level rules for directory Camera
+
+# Recursive "all" directory target.
+Camera/all: Camera/CMakeFiles/Camera_Static.dir/all
+Camera/all: Camera/test/all
+
+.PHONY : Camera/all
+
+# Recursive "preinstall" directory target.
+Camera/preinstall: Camera/test/preinstall
+
+.PHONY : Camera/preinstall
+
+# Recursive "clean" directory target.
+Camera/clean: Camera/CMakeFiles/Camera_Static.dir/clean
+Camera/clean: Camera/CMakeFiles/Camera_Static_autogen.dir/clean
+Camera/clean: Camera/test/clean
+
+.PHONY : Camera/clean
+
+#=============================================================================
+# Directory level rules for directory Camera/test
+
+# Recursive "all" directory target.
+Camera/test/all: Camera/test/CMakeFiles/Camera_Test.dir/all
+
+.PHONY : Camera/test/all
+
+# Recursive "preinstall" directory target.
+Camera/test/preinstall:
+
+.PHONY : Camera/test/preinstall
+
+# Recursive "clean" directory target.
+Camera/test/clean: Camera/test/CMakeFiles/Camera_Test.dir/clean
+
+.PHONY : Camera/test/clean
+
+#=============================================================================
+# Directory level rules for directory MAX30101
+
+# Recursive "all" directory target.
+MAX30101/all: MAX30101/CMakeFiles/MAX30101_Static.dir/all
+MAX30101/all: MAX30101/test/all
+
+.PHONY : MAX30101/all
+
+# Recursive "preinstall" directory target.
+MAX30101/preinstall: MAX30101/test/preinstall
+
+.PHONY : MAX30101/preinstall
+
+# Recursive "clean" directory target.
+MAX30101/clean: MAX30101/CMakeFiles/MAX30101_Static.dir/clean
+MAX30101/clean: MAX30101/test/clean
+
+.PHONY : MAX30101/clean
+
+#=============================================================================
+# Directory level rules for directory MAX30101/test
+
+# Recursive "all" directory target.
+MAX30101/test/all: MAX30101/test/CMakeFiles/MAX30101_Test.dir/all
+
+.PHONY : MAX30101/test/all
+
+# Recursive "preinstall" directory target.
+MAX30101/test/preinstall:
+
+.PHONY : MAX30101/test/preinstall
+
+# Recursive "clean" directory target.
+MAX30101/test/clean: MAX30101/test/CMakeFiles/MAX30101_Test.dir/clean
+
+.PHONY : MAX30101/test/clean
+
+#=============================================================================
+# Directory level rules for directory SoundSensor
+
+# Recursive "all" directory target.
+SoundSensor/all: SoundSensor/CMakeFiles/SoundSensor_Static.dir/all
+SoundSensor/all: SoundSensor/test/all
+
+.PHONY : SoundSensor/all
+
+# Recursive "preinstall" directory target.
+SoundSensor/preinstall: SoundSensor/test/preinstall
+
+.PHONY : SoundSensor/preinstall
+
+# Recursive "clean" directory target.
+SoundSensor/clean: SoundSensor/CMakeFiles/SoundSensor_Static.dir/clean
+SoundSensor/clean: SoundSensor/test/clean
+
+.PHONY : SoundSensor/clean
+
+#=============================================================================
+# Directory level rules for directory SoundSensor/test
+
+# Recursive "all" directory target.
+SoundSensor/test/all: SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/all
+
+.PHONY : SoundSensor/test/all
+
+# Recursive "preinstall" directory target.
+SoundSensor/test/preinstall:
+
+.PHONY : SoundSensor/test/preinstall
+
+# Recursive "clean" directory target.
+SoundSensor/test/clean: SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/clean
+
+.PHONY : SoundSensor/test/clean
 
 #=============================================================================
 # Directory level rules for directory Window
@@ -136,7 +301,7 @@ CMakeFiles/SleepPanda.dir/all: Window/CMakeFiles/Window_Static.dir/all
 CMakeFiles/SleepPanda.dir/all: CMakeFiles/SleepPanda_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SleepPanda.dir/build.make CMakeFiles/SleepPanda.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SleepPanda.dir/build.make CMakeFiles/SleepPanda.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=1,2,3 "Built target SleepPanda"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=18,19,20 "Built target SleepPanda"
 .PHONY : CMakeFiles/SleepPanda.dir/all
 
 # Build rule for subdir invocation for target.
@@ -163,7 +328,7 @@ CMakeFiles/SleepPanda.dir/clean:
 CMakeFiles/SleepPanda_autogen.dir/all: Window/CMakeFiles/Window_Static.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SleepPanda_autogen.dir/build.make CMakeFiles/SleepPanda_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SleepPanda_autogen.dir/build.make CMakeFiles/SleepPanda_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=4 "Built target SleepPanda_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=21 "Built target SleepPanda_autogen"
 .PHONY : CMakeFiles/SleepPanda_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -184,13 +349,256 @@ CMakeFiles/SleepPanda_autogen.dir/clean:
 .PHONY : CMakeFiles/SleepPanda_autogen.dir/clean
 
 #=============================================================================
+# Target rules for target Buzzer/CMakeFiles/Buzzer_Static.dir
+
+# All Build rule for target.
+Buzzer/CMakeFiles/Buzzer_Static.dir/all:
+	$(MAKE) $(MAKESILENT) -f Buzzer/CMakeFiles/Buzzer_Static.dir/build.make Buzzer/CMakeFiles/Buzzer_Static.dir/depend
+	$(MAKE) $(MAKESILENT) -f Buzzer/CMakeFiles/Buzzer_Static.dir/build.make Buzzer/CMakeFiles/Buzzer_Static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=1,2 "Built target Buzzer_Static"
+.PHONY : Buzzer/CMakeFiles/Buzzer_Static.dir/all
+
+# Build rule for subdir invocation for target.
+Buzzer/CMakeFiles/Buzzer_Static.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Buzzer/CMakeFiles/Buzzer_Static.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 0
+.PHONY : Buzzer/CMakeFiles/Buzzer_Static.dir/rule
+
+# Convenience name for target.
+Buzzer_Static: Buzzer/CMakeFiles/Buzzer_Static.dir/rule
+
+.PHONY : Buzzer_Static
+
+# clean rule for target.
+Buzzer/CMakeFiles/Buzzer_Static.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Buzzer/CMakeFiles/Buzzer_Static.dir/build.make Buzzer/CMakeFiles/Buzzer_Static.dir/clean
+.PHONY : Buzzer/CMakeFiles/Buzzer_Static.dir/clean
+
+#=============================================================================
+# Target rules for target Buzzer/test/CMakeFiles/Buzzer_Test.dir
+
+# All Build rule for target.
+Buzzer/test/CMakeFiles/Buzzer_Test.dir/all: Buzzer/CMakeFiles/Buzzer_Static.dir/all
+	$(MAKE) $(MAKESILENT) -f Buzzer/test/CMakeFiles/Buzzer_Test.dir/build.make Buzzer/test/CMakeFiles/Buzzer_Test.dir/depend
+	$(MAKE) $(MAKESILENT) -f Buzzer/test/CMakeFiles/Buzzer_Test.dir/build.make Buzzer/test/CMakeFiles/Buzzer_Test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=3,4 "Built target Buzzer_Test"
+.PHONY : Buzzer/test/CMakeFiles/Buzzer_Test.dir/all
+
+# Build rule for subdir invocation for target.
+Buzzer/test/CMakeFiles/Buzzer_Test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Buzzer/test/CMakeFiles/Buzzer_Test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 0
+.PHONY : Buzzer/test/CMakeFiles/Buzzer_Test.dir/rule
+
+# Convenience name for target.
+Buzzer_Test: Buzzer/test/CMakeFiles/Buzzer_Test.dir/rule
+
+.PHONY : Buzzer_Test
+
+# clean rule for target.
+Buzzer/test/CMakeFiles/Buzzer_Test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Buzzer/test/CMakeFiles/Buzzer_Test.dir/build.make Buzzer/test/CMakeFiles/Buzzer_Test.dir/clean
+.PHONY : Buzzer/test/CMakeFiles/Buzzer_Test.dir/clean
+
+#=============================================================================
+# Target rules for target Camera/CMakeFiles/Camera_Static.dir
+
+# All Build rule for target.
+Camera/CMakeFiles/Camera_Static.dir/all: Camera/CMakeFiles/Camera_Static_autogen.dir/all
+	$(MAKE) $(MAKESILENT) -f Camera/CMakeFiles/Camera_Static.dir/build.make Camera/CMakeFiles/Camera_Static.dir/depend
+	$(MAKE) $(MAKESILENT) -f Camera/CMakeFiles/Camera_Static.dir/build.make Camera/CMakeFiles/Camera_Static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=5,6,7,8 "Built target Camera_Static"
+.PHONY : Camera/CMakeFiles/Camera_Static.dir/all
+
+# Build rule for subdir invocation for target.
+Camera/CMakeFiles/Camera_Static.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Camera/CMakeFiles/Camera_Static.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 0
+.PHONY : Camera/CMakeFiles/Camera_Static.dir/rule
+
+# Convenience name for target.
+Camera_Static: Camera/CMakeFiles/Camera_Static.dir/rule
+
+.PHONY : Camera_Static
+
+# clean rule for target.
+Camera/CMakeFiles/Camera_Static.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Camera/CMakeFiles/Camera_Static.dir/build.make Camera/CMakeFiles/Camera_Static.dir/clean
+.PHONY : Camera/CMakeFiles/Camera_Static.dir/clean
+
+#=============================================================================
+# Target rules for target Camera/CMakeFiles/Camera_Static_autogen.dir
+
+# All Build rule for target.
+Camera/CMakeFiles/Camera_Static_autogen.dir/all:
+	$(MAKE) $(MAKESILENT) -f Camera/CMakeFiles/Camera_Static_autogen.dir/build.make Camera/CMakeFiles/Camera_Static_autogen.dir/depend
+	$(MAKE) $(MAKESILENT) -f Camera/CMakeFiles/Camera_Static_autogen.dir/build.make Camera/CMakeFiles/Camera_Static_autogen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=9 "Built target Camera_Static_autogen"
+.PHONY : Camera/CMakeFiles/Camera_Static_autogen.dir/all
+
+# Build rule for subdir invocation for target.
+Camera/CMakeFiles/Camera_Static_autogen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Camera/CMakeFiles/Camera_Static_autogen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 0
+.PHONY : Camera/CMakeFiles/Camera_Static_autogen.dir/rule
+
+# Convenience name for target.
+Camera_Static_autogen: Camera/CMakeFiles/Camera_Static_autogen.dir/rule
+
+.PHONY : Camera_Static_autogen
+
+# clean rule for target.
+Camera/CMakeFiles/Camera_Static_autogen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Camera/CMakeFiles/Camera_Static_autogen.dir/build.make Camera/CMakeFiles/Camera_Static_autogen.dir/clean
+.PHONY : Camera/CMakeFiles/Camera_Static_autogen.dir/clean
+
+#=============================================================================
+# Target rules for target Camera/test/CMakeFiles/Camera_Test.dir
+
+# All Build rule for target.
+Camera/test/CMakeFiles/Camera_Test.dir/all: Camera/CMakeFiles/Camera_Static.dir/all
+	$(MAKE) $(MAKESILENT) -f Camera/test/CMakeFiles/Camera_Test.dir/build.make Camera/test/CMakeFiles/Camera_Test.dir/depend
+	$(MAKE) $(MAKESILENT) -f Camera/test/CMakeFiles/Camera_Test.dir/build.make Camera/test/CMakeFiles/Camera_Test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=10,11 "Built target Camera_Test"
+.PHONY : Camera/test/CMakeFiles/Camera_Test.dir/all
+
+# Build rule for subdir invocation for target.
+Camera/test/CMakeFiles/Camera_Test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Camera/test/CMakeFiles/Camera_Test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 0
+.PHONY : Camera/test/CMakeFiles/Camera_Test.dir/rule
+
+# Convenience name for target.
+Camera_Test: Camera/test/CMakeFiles/Camera_Test.dir/rule
+
+.PHONY : Camera_Test
+
+# clean rule for target.
+Camera/test/CMakeFiles/Camera_Test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Camera/test/CMakeFiles/Camera_Test.dir/build.make Camera/test/CMakeFiles/Camera_Test.dir/clean
+.PHONY : Camera/test/CMakeFiles/Camera_Test.dir/clean
+
+#=============================================================================
+# Target rules for target MAX30101/CMakeFiles/MAX30101_Static.dir
+
+# All Build rule for target.
+MAX30101/CMakeFiles/MAX30101_Static.dir/all:
+	$(MAKE) $(MAKESILENT) -f MAX30101/CMakeFiles/MAX30101_Static.dir/build.make MAX30101/CMakeFiles/MAX30101_Static.dir/depend
+	$(MAKE) $(MAKESILENT) -f MAX30101/CMakeFiles/MAX30101_Static.dir/build.make MAX30101/CMakeFiles/MAX30101_Static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=12,13,14,15 "Built target MAX30101_Static"
+.PHONY : MAX30101/CMakeFiles/MAX30101_Static.dir/all
+
+# Build rule for subdir invocation for target.
+MAX30101/CMakeFiles/MAX30101_Static.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MAX30101/CMakeFiles/MAX30101_Static.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 0
+.PHONY : MAX30101/CMakeFiles/MAX30101_Static.dir/rule
+
+# Convenience name for target.
+MAX30101_Static: MAX30101/CMakeFiles/MAX30101_Static.dir/rule
+
+.PHONY : MAX30101_Static
+
+# clean rule for target.
+MAX30101/CMakeFiles/MAX30101_Static.dir/clean:
+	$(MAKE) $(MAKESILENT) -f MAX30101/CMakeFiles/MAX30101_Static.dir/build.make MAX30101/CMakeFiles/MAX30101_Static.dir/clean
+.PHONY : MAX30101/CMakeFiles/MAX30101_Static.dir/clean
+
+#=============================================================================
+# Target rules for target MAX30101/test/CMakeFiles/MAX30101_Test.dir
+
+# All Build rule for target.
+MAX30101/test/CMakeFiles/MAX30101_Test.dir/all: MAX30101/CMakeFiles/MAX30101_Static.dir/all
+	$(MAKE) $(MAKESILENT) -f MAX30101/test/CMakeFiles/MAX30101_Test.dir/build.make MAX30101/test/CMakeFiles/MAX30101_Test.dir/depend
+	$(MAKE) $(MAKESILENT) -f MAX30101/test/CMakeFiles/MAX30101_Test.dir/build.make MAX30101/test/CMakeFiles/MAX30101_Test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=16,17 "Built target MAX30101_Test"
+.PHONY : MAX30101/test/CMakeFiles/MAX30101_Test.dir/all
+
+# Build rule for subdir invocation for target.
+MAX30101/test/CMakeFiles/MAX30101_Test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MAX30101/test/CMakeFiles/MAX30101_Test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 0
+.PHONY : MAX30101/test/CMakeFiles/MAX30101_Test.dir/rule
+
+# Convenience name for target.
+MAX30101_Test: MAX30101/test/CMakeFiles/MAX30101_Test.dir/rule
+
+.PHONY : MAX30101_Test
+
+# clean rule for target.
+MAX30101/test/CMakeFiles/MAX30101_Test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f MAX30101/test/CMakeFiles/MAX30101_Test.dir/build.make MAX30101/test/CMakeFiles/MAX30101_Test.dir/clean
+.PHONY : MAX30101/test/CMakeFiles/MAX30101_Test.dir/clean
+
+#=============================================================================
+# Target rules for target SoundSensor/CMakeFiles/SoundSensor_Static.dir
+
+# All Build rule for target.
+SoundSensor/CMakeFiles/SoundSensor_Static.dir/all:
+	$(MAKE) $(MAKESILENT) -f SoundSensor/CMakeFiles/SoundSensor_Static.dir/build.make SoundSensor/CMakeFiles/SoundSensor_Static.dir/depend
+	$(MAKE) $(MAKESILENT) -f SoundSensor/CMakeFiles/SoundSensor_Static.dir/build.make SoundSensor/CMakeFiles/SoundSensor_Static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=22,23 "Built target SoundSensor_Static"
+.PHONY : SoundSensor/CMakeFiles/SoundSensor_Static.dir/all
+
+# Build rule for subdir invocation for target.
+SoundSensor/CMakeFiles/SoundSensor_Static.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SoundSensor/CMakeFiles/SoundSensor_Static.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 0
+.PHONY : SoundSensor/CMakeFiles/SoundSensor_Static.dir/rule
+
+# Convenience name for target.
+SoundSensor_Static: SoundSensor/CMakeFiles/SoundSensor_Static.dir/rule
+
+.PHONY : SoundSensor_Static
+
+# clean rule for target.
+SoundSensor/CMakeFiles/SoundSensor_Static.dir/clean:
+	$(MAKE) $(MAKESILENT) -f SoundSensor/CMakeFiles/SoundSensor_Static.dir/build.make SoundSensor/CMakeFiles/SoundSensor_Static.dir/clean
+.PHONY : SoundSensor/CMakeFiles/SoundSensor_Static.dir/clean
+
+#=============================================================================
+# Target rules for target SoundSensor/test/CMakeFiles/SoundSensor_Test.dir
+
+# All Build rule for target.
+SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/all: SoundSensor/CMakeFiles/SoundSensor_Static.dir/all
+	$(MAKE) $(MAKESILENT) -f SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/build.make SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/depend
+	$(MAKE) $(MAKESILENT) -f SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/build.make SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=24,25 "Built target SoundSensor_Test"
+.PHONY : SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/all
+
+# Build rule for subdir invocation for target.
+SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles 0
+.PHONY : SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/rule
+
+# Convenience name for target.
+SoundSensor_Test: SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/rule
+
+.PHONY : SoundSensor_Test
+
+# clean rule for target.
+SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/build.make SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/clean
+.PHONY : SoundSensor/test/CMakeFiles/SoundSensor_Test.dir/clean
+
+#=============================================================================
 # Target rules for target Window/CMakeFiles/Window_Static.dir
 
 # All Build rule for target.
 Window/CMakeFiles/Window_Static.dir/all: Window/CMakeFiles/Window_Static_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f Window/CMakeFiles/Window_Static.dir/build.make Window/CMakeFiles/Window_Static.dir/depend
 	$(MAKE) $(MAKESILENT) -f Window/CMakeFiles/Window_Static.dir/build.make Window/CMakeFiles/Window_Static.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=5,6,7 "Built target Window_Static"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=26,27,28 "Built target Window_Static"
 .PHONY : Window/CMakeFiles/Window_Static.dir/all
 
 # Build rule for subdir invocation for target.
@@ -217,7 +625,7 @@ Window/CMakeFiles/Window_Static.dir/clean:
 Window/CMakeFiles/Window_Static_autogen.dir/all:
 	$(MAKE) $(MAKESILENT) -f Window/CMakeFiles/Window_Static_autogen.dir/build.make Window/CMakeFiles/Window_Static_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f Window/CMakeFiles/Window_Static_autogen.dir/build.make Window/CMakeFiles/Window_Static_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=8 "Built target Window_Static_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=29 "Built target Window_Static_autogen"
 .PHONY : Window/CMakeFiles/Window_Static_autogen.dir/all
 
 # Build rule for subdir invocation for target.
@@ -244,7 +652,7 @@ Window/CMakeFiles/Window_Static_autogen.dir/clean:
 Window/test/CMakeFiles/Window_Test.dir/all: Window/CMakeFiles/Window_Static.dir/all
 	$(MAKE) $(MAKESILENT) -f Window/test/CMakeFiles/Window_Test.dir/build.make Window/test/CMakeFiles/Window_Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f Window/test/CMakeFiles/Window_Test.dir/build.make Window/test/CMakeFiles/Window_Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=9,10 "Built target Window_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pi/xddcore/SleepPanda/src/app/build/CMakeFiles --progress-num=30,31 "Built target Window_Test"
 .PHONY : Window/test/CMakeFiles/Window_Test.dir/all
 
 # Build rule for subdir invocation for target.

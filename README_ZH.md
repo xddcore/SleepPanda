@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-04-07 20:58:53
+ * @LastEditTime: 2023-04-08 16:32:43
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -23,11 +23,11 @@
 ![Youtube](https://img.shields.io/youtube/channel/subscribers/UCP2-6ywKLy2js1dzJQ5hR_g?style=social)
 
 
->[点我访问Youtube频道](https://www.youtube.com/@SleepPanda666)
->[点我访问Facebook账号](https://www.facebook.com/profile.php?id=100090653119559)
->[点我访问Instgram账号](https://instagram.com/sleeppandapanda?igshid=ZDdkNTZiNTM=)
->[点我访问Twitter账号](https://twitter.com/SleepPanda32?t=1ddNsPfxyXBGGOhH1Kmxfg&s=09)
->[点我访问TikTok账号](https://www.tiktok.com/@sleeppanda32?_t=8bIzVLx8Wd4&_r=1)
+>[点我访问Youtube频道](https://www.youtube.com/@SleepPanda666)   
+>[点我访问Facebook账号](https://www.facebook.com/profile.php?id=100090653119559)    
+>[点我访问Instgram账号](https://instagram.com/sleeppandapanda?igshid=ZDdkNTZiNTM=)    
+>[点我访问Twitter账号](https://twitter.com/SleepPanda32?t=1ddNsPfxyXBGGOhH1Kmxfg&s=09)    
+>[点我访问TikTok账号](https://www.tiktok.com/@sleeppanda32?_t=8bIzVLx8Wd4&_r=1)    
 
 Change README Language: [English](./README.md) ｜ [中文](./README_ZH.md)
 
@@ -988,6 +988,11 @@ cmake .. && make && sudo ctest --verbose
 >**Note**: 请确保你在图形桌面环境下。命令行环境无法显示GUI。
 ```
 cd SleepPanda/src/app/build
+
+# Rebuild code
+cmake .. && make
+
+# Run SleepPanda
 sudo ./SleepPanda
 ```
 你将会得到如下结果:
