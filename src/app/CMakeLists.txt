@@ -6,7 +6,11 @@ MESSAGE(STATUS "Current path : ${CMAKE_CURRENT_SOURCE_DIR}")
 
 add_compile_options(-std=c++14 -Wall -Wconversion -Wextra -pedantic)
 
-#add unit lib
+#add unit lib, and Compile all unit code
+add_subdirectory(Buzzer)
+add_subdirectory(Camera)
+add_subdirectory(MAX30101)
+add_subdirectory(SoundSensor)
 add_subdirectory(Window)
 
 # GoogleTest requires at least C++14
@@ -30,7 +34,7 @@ link_directories(${GTEST_PATH}/lib)
 
 
 add_executable(${LIBTESTNAME} ${LIBSRC})
-target_link_libraries(${LIBTESTNAME} ${LIBSTATIC} pigpio ${OpenCV_LIBRARIES} Qt5::Widgets qwt-qt5)
+target_link_libraries(${LIBTESTNAME} ${LIBSTATIC} pigpio ${OpenCV_LIBRARIES} Qt5::Widgets qwt-qt5 pthread)
 target_include_directories(${LIBTESTNAME} PRIVATE ..)
 
 add_test(${LIBTESTNAME} ${LIBTESTNAME})

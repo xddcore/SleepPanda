@@ -44,6 +44,26 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/pi/xddcore/SleepPanda/src/app/build/Buzzer/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/pi/xddcore/SleepPanda/src/app/build/Camera/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/pi/xddcore/SleepPanda/src/app/build/MAX30101/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/pi/xddcore/SleepPanda/src/app/build/SoundSensor/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/pi/xddcore/SleepPanda/src/app/build/Window/cmake_install.cmake")
 endif()
 

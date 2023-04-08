@@ -3,7 +3,7 @@
  * @Date: 2023-01-18 00:44:11
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-04-07 20:58:40
+ * @LastEditTime: 2023-04-08 16:57:15
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:27:55
@@ -22,8 +22,11 @@
 
 ![Youtube](https://img.shields.io/youtube/channel/subscribers/UCP2-6ywKLy2js1dzJQ5hR_g?style=social)
 
->[Click me to visit the Youtube channel](https://www.youtube.com/@SleepPanda666)
-
+>[Click me to visit the Youtube channel](https://www.youtube.com/@SleepPanda666)    
+>[Click me to visit the Facebook Account](https://www.facebook.com/profile.php?id=100090653119559)    
+>[Click me to visit the Instgram Account](https://instagram.com/sleeppandapanda?igshid=ZDdkNTZiNTM=)    
+>[Click me to visit the Twitter Account](https://twitter.com/SleepPanda32?t=1ddNsPfxyXBGGOhH1Kmxfg&s=09)    
+>[Click me to visit the TikTok Account](https://www.tiktok.com/@sleeppanda32?_t=8bIzVLx8Wd4&_r=1)    
 
 Change README Language: [English](./README.md) ｜ [Chinese](./README_ZH.md)
 
@@ -56,6 +59,10 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 | Hui Wang | 2810919W | Hardware Engineer & Test Engineer |
 | Yihan Wang | 2696441W | Software Engineer |
 > If you have any suggestions for this project, please email to xddcore@gmail.com
+
+## DEMO
+![SleepPanda Demo Video](./img/SleepPanda_Demo_Video.gif)
+<p align="center">SleepPanda Demo Video</p>  
 
 ## Project Development Planning
 
@@ -758,6 +765,17 @@ cmake .. && make && sudo ctest --verbose
 #### 2.5.5 Ink Screen(SSD1608)
 >Author:Rui Liu
 
+**Features：**
+2.13" EPD display
+Inky pHAT pinout
+Compatible with all 40-pin header Raspberry Pi models
+Python library
+Comes fully assembled
+
+**Note：**
+Overall dimensions: 65x30x8.5mm (WxHxD, depth includes header and display)
+Display usable area dimensions: 48.5x23.8mm (WxH), 2.13" diagonal
+
 >Ref:
 >1. https://github.com/pimoroni/inky
 >2. https://shop.pimoroni.com/products/inky-phat?variant=12549254905939
@@ -966,6 +984,11 @@ Run the following code to execute the SleepPanda software:
 >**Note**: Make sure you are in a graphical desktop environment. The command line environment cannot display a GUI.
 ```
 cd SleepPanda/src/app/build
+
+# Rebuild code
+cmake .. && make
+
+# Run SleepPanda
 sudo ./SleepPanda
 ```
 You will get the following result:

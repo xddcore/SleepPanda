@@ -1,0 +1,41 @@
+[submodule "deps/libpng"]
+	path = deps/libpng
+	url = https://github.com/glennrp/libpng.git
+	shallow = true
+[submodule "deps/QR-Code-generator"]
+	path = deps/QR-Code-generator
+	url = https://github.com/nayuki/QR-Code-generator.git
+	shallow = true
+[submodule "deps/single-header-image-resampler"]
+	path = deps/single-header-image-resampler
+	url = https://github.com/DonkeyKong/single-header-image-resampler.git
+	shallow = true
+[submodule "deps/magic_enum"]
+	path = deps/magic_enum
+	url = https://github.com/Neargye/magic_enum.git
+	shallow = true
+[submodule "deps/libjpeg-turbo"]
+	path = deps/libjpeg-turbo
+	url = https://github.com/libjpeg-turbo/libjpeg-turbo.git
+	shallow = true
+[submodule "deps/fmt"]
+	path = deps/fmt
+	url = https://github.com/fmtlib/fmt.git
+	shallow = true
+[submodule "deps/cpp-httplib"]
+	path = deps/cpp-httplib
+	url = https://github.com/yhirose/cpp-httplib.git
+	shallow = true
+[submodule "deps/json"]
+	path = deps/json
+	url = https://github.com/nlohmann/json.git
+	shallow = true
+[submodule "deps/TinyEXIF"]
+	path = deps/TinyEXIF
+	url = https://github.com/cdcseacave/TinyEXIF.git
+[submodule "deps/sigslot"]
+	path = deps/sigslot
+	url = https://github.com/palacaze/sigslot.git
+[submodule "deps/gpio-cpp"]
+	path = deps/gpio-cpp
+	url = https://github.com/DonkeyKong/gpio-cpp

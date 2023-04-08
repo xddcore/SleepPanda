@@ -412,6 +412,22 @@ cxxabi.h
 acxx_demangle.h
 -
 
+../Buzzer/Buzzer.h
+stdint.h
+-
+unistd.h
+-
+stdio.h
+-
+stdlib.h
+-
+pigpio.h
+-
+assert.h
+-
+../Config/Config.h
+../Config/Config.h
+
 ../Camera/Camera.h
 stdint.h
 -
@@ -470,6 +486,22 @@ MAX30101.h
 MAX30101.h
 ../MAX30101/MAX30101.h
 
+../SoundSensor/SoundSensor.h
+stdint.h
+-
+unistd.h
+-
+stdio.h
+-
+stdlib.h
+-
+pigpio.h
+-
+assert.h
+-
+../Config/Config.h
+../Config/Config.h
+
 ../Window/Window.h
 opencv2/objdetect.hpp
 ../Window/opencv2/objdetect.hpp
@@ -489,6 +521,10 @@ qwt/qwt_plot_curve.h
 ../MAX30101/MAX30101.h
 ../Camera/Camera.h
 ../Camera/Camera.h
+../SoundSensor/SoundSensor.h
+../SoundSensor/SoundSensor.h
+../Buzzer/Buzzer.h
+../Buzzer/Buzzer.h
 QBoxLayout
 -
 QPushButton
@@ -502,6 +538,10 @@ QTextEdit
 QLineEdit
 -
 QString
+-
+QDoubleValidator
+-
+QIntValidator
 -
 
 /home/pi/xddcore/SleepPanda/src/app/Window/test/Window_Test.cpp
@@ -982,6 +1022,18 @@ QtCore/qglobal.h
 QtCore/qstring.h
 -
 
+/usr/include/arm-linux-gnueabihf/qt5/QtCore/qregularexpression.h
+QtCore/qglobal.h
+-
+QtCore/qstring.h
+-
+QtCore/qstringview.h
+-
+QtCore/qshareddata.h
+-
+QtCore/qvariant.h
+-
+
 /usr/include/arm-linux-gnueabihf/qt5/QtCore/qscopedpointer.h
 QtCore/qglobal.h
 -
@@ -1253,6 +1305,14 @@ QtCore/qpoint.h
 /usr/include/arm-linux-gnueabihf/qt5/QtCore/qversiontagging.h
 QtCore/qglobal.h
 -
+
+/usr/include/arm-linux-gnueabihf/qt5/QtGui/QDoubleValidator
+qvalidator.h
+/usr/include/arm-linux-gnueabihf/qt5/QtGui/qvalidator.h
+
+/usr/include/arm-linux-gnueabihf/qt5/QtGui/QIntValidator
+qvalidator.h
+/usr/include/arm-linux-gnueabihf/qt5/QtGui/qvalidator.h
 
 /usr/include/arm-linux-gnueabihf/qt5/QtGui/qbrush.h
 QtGui/qtguiglobal.h
@@ -1602,6 +1662,20 @@ QtCore/qline.h
 QtCore/qpoint.h
 -
 QtCore/qrect.h
+-
+
+/usr/include/arm-linux-gnueabihf/qt5/QtGui/qvalidator.h
+QtGui/qtguiglobal.h
+-
+QtCore/qobject.h
+-
+QtCore/qstring.h
+-
+QtCore/qregexp.h
+-
+QtCore/qregularexpression.h
+-
+QtCore/qlocale.h
 -
 
 /usr/include/arm-linux-gnueabihf/qt5/QtGui/qvector2d.h

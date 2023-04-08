@@ -22,11 +22,13 @@ Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: ../../../tools/gtest/r
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: ../../../tools/gtest/rpios_32bit/include/gtest/internal/gtest-port.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: ../../../tools/gtest/rpios_32bit/include/gtest/internal/gtest-string.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: ../../../tools/gtest/rpios_32bit/include/gtest/internal/gtest-type-util.h
+Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: ../Buzzer/Buzzer.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: ../Camera/Camera.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: ../Config/Config.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: ../MAX30101/MAX30101.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: ../MAX30101/algorithm2.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: ../MAX30101/algorithm2_by_RF.h
+Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: ../SoundSensor/SoundSensor.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: ../Window/Window.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: ../Window/test/Window_Test.cpp
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtCore/QString
@@ -81,6 +83,7 @@ Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtCore/qrect.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtCore/qrefcount.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtCore/qregexp.h
+Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtCore/qregularexpression.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtCore/qscopedpointer.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtCore/qset.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtCore/qshareddata.h
@@ -105,6 +108,8 @@ Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtCore/qvarlengtharray.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtCore/qvector.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtCore/qversiontagging.h
+Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/QDoubleValidator
+Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/QIntValidator
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qbrush.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qcolor.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qcursor.h
@@ -135,6 +140,7 @@ Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtguiglobal.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtouchdevice.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qtransform.h
+Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qvalidator.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qvector2d.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qwindowdefs.h
 Window/test/CMakeFiles/Window_Test.dir/Window_Test.cpp.o: /usr/include/arm-linux-gnueabihf/qt5/QtGui/qwindowdefs_win.h
