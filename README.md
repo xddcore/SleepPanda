@@ -24,7 +24,7 @@
 
 >[Click me to visit the Youtube channel](https://www.youtube.com/@SleepPanda666)    
 >[Click me to visit the Facebook Account](https://www.facebook.com/profile.php?id=100090653119559)    
->[Click me to visit the Instgram Account](https://instagram.com/sleeppandapanda?igshid=ZDdkNTZiNTM=)    
+>[Click me to visit the Instagram Account](https://instagram.com/sleeppandapanda?igshid=ZDdkNTZiNTM=)    
 >[Click me to visit the Twitter Account](https://twitter.com/SleepPanda32?t=1ddNsPfxyXBGGOhH1Kmxfg&s=09)    
 >[Click me to visit the TikTok Account](https://www.tiktok.com/@sleeppanda32?_t=8bIzVLx8Wd4&_r=1)    
 
