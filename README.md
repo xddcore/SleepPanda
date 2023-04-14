@@ -3,7 +3,7 @@
  * @Date: 2023-01-18 00:44:11
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-04-08 16:57:15
+ * @LastEditTime: 2023-04-14 13:49:35
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:27:55
@@ -24,7 +24,7 @@
 
 >[Click me to visit the Youtube channel](https://www.youtube.com/@SleepPanda666)    
 >[Click me to visit the Facebook Account](https://www.facebook.com/profile.php?id=100090653119559)    
->[Click me to visit the Instgram Account](https://instagram.com/sleeppandapanda?igshid=ZDdkNTZiNTM=)    
+>[Click me to visit the Instagram Account](https://instagram.com/sleeppandapanda?igshid=ZDdkNTZiNTM=)    
 >[Click me to visit the Twitter Account](https://twitter.com/SleepPanda32?t=1ddNsPfxyXBGGOhH1Kmxfg&s=09)    
 >[Click me to visit the TikTok Account](https://www.tiktok.com/@sleeppanda32?_t=8bIzVLx8Wd4&_r=1)    
 
@@ -43,13 +43,10 @@ Change README Language: [English](./README.md) ｜ [Chinese](./README_ZH.md)
 SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). SleepPanda uses a variety of sensors to collect sleep data of users, and analyzes and processes the data through dsp, convolutional neural network and other algorithms. Finally, the data processing results are presented to users in various ways.
 
 ## Project Features
-1. Early bed reminder, wake up alarm clock
-2. Body temperature (thermal imaging), heart rate, blood oxygen monitoring
-3. Sleep position monitoring
-4. Early warning of apnea syndrome
-5. Light/deep sleep classification
-6. Playing sleep aid music
-7. Sharing and social networking (different SleepPanda hardware will be connected to the same server, which will help users share sleep data and monitor each other's early bedtime plans)
+1. Heart rate, blood oxygen monitoring
+2. Sleep position monitoring
+3. Early warning of apnea syndrome
+4. Alarm threshold setting
 
 ## Project Contributors
 | Name | ID | Role |
@@ -78,17 +75,16 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 - [x] 14:20:00, 25/01/2023 Pitch Session
 
 #### Chengsen Dong
-- [ ] Update the README document (synchronized with the development process)
+- [x] Update the README document (synchronized with the development process)
 - [x] Buzzer driver development
 - [x] MAX30101 driver development
 - [x] 4K 30FPS camera (opencv c++ framework)
-- [ ] Touch screen (QT-based GUI) development & top-level C++ logic
-- [ ] MQTT server setup (low priority)
-- [ ] Check memory management and memory leaks (using STL to manage memory)
+- [x] Touch screen (QT-based GUI) development & top-level C++ logic
+- [x] Check memory management and memory leaks (using STL to manage memory)
 
 #### Yihan Wang
-- [ ] Synchronously update the contents of README_ZH.md & README.md (once a week)
-- [ ] Simultaneous updates of the minutesmeeting (once a week)
+- [x] Synchronously update the contents of README_ZH.md & README.md (once a week)
+- [x] Simultaneous updates of the minutesmeeting (once a week)
 - [x] Creation of a Youtube channel to promote the SleepPanda project
 - [x] Pitch Session PPT slide draft
 - [x] Make cost accounting & original row selection Excel table
@@ -97,18 +93,18 @@ SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). Slee
 - [ ] To do later...
 
 #### Rui Liu
-- [ ] Synchronously update the contents of README_ZH.md & README.md (once a week)
-- [ ] Simultaneous updates of the minutesmeeting (once a week)
-- [ ] Create Gantt charts to organise tasks according to the classification of people
+- [x] Synchronously update the contents of README_ZH.md & README.md (once a week)
+- [x] Simultaneous updates of the minutesmeeting (once a week)
+- [x] Create Gantt charts to organise tasks according to the classification of people
 - [x] Design SleepPanda Logo
 - [x] Pitch Session PPT slide final draft & pitch session speech preparation
 - [x] Make cost accounting & original row selection Excel table
-- [ ] ink screen driver development (virtual zoo)
+- [x] ink screen driver development (virtual zoo)
 - [ ] To do later...
 
 #### Hui Wang
 - [x] Query the data sheets of all sensors/chips and upload them to the github repository
-- [ ] MLX90640 driver development
+- [x] MLX90640 driver development
 - [ ] To do later...
 
 # guide
@@ -764,6 +760,9 @@ cmake .. && make && sudo ctest --verbose
 
 #### 2.5.5 Ink Screen(SSD1608)
 >Author:Rui Liu
+>Ref:
+>1. https://github.com/pimoroni/inky
+>2. https://shop.pimoroni.com/products/inky-phat?variant=12549254905939
 
 **Features：**
 2.13" EPD display
@@ -775,10 +774,6 @@ Comes fully assembled
 **Note：**
 Overall dimensions: 65x30x8.5mm (WxHxD, depth includes header and display)
 Display usable area dimensions: 48.5x23.8mm (WxH), 2.13" diagonal
-
->Ref:
->1. https://github.com/pimoroni/inky
->2. https://shop.pimoroni.com/products/inky-phat?variant=12549254905939
 
 #### 2.5.6 MLX90640
 >Author:Hui Wang

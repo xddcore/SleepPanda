@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-04-08 16:56:10
+ * @LastEditTime: 2023-04-14 13:50:34
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -44,13 +44,10 @@ Change README Language: [English](./README.md) ｜ [中文](./README_ZH.md)
 SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。SleepPanda使用多种传感器收集用户的睡眠数据，并通过dsp，卷积神经网络等算法对数据进行分析处理。最终将数据处理结果通过多种方式呈现给用户。
 
 ## 项目特性
-1. 早睡提醒，起床闹钟
-2. 体温(热成像)，心率，血氧监测
-3. 睡姿监测
-4. 呼吸暂停综合症预警
-5. 浅度/深度睡眠分类
-6. 助眠音乐播放
-7. 分享与社交(不同的SleepPanda硬件将会被连接至同一服务器，这将有助于用户间分享睡眠数据，以及互相监督早睡计划)
+1. 心率，血氧监测
+2. 睡姿监测
+3. 呼吸暂停综合症预警
+4. 报警阈值设置
 
 ## 项目贡献者
 |  Name   | ID  |  Role  |
@@ -79,17 +76,16 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 - [x] 14:20:00, 25/01/2023 Pitch Session
 
 #### Chengsen Dong
-- [ ] 更新README文档(随着开发过程同步更新)
+- [x] 更新README文档(随着开发过程同步更新)
 - [x] 蜂鸣器驱动开发
 - [x] MAX30101驱动开发
 - [x] 4K 30FPS摄像头(opencv c++框架)
-- [ ] 触摸屏(基于QT的GUI)开发&顶层C++逻辑
-- [ ] MQTT服务器搭建(低优先级)
-- [ ] 检查内存管理和内存泄漏(使用STL管理内存)
+- [x] 触摸屏(基于QT的GUI)开发&顶层C++逻辑
+- [x] 检查内存管理和内存泄漏(使用STL管理内存)
 
 #### Yihan Wang
-- [ ] 同步更新README_ZH.md&README.md的内容(每周一次)
-- [ ] 同步更新会议记录meeting的内容（每周一次）
+- [x] 同步更新README_ZH.md&README.md的内容(每周一次)
+- [x] 同步更新会议记录meeting的内容（每周一次）
 - [x] 创建Youtube频道，用于推广SleepPanda项目
 - [x] Pitch Session PPT幻灯片初稿
 - [x] 制作成本核算&原件选行Excel表格
@@ -98,18 +94,18 @@ SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。Sleep
 - [ ] To do later...
 
 #### Rui Liu
-- [ ] 同步更新README_ZH.md&README.md的内容(每周一次)
-- [ ] 同步更新会议记录meeting的内容（每周一次）
-- [ ] 按照人员分类，创造甘特图安排任务
+- [x] 同步更新README_ZH.md&README.md的内容(每周一次)
+- [x] 同步更新会议记录meeting的内容（每周一次）
+- [x] 按照人员分类，创造甘特图安排任务
 - [x] 设计SleepPanda Logo
 - [x] Pitch Session PPT幻灯片终稿&pitch session演讲准备
 - [x] 制作成本核算&原件选行Excel表格
-- [ ] 墨水屏驱动开发(虚拟动物园)
+- [x] 墨水屏驱动开发(虚拟动物园)
 - [ ] To do later...
 
 #### Hui Wang
 - [x] 查询所有传感器/芯片的数据手册，并上传至github仓库
-- [ ] MLX90640驱动开发
+- [x] MLX90640驱动开发
 - [ ] To do later...
 
 # 指南
@@ -764,6 +760,9 @@ cmake .. && make && sudo ctest --verbose
 
 #### 2.5.5 Ink Screen(SSD1608)
 >Author: Rui Liu
+>Ref:
+>1. https://github.com/pimoroni/inky
+>2. https://shop.pimoroni.com/products/inky-phat?variant=12549254905939
 
 **Features：**
 2.13英寸EPD显示屏
@@ -776,11 +775,6 @@ Python库
 **笔记：**
 总体尺寸： 65x30x8.5mm（宽x高x深，深度包括机头和显示器）。
 显示屏可使用区域尺寸： 48.5x23.8毫米（宽x高），2.13英寸的对角线
-
->Ref:
->1. https://github.com/pimoroni/inky
->2. https://shop.pimoroni.com/products/inky-phat?variant=12549254905939
-
 
 
 #### 2.5.6 MLX90640
