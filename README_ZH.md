@@ -779,10 +779,31 @@ Python库
 
 #### 2.5.6 MLX90640
 >Author: Hui Wang
-
->Ref:
+>Ref：
 >1. https://github.com/pimoroni/mlx90640-library
 >2. https://shop.pimoroni.com/products/mlx90640-thermal-camera-breakout?variant=12536948654163
+>3. https://blog.csdn.net/duxi222333/article/details/126100446?
+
+**规格**
+小尺寸，低功耗，32*24像素红外阵列
+I2C兼容数字接口
+可编程刷新速率0.5Hz-60Hz
+供电电压3.3V
+电流消耗 ≤23mA
+工作温度：-45-85°C
+测温范围：-40-300°C
+
+**管脚定义**
+SDA:I²C串行接口数据线（输入/输出）
+VDD：电源正
+GND：电源负
+SCL：I²C串行接口时钟线（输入）
+
+**笔记**
+1.硬件设计注意事项：MLX90640使用3.3V供电，并且使用供电电压作为温度测量的参考电压来使用，所以对电源稳定性要求高。电源电流需能平衡的输出100mA。
+2.软件设计注意事项：计算设计用API库中的对应函数
+3.操作过程中注意解算出Vdd的值，如果这个值与实际值相差超过0.1V就应该检查问题。
+
 
 #### 2.5.7 USB Camera
 >Author:Chengsen Dong
