@@ -781,6 +781,28 @@ Display usable area dimensions: 48.5x23.8mm (WxH), 2.13" diagonal
 >Ref:
 >1. https://github.com/pimoroni/mlx90640-library
 >2. https://shop.pimoroni.com/products/mlx90640-thermal-camera-breakout?variant=12536948654163
+>3. https://blog.csdn.net/duxi222333/article/details/126100446?
+
+**Features：**
+Small size, low power cells, 32*24 pixel infrared array；
+I2C Compatible Digital Interface；
+Programmable refresh rate 0.5Hz-60Hz；
+Supply voltage 3.3V；
+Current consumption ≤23mA；
+Working temperature: -45-85°C；
+Temperature range: -40-300°C；
+
+**Pin definition**
+SDA: I²C serial interface data line (input/output)；
+VDD: positive power supply；
+GND: power negative；
+SCL: I²C serial interface clock line (input)；
+
+**notes**
+1. Hardware design considerations: MLX90640 uses 3.3V power supply, and uses the power supply voltage as the reference voltage for temperature measurement, so it has high requirements for power supply stability. The power supply current needs to be able to output 100mA in balance.
+2. Notes on software design: calculate the corresponding functions in the API library for design.
+3. Pay attention to the calculated value of Vdd during operation. If the difference between this value and the actual value exceeds 0.1V, you should check the problem.
+
 
 #### 2.5.7 USB Camera
 >Author:Chengsen Dong
