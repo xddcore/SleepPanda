@@ -3,7 +3,7 @@
  * @Date: 2023-01-18 00:44:11
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-04-14 13:49:35
+ * @LastEditTime: 2023-04-19 09:13:35
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:27:55
@@ -40,7 +40,7 @@ Change README Language: [English](./README.md) ｜ [Chinese](./README_ZH.md)
 
 
 ## Project Description
-SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). SleepPanda uses a variety of sensors to collect sleep data of users, and analyzes and processes the data through dsp, convolutional neural network and other algorithms. Finally, the data processing results are presented to users in various ways.
+SleepPanda is a sleep monitoring system based on Raspberry Pi 4b (bcm2711). SleepPanda uses a variety of sensors to collect sleep data of users, ~~and analyzes and processes the data through dsp, convolutional neural network and other algorithms.~~ Finally, the data processing results are presented to users in various ways.
 
 ## Project Features
 1. Heart rate, blood oxygen monitoring
