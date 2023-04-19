@@ -3,7 +3,7 @@
  * @Date: 2023-01-15 20:09:22
 <<<<<<< HEAD
  * @LastEditors: Chengsen Dong 1034029664@qq.com
- * @LastEditTime: 2023-04-14 13:50:34
+ * @LastEditTime: 2023-04-19 09:13:46
 =======
  * @LastEditors: Chengsen Dong 1034029664@qq.com
  * @LastEditTime: 2023-02-15 16:29:50
@@ -41,7 +41,7 @@ Change README Language: [English](./README.md) ｜ [中文](./README_ZH.md)
 
 
 ## 项目简介
-SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。SleepPanda使用多种传感器收集用户的睡眠数据，并通过dsp，卷积神经网络等算法对数据进行分析处理。最终将数据处理结果通过多种方式呈现给用户。
+SleepPanda是一个以树莓派4b(bcm2711)为核心的睡眠监测系统。SleepPanda使用多种传感器收集用户的睡眠数据，~~并通过dsp，卷积神经网络等算法对数据进行分析处理。~~最终将数据处理结果通过多种方式呈现给用户。
 
 ## 项目特性
 1. 心率，血氧监测
