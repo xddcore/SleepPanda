@@ -1,0 +1,15 @@
+name: Rpi3b-QEMU-Test
+
+on:
+  push:
+    branches: [ "dev" ]
+  pull_request:
+    branches: [ "dev" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
