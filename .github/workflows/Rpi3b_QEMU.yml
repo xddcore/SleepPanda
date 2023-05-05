@@ -15,7 +15,7 @@ jobs:
       uses: docker/setup-qemu-action@v2
     - 
       name: DownLoad RaspberryPi OS
-      run: Wget https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2022-09-26/2022-09-22-raspios-bullseye-armhf.img.xz
+      run: wget https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2022-09-26/2022-09-22-raspios-bullseye-armhf.img.xz
     - 
       name: Unzip Image
       run: tar -xvf 2022-09-22-raspios-bullseye-armhf.img.xz
