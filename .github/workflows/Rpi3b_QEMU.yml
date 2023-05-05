@@ -17,8 +17,8 @@ jobs:
       name: DownLoad RaspberryPi OS
       run: wget https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2022-09-26/2022-09-22-raspios-bullseye-armhf.img.xz
     - 
-      name: Unzip Image
-      run: tar -xvf 2022-09-22-raspios-bullseye-armhf.img.xz
+      name: Unzip Image(xz)
+      run:  xz -d 2022-09-22-raspios-bullseye-armhf.img.xz
     - 
       name: ls
       run : ls && ls /2022-09-22-raspios-bullseye-armhf
